@@ -1,0 +1,45 @@
+/* ========================
+ditecco.me responsive styles
+======================== */
+
+
+@media screen and (max-width: 600px) {
+	
+	/* ========================
+	COMMON
+	======================== */
+	
+	/* ========================
+	NAV
+	======================== */
+	
+	header,
+	nav
+	{display: none;}
+	
+	/* ========================
+	HERO
+	======================== */
+	
+	#hero {
+		height: 30em;
+/* 		background: #cfd0d0 url('../img/adt-hero.jpg') center center no-repeat; */
+	}
+		
+	#hero h1 {
+		top: 68%;
+		padding: 0 0.75em;
+		white-space: normal;
+		font-size: 3em;
+		line-height: 1.5;
+		display: none;
+	}
+	
+	#hero br {display: none;}
+	
+	#about {height: auto;}
+	
+	#about p {width: 100%;}
+	
+	
+}
