@@ -23,7 +23,10 @@ h1,h2,h3,h4,h5 {
 
 h1 {font-size: 2.4em;}
 
-h2 {font-size: 2em;}
+h2 {
+	font-size: 2em;
+	margin: 0.8em 0;
+}
 
 h3 {font-size: 1.6em;}
 
@@ -92,7 +95,6 @@ header {
 
 nav ul {
 	width: 100%;
-	min-width: 800px;
 	height: 100%;
 	margin: 0 auto;
 	padding: 0;
@@ -139,7 +141,7 @@ HERO
 
 #hero {
 	width: 100%;
-	height: 700px;
+	height: 43.75em;
 	background: #cfd0d0 url('../img/adt-hero.jpg') center center no-repeat;
 	position: relative;
 }
@@ -168,21 +170,14 @@ ABOUT
 ======================== */
 
 #about {
-	width: 100%;
-	height: 300px;
+	height: auto;
 	border-bottom: 3px double #1abc9c;
+	padding: 0 15%;
 }
 
 #about p {
-	width: 600px;
 	font-size: 1.1em;
 	line-height: 2.5;
-	margin: 0 auto;
-	padding: 1em 0;
-}
-
-#about h2 {
-	margin-bottom: 0;
 }
 
 
@@ -201,7 +196,7 @@ PROJECT LIST
 }
 
 .pro-list li {
-	height: 200px;
+	height: 12.5em;
 	border-bottom: 1px dotted #ccc;
 	color: #444;
 	background-color: #fff;
