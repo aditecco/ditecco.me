@@ -9,18 +9,31 @@ ditecco.me responsive styles
 	COMMON
 	======================== */
 	
-	h1,h2 {font-size: 1.8em;}
-	
-	h3 {font-size: 1.45em;}
+	h1 {font-size: 1.6em;}
+
+	h2 {font-size: 1.45em;}
+
+	h3 {font-size: 1.31em;}
 	
 	
 	/* ========================
 	NAV
 	======================== */
 	
-	header,
-	nav
-	{display: none;}
+	header {border-bottom: 3px solid #1c1b1c;}
+
+	nav li {
+		width: auto;
+		border: none;
+		padding: 1.1em 0.6em;
+		margin-bottom: -3px;
+	}
+	
+	nav li:hover {
+		color: #1abc9c;
+		background-color: transparent;
+		border-bottom: 3px solid #1abc9c;
+	}
 	
 	
 	/* ========================
@@ -28,7 +41,6 @@ ditecco.me responsive styles
 	======================== */
 	
 	#hero {
-/* 		height: 30em; */
 		height: 24em;
 		background-position: 50% 50%;
 		background-size: cover;
@@ -36,10 +48,9 @@ ditecco.me responsive styles
 		
 	#hero h1 {
 		top: 65%;
-		padding: 0 0.75em;
+		padding: 0 0.5em;
 		white-space: normal;
 		line-height: 1.5;
-		font-size: 1.55em;
 	}
 	
 	#hero h1 br {display: none;}
@@ -54,6 +65,11 @@ ditecco.me responsive styles
 		padding: 0 6%;
 	}
 	
+	#about p {
+		font-size: 1em;
+		line-height: 2.25;
+	}
+	
 	
 	/* ========================
 	PROJECT LIST
@@ -63,7 +79,6 @@ ditecco.me responsive styles
 		height: auto;
 		min-height: 12.5em;
 		border-bottom: 2px dotted #ccc;
-/* 		background-color: gray; */
 	}
 	
 	.pro-list li h3 {
@@ -71,7 +86,7 @@ ditecco.me responsive styles
 		padding-top: 12%;
 	}
 	
-	.pro-list .tag {
+	.pro-list li .tag {
 		display: block;
 		font-size: 0.6em;
 		margin: 1em 20%;
@@ -79,11 +94,16 @@ ditecco.me responsive styles
 	}
 	
 	.pro-list p {
-/* 		font-size: 0.95em; */
 		padding: 0 15%;
 		margin: 0;
-/* 		letter-spacing: -0.05em; */
-	}
+	}	
+}
 
+@media screen and (min-width: 1900px) {
 	
+	/* ========================
+	ABOUT
+	======================== */
+	
+	#about {padding: 0 24%;}
 }
