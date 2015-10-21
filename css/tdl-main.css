@@ -1,10 +1,11 @@
 /* ========================
-COMMON
+thedigitaleague styles
 ======================== */
 
-/** {
-	box-sizing: border-box;
-}*/
+
+/* ========================
+COMMON
+======================== */
 
 body {
 	margin-top: 0;
@@ -12,21 +13,6 @@ body {
 	font-size: 1.1em;
 	text-align: left;
 	color: #444;
-}
-
-.wrap {
-	width: 43.5em;
-	height: auto;
-	margin: 0 auto;
-	padding: 1em 0;
-}
-
-/* look into this */
-.wrap:after {
-content:".";
-display:block;
-clear:both;
-visibility:hidden;
 }
 
 a {
@@ -40,28 +26,166 @@ a:hover {
 	border-bottom: 2px solid #a34129;
 }
 
-h1 {
+h2 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 2em;
 	font-weight: 400;
 	text-align: center;
-	padding: 0 0 1em 0;
+	padding: 0 0 1em;
 	margin: 0;
 }
 
-/*h3 {
-	font-family: 'Oswald', sans-serif;
-	text-transform: uppercase;
-	font-size: 1.5em;
-	font-weight: 400;
-	display: inline-block;
-	clear: both;
-	margin: 0;
-	padding: 0;
-}*/
+.underline {border-bottom: 4px solid #a34129;}
 
-.underline {
-	border-bottom: 4px solid #a34129;
+::selection {background-color: #b0b8a6}
+
+
+/* ========================
+NAV
+======================== */
+
+nav {
+	width: 100%;
+	height: 3em;
+	margin-top: 0;
+	z-index: 100;
+	position: fixed;
+	background-color: #f1f1f1;
+	border-bottom: 2px solid #a34129;
+	font-family: Helvetica, Arial;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+#nav-cont {
+	width: 43.1em;
+	height: 100%;
+	margin: 0 auto;
+/* 	background-color: aqua; */
+}
+
+nav ul {
+	width: auto;
+	max-width: 80%;
+	padding: 0;
+	float: right;
+/* 	background-color: orange; */
+}
+
+nav ul li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 0 0 1em;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #222;
+}
+
+nav ul li a:hover {
+	text-decoration: none;
+	color: #b0b8a6;
+	color: #a34129;
+	border-bottom: 2px solid #a34129;
+}
+
+#logo {
+	width: 20%;
+	display: inline-block;
+	float: left;
+	padding: 0.8em 0;
+	font-family: 'Oswald', sans-serif;
+	color: #222;
+	text-transform: uppercase;
+/* 	background-color: gray; */
+}
+
+#logo a {color: #222;}
+
+#logo a:hover {color: #a34129;}
+
+
+/* ========================
+HERO
+======================== */
+
+#hero {
+	width: 100%;
+	height: 37.5em;
+	position: relative;
+	background:
+		linear-gradient(
+			rgba(175, 184, 165, 0.9),
+			rgba(175, 184, 165, 0.8)
+		),
+		url('../img/tdl-hero.jpg')
+		#b0b8a6;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*
+#hero img {
+	position: absolute;
+	top: 30%;
+	bottom: 0;
+	left: 0;
+	right: 0; 
+	margin: 0 auto;
+}
+*/
+
+#hero-logo {
+	background: url('../img/tdl-logo-400.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+}
+
+
+/* ========================
+LAYOUT ELEMENTS
+======================== */
+
+.row {
+	width: 100%;
+	background-color: #eee;
+}
+
+.row-alt {
+	width: 100%;
+	background-color: #b0b8a6;
+}
+
+.quote {
+	width: 100%;
+	background-color: #e4e4e4;
+}
+
+.quote p {
+	margin: 0;
+	padding: 1.2em;
+	font-size: 1.9em;
+	line-height: 1.5;
+	text-align: center;
+	color: #555;	
+}
+
+.wrap {
+	max-width: 43.5em;
+	height: auto;
+	margin: 0 auto;
+	padding: 1em 0;
+}
+
+.wrap:after {
+	content:".";
+	display:block;
+	clear:both;
+	visibility:hidden;
 }
 
 .col {
@@ -69,8 +193,7 @@ h1 {
 	height: 100%;
 	display: inline-block;
 	float: left;
-	padding: 0 5% 0 5%;
-	/*font-size: 1.15em;*/
+	padding: 0 5% 0;
 	line-height: 1.5;
 }
 
@@ -102,127 +225,6 @@ h1 {
 	background-color: #fff;
 }
 
-.quote {
-	width: 100%;
-	/*height: 12.5em;*/
-	background-color: #e4e4e4;
-}
-
-.quote p {
-	margin: 0;
-	padding: 1.2em;
-	font-size: 1.9em;
-	line-height: 1.5;
-	text-align: center;
-	color: #555;	
-}
-
-
-/* ========================
-NAV
-======================== */
-
-nav {
-	width: 100%;
-	height: 3em;
-	margin-top: 0;
-	z-index: 100;
-	position: fixed;
-	background-color: #f1f1f1;
-	border-bottom: 2px solid #a34129;
-	font-family: Helvetica, Arial;
-	font-size: 0.8em;
-	text-align: center;
-}
-
-nav ul {
-	width: 43.5em;
-	margin: 0 auto;
-}
-
-nav ul li {
-	list-style: none;
-	display: inline-block;
-	float: right;
-	margin: 0 0 0 0.4em;
-	padding: 1em 0;
-}
-
-nav ul li a {
-	text-decoration: none;
-	color: #222;
-}
-
-nav ul li a:hover {
-	text-decoration: none;
-	color: #b0b8a6;
-	border-bottom: 2px solid #b0b8a6;
-}
-
-#logo {
-	display: inline-block;
-	float: left;
-	margin: 0;
-	padding: 0.8em 0;
-	font-family: 'Oswald', sans-serif;
-	color: #222;
-	text-transform: uppercase;
-}
-
-#logo a:hover {
-	text-decoration: none;
-	border-bottom: none;
-	color: #b0b8a6;
-}
-
-
-/* ========================
-HERO
-======================== */
-
-#hero {
-	width: 100%;
-	height: 37.5em;
-	position: relative;
-	background:
-		linear-gradient(
-			rgba(0, 0, 0, 0.5),
-			rgba(0, 0, 0, 0.5)
-		),
-		url('../img/tdl-hero.jpg');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-#hero img {
-	position: absolute;
-	top: 30%;
-	bottom: 0;
-	left: 0;
-	right: 0; 
-	margin: 0 auto;
-}
-
-
-/* ========================
-ROWS
-======================== */
-
-.row {
-	width: 100%;
-	/*height: 40.6em;*/
-	/*margin: -1.4em 0 0 0;*/
-	background-color: #eee;
-}
-
-.row-alt {
-	width: 100%;
-	/*height: 40.6em;*/
-	/*margin: -1.4em 0 0 0;*/
-	background-color: #b0b8a6;
-}
-
 
 /* ========================
 FOOTER
@@ -230,8 +232,9 @@ FOOTER
 
 footer {
 	width: 100%;
-	height: 3em;
-	margin: -1.4em 0 0 0;
+/* 	height: 3em; */
+	height: auto;
+	margin: -1.4em 0 0;
 	padding: 0.4em 0;
 	font-family: Helvetica, Arial;
 	color: #555;
