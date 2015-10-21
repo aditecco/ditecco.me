@@ -2,6 +2,7 @@
 thedigitaleague responsive styles
 ======================== */
 
+
 @media screen and (max-width: 600px) {
 
 	/* ========================
@@ -34,7 +35,7 @@ thedigitaleague responsive styles
 	
 	nav ul li {padding: 0.6em 0;}
 
-	#logo {
+	#home {
 		width: 100%;
 		display: block;
 		float: none;
@@ -52,7 +53,6 @@ thedigitaleague responsive styles
 		height: 100%;
 		width: 100%;
 		background-size: 80% auto;
-/* 		background-size: 60% auto; */
 	}
 
 	
@@ -80,34 +80,6 @@ thedigitaleague responsive styles
 	}
 	
 	
-	/* ========================
-	FOOTER
-	======================== */
-}
-
-
-@media screen and (min-width: 1900px) {
-
-	/* ========================
-	COMMON
-	======================== */
-		
-	
-	/* ========================
-	NAV
-	======================== */
-	
-	
-	/* ========================
-	HERO
-	======================== */
-	
-	
-	/* ========================
-	LAYOUT ELEMENTS
-	======================== */
-		
-		
 	/* ========================
 	FOOTER
 	======================== */
