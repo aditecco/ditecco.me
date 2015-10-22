@@ -197,6 +197,21 @@ LAYOUT ELEMENTS
 	color: #a34129;
 }
 
+.col.altlist {
+	width: 90%;
+}
+
+.col li.altlist-item {
+	list-style: none;
+	padding: 0 0.5em;
+	margin: 0.2em 0;
+	list-style-position: inside;
+	line-height: 2.5;
+	background-color: #fff;
+	border-bottom: 2px solid #ddd;
+}
+
+/*
 .biglist {
 	padding: 0 2em;
 }
@@ -210,6 +225,7 @@ LAYOUT ELEMENTS
 	line-height: 2.5;
 	background-color: #fff;
 }
+*/
 
 
 /* ========================
@@ -219,11 +235,27 @@ FOOTER
 footer {
 	width: 100%;
 	height: auto;
-	margin: -1.4em 0 0;
-	padding: 0.4em 0;
+	min-height: 3em;
+/* 	margin: -1.4em 0 0; */
+/* 	padding: 0.4em 0; */
+	background-color: #222;
+}
+
+footer p {
 	font-family: Helvetica, Arial;
 	color: #555;
 	font-size: 0.8em;
 	text-align: center;
-	background-color: #222;
+	padding: 1em 8%;
+	margin: 0;
+}
+
+footer a {
+	color: #555;
+	border-bottom: 1px dotted #555;
+}
+
+footer a:hover {
+	color: #999;
+	border-bottom: 1px dotted #999;
 }
