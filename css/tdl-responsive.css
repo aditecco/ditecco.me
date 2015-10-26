@@ -49,10 +49,9 @@ thedigitaleague responsive styles
 	
 	#hero {height: 22em;}
 	
-	#hero-logo {
-		height: 100%;
-		width: 100%;
-		background-size: 80% auto;
+	#hero img {
+		width: 300px;
+		height: auto;
 	}
 
 	
