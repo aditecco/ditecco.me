@@ -1,0 +1,109 @@
+/* ========================
+ditecco.me responsive styles
+======================== */
+
+
+@media screen and (max-width: 600px) {
+	
+	/* ========================
+	COMMON
+	======================== */
+	
+	h1 {font-size: 1.6em;}
+
+	h2 {font-size: 1.45em;}
+
+	h3 {font-size: 1.31em;}
+	
+	
+	/* ========================
+	NAV
+	======================== */
+	
+	header {border-bottom: 3px solid #1c1b1c;}
+
+	nav li {
+		width: auto;
+		border: none;
+		padding: 1.1em 0.6em;
+		margin-bottom: -3px;
+	}
+	
+	nav li:hover {
+		color: #1abc9c;
+		background-color: transparent;
+		border-bottom: 3px solid #1abc9c;
+	}
+	
+	
+	/* ========================
+	HERO
+	======================== */
+	
+	#hero {
+		height: 24em;
+		background-position: 50% 50%;
+		background-size: cover;
+	}
+		
+	#hero h1 {
+		top: 65%;
+		padding: 0 0.5em;
+		white-space: normal;
+		line-height: 1.5;
+	}
+	
+	#hero h1 br {display: none;}
+	
+	
+	/* ========================
+	ABOUT
+	======================== */
+	
+	#about {
+		border-bottom: 3px double #1abc9c;
+		padding: 0 6%;
+	}
+	
+	#about p {
+		font-size: 1em;
+		line-height: 2.25;
+	}
+	
+	
+	/* ========================
+	PROJECT LIST
+	======================== */
+	
+	.pro-list li {
+		height: auto;
+		min-height: 12.5em;
+		border-bottom: 2px dotted #ccc;
+	}
+	
+	.pro-list li h3 {
+		margin: 0;
+		padding-top: 12%;
+	}
+	
+	.pro-list li .tag {
+		display: block;
+		font-size: 0.6em;
+		margin: 1em 25%;
+		padding: 0.2em 1em;
+	}
+	
+	.pro-list p {
+		padding: 0 15%;
+		margin: 0;
+	}	
+}
+
+@media screen and (min-width: 1900px) {
+	
+	/* ========================
+	ABOUT
+	======================== */
+	
+	#about {padding: 0 24%;}
+}
