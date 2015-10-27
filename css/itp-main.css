@@ -1,5 +1,5 @@
 /* ========================
-ITAKEPICTURES
+ITAKEPICTURES styles
 ======================== */
 body {
   /* 	font-family: 'Helvetica, Arial', sans-serif; */
@@ -88,6 +88,9 @@ nav ul li {
   background-color: #222;
   margin: 0;
   padding: 0;
+}
+.lazy {
+  display: none;
 }
 /* ========================
 FLUID
