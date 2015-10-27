@@ -1,17 +1,14 @@
-@media screen and (min-width: 600px) {
-  .module.full {
-    -webkit-flex-basis: 60em;
-        -ms-flex-preferred-size: 60em;
-            flex-basis: 60em;
-  }
-  .module.half {
-    -webkit-flex-basis: 30em;
-        -ms-flex-preferred-size: 30em;
-            flex-basis: 30em;
-  }
-}
-@media screen and (max-width: 320px) {
+/* ========================
+ITAKEPICTURES responsive styles
+======================== */
+@media screen and (max-width: 960px) {
   .module {
-    min-height: auto;
+    width: 100%;
+    height: auto;
+  }
+  .module.full img,
+  .module.half img {
+    width: 100%;
+    height: auto;
   }
 }
