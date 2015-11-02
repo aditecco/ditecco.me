@@ -5,6 +5,13 @@ ditecco.me/blog post responsive styles
   /* ========================
 	COMMON
 	======================== */
+  /* ========================
+	NAV
+	======================== */
+  /* ========================
+	FORMATTING
+	======================== */
+  /* ===== HEADINGS ===== */
   h1 {
     font-size: 2.8em;
   }
@@ -17,29 +24,32 @@ ditecco.me/blog post responsive styles
   h4 {
     font-size: 1.5em;
   }
-  /*
-	.txt-wrap img {
-		border-top: 3px solid #1abc9c;
-		width: 100%;
-		height: auto;
-	}
-*/
+  /* ===== BODY TXT ===== */
+  /* ===== TXT FX ===== */
+  blockquote {
+    margin: 0;
+  }
   /* ===== LISTS ===== */
-  .txt-wrap ul {
+  .txt-wrap ul,
+  ol {
     padding: 0 1.6em 0;
   }
-  #cta ul li {
+  /* ===== SEPARATORS ===== */
+  /* ===== LINKS ===== */
+  /* ===== TXT SELECTION ===== */
+  /* ===== FOOTNOTES ===== */
+  /* ========================
+	CTA
+	======================== */
+  #cta ul a li {
     display: block;
     width: 100%;
   }
-  /* ===== TXT FX ===== */
-  blockquote {
-    font-style: italic;
-    border-left: 3px solid #1abc9c;
-    padding: 0 1em;
-    margin: 0;
+  #cta ul a:last-child > li {
+    border-left: 0;
+    border-top: 0;
   }
-  .cta-right {
-    border: none;
-  }
+  /* ========================
+	FOOTER
+	======================== */
 }

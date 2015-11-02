@@ -17,19 +17,10 @@ body {
   font-weight: 400;
   font-size: 1em;
   color: #555;
-  /*
-	width: 600px;
-	min-width: 600px;
-*/
   max-width: 600px;
   margin: 0 auto;
-  padding: 6em 2em 3em 2em;
+  padding: 6em 2em 3em;
 }
-/*
-img {
-	border-top: 3px solid #1abc9c;
-}
-*/
 .txt-wrap img {
   border-top: 3px solid #1abc9c;
   width: 100%;
@@ -47,10 +38,6 @@ header {
   border-bottom: 2px solid #1c1b1c;
 }
 nav ul {
-  /*
-	width: 100%;
-	min-width: 800px;
-*/
   height: 100%;
   margin: 0 auto;
   padding: 0;
@@ -73,12 +60,6 @@ nav li {
   font-size: 0.8em;
   text-align: center;
   text-transform: uppercase;
-  /* Transitions */
-  /*
-	-webkit-transition: background-color 0.6s ease;
-	-moz-transition: background-color 0.6s ease;
-	-o-transition: background-color 0.6s ease;
-*/
   -webkit-transition: background-color 0.6s ease;
           transition: background-color 0.6s ease;
 }
@@ -125,11 +106,6 @@ h5 {
   margin: 1em 0;
 }
 /* ===== TXT FX ===== */
-blockquote {
-  font-style: italic;
-  border-left: 3px solid #1abc9c;
-  padding: 0 1em;
-}
 strong {
   color: #333;
 }
@@ -137,16 +113,38 @@ em {
   background-color: #fffee9;
 }
 /* acts as highlight */
+/* ===== SPECIAL TXT ===== */
+pre {
+  border-left: 3px solid lime;
+  padding: 2em 0.5em;
+  background-color: rgba(127, 127, 127, 0.15);
+  -moz-tab-size: 2;
+    -o-tab-size: 2;
+       tab-size: 2;
+}
+code {
+  padding: 0.1em 0.3em;
+  background-color: rgba(127, 127, 127, 0.15);
+  border-radius: 3px;
+}
+blockquote {
+  font-style: italic;
+  border-left: 3px solid #1abc9c;
+  padding: 0 1em;
+}
 /* ===== LISTS ===== */
-.txt-wrap ul {
+.txt-wrap ul,
+ol {
   font-size: 1.1em;
-  list-style: disc;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   background-color: #f3f0eb;
 }
-.txt-wrap ul li {
+.txt-wrap li {
   padding: 0.5em 0;
+}
+.txt-wrap ul {
+  list-style: circle;
 }
 .txt-wrap ol {
   list-style: decimal-leading-zero;
@@ -201,46 +199,46 @@ CTA
 #cta {
   display: block;
   width: 100%;
-  height: 96px;
+  height: auto;
 }
 #cta ul {
   max-width: 600px;
   margin: 0 auto;
   padding: 0;
 }
-#cta ul li {
-  width: 49.5%;
-  height: 96px;
+#cta ul a li {
   display: inline-block;
   float: left;
+  width: 49.5%;
+  height: 96px;
   margin: 0;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   color: #ccc;
-  /* Transitions */
-  /*
-	-webkit-transition: background-color 0.6s, color 0.6s;
-	-moz-transition: background-color 0.6s, color 0.6s;
-	-o-transition: background-color 0.6s, color 0.6s;
-*/
   -webkit-transition: background-color 0.6s, color 0.6s;
           transition: background-color 0.6s, color 0.6s;
 }
-#cta ul li:hover {
+#cta ul a:last-child > li {
+  border-left: 1px solid #ccc;
+}
+/*
+.cta-right {
+	border-left: 1px solid #ccc;
+	background-color: orange;
+}
+*/
+#cta ul a li:hover {
   background-color: #4099ff;
   color: #f4f5f2;
 }
-.cta-right {
-  border-left: 1px solid #ccc;
-}
-#cta ul li p {
+#cta ul a li p {
   text-align: center;
   padding: 1.25em;
 }
 #disqus_thread {
-  display: block;
-  max-width: 600px;
+  max-width: 536px;
   margin: 3em auto 0;
+  padding: 2em;
 }
 /* ========================
 FOOTER

@@ -21,7 +21,7 @@ h5 {
   font-weight: 400;
 }
 h1 {
-  font-size: 2.4em;
+  font-size: 30px;
 }
 h2 {
   font-size: 2em;
@@ -46,17 +46,17 @@ a:hover {
   width: 80px;
   width: 5em;
   margin: 1em auto;
+  padding: 0.1em 0.6em;
   font-size: 0.75em;
   text-transform: uppercase;
   color: #e74c3c;
   border: 2px solid #e74c3c;
   border-radius: 4px;
-  padding: 0.1em 0.6em;
   vertical-align: 6.5%;
 }
-.tag.new {
-  color: silver;
-  border: 2px solid silver;
+.tag.design {
+  color: teal;
+  border: 2px solid teal;
 }
 /* ========================
 NAV
@@ -92,12 +92,6 @@ nav li {
   font-size: 0.8em;
   text-align: center;
   text-transform: uppercase;
-  /* Transitions */
-  /*
-	-webkit-transition: background-color 0.6s ease;
-	-moz-transition: background-color 0.6s ease;
-	-o-transition: background-color 0.6s ease;
-*/
   -webkit-transition: background-color 0.6s ease;
           transition: background-color 0.6s ease;
 }
@@ -112,25 +106,10 @@ HERO
   background-color: #1abc9c;
   padding: 1em 2em;
 }
-/*
-#hero h1 {
-	width: 100%;
-	height: 12%;
-	position: absolute;
-	bottom: 0;
-	top: 0;
-	right: 0;
-	left: 0;
-	margin: auto;
-	color: #f1f1f1;
-	white-space: nowrap;
-}
-*/
 #hero h1 {
   text-align: center;
   color: #f1f1f1;
-  margin: 0px;
-  padding: 3.25em 0;
+  margin: 3.25em 0 0;
 }
 /* ========================
 POST LIST
@@ -149,12 +128,6 @@ POST LIST
   border-bottom: 1px dotted #ccc;
   color: #444;
   background-color: #fff;
-  /* Transitions */
-  /*
-	-webkit-transition: background-color 0.6s ease;
-	-moz-transition: background-color 0.6s ease;
-	-o-transition: background-color 0.6s ease;
-*/
   -webkit-transition: background-color 0.6s ease;
           transition: background-color 0.6s ease;
 }

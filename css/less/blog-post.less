@@ -2,7 +2,6 @@
 ditecco.me/blog post styles
 ======================== */
 
-
 /* ========================
 COMMON
 ======================== */
@@ -21,21 +20,10 @@ body {
 	font-weight: 400;
 	font-size: 1em;
 	color: #555;
-/*
-	width: 600px;
-	min-width: 600px;
-*/
-	max-width: 600px;
-// 	max-width: 37.5 em;
+	max-width: 600px; // ?em
 	margin: 0 auto;
-	padding: 6em 2em 3em 2em;
+	padding: 6em 2em 3em;
 }
-
-/*
-img {
-	border-top: 3px solid #1abc9c;
-}
-*/
 
 .txt-wrap img {
 	border-top: 3px solid #1abc9c;
@@ -58,12 +46,8 @@ header {
 }
 
 nav ul {
-/*
-	width: 100%;
-	min-width: 800px;
-*/
 	height: 100%;
-	margin: 0 auto;
+	margin: 0 auto; // ?
 	padding: 0;
 }
 
@@ -81,18 +65,11 @@ nav li {
 	display: inline-block;
 	float: left;
 	list-style: none;
-// 	border-right: 1px solid #1c1b1c;
 	color: #f1f1f1;
 	padding: 1.1em 0;
 	font-size: 0.8em;
 	text-align: center;
 	text-transform: uppercase;
-	/* Transitions */
-/*
-	-webkit-transition: background-color 0.6s ease;
-	-moz-transition: background-color 0.6s ease;
-	-o-transition: background-color 0.6s ease;
-*/
 	transition: background-color 0.6s ease;
 }
 
@@ -104,7 +81,6 @@ nav li:hover {
 /* ========================
 FORMATTING
 ======================== */
-
 
 	/* ===== HEADINGS ===== */
 	
@@ -144,34 +120,49 @@ FORMATTING
 
 	/* ===== TXT FX ===== */
 	
+	strong {color: #333;}
+	
+	em {background-color: #fffee9} /* acts as highlight */
+	
+	
+	/* ===== SPECIAL TXT ===== */
+	
+	pre {
+		border-left: 3px solid lime;
+		padding: 2em 0.5em;
+		background-color: rgba(127, 127, 127, 0.15);
+		tab-size: 2;
+// 		white-space: pre-wrap;
+	}
+	
+	code {
+		padding: 0.1em 0.3em;
+		background-color: rgba(127, 127, 127, 0.15);
+		border-radius: 3px;
+// 		font-size: 90%;
+	}
+	
 	blockquote {
 		font-style: italic;
 		border-left: 3px solid #1abc9c;
 		padding: 0 1em;
 	}
 	
-	strong {color: #333;}
-	
-	em {background-color: #fffee9} /* acts as highlight */
-	
 	
 	/* ===== LISTS ===== */
 	
-	.txt-wrap ul {
+	.txt-wrap ul,ol {
 		font-size: 1.1em;
-		list-style: disc;
 		border-top: 1px solid #ccc;
 		border-bottom: 1px solid #ccc;
 		background-color: #f3f0eb;
 	}
 	
-	.txt-wrap ul li {
-		padding: 0.5em 0;
-	}
+	.txt-wrap li {padding: 0.5em 0;}
 	
-	.txt-wrap ol {
-		list-style: decimal-leading-zero;
-	}
+	.txt-wrap ul {list-style: circle;}
+	
+	.txt-wrap ol {list-style: decimal-leading-zero;}
 	
 	/* ===== SEPARATORS ===== */
 	
@@ -236,55 +227,53 @@ CTA
 #cta {
 	display: block;
 	width: 100%;
-	height: 96px;
+	height: auto;
 }
 
 #cta ul {
-// 	width: 600px;
 	max-width: 600px;
-// 	max-width: 37.5 em;
 	margin: 0 auto;
 	padding: 0;
 }
 
-#cta ul li {
-// 	width: 299.5px;
-// 	max-width: 299.5px;
-	width: 49.5%;
-	height: 96px;
+#cta ul a li {
 	display: inline-block;
 	float: left;
+	width: 49.5%;
+	height: 96px;
 	margin: 0;
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	color: #ccc;
-	/* Transitions */
-/*
-	-webkit-transition: background-color 0.6s, color 0.6s;
-	-moz-transition: background-color 0.6s, color 0.6s;
-	-o-transition: background-color 0.6s, color 0.6s;
-*/
 	transition: background-color 0.6s, color 0.6s;
 }
 
-#cta ul li:hover {
+#cta ul a:last-child > li {
+	border-left: 1px solid #ccc;
+// 	background-color: orange;
+}
+
+/*
+.cta-right {
+	border-left: 1px solid #ccc;
+	background-color: orange;
+}
+*/
+
+#cta ul a li:hover {
 	background-color: #4099ff;
 	color: #f4f5f2;
 }
 
-.cta-right {border-left: 1px solid #ccc;}
-
-#cta ul li p {
+#cta ul a li p {
 	text-align: center;
 	padding: 1.25em;
 }
 
 #disqus_thread {
-	display: block;
-// 	width: 600px;
-	max-width: 600px;
-// 	margin: 3em auto 0 auto;
+	max-width: 536px;
 	margin: 3em auto 0;
+	padding: 2em;
 }
 
 /* ========================
@@ -305,4 +294,3 @@ footer p {
 	color: #ccc;
 	text-align: center;
 }
-
