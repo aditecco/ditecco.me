@@ -3,53 +3,42 @@ ditecco.me/blog post responsive styles
 ======================== */
 @media screen and (max-width: 480px) {
   /* ========================
-	COMMON
-	======================== */
-  /* ========================
-	NAV
-	======================== */
-  /* ========================
 	FORMATTING
 	======================== */
-  /* ===== HEADINGS ===== */
+  /* ===== HEADERS ===== */
   h1 {
-    font-size: 2.8em;
+    font-size: 2.4em;
   }
   h2 {
-    font-size: 2.2em;
+    font-size: 1.9em;
   }
   h3 {
-    font-size: 1.8em;
-  }
-  h4 {
     font-size: 1.5em;
   }
-  /* ===== BODY TXT ===== */
-  /* ===== TXT FX ===== */
+  h4 {
+    font-size: 1.25em;
+  }
+  /* ===== SPECIAL TXT ===== */
   blockquote {
     margin: 0;
   }
-  /* ===== LISTS ===== */
-  .txt-wrap ul,
-  ol {
-    padding: 0 1.6em 0;
-  }
-  /* ===== SEPARATORS ===== */
-  /* ===== LINKS ===== */
-  /* ===== TXT SELECTION ===== */
-  /* ===== FOOTNOTES ===== */
   /* ========================
 	CTA
 	======================== */
+  #cta ul {
+    height: 192px;
+  }
   #cta ul a li {
     display: block;
     width: 100%;
+    height: 50%;
   }
   #cta ul a:last-child > li {
     border-left: 0;
     border-top: 0;
   }
-  /* ========================
-	FOOTER
-	======================== */
+  #dq-embed {
+    width: 90%;
+    max-width: 440px;
+  }
 }

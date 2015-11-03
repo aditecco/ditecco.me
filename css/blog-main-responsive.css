@@ -1,3 +1,11 @@
 /* ========================
 ditecco.me/blog index responsive styles
 ======================== */
+@media screen and (max-width: 480px) {
+  /* ========================
+	HERO
+	======================== */
+  #hero h1 {
+    margin: 3em 0 0;
+  }
+}

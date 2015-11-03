@@ -49,14 +49,14 @@ a:hover {
   padding: 0.1em 0.6em;
   font-size: 0.75em;
   text-transform: uppercase;
-  color: #e74c3c;
-  border: 2px solid #e74c3c;
+  color: #A9A9A9;
+  border: 2px solid #A9A9A9;
   border-radius: 4px;
   vertical-align: 6.5%;
 }
 .tag.design {
-  color: teal;
-  border: 2px solid teal;
+  color: #1E90FF;
+  border: 2px solid #1E90FF;
 }
 /* ========================
 NAV
@@ -105,11 +105,12 @@ HERO
   height: 14em;
   background-color: #1abc9c;
   padding: 1em 2em;
+  padding: 3em 2em 0;
 }
 #hero h1 {
   text-align: center;
   color: #f1f1f1;
-  margin: 3.25em 0 0;
+  margin: 2.6em 0 0;
 }
 /* ========================
 POST LIST

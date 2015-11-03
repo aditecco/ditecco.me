@@ -11,6 +11,9 @@
 		<link rel="stylesheet" href="../css/normalize.css">
 		<link href='http://fonts.googleapis.com/css?family=Karla|Roboto|Trocchi' rel='stylesheet' type='text/css'> <!-- fonts -->
 		<link rel="stylesheet" href="../css/blog-post.css">
+		<!-- responsive -->
+		<link rel="stylesheet" href="../css/blog-post-responsive.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<!-- title -->
 		<title>Alessandro Di Tecco Blog | Hello World</title>
@@ -60,25 +63,26 @@
 					</a>
 					
 					<a href="https://twitter.com/intent/follow?screen_name=aditecco" target="_blank">
-						<li class="cta-right">
+						<li>
 							<p>Follow me on Twitter</p>
 						</li>
 					</a>
 				</ul>
 			</div>
 				
-			<!-- disqus embed -->
-			<div id="disqus_thread"></div>
-		    <script type="text/javascript">
-		        var disqus_shortname = 'alessandroditecco';
-
-		        (function() {
-		            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-		            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		        })();
-		    </script>
-		    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			<div id="dq-embed"><!-- disqus embed -->
+				<div id="disqus_thread"></div>
+			    <script type="text/javascript">
+			        var disqus_shortname = 'alessandroditecco';
+	
+			        (function() {
+			            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			        })();
+			    </script>
+			    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		    </div>
 		</section> <!-- /cta & comments -->
 		
 		<!-- ====================== FOOTER ======================  -->
