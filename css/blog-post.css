@@ -39,7 +39,7 @@ header {
 }
 nav ul {
   height: 100%;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 }
 nav a,
@@ -71,7 +71,7 @@ FORMATTING
 ======================== */
 /* ===== HEADERS ===== */
 h1 {
-  font-size: 4em;
+  font-size: 3.8em;
 }
 h2 {
   font-size: 2.2em;
@@ -124,8 +124,10 @@ pre {
   line-height: 1.5em;
   white-space: pre-wrap;
 }
-code {
+code.inline-code {
   padding: 0.1em 0.3em;
+  background-color: rgba(56, 55, 55, 0.1);
+  border-radius: 3px;
   font-size: 0.9em;
 }
 blockquote {
