@@ -47,13 +47,11 @@ ditecco.me responsive styles
 	}
 		
 	#hero h1 {
-		top: 65%;
+		top: 79%;
 		padding: 0 0.5em;
+		letter-spacing: 0;
 		white-space: normal;
-		line-height: 1.5;
 	}
-	
-	#hero h1 br {display: none;}
 	
 	
 	/* ========================
@@ -68,6 +66,7 @@ ditecco.me responsive styles
 	#about p {
 		font-size: 1em;
 		line-height: 2.25;
+		letter-spacing: -0.04em;
 	}
 	
 	
@@ -97,6 +96,15 @@ ditecco.me responsive styles
 		padding: 0 15%;
 		margin: 0;
 	}	
+}
+
+@media screen and (max-width: 289px) {
+		
+	/* ========================
+	HERO
+	======================== */
+	
+	#hero h1 {display: none;}
 }
 
 @media screen and (min-width: 1900px) {
