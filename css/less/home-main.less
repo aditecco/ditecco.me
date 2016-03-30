@@ -81,7 +81,7 @@ nav li {
 	width: 10em;
 	display: inline-block;
 	list-style: none;
-	border-left: 1px solid #1c1b1c;
+	border-left: 1px dotted #1c1b1c;
 	color: #f1f1f1;
 	margin-right: -4px;
 	padding: 1.1em 0;
@@ -95,13 +95,11 @@ nav li {
 	transition: background-color 0.6s ease;
 }
 
-nav li:hover {
-	background-color: #1abc9c;
-}
+nav li:hover {background-color: #1abc9c;}
 
-#home {
-	border: none;
-}
+nav li.nav-sep {display: none;}
+
+#home {border: none;}
 
 
 /* ========================
@@ -171,10 +169,12 @@ PROJECT LIST
 }
 
 .pro-list li {
-	height: 12.5em;
-	border-bottom: 1px dotted #ccc;
+	height: auto;
+	padding: 3em 0;
 	color: #444;
 	background-color: #fff;
+	border-bottom: 1px dotted #ccc;
+	list-style: none;
 	/* Transitions */
 	-webkit-transition: background-color 0.6s ease;
 	-moz-transition: background-color 0.6s ease;
@@ -183,14 +183,19 @@ PROJECT LIST
 }
 
 .pro-list li h3 {
+	display: inline-block;
 	text-transform: uppercase;
-	letter-spacing: 0.1em;
+	letter-spacing: 0.05em;
 	margin: 0;
-	padding-top: 2.5em;
 }
 
 .pro-list li .tag {
-	font-size: 0.6em;
+	width: 10em;
+	display: inline-block;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 0.9em;
+	letter-spacing: 0.025em;
 	text-transform: uppercase;
 	color: #e74c3c;
 	border: 2px solid #e74c3c;
@@ -210,9 +215,9 @@ PROJECT LIST
 	border: 2px solid #a9a9a9;
 }
 
-.pro-list li:hover {
-	background-color: #e6e3df;
-}
+.pro-list li p {margin-bottom: 0;}
+
+.pro-list li:hover {background-color: #e6e3df;}
 
 
 /* ========================
