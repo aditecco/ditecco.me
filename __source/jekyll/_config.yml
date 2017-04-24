@@ -1,0 +1,48 @@
+#############################################################
+#                                                           #
+# Restart the server/watch service to apply config changes! #
+#                                                           #
+#############################################################
+
+# places
+source: ./
+destination: ../../blog
+layouts_dir: ./_layouts
+includes_dir: ./_includes
+
+# URLs
+#url: http://www.ditecco.me
+baseurl: /blog
+
+# vars
+title: ditecco.me
+name: Alessandro Di Tecco's blog
+#description:
+
+# content
+permalink: /:year/:title/
+
+# collections
+# collections:
+#   blog:
+#     output: true
+#     #permalink: pretty
+#     permalink: /:collection/:path/
+
+# compilers
+sass:
+  sass_dir: _sass
+  style: compressed
+
+kramdown:
+  auto_ids: false
+
+# # defaults
+# defaults:
+#   - scope:
+#       path: "work"
+#     values:
+#       layout: case
+
+# meta
+error_mode: warn

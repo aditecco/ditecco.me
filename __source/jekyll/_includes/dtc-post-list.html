@@ -1,0 +1,17 @@
+<!-- ====================== POST LIST ======================  -->
+<a name="post-list"></a>
+
+<section> <!-- Post List -->
+	<div class="post">
+		{% for blog-post in site.posts %}
+			<ul>
+				<a href="{{ blog-post.url }}">
+					<li> <!-- Post 1 -->
+						<h3>{{ blog-post.title }}</h3>
+						<p>&#126; Written on {{ blog-post.timestamp }} <span class="tag">{{ blog-post.taxonomy }}</span></p>
+					</li>
+				</a>
+			</ul>
+		{% endfor %}
+	</div>
+</section>

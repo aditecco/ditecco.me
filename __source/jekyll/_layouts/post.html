@@ -1,0 +1,35 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+	<head>
+		{% include dtc-common-meta.html %}
+
+		{% include dtc-post-meta.html %}
+
+		{% include dtc-styles-post.html %}
+		
+		<!-- title -->
+		<title>{{ site.title }} | {{ post.title }}</title>
+		
+		{% include dtc-ga-snp.html %}
+	</head>
+	
+	<body>
+		{% include dtc-nav.html %}
+					
+		<!-- ====================== POST CONTENT ======================  -->
+		<section>
+			<div class="txt-wrap">
+				{{ content }}
+			</div> <!-- /txt-wrap -->
+		</section>
+		
+		{% include dtc-disqus-snp.html %}
+
+		<!-- ====================== FOOTER ======================  -->
+		{% include dtc-footer.html %}
+	</body>
+</html>
