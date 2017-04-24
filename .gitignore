@@ -1,0 +1,4 @@
+__source/_assets/
+__source/_tmp/
+__source/jekyll/sass-cache/
+.DS_Store
