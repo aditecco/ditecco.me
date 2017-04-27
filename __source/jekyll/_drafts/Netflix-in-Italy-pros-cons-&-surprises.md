@@ -1,14 +1,5 @@
----
-layout: post
-title: Netflix in Italy – pros, cons & surprises
-timestamp: 10 Apr 2017
-taxonomy: cinema
-test: 2017/netflix-in-italy/
----
-
-# {{ page.title }}
-
-![hello-world]({{ site.url }}/img/dtc-blog-hello-world.jpg)
+# Netflix in Italy: pros, cons & surprises
+##### Written on Day, 05-01-2016
 
 When the news hit that [Netflix was coming to Italy,]() as a tech early adopter and a heavy movie & TV-Show watcher I was eager to try it: I subscribed on launch day.
 

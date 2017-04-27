@@ -11,7 +11,7 @@ layouts_dir: ./_layouts
 includes_dir: ./_includes
 
 # URLs
-#url: http://www.ditecco.me
+url: /blog
 baseurl: /blog
 
 # vars

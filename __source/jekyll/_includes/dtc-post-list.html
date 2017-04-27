@@ -1,16 +1,16 @@
-<!-- ====================== POST LIST ======================  -->
+<!-- ====================== POST LIST ====================== -->
 <a name="post-list"></a>
 
-<section> <!-- Post List -->
+<section>
 	<div class="post">
 		<ul>
-			{% for blog-post in site.posts %}
-				<a href="{{ blog-post.url }}">
-					<li> <!-- Post 1 -->
-						<h3>{{ blog-post.title }}</h3>
-						<p>&#126; Written on {{ blog-post.timestamp }} <span class="tag">{{ blog-post.taxonomy }}</span></p>
-					</li>
-				</a>
+			{% for blogPost in site.posts %}
+			<a href="{{ blogPost.url | replace_first: '/', '/blog/' }}">
+				<li>
+					<h3>{{ blogPost.title }}</h3>
+					<p>&#126; Written on {{ blogPost.timestamp }} <span class="tag">{{ blogPost.taxonomy }}</span></p>
+				</li>
+			</a>
 			{% endfor %}
 		</ul>
 	</div>
