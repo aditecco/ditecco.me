@@ -1,4 +1,5 @@
 __source/_assets/
+__source/_assets/bower_components/
 __source/_tmp/
 __source/jekyll/.sass-cache/
 __source/jekyll/_drafts/
