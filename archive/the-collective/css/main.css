@@ -1,0 +1,835 @@
+/* font-face */
+@font-face {
+	font-family: 'PTSansRegular';
+	src: url('../fonts/pts55f-webfont.eot');
+	src: url('../fonts/pts55f-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/pts55f-webfont.woff') format('woff'),
+		url('../fonts/pts55f-webfont.ttf') format('truetype'),
+		url('../fonts/pts55f-webfont.svg#PTSansRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'NovecentowideLightBold';
+	src: url('../fonts/novecentowide-demibold-webfont.eot');
+	src: url('../fonts/novecentowide-demibold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/novecentowide-demibold-webfont.woff') format('woff'),
+		url('../fonts/novecentowide-demibold-webfont.ttf') format('truetype'),
+		url('../fonts/novecentowide-demibold-webfont.svg#NovecentowideLightBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'PTSansBold';
+	src: url('../fonts/pts75f-webfont.eot');
+	src: url('../fonts/pts75f-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/pts75f-webfont.woff') format('woff'),
+		url('../fonts/pts75f-webfont.ttf') format('truetype'),
+		url('../fonts/pts75f-webfont.svg#PTSansBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'PTSansItalic';
+	src: url('../fonts/pts56f-webfont.eot');
+	src: url('../fonts/pts56f-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/pts56f-webfont.woff') format('woff'),
+		url('../fonts/pts56f-webfont.ttf') format('truetype'),
+		url('../fonts/pts56f-webfont.svg#PTSansItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* NOVECENTO WIDE is a font by Jan Tonellato http://typography.synthview.com */
+
+@font-face {
+	font-family: 'NovecentowideBookBold';
+	src: url('../fonts/novecentowide-bold-webfont.eot');
+	src: url('../fonts/novecentowide-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/novecentowide-bold-webfont.woff') format('woff'),
+		url('../fonts/novecentowide-bold-webfont.ttf') format('truetype'),
+		url('../fonts/novecentowide-bold-webfont.svg#NovecentowideBookBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'NovecentowideUltraLightBold';
+	src: url('../fonts/novecentowide-medium-webfont.eot');
+	src: url('../fonts/novecentowide-medium-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/novecentowide-medium-webfont.woff') format('woff'),
+		url('../fonts/novecentowide-medium-webfont.ttf') format('truetype'),
+		url('../fonts/novecentowide-medium-webfont.svg#NovecentowideUltraLightBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'PTSansBoldItalic';
+	src: url('../fonts/pts76f-webfont.eot');
+	src: url('../fonts/pts76f-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/pts76f-webfont.woff') format('woff'),
+		url('../fonts/pts76f-webfont.ttf') format('truetype'),
+		url('../fonts/pts76f-webfont.svg#PTSansBoldItalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* body */
+body {
+	margin:0;
+	color:#717f81;
+	font:15px/18px 'PTSansRegular', Arial, Helvetica, sans-serif;
+	background:#e2e1dd url(../images/bg-page.png) repeat-x;
+	min-width:1000px;
+}
+img {border-style:none;}
+
+/* ====== Link styles ===== */
+
+a {
+	color:#717f81;
+	text-decoration:none;
+}
+a:hover {text-decoration:underline;}
+input,
+textarea,
+select {
+	font:100% Arial, Helvetica, sans-serif;
+	vertical-align:middle;
+	color:#000;
+
+}
+form,
+fieldset {
+	margin:0;
+	padding:0;
+	border-style:none;
+}
+q {quotes:none;}
+q:before {content:''}
+q:after {content:''}
+/* wrapper-holder */
+.wrapper-holder {
+	overflow:hidden;
+	width:100%;
+	position:relative;
+}
+/* wrapper */
+#wrapper {
+	width:974px;
+	margin:0 auto;
+	position:relative;
+}
+/* header */
+#header {
+	overflow:hidden;
+	padding:0 0 0 2px;
+	margin:0 0 19px;
+}
+#header .row {
+	overflow:hidden;
+	width:100%;
+	font-size:14px;
+	line-height:16px;
+	margin: 0 0 35px;
+}
+/* nav */
+#nav {
+	list-style:none;
+	padding:0;
+	margin:0;
+	float:left;
+}
+#nav li {
+	float:left;
+	margin:0 3px 0 0;
+	padding:9px 0 0;
+}
+
+#nav li a {
+	float:left;
+	color:#fff;
+	text-shadow: 0px 1px 0px #444;
+	cursor:pointer;
+}
+
+#nav a span {
+	padding: 0 9px 0 12px;
+	float:left;
+}
+
+#nav li a em {
+	font-style:normal;
+	padding:0 0 3px;
+	float:left;
+}
+
+#nav li a:hover {text-decoration:none;}
+
+
+#nav li a:hover em {
+	background:url(../images/bg-nav-hover.png) 0 100% repeat-x;
+}
+
+/* fblikebutton custom style follows */
+#header .fblikebutton {
+	float:right;
+	margin: 5px 5px 0 0;
+	padding: 5px 10px;
+	width:237px;
+}
+
+/* ad-hoc highlight style for "formazione" - added 14-05-2013 */
+#nav li a .highlight2 {
+	color: #ffffff;
+	text-shadow: none;
+	background-color: #505b5c;
+	border-radius: 2px;
+	padding: 1px 4px 0 4px;
+}
+
+#nav li a:hover .highlight2 {
+	color: #444444;
+	text-shadow: none;
+	background-color: #deddd8;
+	border-radius: 2px;
+	padding: 1px 4px 0 4px;
+}
+
+/* logo */
+.logo {
+	width:219px;
+	height:208px;
+	background:url(../images/logo.png) no-repeat;
+	margin:0 auto;
+	display:block;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+.logo a {
+	display:block;
+	height:100%;
+}
+/* main */
+#main {
+	margin: 0 6px 0 8px;
+	background:#fff;
+}
+#space:after,
+#main:after {
+	clear: both;
+	content:"";
+	display: block;
+}
+.main-holder {
+	background:url(../images/bg-main.png) no-repeat;
+	padding:60px 0 0;
+}
+.main-frame {
+	background:url(../images/bg-main.png) 100% 100% no-repeat;
+	padding:0 0 20px;
+	width:960px;
+}
+
+/* ===== EDIT: alt H1 style ===== */
+#main h1 {
+	font:40px/45px 'PTSansBold', Arial, Helvetica, sans-serif;
+	margin: 0 0 24px;
+	padding: 3px 10px 0 13px;
+	text-align:center;
+	color:#e70033;
+	text-shadow: 0px 2px 0px #e2e1dd;
+}
+
+/* content */
+#content {
+	background:#f6f6f7 url(../images/bg-content.png) repeat-x;
+	padding:10px 0 0;
+}
+/* what */
+#what {
+	overflow:hidden;
+	padding: 23px 130px 26px;
+}
+#what .list {
+	list-style:none;
+	padding:0;
+	margin: 0 0 25px;
+	overflow:hidden;
+	width:110%;
+}
+#what .list li {
+	float:left;
+	width:145px;
+	text-align:center;
+	font:18px/24px 'NovecentowideLightBold', Arial, Helvetica, sans-serif;
+	margin: 0 47px 0 -4px;
+	text-transform:uppercase;
+}
+
+#what .list li span {display:block;}
+
+#what .list li img {
+	vertical-align:top;
+	margin:0 0 3px;
+}
+.box {
+	background:url(../images/bg-box.png) 100% 100% repeat-y;
+	width:696px;
+}
+.box-holder {
+	background:url(../images/bg-box.png) no-repeat;
+	padding:4px 0 0;
+}
+.box-frame {
+	background:url(../images/bg-box.png) -696px 100% no-repeat;
+	padding:0 1px 11px 2px;
+	overflow:hidden;
+}
+#what .heading {
+	background:url(../images/bg-heading.png) no-repeat;
+	overflow:hidden;
+	width:auto;
+	padding: 5px 80px 9px;
+	text-align: center;
+	border-bottom:1px solid #e3e5e6;
+	margin:0;
+} 
+#what h2 {
+	font:21px/24px 'PTSansBold', Arial, Helvetica, sans-serif;
+	margin:0;
+	background:none;
+	width:auto;
+	padding:0;
+	text-shadow:none;
+	text-transform:none;
+}
+.reasons {
+	list-style:none;
+	padding: 33px 79px 19px;
+	margin:0;
+	overflow:hidden;
+	text-align:center;
+	font:18px/24px 'PTSansItalic', Arial, Helvetica, sans-serif;
+}
+.reasons li {
+	vertical-align:top;
+	margin: 0 0 17px;
+	padding: 24px 0 0;
+	background:url(../images/bg-reasons.png) 242px 0 no-repeat;
+}
+.reasons li:first-child {
+	background:none;
+	padding:0;
+}
+
+/* ===== EDIT: adding custom anchor CSS ===== */
+
+.reasons li a {
+	text-decoration: none;
+	border-bottom: 1px dotted #717f81;
+}
+
+.reasons li a:hover {
+	text-decoration: none;
+	border-bottom: 1px dotted #717f81;
+	background-color: #e2e1dd;
+}
+
+/* ===== End custom CSS ===== */
+
+/* benefits */
+#benefits {
+	overflow:hidden;
+	padding: 0 130px 11px;
+}
+#benefits .heading {
+	margin: 0 -121px 25px;
+	width: auto;
+}
+.heading {
+	overflow:hidden;
+	width:100%;
+	margin:0 0 25px;
+	background:url(../images/bg-heading2.png) 0 50px repeat-x;
+}
+.heading h2 {
+	width:131px;
+	padding: 37px 0 37px 1px;
+	text-align:center;
+	background:url(../images/circle.png) no-repeat;
+	font:21px/24px 'NovecentowideBookBold', Arial, Helvetica, sans-serif;
+	text-shadow: 0px 2px 0px #f8f8f8;
+	text-transform:uppercase;
+	margin:0 auto;
+	color:#5a5c5c;
+}
+.block {
+	font:18px/24px 'PTSansItalic', Arial, Helvetica, sans-serif;
+	text-align:center;
+}
+.block h3 {
+	font:21px/24px 'PTSansBold', Arial, Helvetica, sans-serif;
+	margin: 0 0 10px;
+}
+.block p {margin: 0 0 30px;}
+/* benefits-list */
+.benefits-list {
+	list-style:none;
+	padding: 14px 22px 14px 28px;
+	margin:0;
+	overflow:hidden;
+	font-size:19px;
+	line-height:24px;
+}
+.benefits-list li {
+	vertical-align:top;
+	background:url(../images/bullet.png) 0 10px no-repeat;
+	padding:0 0 0 33px;
+}
+.benefits-list li:first-child span {border:none;}
+.benefits-list li span {
+	display:block;
+	border-top:1px solid #e2f0ff;
+	padding:7px 0;
+}
+.columns-holder {
+	overflow:hidden;
+	margin: 0 -137px 0 -87px;
+	padding: 22px 0 0;
+}
+#benefits .column {
+	float:left;
+	width:189px;
+	background:url(../images/bg-column.png) 0 100% repeat-x;
+	margin: 0 42px 0 0;
+	padding: 0 0 9px;
+	text-align:center;
+	font-size:16px;
+	line-height:21px;
+}
+.columns-holder h3 {
+	font:21px/24px 'PTSansBold', Arial, Helvetica, sans-serif;
+	padding: 0 44px 13px 0;
+	margin:0;
+	text-align:center;
+}
+.column img {
+	margin: 0 15px 11px 0;
+	vertical-align: top;
+}
+.column p {margin:0 0 20px;}
+
+/* visual-holder */
+.visual-holder {
+	overflow:hidden;
+	margin: -6px -6px 0 -7px;
+}
+.visual {
+	overflow:hidden;
+	width:100%;
+	position:relative;
+	border-bottom:3px solid #ea315a;
+	margin:0 0 13px;
+}
+.visual img {vertical-align:top;}
+.visual .description {
+	position:absolute;
+	top:0;
+	left:0;
+	width:323px;
+	height:405px;
+}
+
+/* ===== EDIT: Ad-hoc visual holder + anchor styles ===== */
+.visual .tallerholder {
+	overflow:hidden;
+	height:358px;
+}
+
+.tallerholder a {
+	text-decoration: none;
+	color: #ffffff;
+	border-bottom: 1px dotted #ffffff;
+}
+
+.tallerholder a:hover {
+	text-decoration: none;
+	border-bottom: 1px dotted #444444;
+	background-color: #e2e1dd;
+	color: #444444;
+}
+/* end edit */
+
+.visual .holder {
+	overflow:hidden;
+	height:250px;
+}
+
+.visual .block {
+	background:url(../images/bg-description.png);
+	margin:0 0 1px;
+	padding: 27px 25px 20px;
+	font-size:14px;
+	line-height:22px;
+	color:#fff;
+	text-align:left;
+}
+.visual .block h3 {
+	font:20px/24px 'PTSansBold', Arial, Helvetica, sans-serif;
+	padding: 0 0 0 5px;
+	margin:0 0 6px;
+	color:#fff;
+}
+.visual dl {
+	margin:0;
+	overflow:hidden;
+	width:100%;
+}
+.visual dt {
+	float:left;
+	font:14px/22px 'PTSansBold', Arial, Helvetica, sans-serif;
+	margin:0 5px 0 0;
+}
+.visual dd {margin:0;}
+.visual .block p {margin: 0 0 22px;}
+.button-holder {
+	background:url(../images/bg-button-holder.png);
+	padding:30px 23px;
+}
+.button {
+	width:272px;
+	height:34px;
+	display:block;
+	color:#fff;
+	background:url(../images/sprite.png) 0 -110px no-repeat;
+	font:19px/22px 'PTSansBold', Arial, Helvetica, sans-serif;
+	text-shadow: 0px 2px 0px #920623;
+	text-align:center;
+	padding: 13px 0 0;
+}
+.button span {
+	overflow:hidden;
+	height:22px;
+	display:block;
+}
+.button:hover {text-decoration:none;}
+
+.block h4,
+#prices .columns-holder h3 {
+	background:url(../images/sprite.png) 0 -170px no-repeat;
+	width:465px;
+	text-align:center;
+	margin: -8px auto 22px;
+	padding: 8px 20px 9px;
+	font:18px/21px 'NovecentowideUltraLightBold', Arial, Helvetica, sans-serif;
+	color:#fff;
+	position:relative;
+}
+.block h4 span,
+#prices .columns-holder h3 span {
+	overflow:hidden;
+	height:22px;
+	display:block;
+}
+#prices .columns-holder .holder {padding:0 40px 0 0;}
+#prices .columns-holder h3 {margin: 0 auto 24px;}
+/* prices */
+#prices .column {
+	float:left;
+	width:197px;
+	text-align:center;
+	margin: 0 34px 0 0;
+}
+#prices .column h4 {
+	font:18px/22px 'PTSansBold', Arial, Helvetica, sans-serif;
+	margin:0 0 10px;
+	text-align:center;
+}
+.price-list {
+	list-style:none;
+	padding:0;
+	margin:0 0 20px;
+	line-height:40px;
+	overflow:hidden;
+	width:100%;
+	background:url(../images/bg-price-list.png) 0 1px;
+}
+.price-list li {vertical-align:top;}
+.price-list li p {margin:0;}
+.price-list li span {font:15px/22px 'PTSansBold', Arial, Helvetica, sans-serif;}
+
+/* ===== EDIT: adding custom list CSS ===== */
+
+.featurelist {
+	overflow:hidden;
+	margin:0;
+	font:14px 'PTSansItalic', Arial, Helvetica, sans-serif;
+	line-height: 1.5;
+	text-align:left;
+}
+
+.featurelist a {
+	text-decoration: none;
+	border-bottom: 1px dotted #444444;
+}
+
+.featurelist a:hover {
+	text-decoration: none;
+	border-bottom: 1px dotted #444444;
+	background-color: #e2e1dd;
+}
+
+/* ===== end custom CSS ===== */
+
+#space {padding: 0 0 14px;}
+#prices .columns-holder {
+/* ===== EDIT: changing bottom margin from 63 px to 28 px ===== */
+	margin: -9px 0 28px;
+	overflow: hidden;
+	padding: 2px 0 0 36px;
+}
+
+.highlight {
+	background-color: #ffffdb;
+	border-radius: 2px;
+	padding: 1px 2px;
+}
+
+/* ===== EDIT: adding "pricenotes" styles ===== */
+
+#pricenotes {
+	width: 100%;
+	text-align: center;
+	font:13px 'PTSansRegular', Arial, Helvetica, sans-serif;
+	color: #cbcccb;
+	/* margin-bottom: 24px; */
+}
+
+#pricenotes p {
+	margin-bottom: 5px;
+	margin-top: 0px;
+}
+
+/* contacts */
+#contacts {
+	overflow: hidden;
+	padding: 28px 0 11px;
+}
+.map {
+	overflow:hidden;
+	width:100%;
+	margin: -8px 0 15px;
+	border-bottom:3px solid #ced2d3;
+}
+
+/* ===== EDIT: disabling gmaps image placeholder and adding gmapsembed style =====
+.map img {vertical-align:top;}
+*/
+
+/* gmapsembed custom style follows */
+#gmapsembed {vertical-align: top;}
+
+.information-block {
+	overflow:hidden;
+	padding: 0 10px 0 38px;
+}
+.info {
+	list-style:none;
+	padding: 9px 0;
+	margin: 0 32px 0 0;
+	float:left;
+	width:357px;
+	background:#fff;
+	border-bottom:2px solid #e80033;
+	font-size:19px;
+}
+.info li {
+	vertical-align:top;
+	border-top:1px solid #ced2d3;
+	padding: 7px 10px 9px 48px;
+}
+.info li:first-child {border:none;}
+.info li p {margin:0;}
+.info .address {background:url(../images/sprite.png) 17px -275px no-repeat;}
+
+.info .time {
+background:url(../images/sprite.png) 16px -322px no-repeat;
+}
+
+.info .phone {background:url(../images/sprite.png) 19px -373px no-repeat;}
+.info .mail {background:url(../images/sprite.png) 15px -417px no-repeat;}
+.info address {
+	font-style:normal;
+	padding:0;
+}
+.container {
+	float:left;
+	width:180px;
+	margin: 0 35px 0 0;
+	padding: 13px 0 0;
+	line-height:22px;
+}
+.container .holder {
+	overflow:hidden;
+	width:100%;
+	margin:0 0 10px;
+}
+
+/* ===== EDIT: adding anchor styles ===== */
+
+.container .holder a {
+	text-decoration: none;
+	border-bottom: 1px dotted #444444;
+}
+
+.container .holder a:hover {
+	text-decoration: none;
+	border-bottom: 1px dotted #444444;
+	background-color: #e2e1dd;
+}
+/* ===== End edit ===== */
+
+.container h3 {
+	font:15px/18px 'PTSansBold', Arial, Helvetica, sans-serif;
+	margin:0 0 1px;
+}
+.container p {margin:0;}
+
+.container.add {
+	width:270px;
+	line-height:18px;
+}
+
+/* ===== EDIT: adding anchor styles ===== */
+
+.container.add a {
+	text-decoration: none;
+	border-bottom: 1px dotted #444444;
+}
+
+.container.add a:hover {
+	text-decoration: none;
+	border-bottom: 1px dotted #444444;
+	background-color: #e2e1dd;
+}
+/* ===== End edit ===== */
+
+.container ol {
+	font:15px/18px 'PTSansRegular', Arial, Helvetica, sans-serif;
+	color:#717f81;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	counter-reset: item;
+}
+
+
+
+/* sponsors */
+#sponsors {overflow:hidden;}
+.sponsors {
+	list-style:none;
+	padding:15px 0;
+	margin:0;
+	overflow:hidden;
+	width:100%;
+	text-align:center;
+}
+.sponsors li {
+	display:inline-block;
+	margin: 0 20px 0 37px;
+	vertical-align: top;
+}
+*+html .sponsors li {
+	display:inline;
+	margin:0 20px 0 41px;
+}
+.sponsors li h3 {
+	font:18px/24px 'PTSansBold', Arial, Helvetica, sans-serif;
+	margin:0 0 17px;
+}
+.sponsors li img {vertical-align:top;} 
+.sponsors .main-sponsor h3 {margin: 0 0 48px;}
+.sponsors .tech-sponsor h3 {margin: 0 0 33px;}
+.diventa-sponsor a {
+	font:16px/18px 'PTSansItalic', Arial, Helvetica, sans-serif;
+	background:url(../images/bg-sponsor.png);
+	width:215px;
+	padding: 21px 0 23px;
+	display:block;
+}
+.diventa-sponsor a span {font:16px/18px 'PTSansBoldItalic', Arial, Helvetica, sans-serif;}
+/* founders */
+#founders {
+	overflow:hidden;
+	padding:25px 0 0;
+}
+.founders-holder {
+	border-top:1px solid #dbdedf;
+	overflow:hidden;
+	padding: 50px 161px 22px 162px;
+	background:#fff;
+	margin: -15px 0 0;
+}
+.founders-holder ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	width:100%;
+	font-size:14px;
+	text-align:center;
+	line-height:18px;
+	background:url(../images/bg-founders.png) -2px 66px repeat-x;
+}
+.founders-holder ul li {
+	display:inline-block;
+	margin:0 2px;
+	width:155px;
+}
+*+html .founders-holder ul li {
+	display:inline;
+	margin:0 6px 0 2px;
+}
+.founders-holder ul li img {
+	vertical-align:top;
+	margin: 0 0 14px;
+	padding: 0 10px;
+	background:#fff;
+}
+.founders-holder h3 {
+	font:18px/24px 'PTSansBold', Arial, Helvetica, sans-serif;
+	white-space:nowrap;
+	margin:0;
+}
+.founders-holder h3 a {color:#717F81;}
+.founders-holder p {margin:0;}
+/* footer */
+#footer {
+	overflow:hidden;
+	width:100%;
+	font:11px/14px Arial, Helvetica, sans-serif;
+	color:#a8a7a5;
+	padding:12px 0 50px;
+	text-align:center;
+	background-color: #e2e1dd;
+}
+#footer p {margin:0;}
+#footer a {color:#c77d86;}
+.back-on-top {
+	font:10px/11px Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	color:#9d9c9a;
+	background:url(../images/sprite.png) 0 -500px no-repeat;
+	padding:61px 0 0;
+	text-align:center;
+	position:absolute;
+	bottom:51px;
+	right:-87px;
+	width:55px;
+}
+.container ol li {
+	display: block;
+	margin: 0 0 9px;
+}
+.container ol li:before { content: "(" counters(item, ".") ") "; counter-increment: item }
