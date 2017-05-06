@@ -12,22 +12,18 @@
 
 		<title>Temporary office, sala riunione, coworking a Verona | Geekville</title>
 		
-		<!-- GA tracking -->	
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-57098011-1', 'auto');
-		  ga('send', 'pageview');
-		</script>
+		<!--GA tracking--><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-57098011-1','auto');ga('send','pageview');</script>
 	</head>
 
 	<body>
 		<!-- archived website notice -->
-		<div class="archive-notice">
-			<p>This is an archive copy of the original website: links and data have been removed.</p>
+		<div class="archived-notice">
+			<div class="archived-notice-back-button">
+				<a href="/archive/">&larr; Back</a>
+			</div>
+			<div class="archived-notice-content">
+				<p>This is an archived copy of the original website: links and data have been removed.</p>
+			</div>
 		</div>
 		<!-- ========== NAV ========== -->
 		<nav>
@@ -465,7 +461,7 @@
 					
 					<ul class="col addnotes rhidden">
 						<h5>Altre info</h5>
-						<!-- <li>Visita <a href="" target="_blank">l'Help Center</a> per le risposte alle domande più comuni.</li> -->
+						<!-- <li>Visita <a href="" target="_blank">l'Help Center</a> per le risposte alle domande piÃ¹ comuni.</li> -->
 						<li>Pi&ugrave; stai, meno paghi: approfitta degli sconti fino al 30% per contratti di 3 o 6 mesi. <a href="#">Guarda il listino.</a></li>
 						<!-- <li>Cerchi info dettagliate su un servizio? <a href="#">Richiedi la scheda prodotto.</a></li> -->
 						<li>Ti serve pi&ugrave; di un box ufficio? <a href="#">Contattaci per un contratto ad-hoc.</a></li>
@@ -474,7 +470,7 @@
 					<!-- r-spec -->
 					<ul class="col addnotes toggl-4">
 						<h5>Altre info</h5>
-						<!-- <li>Visita <a href="" target="_blank">l'Help Center</a> per le risposte alle domande più comuni.</li> -->
+						<!-- <li>Visita <a href="" target="_blank">l'Help Center</a> per le risposte alle domande piÃ¹ comuni.</li> -->
 						<li>Pi&ugrave; stai, meno paghi: approfitta degli sconti fino al 30% per contratti di 3 o 6 mesi. <a href="#">Guarda il listino.</a></li>
 						<!-- <li>Cerchi info dettagliate su un servizio? <a href="#">Richiedi la scheda prodotto.</a></li> -->
 						<li>Ti serve pi&ugrave; di un box ufficio? <a href="#">Contattaci per un contratto ad-hoc.</a></li>
@@ -529,12 +525,8 @@
 				<p class="lightxt">&rarr; Geekville propone anche corsi di formazione, visita il sito <a href="http://www.geekvillelearning.it/?ref=gvwebsite" target="_blank"> Geekville Learning!</a></p>
 			</div>
 		</footer>
-
-		<!-- js & jq -->
+		<!-- jquery -->
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-		
-		<!-- smooth scrolling
-		<script type="text/javascript">$(function(){$('a[href*=#]:not([href=#])').click(function(){if(location.pathname.replace(/^\//,'')==this.pathname.replace(/^\//,'')&&location.hostname==this.hostname){var target=$(this.hash);target=target.length?target:$('[name='+this.hash.slice(1)+']');if(target.length){$('html,body').animate({scrollTop:target.offset().top},1000);return false;}}});});</script> -->
 		
 		<!-- js show/hide by class -->
 		<script type="text/javascript">var toggle_visibility=(function(){function toggle(cl){var els=document.getElementsByClassName(cl);for(var i=0;i<els.length;++i){var s=els[i].style;s.display=s.display==='none'?'block':'none';};}
