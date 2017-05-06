@@ -1,0 +1,105 @@
+/* ========================
+ditecco.me responsive styles
+======================== */
+
+
+@media screen and (max-width: 600px) {
+	
+	/* ========================
+	COMMON
+	======================== */
+	
+	h1 {font-size: 1.6em;}
+
+	h2 {font-size: 1.45em;}
+
+	h3 {font-size: 1.31em;}
+	
+	
+	/* ========================
+	NAV
+	======================== */
+	
+	header {border-bottom: 3px solid #1c1b1c;}
+
+	nav li {
+		width: auto;
+		border: none;
+		padding: 1.1em 0.6em;
+		margin-bottom: -3px;
+	}
+	
+	nav li:hover {
+		color: #1abc9c;
+		background-color: transparent;
+		border-bottom: 3px solid #1abc9c;
+	}
+	
+	nav li.nav-sep {
+		display: inline-block;
+		color: #1abc9c;
+		padding: 0;
+	}
+	
+	nav li.nav-sep:hover {border: 0;}
+	
+	
+	/* ========================
+	HERO
+	======================== */
+	
+	#hero {
+		height: 24em;
+		background-position: 50% 50%;
+		background-size: cover;
+	}
+		
+	#hero h1 {
+		top: 79%;
+		padding: 0 0.5em;
+		letter-spacing: 0;
+		white-space: normal;
+	}
+	
+	
+	/* ========================
+	ABOUT
+	======================== */
+	
+	#about #wrapper p {
+		font-size: 1em;
+		line-height: 2.15;
+		letter-spacing: -0.02em;
+		padding: 0 1.8em;
+		text-align: left;
+	}
+	
+	
+	/* ========================
+	PROJECT LIST
+	======================== */
+	
+	.pro-list li {
+		padding: 2.2em 0;
+		border-bottom: 2px dotted #ccc;
+	}
+	
+	.pro-list li .tag {
+		display: block;
+		margin: 0.8em auto;
+	}
+	
+	.pro-list p {
+		padding: 0 15%;
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 289px) {
+		
+	/* ========================
+	HERO
+	======================== */
+	
+	#hero h1 {display: none;}
+}
