@@ -6,8 +6,8 @@ remember to manually escape accented chars!
 
 <h2 class="alt-par-heading">Profile &amp; skills</h2>
 
-* <span class="list-heading">User Interface Designer</span><br>I'm a User Interface Designer lorem ipsum dolor sit amet
-* <span class="list-heading">I love coding!</span><br>My primary output is high-fidelity mockups designed in <del>Adobe Photoshop</del> a design editor; however, I can code basic HTML & CSS (for example, I hand-coded [my responsive portfolio](http://www.simplest.io/?ref=dtc-resume)).
+* <span class="list-heading">User Interface Designer</span><br>Since 2011, I’ve been designing interfaces for a diverse range of digital products.
+* <span class="list-heading">I love coding!</span><br>My primary output is high-fidelity mockups designed in my design tool of choice; however, I can code basic HTML & CSS and I'm comfortable with the Unix/macOS command line.
 * <span class="list-heading">Entrepreneurial experience</span><br>In the past 6 years I've been working on my own ventures, developing firsthand experience of what it means to build, sell, and maintain a product or service.
 
 <br>
@@ -60,7 +60,7 @@ I've been designing interfaces as a freelancer since 2011; starting from 2015, I
 
 Over the past 6 years I designed a diverse range of digital products, often taking care of the full product image, from identity to marketing visuals: subscription e-commerce sites, highly detailed web apps, multi-platform apps, & more. [&rarr; check out my works](http://www.simplest.io/?ref=dtc-resume)
 
-Moreover, given my current entrepreneurial experience in building and managing a coworking space, I developed an understanding of what it means to build a product: from design (both in the physical and digital realm) to marketing & sales, pricing, admin, client acquisition, client retention, customer care, and all the daily problem-solving founders are accustomed to.
+Moreover, given my past entrepreneurial experience in building and managing a coworking space, I developed a solid understanding of what it means to build a product: from design (both in the physical and digital realm) to marketing & sales, pricing, admin, client acquisition, client retention, customer care, and all the daily problem-solving founders are accustomed to.
 
 <hr class="separator" />
 
@@ -73,7 +73,7 @@ Inspired by the coolest startup HQs, Geekville was no ordinary workplace; while 
 
 Geekville also created courses and workshops under the dedicated brand [&rarr; Geekville Learning](http://www.geekvillelearning.it)
 
-Credits: Geekville was founded and built with the help of my business associate Francesco Adami.
+Credits: I founded, built and ran Geekville with the help of my business associate Francesco Adami.
 
 <hr class="separator" />
 
@@ -95,7 +95,7 @@ Credits: a big help in building and running The Collective came from my business
 
 The coolest tech events in Italy, both big or small, are usually held only in major cities like Milan or Rome. I've been thinking of a way to bring them to Verona, my city, since 2009. It was only after 2 years, in 2011, that I founded [The Digital League:](/archive/the-digital-league/) a non-profit association aiming to bring the best national/international tech &amp; digital events to Verona. By gathering people around topics such as internet culture, tehnology, startup &amp; entrepreneurship, TDL aimed to create a local digital community.
 
-Here's a summary of TDL's activities:
+Here's the most significant achievements of TDL:
 
 * Founded The Collective, the first authentic coworking space in Verona;
 * Created DigitalDrink, a networking event that gave several startups the opportunity to pitch their product to a selected audience;
@@ -140,7 +140,7 @@ BCF is an advertising agency & industrial design studio with 30+ years of experi
 ## 03-05/2014 &mdash; Behance Portfolio Reviews
 #### Organizer
 
-I was the lead organizer of Behance Portfolio Reviews Verona 2014, for the first time ever in the city: [&rarr; Behance Portfolio Reviews Verona 2014](http://www.geekvillelearning.it/offerta-formativa/behance-portfolio-review-verona/)
+I was the lead organizer of [Behance Portfolio Reviews Verona 2014,](http://www.geekvillelearning.it/offerta-formativa/behance-portfolio-review-verona/) for the first time ever in the city.
 
 Behance Portfolio Review is a networking event aimed specifically at creatives, with the purpose of promoting the practice of design critique.
 
@@ -159,7 +159,7 @@ Credits: a big help for recruiting Special Guests and Review Leaders came from S
 ## 04/2013 &mdash; Startup Weekend
 #### Coach
 
-In april 2013, [H-Farm](http://www.h-farmventures.com/en/) (one of the top italian startup accelerators) organized and hosted Startup Weekend Venice; I was invited to join the event as a Coach: [&rarr; Startup Weekend Venice 2013](https://web.archive.org/web/20131115072955/http://venice.startupweekend.org/)
+In april 2013, [H-Farm](http://www.h-farmventures.com/en/) (one of the top italian startup accelerators) organized and hosted [Startup Weekend Venice 2013;](https://web.archive.org/web/20131115072955/http://venice.startupweekend.org/) I was invited to join the event as a Coach.
 
 The role of Coaches in Startup Weekend's formula is an important one: a Coach is basically an expert in his field &mdash; in my case, UI Design &amp; Logo Design &mdash; who follows each team and contributes with his knowledge.
 
@@ -168,7 +168,7 @@ The role of Coaches in Startup Weekend's formula is an important one: a Coach is
 ## 10-12/2012 &mdash; Startup Weekend
 #### Organizer
 
-I was one of the 3-people-team who organized Startup Weekend Verona 2012, for the first time ever in the city: [&rarr; Startup Weekend Verona 2012](https://web.archive.org/web/20121217072032/http://verona.startupweekend.org/)
+I was one of the 3-people-team who organized [Startup Weekend Verona 2012,](https://web.archive.org/web/20121217072032/http://verona.startupweekend.org/) for the first time ever in the city.
 
 Organizing a Startup Weekend is no easy task: it involves a lot of planning and the ability to wear many different hats:
 
@@ -187,4 +187,4 @@ I worked mostly in areas 02, 03, 05, 06, 08.
 
 I also created the event identity: [&rarr; Startup Weekend Verona 2012 on Simplest](http://www.simplest.io/work/startup-weekend-verona.html?ref=dtc-resume)
 
-Thanks to the work of everyone involved the event was a great success, with 120+ attendees.
+Thanks to the work of everyone involved the event was a success, with 120+ attendees.

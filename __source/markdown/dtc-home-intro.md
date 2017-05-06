@@ -1,0 +1,3 @@
+## About
+
+I design [user interfaces for web & mobile apps.](http://www.simplest.io/?ref=dtc-home) To get in touch with me you can [send me a good, old-fashioned e-mail](mailto:alessandro@ditecco.me) (please allow 2-4 business days for a reply). If you wish, you can also follow me on [Twitter](http://twitter.com/aditecco), [Linkedin](http://linkedin.com/in/alessandroditecco/en) or [Dribbble.](http://dribbble.com/alessandroditecco)
