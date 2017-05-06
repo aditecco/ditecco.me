@@ -1,8 +1,13 @@
-@import "normalize";
-
 /* ========================
 ditecco.me/blog post styles
 ======================== */
+
+/* ========================
+ASSETS
+======================== */
+
+@import "normalize";
+
 
 /* ========================
 COMMON
@@ -298,5 +303,10 @@ footer p {
 	color: #ccc;
 	text-align: center;
 }
+
+
+/* ========================
+RESPONSIVE
+======================== */
 
 @import "dtc-blog-post-responsive";
