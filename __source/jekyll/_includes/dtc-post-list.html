@@ -8,7 +8,7 @@
 			<a href="{{ blogPost.url | replace_first: '/', '/blog/' }}">
 				<li>
 					<h3>{{ blogPost.title }}</h3>
-					<p>&#126; Written on {{ blogPost.timestamp }} <span class="tag">{{ blogPost.taxonomy }}</span></p>
+					<p>&#126; Written on {{ blogPost.timestamp }}<br><span class="tag">{{ blogPost.taxonomy }}</span></p>
 				</li>
 			</a>
 			{% endfor %}
