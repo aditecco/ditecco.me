@@ -68,7 +68,7 @@
 			<div class="pro-list">
 				<ul>
 					<a href="http://www.simplest.io/?ref=dtc-home" target="_blank">
-						<li>
+						<li class="pro-list-item">
 							<h3>Simplest</h3>
 							<span class="tag">2011&ndash;Present</span>
 							<p>My one-man-band user interface design studio.</p>
@@ -76,7 +76,7 @@
 					</a>
 					
 					<a href="/archive/geekville/en/" target="_blank">
-						<li>
+						<li class="pro-list-item">
 							<h3>Geekville</h3>
 							<span class="tag tarch">2013&ndash;2017</span>
 							<p>A coworking space for tech &amp; creative professionals.</p>
@@ -84,7 +84,7 @@
 					</a>
 					
 					<a href="/archive/the-collective/" target="_blank">
-						<li>
+						<li class="pro-list-item">
 							<h3>The Collective</h3>
 							<span class="tag tarch">2012&ndash;2013</span>
 							<p>The first authentic coworking space in Verona.</p>
@@ -92,7 +92,7 @@
 					</a>
 					
 					<a href="/archive/the-digital-league/" target="_blank">
-						<li>
+						<li class="pro-list-item">
 							<h3>The Digital League</h3>
 							<span class="tag tarch">2011&ndash;2013</span>
 							<p>A community for tech pros &amp; innovators in the Verona area.</p>
@@ -100,7 +100,7 @@
 					</a>
 					
 					<a href="/resume/">
-						<li>
+						<li class="pro-list-item">
 							<h3>Read my R&eacute;sum&eacute;</h3>
 							<span class="tag tfeat">r&eacute;sum&eacute; &amp; cv</span>
 							<p>Read more about my current &amp; past activities.</p>
@@ -117,7 +117,7 @@
 			<div class="pro-list">
 				<ul>
 					<a href="/projects/itakepictures/" target="_blank">
-						<li>
+						<li class="pro-list-item">
 							<h3>I take pictures</h3>
 							<span class="tag tarch">photography</span>
 							<p>Casual &amp; experimental photography.</p>
@@ -128,7 +128,7 @@
 		
 		<!-- ====================== FOOTER ======================  -->
 		<footer>
-			<p>&copy;2017 Alessandro Di Tecco&comma; All rights reserved. &bull; v4.2.0</p>
+			<p>&copy;2017 Alessandro Di Tecco&comma; All rights reserved. &bull; v4.2.1</p>
 		</footer>
 
 		<!-- jquery -->
@@ -136,5 +136,13 @@
 		
 		<!-- smooth scrolling -->
 		<script src="/js/smooth-scrolling.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+			$(document).ready(hideListItems);
+			function hideListItems() {
+				$('.pro-list-item').hide();
+				$('.pro-list-item').fadeIn(1000);
+			}
+		</script>
 	</body>
 </html>
