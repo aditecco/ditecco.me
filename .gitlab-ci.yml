@@ -1,0 +1,17 @@
+image: ruby:2.1
+
+pages:
+  stage: deploy
+  script:
+    - gem install jekyll
+    - mkdir .public
+    - cd __source/jekyll
+    - jekyll build
+    - cd ../
+    - cp -r * .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
