@@ -1,7 +1,0 @@
-DirectoryIndex index.html index.php parking-page.html
-
-RewriteEngine On
-
-# Adding redirect rules for recently changed /archive URLs
-Redirect 301 /archive/thedigitaleague /archive/the-digital-league
-Redirect 301 /archive/thecollective /archive/the-collective
