@@ -1,15 +1,3 @@
-image: ruby:2.1
-
-job:
-  # we launch a Jekyll build
-  script:
-    - gem install jekyll
-    - cd __source/jekyll
-    # builds a /blog dir
-    - jekyll build
-  only:
-    - master
-
 pages:
   # we deploy all files to /public
   stage: deploy
@@ -18,7 +6,7 @@ pages:
     # to-do: find a simple way to exclude __source from the copy operation
     - cp -r archive .public
     - cp -r basecamp .public
-    - cp -r blog .public
+    # - cp -r blog .public
     - cp -r css .public
     - cp -r img .public
     - cp -r js .public
