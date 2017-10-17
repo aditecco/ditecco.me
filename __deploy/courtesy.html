@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Courtesy page</title>
+	
+		<style type="text/css">
+			* {
+				font-family: 'Helvetica, Arial', sans-serif;
+				box-sizing: border-box;
+			}
+
+			body {
+				text-align: left;
+				color: #34495e;
+				background: radial-gradient(circle at center, hsla(260, 50%, 48%, .9), #607d8b);
+			}
+
+			.courtesy-container {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 80%;
+				padding: 40px 20px;
+				transform: translate(-50%, -50%);
+				background-color: #ecf0f1;
+				border-radius: 4px;
+				box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+			}
+
+			@media screen and (min-width: 360px) {
+				.courtesy-container {
+					width: 340px;
+				}
+			}
+
+			.courtesy-header > h2 { margin: 0 0 15px; }
+
+			.courtesy-body > p {
+				margin-top: 0;
+				color: #7f8c8d;
+			}
+
+			.courtesy-body > p:last-of-type { margin-bottom: 0; }
+
+			.courtesy-button-cta {
+				display: block;
+				padding: 5px;
+				margin: 20px auto 0;
+				text-align: center;
+				color: hsla(260, 50%, 48%, 1);
+				white-space: nowrap;
+				border: 2px solid hsla(260, 50%, 48%, 1);
+				border-radius: 4px;
+				text-decoration: none;
+			}
+
+			.courtesy-button-cta:hover {
+				color: black;
+				border: 2px solid black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main class="courtesy-container">
+			<header class="courtesy-header">
+				<h2>Just a little patience...</h2>
+			</header>
+
+			<section class="courtesy-body">
+				<p>The website is undergoing maintenance and will be back soon.</p>
+				<p>In the meantime, you can contact me via email.</p>
+				<a class="courtesy-button-cta" href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x61;&#x6c;&#101;&#x73;&#x73;&#x61;&#x6e;&#100;&#114;&#111;&#64;&#100;&#105;&#116;&#101;&#x63;&#99;&#111;&#x2e;&#x6d;&#x65;">contact me</a>
+			</section>
+		</main>
+	</body>
+</html>
