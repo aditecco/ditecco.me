@@ -1,7 +1,11 @@
+
+image: ruby:2.1
+
 pages:
-  stage: deploy
   script:
-    - cp -r __deploy ./public
+    - gem install jekyll
+    - cd __source/jekyll
+    - jekyll build
   artifacts:
     paths:
       - public
