@@ -1,35 +1,31 @@
+
 #############################################################
 #                                                           #
 # Restart the server/watch service to apply config changes! #
 #                                                           #
 #############################################################
 
+# ======
 # places
+# ======
 source: ./
-destination: ../../blog
+destination: ../../public
 layouts_dir: ./_layouts
 includes_dir: ./_includes
+# collections_dir: ./_collections
 
-# URLs
-url: /blog
-baseurl: /blog
 
+# ====
 # vars
-title: ditecco.me
-name: Alessandro Di Tecco's blog
-#description:
+# ====
+title: Alessandro Di Tecco | Interface designer & entrepreneur
+name: The personal website of Alessandro Di Tecco
+description: Alessandro Di Tecco is an interface designer and entrepreneur. This is his personal website.
 
-# content
-permalink: /:year/:title/
 
-# collections
-# collections:
-#   blog:
-#     output: true
-#     #permalink: pretty
-#     permalink: /:collection/:path/
-
-# compilers
+# ==================
+# compilers, plugins
+# ==================
 sass:
   sass_dir: _sass
   style: compressed
@@ -37,12 +33,8 @@ sass:
 kramdown:
   auto_ids: false
 
-# # defaults
-# defaults:
-#   - scope:
-#       path: "work"
-#     values:
-#       layout: case
 
-# meta
+# =========
+# debugging
+# =========
 error_mode: warn
