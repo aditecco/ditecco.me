@@ -1,24 +1,32 @@
 
-# --------------
-# source folders
-# --------------
+# ---------------------------------
+# source
+# --------------------------------- 
 
 __source/_assets/
 __source/_tmp/
+__source/_discontinued/
 __source/jekyll/.sass-cache/
 __source/jekyll/_drafts/
 
 
-# --------------
-# deploy folders
-# --------------
+# ---------------------------------
+# deploy
+# --------------------------------- 
 
 public/
 __deploy/
 
 
 # --------------
-# misc
+# system
 # --------------
 
 .DS_Store
+
+
+# ---------------------------------
+# overrides
+# --------------------------------- 
+
+!.htaccess
