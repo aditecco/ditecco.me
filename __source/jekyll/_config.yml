@@ -5,9 +5,10 @@
 #                                                           #
 #############################################################
 
-# ======
+
+# ---------------------------------
 # places
-# ======
+# --------------------------------- 
 source: ./
 destination: ../../public
 layouts_dir: ./_layouts
@@ -15,17 +16,24 @@ includes_dir: ./_includes
 # collections_dir: ./_collections
 
 
-# ====
+# ---------------------------------
 # vars
-# ====
+# --------------------------------- 
 title: Alessandro Di Tecco | Interface designer & entrepreneur
 name: The personal website of Alessandro Di Tecco
 description: Alessandro Di Tecco is an interface designer and entrepreneur. This is his personal website.
 
 
-# ==================
+# ---------------------------------
 # compilers, plugins
-# ==================
+# --------------------------------- 
+
+plugins:
+  - jekyll-pug
+
+jekyll-pug:
+  minify: true
+
 sass:
   sass_dir: _sass
   style: compressed
@@ -34,7 +42,7 @@ kramdown:
   auto_ids: false
 
 
-# =========
+# ---------------------------------
 # debugging
-# =========
+# --------------------------------- 
 error_mode: warn
