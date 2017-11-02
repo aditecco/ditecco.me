@@ -3,6 +3,13 @@ layout:
 title:
 ---
 
+//- vars
+//- is `var` implicit?
+- vNumber = '5.0.0'
+- copyYear = 2017
+- timeStamp = new Date();
+- printLastEdit = () => timeStamp.toLocaleString();
+
 doctype
 html
 	head
@@ -18,65 +25,57 @@ html
 		title Alessandro Di Tecco | Interface designer &amp; entrepreneur
 
 	body
-		main
-			ul.pro-list
-				li.pro-list-item
+		main.card-list-container
+			ul.card-list
+				li.card-list-item.card-list-item--master
+					article.card-list-item-body
+						h2 Hi, this is Alessandro <br>Di Tecco.
+				li.card-list-item
+					article.card-list-item-body
+						h3 About
+						p I design user interfaces for web &amp; mobile apps.
+				li.card-list-item.card-list-item--header
+					article.card-list-item-body
+						h3 Work
+				li.card-list-item
 					a(href="")
-						article
-							h2 Hi, this is Alessandro Di Tecco.
-				li.pro-list-item
-					a(href="")
-						article
-							h3 About
-							p | I design user interfaces for web &amp; mobile apps.
-				li.pro-list-item
-					a(href="")
-						article
-							h3 Work
-							//- p lorem
-							//- span(class='tag tarch')
-				li.pro-list-item
-					a(href="")
-						article
+						article.card-list-item-body
 							h3 Simplest
 							p My one-man-band user interface design studio.
-							span(class="tag") 2011&ndash;Present
-				li.pro-list-item
+							span(class="card-list-item-tag") 2011&ndash;Present
+				li.card-list-item
 					a(href="")
-						article
+						article.card-list-item-body
 							h3 Geekville
 							p A coworking space for tech &amp; creative professionals.
-							span(class="tag tarch") 2013&ndash;2017
-				li.pro-list-item
+							span(class="card-list-item-tag card-list-item-tag--archived") 2013&ndash;2017
+				li.card-list-item
 					a(href="")
-						article
+						article.card-list-item-body
 							h3 The Collective
 							p The first authentic coworking space in Verona.
-							span(class="tag tarch") 2012&ndash;2013
-				li.pro-list-item
+							span(class="card-list-item-tag card-list-item-tag--archived") 2012&ndash;2013
+				li.card-list-item
 					a(href="")
-						article
+						article.card-list-item-body
 							h3 The Digital League
 							p A community for tech pros &amp; innovators in the Verona area.
-							span(class="tag tarch") 2011&ndash;2013
-				li.pro-list-item
+							span(class="card-list-item-tag card-list-item-tag--archived") 2011&ndash;2013
+				li.card-list-item
 					a(href="")
-						article
+						article.card-list-item-body
 							h3 R&eacute;sum&eacute;
 							p Read more about my current &amp; past activities.
-							span(class="tag tfeat") r&eacute;sum&eacute; &amp; cv
-				li.pro-list-item
+							span(class="card-list-item-tag card-list-item-tag--featured") r&eacute;sum&eacute; &amp; cv
+				li.card-list-item.card-list-item--header
+					article.card-list-item-body
+						h3 Projects
+				li.card-list-item
 					a(href="")
-						article
-							h3 Projects
-							//- p lorem
-							//- span(class='tag tarch')
-				li.pro-list-item
-					a(href="")
-						article
+						article.card-list-item-body
 							h3 I take pictures
 							p Casual &amp; experimental photography.
-							span(class="tag tarch") photography
+							span(class="card-list-item-tag card-list-item-tag--archived") photography
 
 		footer
-			p &copy;2017 Alessandro Di Tecco&comma; All rights reserved. &bull; v4.2.1
+			p &copy;#{copyYear} Alessandro Di Tecco&comma; All rights reserved. &mdash; v#{vNumber} &bull; #{printLastEdit()}

@@ -14,11 +14,14 @@ imports
 --------------------------------- */
 
 @import '_normalize';
+@import '_flat-ui-colors';
 
 
 /* ---------------------------------
 common
 --------------------------------- */
+
+* { box-sizing: border-box; }
 
 body {
 	font-family: 'Roboto', sans-serif;
@@ -60,100 +63,96 @@ a:hover {
 }
 
 
-/* ========================
-HERO
-======================== */
-
-#hero {
-	width: 100%;
-	height: 43.75em;
-	background: #cfd0d0 url('/img/adt-hero.jpg') center center no-repeat;
-	position: relative;
-}
-
-#img-tint {
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.25);
-}
-
-#hero h1 {
-	position: absolute;
-	top: 89.5%;
-	right: 0;
-	left: 0;
-	margin: 0 auto;
-	color: #f1f1f1;
-	line-height: 1.2;
-	letter-spacing: -0.015em;
-	white-space: nowrap;
-}
-
-
 /* ---------------------------------
-pro list
+card list
 --------------------------------- */
 
-.pro-list {
-	width: 100%;
-	margin: 0;
-}
+.card-list-container {}
 
-.pro-list ul {
-	margin: 0;
+// unbundle .card-list-item and nest .card-list-item-body
+.card-list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
 	padding: 0;
-}
-
-.pro-list li {
-	height: auto;
-	padding: 3em 0;
-	color: #444;
-	background-color: #fff;
-	border-bottom: 1px dotted #ccc;
 	list-style: none;
-	/* Transitions */
-	-webkit-transition: background-color 0.6s ease;
-	-moz-transition: background-color 0.6s ease;
-	-o-transition: background-color 0.6s ease;
-	transition: background-color 0.6s ease;
+	.card-list-item {
+		flex-basis: 360px;
+		height: 200px;
+		padding: 40px 20px;
+		margin: 0 20px 20px 0;
+		border-radius: 4px;
+		text-align: left;
+		box-shadow: 0 2px 4px rgba(#777, .15);
+		color: #444;
+		background-color: #fff;
+		/* Transitions */
+		-webkit-transition: background-color 0.6s ease;
+		-moz-transition: background-color 0.6s ease;
+		-o-transition: background-color 0.6s ease;
+		transition: background-color 0.6s ease;
+		&:hover {
+			color: $paper;
+			background-color: $emerald;
+		}
+		&.card-list-item--master {
+			padding: 20px;
+			// background-color: $asphalt;
+			background: $asphalt url('/img/adt-hero.jpg') center center no-repeat;
+			h2 {color: #eee;}
+		}
+		&.card-list-item--header {
+			border: 2px dashed rgba($silver, .4);
+			box-shadow: none;
+			background-color: transparent;
+		}
+		@media(max-width: 360px) {
+			flex-basis: 280px;
+			margin-right: 0;
+		}
+	}
 }
 
-.pro-list li h3 {
-	display: inline-block;
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
-	margin: 0;
+.card-list-item-body {
+	// display: flex;
+	// flex-flow: column nowrap;
+	// justify-content: flex-start;
+	h3 {
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin: 0;
+		// border-bottom: 3px solid rgba($asphalt, .15);
+	}
+	h3,
+	p,
+	span { flex-grow: .3 }
+	.card-list-item-tag {
+		// display: block;
+		// width: 10em;
+		// margin-left: 1em;
+		padding: 0.2em 1em;
+		border: 2px solid #e74c3c;
+		border-radius: 20px;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;
+		font-size: 0.9em;
+		letter-spacing: 0.025em;
+		text-transform: uppercase;
+		color: #e74c3c;
+		vertical-align: 16.5%;
+		&.card-list-item-tag--featured {
+			color: #470ff4;
+			border: 2px solid #470ff4;
+		}
+		&.card-list-item-tag--archived {
+			color: #a9a9a9;
+			border: 2px solid #a9a9a9;
+		}
+	}
 }
 
-.pro-list li .tag {
-	width: 10em;
-	display: inline-block;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
-	font-size: 0.9em;
-	letter-spacing: 0.025em;
-	text-transform: uppercase;
-	color: #e74c3c;
-	border: 2px solid #e74c3c;
-	border-radius: 20px;
-	margin-left: 1em;
-	padding: 0.2em 1em;
-	vertical-align: 16.5%;
-}
-
-.pro-list li .tag.tfeat {
-	color: #470ff4;
-	border: 2px solid #470ff4;
-}
-
-.pro-list li .tag.tarch {
-	color: #a9a9a9;
-	border: 2px solid #a9a9a9;
-}
-
-.pro-list li p {margin-bottom: 0;}
-
-.pro-list li:hover {background-color: #e6e3df;}
+.card-list li:hover {background-color: #e6e3df;}
 
 
 /* ---------------------------------
@@ -232,3 +231,4 @@ responsive
 // nav li.nav-sep {display: none;}
 
 // #home {border: none;}
+
