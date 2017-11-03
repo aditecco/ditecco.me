@@ -67,7 +67,12 @@ a:hover {
 card list
 --------------------------------- */
 
-.card-list-container {}
+.card-list-container {
+	margin: 40px 0;
+	@media(max-width: 360px) {
+		margin: 20px 0;
+	}
+}
 
 // unbundle .card-list-item and nest .card-list-item-body
 .card-list {
@@ -75,6 +80,7 @@ card list
 	flex-flow: row wrap;
 	justify-content: center;
 	padding: 0;
+	margin: 0;
 	list-style: none;
 	.card-list-item {
 		flex-basis: 360px;
@@ -92,7 +98,8 @@ card list
 		&:last-child { margin: 0; }
 		&:hover {
 			color: $paper;
-			background-color: $greenSea;
+			// background-color: $greenSea;
+			background-color: $gunMetal;
 		}
 		&.card-list-item--master {
 			padding: 20px;
@@ -109,9 +116,10 @@ card list
 		// 	box-shadow: none;
 		// 	background-color: transparent;
 		// }
-		&.card-list-item--work-current { border-bottom: 4px solid rgba($pomegranate, .8); }
-		&.card-list-item--work-archived { border-bottom: 4px solid rgba($deepPurple, .8); }
-		&.card-list-item--project { border-bottom: 4px solid rgba($sunflower, .8); }
+		// better if the border appears on hover
+		// &.card-list-item--work-current { border-bottom: 4px solid rgba($pomegranate, .8); }
+		// &.card-list-item--work-archived { border-bottom: 4px solid rgba($deepPurple, .8); }
+		// &.card-list-item--project { border-bottom: 4px solid rgba($sunflower, .8); }
 		@media(max-width: 360px) {
 			flex-basis: 280px;
 			margin-right: 0;
