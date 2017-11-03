@@ -5,10 +5,12 @@ title:
 
 //- vars
 //- is `var` implicit?
-- vNumber = '5.0.0'
+- vNumber = '5.0.0 (beta)'
 - copyYear = 2017
 - timeStamp = new Date();
 - printLastEdit = () => timeStamp.toLocaleString();
+//- email should be encoded!
+- encodedEmail = 'alessandro@ditecco.me'
 
 doctype
 html
@@ -30,21 +32,22 @@ html
 				li.card-list-item.card-list-item--master
 					article.card-list-item-body
 						h2 Hi, this is Alessandro <br>Di Tecco.
-				li.card-list-item
+				li.card-list-item.card-list-item--intro
 					article.card-list-item-body
 						h3 About
-						p I design and code user interfaces for web &amp; mobile apps. To get in touch with me you can send me a nice, old fashioned email.
+						p I design and code user interfaces for web &amp; mobile apps. To get in touch with me you can #[a(href='mailto:' + encodedEmail) send me an email] (I'm old fashioned).
 				li.card-list-item
 					a(href="/blog/")
 						article.card-list-item-body
 							h3 Blog
-							p Thoughts &amp; writings about technology, development, and other things.
+							p Thoughts &amp; writing about technology, development, and more.
+							span(class="card-list-item-tag") writing
 				li.card-list-item
 					a(href="/resume/")
 						article.card-list-item-body
 							h3 R&eacute;sum&eacute;
 							p Read more about my current &amp; past activities.
-							span(class="card-list-item-tag card-list-item-tag--featured") r&eacute;sum&eacute; &amp; cv
+							span(class="card-list-item-tag") r&eacute;sum&eacute; &amp; cv
 				//- li.card-list-item.card-list-item--header
 				//- 	article.card-list-item-body
 				//- 		h3 Work
@@ -59,19 +62,19 @@ html
 						article.card-list-item-body
 							h3 Geekville
 							p A coworking space for tech &amp; creative professionals.
-							span(class="card-list-item-tag card-list-item-tag--archived") 2013&ndash;2017
+							span(class="card-list-item-tag") 2013&ndash;2017
 				li.card-list-item.card-list-item--work-archived
 					a(href="/archive/the-collective/")
 						article.card-list-item-body
 							h3 The Collective
 							p The first authentic coworking space in Verona.
-							span(class="card-list-item-tag card-list-item-tag--archived") 2012&ndash;2013
+							span(class="card-list-item-tag") 2012&ndash;2013
 				li.card-list-item.card-list-item--work-archived
 					a(href="/archive/the-digital-league/")
 						article.card-list-item-body
 							h3 The Digital League
 							p A community for tech pros &amp; innovators in the Verona area.
-							span(class="card-list-item-tag card-list-item-tag--archived") 2011&ndash;2013
+							span(class="card-list-item-tag") 2011&ndash;2013
 				//- li.card-list-item.card-list-item--header
 				//- 	article.card-list-item-body
 				//- 		h3 Projects
@@ -80,7 +83,7 @@ html
 						article.card-list-item-body
 							h3 I take pictures
 							p Casual &amp; experimental photography.
-							span(class="card-list-item-tag card-list-item-tag--archived") photography
+							span(class="card-list-item-tag") photography
 
 		footer
 			p &copy;#{copyYear} Alessandro Di Tecco&comma; All rights reserved. &mdash; v#{vNumber} &bull; #{printLastEdit()}
