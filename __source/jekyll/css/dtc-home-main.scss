@@ -1,0 +1,241 @@
+---
+
+
+---
+
+
+/* ========================
+dtc-home-main.scss
+======================== */
+
+
+/* ---------------------------------
+imports
+--------------------------------- */
+
+@import '_normalize';
+@import '_flat-ui-colors';
+
+
+/* ---------------------------------
+vars
+--------------------------------- */
+
+// colors
+$accent-primary: #1abc9c;
+
+
+/* ---------------------------------
+common
+--------------------------------- */
+
+* { box-sizing: border-box; }
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	text-align: center;
+	color: #555;
+	background-color: #f4f5f2;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+
+h1 {font-size: 2.4em;}
+
+h2 {
+	font-size: 2em;
+	margin: 0.8em 0;
+}
+
+h3 {font-size: 1.6em;}
+
+// a {
+// 	color: #333;
+// 	text-decoration: none;
+// 	border-bottom: 1px solid #1abc9c;
+// }
+
+// a:hover {
+// 	text-decoration: none;
+// 	color: #1abc9c;
+// }
+
+a,
+a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+::selection {
+	background: #1abc9c;
+	color: #f1f1f1;
+}
+
+
+/* ---------------------------------
+card list
+--------------------------------- */
+
+.card-list-container {
+	margin: 40px 0;
+	// to accomodate iPhone 6 Plus
+	@media(max-width: 420px) {
+		margin: 20px 0;
+	}
+	// @media(max-width: 360px) {
+	// 	margin: 20px 0;
+	// }
+}
+
+// unbundle .card-list-item and nest .card-list-item-body
+.card-list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	.card-list-item {
+		flex-basis: 360px;
+		height: 200px;
+		// padding: 40px 20px;
+		margin: 0 20px 20px 0;
+		border-radius: 4px;
+		border-bottom: 4px solid rgba($clouds, .99);
+		text-align: left;
+		color: #444;
+		box-shadow: 0 2px 4px rgba(#777, .15);
+		background-color: #fff;
+		// use `all` for the stacked cards layout
+		transition: all 0.5s ease;
+		&:last-child { margin: 0; }
+		&:hover {
+			// color: $paper;
+			// background-color: $greenSea;
+			// background-color: $gunMetal;
+			// background: linear-gradient(to bottom, transparent, $accent-primary);
+			border-bottom: 4px solid $accent-primary;
+			// transform: scale(1.05);
+		}
+		&.card-list-item--master {
+			// padding: 20px;
+			// background-color: $asphalt;
+			// border: none;
+			// bad override! find a cleaner solution
+			border-bottom: 4px solid rgba(black, .6);
+			background: $gunMetal url('/img/adt-hero.jpg') center center no-repeat;
+			// check this
+			background-size: 140% auto;
+			// background-color: linear-gradient($gunMetal, $asphalt);
+			.card-list-item-body { background-color: hsla(0, 0%, 0%, 0.6); }
+			h2 {
+				margin: 0;
+				color: #eee;
+			}
+		}
+		&.card-list-item--intro {
+			// bad override! find a cleaner solution
+			&:hover { border-bottom: 4px solid rgba($clouds, .99); }
+			p {
+				line-height: 1.5;
+				a {
+					padding: 1px 2px;
+					border-bottom: 1px dashed $accent-primary;
+				}
+				a:hover {
+					color: black;
+					border-bottom: 2px solid $accent-primary;
+					background-color: rgba($accent-primary, .1);
+				}
+			}
+		}
+		// &.card-list-item--header {
+		// 	border: 2px dashed rgba($silver, .4);
+		// 	box-shadow: none;
+		// 	background-color: transparent;
+		// }
+		// better if the border appears on hover
+		// &.card-list-item--work-current { border-bottom: 4px solid rgba($pomegranate, .8); }
+		// &.card-list-item--work-archived { border-bottom: 4px solid rgba($deepPurple, .8); }
+		// &.card-list-item--project { border-bottom: 4px solid rgba($sunflower, .8); }
+		// to accomodate iPhone 6 Plus
+		@media(max-width: 420px) {
+			margin-right: 0;
+		}
+		@media(max-width: 360px) {
+			flex-basis: 280px;
+			height: auto;
+			// margin-right: 0;
+		}
+	}
+}
+
+.card-list-item-body {
+	padding: 40px 20px;
+	// display: flex;
+	// flex-flow: column nowrap;
+	// justify-content: flex-start;
+	h3 {
+		// display: inline-block;
+		// text-transform: uppercase;
+		// letter-spacing: 0.05em;
+		margin: 0;
+		// border-bottom: 3px solid rgba($asphalt, .15);
+	}
+	p {
+		margin: 15px 0;
+		// color: rgba($concrete, .9);
+	}
+	// h3,
+	// p,
+	// span { flex-grow: .3 }
+	.card-list-item-tag {
+		// display: block;
+		// width: 10em;
+		// margin-left: 1em;
+		padding: 0.2em 1em;
+		// border: 2px solid #e74c3c;
+		border: 2px solid $silver;
+		border-radius: 20px;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;
+		font-size: 0.9em;
+		letter-spacing: 0.025em;
+		text-transform: uppercase;
+		// color: #e74c3c;
+		color: $silver;
+		// vertical-align: 16.5%;
+		&.card-list-item-tag--featured {
+			color: #470ff4;
+			// border: 2px solid #470ff4;
+			border: 2px solid #470ff4;
+		}
+		&.card-list-item-tag--archived {
+			// color: #a9a9a9;
+			// border: 2px solid #a9a9a9;
+			color: $deepPurple;
+			border: 2px solid $deepPurple;
+		}
+	}
+}
+
+
+/* ---------------------------------
+footer
+--------------------------------- */
+
+footer {
+	padding: 0 20px 20px;
+	// height: 48px;
+	color: #ccc;
+	p {
+		font-size: 0.7em;
+		// padding-top: 1.4em;
+		margin: 0;
+	}
+}
