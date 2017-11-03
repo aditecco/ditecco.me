@@ -6,4 +6,5 @@ source "https://rubygems.org"
 
 gem 'jekyll'
 gem 'jekyll-pug'
+gem 'execjs'
 gem 'jekyll-autoprefixer'
