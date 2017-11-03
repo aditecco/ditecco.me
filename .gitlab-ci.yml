@@ -3,7 +3,7 @@ image: ruby:2.4
 
 pages:
   script:
-    - gem install jekyll jekyll-pug jekyll-autoprefixer
+    - bundle install
     - cd __source/jekyll
     - jekyll build
   artifacts:
