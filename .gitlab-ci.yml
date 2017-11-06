@@ -2,11 +2,15 @@
 image: ruby:2.4
 
 before_script:
+  - echo "en_US UTF-8" > /etc/locale.gen
+  - locale-gen en_US.UTF-8
+  - export LANG=en_US.UTF-8
+  - export LANGUAGE=en_US:en
   - export LC_ALL=en_US.UTF-8
-  - bundle install --deployment
 
 pages:
   script:
+    - bundle install --deployment
     - cd __source/jekyll
     - bundle exec jekyll build
   artifacts:
