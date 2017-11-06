@@ -1,11 +1,17 @@
 
 image: ruby:2.4
 
+cache:
+  paths:
+    - vendor/
+
+before_script:
+  - bundle install --path vendor
+
 pages:
   script:
-    - bundle install
     - cd __source/jekyll
-    - jekyll build
+    - bundle exec jekyll build
   artifacts:
     paths:
       - public

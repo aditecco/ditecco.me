@@ -31,11 +31,11 @@ description: Alessandro Di Tecco is an interface designer and entrepreneur. This
 # ---------------------------------
 
 plugins:
-  # - jekyll-pug
+  - jekyll-pug
   - jekyll-autoprefixer
 
-# jekyll-pug:
-#   minify: true
+jekyll-pug:
+  minify: true
 
 autoprefixer:
   browsers:
