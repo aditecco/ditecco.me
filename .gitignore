@@ -22,6 +22,7 @@ __deploy/
 # packages
 # ---------------------------------
 
+.bundle/
 vendor/
 node_modules/
 
