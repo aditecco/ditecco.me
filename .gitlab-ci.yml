@@ -1,12 +1,8 @@
 
 image: ruby:2.4
 
-cache:
-  paths:
-    - vendor/
-
 before_script:
-  - bundle install --path vendor
+  - bundle install --deployment
 
 pages:
   script:
