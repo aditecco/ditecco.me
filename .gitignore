@@ -23,6 +23,7 @@ __deploy/
 # ---------------------------------
 
 .bundle/
+# should I include .bundle/config ?
 vendor/
 node_modules/
 
