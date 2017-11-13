@@ -18,12 +18,12 @@ html
 		meta(name="keywords", content="Alessandro Di Tecco,ui design,user interface design,interface design,design,startup,user experience,ux design,coworking,entrepreneur,entrepreneurship")
 		meta(name="author", content="Alessandro Di Tecco")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		meta(name="description", content="Alessandro Di Tecco is an interface designer and entrepreneur. This is his personal website.")
+		meta(name="description", content="The personal website of Alessandro Di Tecco, UI designer and entrepreneur.")
 
 		link(href='http://fonts.googleapis.com/css?family=Montserrat|Roboto', rel='stylesheet', type='text/css')
 		link(rel="stylesheet", href="/css/dtc-home-main.css")
 
-		title Alessandro Di Tecco | Interface designer &amp; entrepreneur
+		title Alessandro Di Tecco | UI designer &amp; entrepreneur
 
 		script.
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-57098011-1','auto');ga('send','pageview');
@@ -33,56 +33,71 @@ html
 			ul.card-list
 				li.card-list-item.card-list-item--master
 					article.card-list-item-body
-						h2 Hi, this is Alessandro <br>Di Tecco.
+						h2
+							| Hi, this is
+							| Alessandro
+							br
+							| Di Tecco.
 				li.card-list-item.card-list-item--intro
 					article.card-list-item-body
 						h3 About me
-						p I design and code user interfaces for web &amp; mobile apps. To get in touch with me you can #[a(href!='mailto:' + encodedEmail) send me an email] (I'm old fashioned).
+						p
+							| I design and code #[a(href='http://www.simplest.io/?ref=dtc-home', target='_blank') user interfaces] for web &amp; mobile apps.
+							| To get in touch with me you can #[a(href!='mailto:' + encodedEmail) send me an email] (old fashioned!).
+							br
+							| I'm also on:
+							| #[a(href='https://twitter.com/aditecco', target='_blank') Twitter] &middot;
+							| #[a(href='https://dribbble.com/alessandroditecco', target='_blank') Dribbble] &middot;
+							| #[a(href='https://linkedin.com/in/alessandroditecco/en/', target='_blank') LinkedIn]
 				li.card-list-item
 					a(href="/blog/")
 						article.card-list-item-body
+							h5 projects
 							h3 Blog
 							p Thoughts &amp; writings about technology, development, and more.
 							span(class="card-list-item-tag") writing
 				li.card-list-item
 					a(href="/resume/")
 						article.card-list-item-body
+							h5 work
 							h3 R&eacute;sum&eacute;
 							p Read more about my current &amp; past activities.
 							span(class="card-list-item-tag") r&eacute;sum&eacute; &amp; cv
 				li.card-list-item.card-list-item--work-current
 					a(href="http://www.simplest.io/?ref=dtc-home")
 						article.card-list-item-body
-							h6 2011&ndash;Present
+							h5 work &middot; 2011&ndash;Present
 							h3 Simplest
 							p My one-man-band user interface design studio.
 							span(class="card-list-item-tag") UI Design
 				li.card-list-item.card-list-item--work-archived
 					a(href="/archive/geekville/en/")
 						article.card-list-item-body
+							h5 work &middot; 2013&ndash;2017
 							h3 Geekville
 							p A coworking space for tech &amp; creative professionals.
-							span(class="card-list-item-tag") 2013&ndash;2017
+							span(class="card-list-item-tag") entrepreneurship
 				li.card-list-item.card-list-item--work-archived
 					a(href="/archive/the-collective/")
 						article.card-list-item-body
+							h5 work &middot; 2012&ndash;2013
 							h3 The Collective
 							p The first authentic coworking space in Verona.
-							span(class="card-list-item-tag") 2012&ndash;2013
+							span(class="card-list-item-tag") community
 				li.card-list-item.card-list-item--work-archived
 					a(href="/archive/the-digital-league/")
 						article.card-list-item-body
+							h5 Work &middot; 2011&ndash;2013
 							h3 The Digital League
 							p A community for tech pros &amp; innovators in the Verona area.
-							span(class="card-list-item-tag") 2011&ndash;2013
+							span(class="card-list-item-tag") community
 				li.card-list-item.card-list-item--project
 					a(href="/projects/itakepictures/")
 						article.card-list-item-body
+							h5 projects
 							h3 I take pictures
-							p Casual &amp; experimental photography.
+							p A mini-site for my experiments in photography.
 							span(class="card-list-item-tag") photography
-				li.card-list-item.card-list-item--project
-					article.card-list-item-body
 
 		footer
 			p &copy;#{copyYear} Alessandro Di Tecco&comma; All rights reserved. &mdash; v#{vNumber} &bull; #{printLastEdit()}

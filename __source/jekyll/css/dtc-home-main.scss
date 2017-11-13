@@ -41,7 +41,7 @@ body {
 	background-color: #f4f5f2;
 }
 
-h1,h2,h3,h4,h5 {
+h1,h2,h3,h4,h5,h6 {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 }
@@ -110,7 +110,10 @@ card list
 			background: $gunMetal url('/img/adt-hero.jpg') center center no-repeat;
 			// check this
 			background-size: 140% auto;
-			.card-list-item-body { background-color: hsla(0, 0%, 0%, 0.6); }
+			.card-list-item-body {
+				padding: 40px 20px;
+				background-color: hsla(0, 0%, 0%, 0.6);
+			}
 			h2 {
 				margin: 0;
 				color: #eee;
@@ -119,16 +122,21 @@ card list
 		&.card-list-item--intro {
 			// bad override! find a cleaner solution
 			&:hover { border-bottom: 4px solid rgba($clouds, .99); }
-			p {
-				line-height: 1.5;
-				a {
-					padding: 1px 2px;
-					border-bottom: 1px dashed $accent-primary;
-				}
-				a:hover {
-					color: black;
-					border-bottom: 2px solid $accent-primary;
-					background-color: rgba($accent-primary, .1);
+			.card-list-item-body {
+				padding: 20px;
+				p {
+					margin-bottom: 0;
+					font-size: 15px;
+					line-height: 1.8;
+					a {
+						padding: 1px 2px;
+						border-bottom: 1px dashed $accent-primary;
+					}
+					a:hover {
+						color: black;
+						border-bottom: 2px solid $accent-primary;
+						background-color: rgba($accent-primary, .1);
+					}
 				}
 			}
 		}
@@ -144,7 +152,12 @@ card list
 }
 
 .card-list-item-body {
-	padding: 40px 20px;
+	padding: 25px 20px;
+	h5 {
+		margin: 0 0 7px;
+		color: $silver;
+		text-transform: uppercase;
+	}
 	h3 { margin: 0; }
 	p {
 		margin: 15px 0;
