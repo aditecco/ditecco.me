@@ -1,0 +1,36 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+	<head>
+		{% include dtc-common-meta.html %}
+		<meta name="description" content="{{ page.description }}">
+
+		<!-- CSS -->
+		<link href='http://fonts.googleapis.com/css?family=Arvo|Kaushan+Script|Karla' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/dtc-resume-main.css" type="text/css" />
+
+		<!-- title -->
+		<title>{{ site.title }} | {{ page.title }}</title>
+
+		{% include dtc-ga-snp.html %}
+	</head>
+
+	<body>
+		<p class="subtext"><a href="/index.html">&#8592; Back to homepage?</a></p>
+
+		<div id="wrap">
+			<h1 class="hero-head">R&eacute;sum&eacute;</h1>
+			<h4 class="hero-sub-head">of Alessandro Di Tecco</h4>
+				<div id="sub-wrap">
+					{{ content | markdownify }}
+				</div> <!-- subwrap -->
+		</div> <!-- wrap -->
+
+		<footer>
+			<p class="subtext">All content &copy; 2017 Alessandro Di Tecco<br><a href="#">&#8593; Back to top</a></p>
+		</footer>
+	</body>
+</html>
