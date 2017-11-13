@@ -6,27 +6,26 @@ layout: compress
 <html>
 	<head>
 		{% include dtc-common-meta.html %}
-
-		<meta name="description" content="This is Alessandro Di Tecco's blog. Here you'll find posts and articles about technology, culture, and other topics.">
+		<meta name="description" content="{{ page.description }}">
 
 		{% include dtc-styles-main.html %}
-		
+
 		<!-- title -->
 		<title>{{ site.title }} | {{ page.title }}</title>
-		
+
 		{% include dtc-ga-snp.html %}
 	</head>
-	
+
 	<body>
 		{% include dtc-nav.html %}
-		
+
 		<!-- ====================== HERO ======================  -->
 		<section>
 			<div id="hero">
 				<h1> {{ page.title }} </h1>
 			</div>
 		</section>
-					
+
 		{{ content }}
 
 		{% include dtc-footer.html %}
