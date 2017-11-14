@@ -55,14 +55,21 @@ The best way to get in touch with me is via good-old e-mail.
 
 <br>
 
+<!-- move this setting to JK config -->
+{::options parse_block_html="true" /}
+<div class="story-block">
+<header class="story-block-header">
 ## 2011 - 2017 &mdash; Simplest
 #### Freelance User Interface Designer
-
+</header>
+<div class="story-block-body">
 I've been designing interfaces as a freelancer since 2011; starting from 2015, I decided to create my solo User Interface Design studio: I called it Simplest, to remind myself that the simplest user interfaces &amp; interactions are the building blocks of the best digital experiences.
 
 Over the past 6 years I designed a diverse range of digital products, often taking care of the full product image, from identity to marketing visuals: subscription e-commerce sites, highly detailed web apps, multi-platform apps, & more. [&rarr; check out my works](http://www.simplest.io/?ref=dtc-resume)
 
 Moreover, given my past entrepreneurial experience in building and managing a coworking space, I developed a solid understanding of what it means to build a product: from design (both in the physical and digital realm) to marketing & sales, pricing, admin, client acquisition, client retention, customer care, and all the daily problem-solving founders are accustomed to.
+</div>
+</div>
 
 <hr class="separator" />
 

@@ -12,6 +12,21 @@ layout: compress
 		<link href='http://fonts.googleapis.com/css?family=Arvo|Kaushan+Script|Karla' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/dtc-resume-main.css" type="text/css" />
 
+		<!-- TEMP! styles -->
+		<style>
+			.story-block-header {
+				/*border: 1px dotted silver;
+				border-radius: 4px;*/
+				padding: 5px 0;
+				border-left: 4px solid #00a0b0;
+				box-shadow: 0 1px 8px rgba(0, 0, 0, .125);
+			}
+
+			/* fix this heavy legacy ID */
+			#sub-wrap .story-block-header > h2,
+			#sub-wrap	.story-block-header > h4 { border: none; }
+		</style>
+
 		<!-- title -->
 		<title>{{ site.title }} | {{ page.title }}</title>
 
@@ -32,5 +47,8 @@ layout: compress
 		<footer>
 			<p class="subtext">All content &copy; 2017 Alessandro Di Tecco<br><a href="#">&#8593; Back to top</a></p>
 		</footer>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/dtc-resume-main.js"></script>
 	</body>
 </html>
