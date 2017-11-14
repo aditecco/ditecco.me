@@ -8,26 +8,9 @@ layout: compress
 		{% include dtc-common-meta.html %}
 		<meta name="description" content="{{ page.description }}">
 
-		<!-- CSS -->
 		<link href='http://fonts.googleapis.com/css?family=Arvo|Kaushan+Script|Karla' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/dtc-resume-main.css" type="text/css" />
 
-		<!-- TEMP! styles -->
-		<style>
-			.story-block-header {
-				/*border: 1px dotted silver;
-				border-radius: 4px;*/
-				padding: 5px 0;
-				border-left: 4px solid #00a0b0;
-				box-shadow: 0 1px 8px rgba(0, 0, 0, .125);
-			}
-
-			/* fix this heavy legacy ID */
-			#sub-wrap .story-block-header > h2,
-			#sub-wrap	.story-block-header > h4 { border: none; }
-		</style>
-
-		<!-- title -->
 		<title>{{ site.title }} | {{ page.title }}</title>
 
 		{% include dtc-ga-snp.html %}
@@ -36,10 +19,10 @@ layout: compress
 	<body>
 		<p class="subtext"><a href="/index.html">&#8592; Back to homepage?</a></p>
 
-		<div id="wrap">
+		<div class="wrap">
 			<h1 class="hero-head">R&eacute;sum&eacute;</h1>
 			<h4 class="hero-sub-head">of Alessandro Di Tecco</h4>
-				<div id="sub-wrap">
+				<div class="sub-wrap">
 					{{ content | markdownify }}
 				</div> <!-- subwrap -->
 		</div> <!-- wrap -->
