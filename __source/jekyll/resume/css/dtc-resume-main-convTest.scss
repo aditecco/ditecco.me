@@ -168,6 +168,8 @@ h1 {
 new!
 --------------------------------- */
 
+.special-char { color: red; }
+
 .section-header {
 	display: flex;
 	justify-content: center;
@@ -178,11 +180,10 @@ new!
 	}
 }
 
-
-.special-char { color: red; }
-
 .story-block {
 	.story-block-header {
+		// experimental
+		position: relative;
 		padding: 30px 10px;
 		border-bottom: 1px dotted #E0D6CC;
 		h2, h4 {
@@ -194,6 +195,16 @@ new!
 			border-bottom: 1px solid #00a0b0;
 			background-color: rgba(#E0D6CC, .25);
 			cursor: pointer;
+			// experimental
+			&::before {
+				position: absolute;
+				right: 10px;
+				top: 45px;
+				padding: 5px 10px;
+				border-radius: 20px;
+				content: 'click to toggle';
+				background-color: wheat;
+			}
 		}
 	}
 	.story-block-body {
