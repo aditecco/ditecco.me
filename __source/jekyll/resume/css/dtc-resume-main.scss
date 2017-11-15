@@ -152,10 +152,18 @@ h1 {
 new!
 --------------------------------- */
 
-/* ---------------------------------
-- [OPTIM] CSS tweaks & improvements
-	- .section-heading: margin should go to parent header
---------------------------------- */
+// buttons
+.cta-button {
+	padding: 10px;
+	border-radius: 4px;
+	text-align: center;
+	color: $background-page-inner;
+	background-color: $accent-primary;
+	&:hover {
+		color: $background-page-inner;
+		background-color: darken($accent-primary, 15%);
+	}
+}
 
 // special formatting
 .special-char { color: red; }
@@ -216,6 +224,21 @@ new!
 	margin-bottom: 50px;
 	// &::after { content: '* * *' }
 	ul { list-style: circle; }
+}
+
+// quick-outline--contact
+.quick-outline--contact {
+	.quick-outline--contact-inner {
+		display: flex;
+		align-items: center;
+		margin-top: 20px;
+		& > * {
+			flex-grow: .5;
+			margin: 0;
+		}
+		.contact-button {
+		}
+	}
 }
 
 

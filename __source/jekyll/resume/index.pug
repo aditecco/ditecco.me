@@ -78,10 +78,12 @@ block content
 
 		.outline-block.quick-outline--contact
 			h2.alt-par-heading Contact info
-			p The best way to get in touch with me is via good-old e-mail.
-			ul
-				li If you're interested in hiring me for design work, please write to: #[a(href='mailto:hello@simplest.io') hello@simplest.io]
-				li For any other matter, my e-mail is: #[a(href='mailto:alessandro@ditecco.me') alessandro@ditecco.me]
+			.quick-outline--contact-inner
+				p The best way to get in touch with me is via good-old e-mail.
+				//- ul
+				//- 	li If you're interested in hiring me for design work, please write to: #[a(href='mailto:hello@simplest.io') hello@simplest.io]
+				//- 	li For any other matter, my e-mail is: #[a(href='mailto:alessandro@ditecco.me') alessandro@ditecco.me]
+				a.cta-button.contact-button(href!='mailto:' + '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;') Contact me
 
 	hr.section-separator
 
