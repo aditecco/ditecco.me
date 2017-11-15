@@ -3,68 +3,68 @@ ditecco.me/resume responsive styles
 ======================== */
 
 @media screen and (max-width: 480px) {
-	
+
 	/* ========================
 	COMMON
 	======================== */
 
 	ul,
 	ol {padding-left: 1em;}
-	
+
 	.multiline-list {padding: 0;}
-	
+
 	.multiline-list li {list-style: none;}
-	
+
 
 	/* ========================
 	CONTAINERS
 	======================== */
-	
-	#wrap {width: 90%;}
-	
-	#sub-wrap {padding: 1.5em;}
-	
+
+	.wrapper {width: 90%;}
+
+	.container {padding: 1.5em;}
+
 
 	/* ========================
 	TEXT FORMATTING
 	======================== */
-	
-	#wrap .hero-head {font-size: 8em;}
-	
-	#sub-wrap h2 {
+
+	.wrapper .hero-head {font-size: 8em;}
+
+	.container h2 {
 		padding-left: 0;
 		padding-bottom: 0.3em;
 		border-left: none;
 		border-bottom: 4px solid #00a0b0;
 	}
-	
-	#sub-wrap .alt-par-heading {
+
+	.container .alt-par-heading {
 		padding-left: 0;
 		border-left: 0;
 		border-bottom: 4px solid #27ae60;
 	}
-	
-	#sub-wrap h4 {
+
+	.container h4 {
 		padding-left: 0;
 		padding-top: 0.45em;
 		border-left: none;
 	}
 }
 
-@media screen and (max-width: 375px) {	
+@media screen and (max-width: 375px) {
 
 	/* ========================
 	COMMON
 	======================== */
-	
+
 	.rbreak {display: block;}
-	
+
 	.rcloak {display: none;}
-	
+
 
 	/* ========================
 	TEXT FORMATTING
 	======================== */
-	
-	#wrap .hero-head {font-size: 5.5em;}
+
+	.wrapper .hero-head {font-size: 5.5em;}
 }
