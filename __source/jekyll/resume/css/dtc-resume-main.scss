@@ -79,6 +79,9 @@ CONTAINERS
 	background-color: #fff;
 	margin: 0;
 	padding: 2.5em;
+	// @media(max-width: 400px) {
+	// 	padding: 1.5em;
+	// }
 }
 
 
@@ -232,11 +235,19 @@ new!
 		display: flex;
 		align-items: center;
 		margin-top: 20px;
-		& > * {
-			flex-grow: .5;
-			margin: 0;
+		p {
+			flex-basis: 70%;
+			margin: 0 15px 0 0;
 		}
-		.contact-button {
+		.contact-button { flex-basis: 30%; }
+		@media(max-width: 600px) {
+			flex-flow: column nowrap;
+			p { margin: 0 0 20px; }
+			.contact-button {
+				// should be applied globally!
+				box-sizing: border-box;
+				width: 100%;
+			}
 		}
 	}
 }
@@ -267,6 +278,10 @@ new!
 				border-radius: 20px;
 				content: 'click to toggle';
 				background-color: $background-page-outer;
+				// too much nesting?
+				@media(max-width: 750px) {
+					content: none;
+				}
 			}
 		}
 	}
