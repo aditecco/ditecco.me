@@ -2,19 +2,30 @@
 doctype
 html
 	head
+		//- check contents against this: https://github.com/joshbuchea/HEAD
+		//- for unicode chars
+		//- https://stackoverflow.com/questions/1696619/displaying-unicode-symbols-in-html
+		meta(http-equiv='Content-Type', content='text/html', charset='utf-8')
 		meta(name="description" content="")
 		link(href='http://fonts.googleapis.com/css?family=Arvo|Kaushan+Script|Karla', rel='stylesheet', type='text/css')
 		//- temp stylesheet!
 		link(rel="stylesheet", href="css/dtc-resume-main-convTest.css", type="text/css")
 		title
 	body
-		p.subtext
-			a(href="/index.html") &#8592; Back to homepage?
+		nav.page-controls
+			ul.subtext
+				li #[a(href="/index.html") &#8592; Back to homepage]
+				//- add country flag
+				li #[a(href="#") Italian version]
+
 		.wrapper
-			h1.hero-head R&eacute;sum&eacute;
-			h4.hero-sub-head of Alessandro Di Tecco
+			.hero
+				h1.hero-head R&eacute;sum&eacute;
+				h4.hero-sub-head of Alessandro Di Tecco
+
 			main.container
 				block content
+
 		footer
 			p.subtext All content &copy; 2017 Alessandro Di Tecco<br>
 				a(href="#") &#8593; Back to top
