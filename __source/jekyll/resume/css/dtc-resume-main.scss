@@ -204,17 +204,8 @@ new!
 .section-header {
 	margin-bottom: 40px;
 	.section-heading {
-		// based on: https://stackoverflow.com/questions/16399232/restrict-border-width-to-text-width-in-a-block-element#16401443
-		// but loses centered alignment
-		display: table-cell;
-		margin: 0 auto;
+		margin: 0;
 		font-size: 30px;
-		border-bottom: 2px solid #E0D6CC;
-		&::after {
-			display: table-cell;
-			width: 100%;
-			content: '';
-		}
 	}
 	p { margin-bottom: 0; }
 }
