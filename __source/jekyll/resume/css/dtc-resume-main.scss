@@ -8,6 +8,14 @@
 dtc-resume-main.scss
 ======================== */
 
+/* ---------------------------------
+colors
+--------------------------------- */
+
+$background-page-outer: #F7ECE1;
+$background-page-inner: #f2f2f2;
+$accent-primary: #00a0b0;
+
 /* ========================
 COMMON
 ======================== */
@@ -50,8 +58,6 @@ a:hover {
 	background-color: #fadf63;
 	color: #5a5a5a;
 }
-
-::-moz-selection {background-color: #fadf63;}
 
 ::selection {background-color: #fadf63;}
 
@@ -114,28 +120,6 @@ h1 {
 	margin: 0 0 1.25em 0;
 }
 
-.wrapper .hero-head {
-	font-family: 'Kaushan Script', cursive;
-	font-weight: 400;
-	font-size: 11em;
-	letter-spacing: -0.09em;
-	color: #00a0b0;
-	margin: 0 0 0 -0.25em;
-	padding: 0.25em 0 0;
-	text-decoration: none;
-}
-
-.wrapper .hero-sub-head {
-	text-align: center;
-	color: #00a0b0;
-	margin: 0;
-	padding: 0 0 2.5em 0;
-}
-
-.container .underline {
-	border-bottom: 2px solid #E0D6CC;
-}
-
 .container h2 {
 	font-size: 1.5em;
 	margin-bottom: 0;
@@ -168,6 +152,37 @@ h1 {
 new!
 --------------------------------- */
 
+/* ---------------------------------
+- [OPTIM] CSS tweaks & improvements
+	- .section-heading: margin should go to parent header
+--------------------------------- */
+
+// special formatting
+.special-char { color: red; }
+
+.underline { border-bottom: 2px solid #E0D6CC; }
+
+
+// hero
+.hero {
+	padding: 45px 0;
+	.hero-head {
+		margin: 0 0 0 -0.25em;
+		font-family: 'Kaushan Script', cursive;
+		font-weight: 400;
+		font-size: 11em;
+		letter-spacing: -0.09em;
+		color: #00a0b0;
+	}
+	.hero-sub-head {
+		text-align: center;
+		color: #00a0b0;
+		margin: 0;
+	}
+}
+
+
+// nav
 .page-controls {
 	ul {
 		display: flex;
@@ -184,28 +199,40 @@ new!
 	}
 }
 
-.special-char { color: red; }
 
+// section header
 .section-header {
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
+	margin-bottom: 40px;
 	.section-heading {
-		margin: 0 auto 40px;
+		// based on: https://stackoverflow.com/questions/16399232/restrict-border-width-to-text-width-in-a-block-element#16401443
+		// but loses centered alignment
+		display: table-cell;
+		margin: 0 auto;
 		font-size: 30px;
 		border-bottom: 2px solid #E0D6CC;
+		&::after {
+			display: table-cell;
+			width: 100%;
+			content: '';
+		}
 	}
+	p { margin-bottom: 0; }
 }
 
+
+// outline-block
 .outline-block {
 	margin-bottom: 50px;
 	// &::after { content: '* * *' }
 	ul { list-style: circle; }
 }
 
+
+// story-block
 .story-block {
+	&:nth-of-type(1),
+	&:nth-of-type(9) { border-top: 1px dotted #E0D6CC; }
 	.story-block-header {
-		// experimental
 		position: relative;
 		padding: 30px 10px;
 		border-bottom: 1px dotted #E0D6CC;
@@ -216,9 +243,8 @@ new!
 		h4 { color: inherit; }
 		&:hover {
 			border-bottom: 1px solid #00a0b0;
-			background-color: rgba(#E0D6CC, .25);
+			background-color: rgba(#E0D6CC, .15);
 			cursor: pointer;
-			// experimental
 			&::before {
 				position: absolute;
 				right: 10px;
@@ -226,7 +252,7 @@ new!
 				padding: 5px 10px;
 				border-radius: 20px;
 				content: 'click to toggle';
-				background-color: wheat;
+				background-color: $background-page-outer;
 			}
 		}
 	}
@@ -238,7 +264,6 @@ new!
 	// reqs js adjustments
 	// .story-block-footer { border-bottom: 1px dotted #E0D6CC; }
 }
-
 
 
 /* fix this heavy legacy ID */
