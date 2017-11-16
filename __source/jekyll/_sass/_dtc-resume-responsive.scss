@@ -8,12 +8,16 @@ ditecco.me/resume responsive styles
 	COMMON
 	======================== */
 
+	.rbreak { display: block; }
+
+	.rhide { display: none; }
+
 	ul,
 	ol {padding-left: 1em;}
 
-	.multiline-list {padding: 0;}
+	// .multiline-list {padding: 0;}
 
-	.multiline-list li {list-style: none;}
+	// .multiline-list li {list-style: none;}
 
 
 	/* ========================
@@ -38,7 +42,7 @@ ditecco.me/resume responsive styles
 		border-bottom: 4px solid #00a0b0;
 	}
 
-	.container .alt-par-heading {
+	.container .outline-block-list-heading {
 		padding-left: 0;
 		border-left: 0;
 		border-bottom: 4px solid #27ae60;
@@ -52,15 +56,6 @@ ditecco.me/resume responsive styles
 }
 
 @media screen and (max-width: 375px) {
-
-	/* ========================
-	COMMON
-	======================== */
-
-	.rbreak {display: block;}
-
-	.rcloak {display: none;}
-
 
 	/* ========================
 	TEXT FORMATTING

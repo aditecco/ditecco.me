@@ -61,8 +61,6 @@ a:hover {
 
 ::selection {background-color: #fadf63;}
 
-.rbreak {display: none;}
-
 
 /* ========================
 CONTAINERS
@@ -130,11 +128,12 @@ h1 {
 	border-left: 4px solid #00a0b0;
 }
 
-.container .alt-par-heading {
-	padding-left: 0.2em;
-	border-left: 4px solid #27ae60;
-}
+// .container .alt-par-heading {
+// 	padding-left: 0.2em;
+// 	border-left: 4px solid #27ae60;
+// }
 
+// change this to a heading!
 .container .list-heading {
 	font-family: 'Arvo', serif;
 	font-weight: 400;
@@ -154,6 +153,15 @@ h1 {
 /* ---------------------------------
 new!
 --------------------------------- */
+
+// other
+.rbreak { display: none; }
+
+.rhide {
+	// inserts a space before and after separator
+	&::before { content: ' ' }
+	&::after { content: ' ' }
+}
 
 // buttons
 .cta-button {
@@ -226,7 +234,26 @@ new!
 .outline-block {
 	margin-bottom: 50px;
 	// &::after { content: '* * *' }
-	ul { list-style: circle; }
+	.outline-block-list-heading {
+		padding-left: 0.2em;
+		margin: 0 0 20px;
+		border-left: 4px solid #27ae60;
+	}
+	ul {
+		margin: 0;
+		list-style: circle;
+		@media(max-width: 500px) {
+			padding: 0;
+			list-style: none;
+			li {
+				padding-bottom: 15px;
+				margin-bottom: 15px;
+				border-bottom: 1px dotted #E0D6CC;
+				&:last-child { margin-bottom: 0; }
+				a { border-bottom: none; }
+			}
+		}
+	}
 }
 
 // quick-outline--contact
