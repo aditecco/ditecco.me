@@ -214,6 +214,10 @@ new!
 			&::after { content: none; }
 			&:last-child { margin: 0; }
 			&:last-child::after { content: none; }
+			img {
+				margin-left: 5px;
+				vertical-align: middle;
+			}
 		}
 	}
 }

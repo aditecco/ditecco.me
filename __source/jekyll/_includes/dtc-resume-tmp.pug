@@ -13,9 +13,11 @@ html
 	body
 		nav.page-controls
 			ul.subtext
-				li #[a(href="/index.html") &#8592; Back to homepage]
-				//- add country flag
-				li #[a(href="#") Italian version]
+				li
+					a(href="/index.html") &#8592; Back to homepage
+				li
+					a(href="#", id='lang-switcher') Italian version
+					img(src='img/it-flag.svg', width='16', height='auto')
 
 		.wrapper
 			.hero
