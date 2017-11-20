@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="36px" viewBox="0 0 60 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>us-flag-03</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="us-flag-03">
+            <g id="stripes">
+                <rect id="Rectangle" fill="#CC0000" x="0" y="0" width="60" height="4"></rect>
+                <rect id="Rectangle-Copy-4" fill="#CC0000" x="0" y="16" width="60" height="4"></rect>
+                <rect id="Rectangle-Copy-2" fill="#CC0000" x="0" y="8" width="60" height="4"></rect>
+                <rect id="Rectangle-Copy-10" fill="#CC0000" x="0" y="32" width="60" height="4"></rect>
+                <rect id="Rectangle-Copy-5" fill="#CC0000" x="0" y="24" width="60" height="4"></rect>
+                <rect id="Rectangle-Copy" fill="#FFFFFF" x="0" y="4" width="60" height="4"></rect>
+                <rect id="Rectangle-Copy-12" fill="#FFFFFF" x="0" y="28" width="60" height="4"></rect>
+                <rect id="Rectangle-Copy-6" fill="#FFFFFF" x="0" y="20" width="60" height="4"></rect>
+                <rect id="Rectangle-Copy-3" fill="#FFFFFF" x="0" y="12" width="60" height="4"></rect>
+            </g>
+            <rect id="field" fill="#000094" x="0" y="0" width="31" height="20"></rect>
+            <g id="stars" transform="translate(4.000000, 3.000000)" fill="#FFFFFF">
+                <rect id="Rectangle-2" transform="translate(1.500000, 11.500000) rotate(90.000000) translate(-1.500000, -11.500000) " x="0" y="10" width="3" height="3"></rect>
+                <rect id="Rectangle-2-Copy-8" transform="translate(11.500000, 11.500000) rotate(90.000000) translate(-11.500000, -11.500000) " x="10" y="10" width="3" height="3"></rect>
+                <rect id="Rectangle-2-Copy-10" transform="translate(21.500000, 11.500000) rotate(90.000000) translate(-21.500000, -11.500000) " x="20" y="10" width="3" height="3"></rect>
+                <rect id="Rectangle-2" transform="translate(6.500000, 6.500000) rotate(90.000000) translate(-6.500000, -6.500000) " x="5" y="5" width="3" height="3"></rect>
+                <rect id="Rectangle-2-Copy-8" transform="translate(16.500000, 6.500000) rotate(90.000000) translate(-16.500000, -6.500000) " x="15" y="5" width="3" height="3"></rect>
+                <rect id="Rectangle-2" transform="translate(1.500000, 1.500000) rotate(90.000000) translate(-1.500000, -1.500000) " x="0" y="0" width="3" height="3"></rect>
+                <rect id="Rectangle-2-Copy-8" transform="translate(11.500000, 1.500000) rotate(90.000000) translate(-11.500000, -1.500000) " x="10" y="0" width="3" height="3"></rect>
+                <rect id="Rectangle-2-Copy-10" transform="translate(21.500000, 1.500000) rotate(90.000000) translate(-21.500000, -1.500000) " x="20" y="0" width="3" height="3"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
