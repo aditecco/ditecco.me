@@ -153,9 +153,12 @@ $(document).ready(function() {
 			showConfirmation();
 			setTimeout(removeConfirmation, 1000);
 
-			// change button label & flag
-			$(this).text('English version')
-						 .next().fadeOut();
+			var buttonHandler = function() {
+				// change button label & flag
+				$('#lang-switcher').text('English version')
+													 .next().attr('src', 'img/us-flag.png');
+			}();
+
 		}
 	});
 }); // document.ready
