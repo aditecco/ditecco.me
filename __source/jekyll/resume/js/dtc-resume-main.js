@@ -15,85 +15,156 @@ $(document).ready(function() {
 		$(this).next().slideToggle();
 	});
 
+	// [IDEA]
+	// when an el is selected,
+	// (implementation)
+	// fade out other els
+	/* ---------------------------------
+	$('.story-block').map((ind, el) => {
+		let jqt = $(el);
+		jqt.fadeTo('slow', 0.25);
+	})
+	--------------------------------- */
+
+
 	/* ---------------------------------
 	language switcher
 	--------------------------------- */
 	$('.page-controls').on('click', '#lang-switcher', function(e) {
 		e.preventDefault();
-		/*
-		// outline blocks
-		var outlineBlocks = $('.outline-block');
 
-		$.map(outlineBlocks, function(e, i) {
-			var localizedContent = [
-				{
-					blockTitle: "Profilo &amp; skills",
-					listItem_0: {
-						listHeading: "UI Designer & Imprenditore",
-						listBody: "<span class='list-heading'>UI Designer & Imprenditore</span><br>User Interface Designer con approccio imprenditoriale, negli ultimi 5 anni ho lavorato sui miei progetti d'impresa sviluppando un'ampia esperienza nella creazione, vendita e mantenimento di prodotti o servizi."
+		// we need to prevent the script from being repeatedly executed
+		// when clicking the translation button multiple times
+		var checkLang = $(this).text();
+
+		if (checkLang === 'English version') {
+			// we need to offer a way to revert the process
+			// ...
+			console.log('Already translated!')
+		} else {
+			// outline blocks
+			var outlineBlocks = $('.outline-block');
+
+			$.map(outlineBlocks, function(e, i) {
+				var localizedOutlineContent = [
+					{
+						title: 'Profilo &amp; skills',
+						body: '<li><span class="list-heading">UI Designer &amp; Imprenditore</span><br>User Interface Designer con approccio imprenditoriale, negli ultimi 5 anni ho lavorato sui miei progetti d&#39;impresa sviluppando un&#39;ampia esperienza nella creazione, vendita e mantenimento di prodotti o servizi.</li><li><span class="list-heading">Un designer che scrive codice</span><br>Il mio output principale è high-fidelity mockups in Adobe Photoshop, ma sono anche in grado di scrivere HTML &amp; CSS di base (l&#39;esempio più recente è <a href="http://www.simplest.io">il mio portfolio responsive.</a>)</li>'
 					},
-					listItem_1: {
-						listHeading: "Un designer che scrive codice",
-						listBody: "<span class='list-heading'>Un designer che scrive codice</span><br>Il mio output principale è high-fidelity mockups in Adobe Photoshop, ma sono anche in grado di scrivere HTML & CSS di base (l'esempio più recente è [il mio portfolio responsive.](http://www.simplest.io))"
-					},
-					listItem_2: {
-						listHeading: "Di cosa mi occupo oggi (2016)",
-						listBody: "2011 ad oggi — Simplest</span><br>Dal 2011 lavoro come freelance User Interface Designer, con il brand Simplest: [simplest.io](http://www.simplest.io)"
+					{
+						title: 'Contatti',
+						body: 'Il modo migliore per contattarmi &egrave; via e-mail'
 					}
-				}
-			];
+				];
 
-			// e.innerText = localizedContent[i];
-			// e.firstChild.innerText = localizedContent[i.title];
-			// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_name_after_dot_operator
-			var buildPropName = 'listItem_' + i;
-			var locBlockTitle = localizedContent[i].blockTitle,
-					// locBlockListHeading = localizedContent[i]['listItem_' + i].listHeading,
-					locBlockListBody = localizedContent[i]['listItem_' + i].listBody;
+				var locOutlineBlockTitle = localizedOutlineContent[i].title,
+						locOutlineBlockListBody = localizedOutlineContent[i].body;
 
-			$(e).find('.outline-block-list-heading').text(locBlockTitle);
-			// $(e).find('.list-heading').text(locBlockListHeading);
-			$(e).find('li').html(locBlockListBody);
-		});
-		*/
+				$(e).find('.outline-block-list-heading').html(locOutlineBlockTitle);
+				$(e).find('ul').html(locOutlineBlockListBody);
+			});
 
-		// story blocks
-		var storyBlocks = $('.story-block');
+			// story blocks
+			var storyBlocks = $('.story-block');
 
-		$.map(storyBlocks, function(e, i) {
-			var localizedStoryContent = [
-				{
-					storyBlockTitle: "Freelance User Interface Designer",
-					storyBlockBody: "Mi occupo stabilmente di UI Design dal 2011, e dal 2015 ho deciso di dare un nome alla mia attività: l'ho chiamata Simplest, per ricordare a me stesso che le interfacce utente e le interazioni più semplici sono il fondamento delle migliori esperienze digitali. Negli ultimi 5 anni ho progettato una vasta gamma di prodotti digitali, spesso curandone l'immagine completa dall'identità al marketing: subscription e-commerce, web apps, applicazioni multi-piattaforma, & molto altro. [&rarr; Tutti i miei lavori](http://www.simplest.io) Inoltre, data la mia attuale esperienza nella creazione e gestione di uno spazio di coworking, ho sviluppato una comprensione a tutto tondo del ciclo di vita di un prodotto: progettazione (nell'ambito fisico o digitale), marketing & vendita, pricing, amministrazione, acquisizione clienti, fidelizzazione, customer care, e tutte le quotidiane attività di problem-solving che ogni imprenditore conosce bene."
-				},
-				{
-					storyBlockTitle: "foobar",
-					storyBlockBody: "Attivo da ottobre 2013, Geekville è il coworking per aziende e freelance del settore creativo, web, & mobile a Verona. [&rarr; Visita il sito](http://www.geekville.it) Ispirato agli uffici delle startup di Silicon Valley, Geekville è un ambiente di lavoro non convenzionale: offre tutto ciò che serve per essere produttivi, e allo stesso tempo favorisce l'incontro e lo scambio di conoscenze tra coworkers grazie all'atmosfera amichevole e informale. Geekville è attivo anche nella produzione di corsi & workshop, con il brand [&rarr; Geekville Learning.](http://www.geekvillelearning.it) Credits: Geekville è stato fondato e realizzato col fondamentale aiuto del mio socio Francesco Adami, con il quale attualmente sto gestendo la società."
-				},
-				{
-					storyBlockTitle: "Creator, Co-Founder, All-around Designer",
-					storyBlockBody: "Nel 2012 a Verona non esisteva una vera e propria offerta dedicata al coworking; certo, c'era abbondanza di professionisti e aziende con uffici più grandi del necessario, che per arrotondare affittavano qualcuno dei loro locali. Ma ho sempre pensato che questo non si potesse chiamare coworking; piuttosto, sub-affitto. Nessuno aveva ancora pensato di creare una realtà che facesse una cosa sola, e con la massima qualità: offrire spazi di lavoro come servizio per giovani aziende e professionisti, a un prezzo ragionevole. E' in questo vuoto che si è inserito The Collective. Durante la sua esistenza, in molti si sono incontrati a The Collective: alcuni hanno instaurato rapporti professionali, altri sono diventati semplicemente buoni amici. Alcuni ne hanno fatto quasi una seconda casa, altri ci hanno trovato lo spazio giusto per dare vita a quei progetti che da troppo tempo tenevano nel cassetto. Altri ancora si sono ispirati a The Collective per creare un proprio coworking. In ogni caso, The Collective ha lasciato il segno. Credits: un fondamentale aiuto nel realizzare e gestire The Collective è venuto dal mio socio Francesco Adami, con il quale attualmente conduco Geekville."
-				}
-			];
+			$.map(storyBlocks, function(e, i) {
+				var localizedStoryContent = [
+					{
+						title: '2011 - 2016 &mdash; Simplest',
+						jobTitle: 'Freelance User Interface Designer',
+						body: '<p>Mi occupo stabilmente di UI Design dal 2011, e dal 2015 ho deciso di dare un nome alla mia attività: l&#39;ho chiamata Simplest, per ricordare a me stesso che le interfacce utente e le interazioni più semplici sono il fondamento delle migliori esperienze digitali.</p><p>Negli ultimi 5 anni ho progettato una vasta gamma di prodotti digitali, spesso curandone l&#39;immagine completa dall&#39;identità al marketing: subscription e-commerce, web apps, applicazioni multi-piattaforma, &amp; molto altro.<a href="http://www.simplest.io">&rarr; Tutti i miei lavori</a></p><p>Inoltre, data la mia attuale esperienza nella creazione e gestione di uno spazio di coworking, ho sviluppato una comprensione a tutto tondo del ciclo di vita di un prodotto: progettazione (nell&#39;ambito fisico o digitale), marketing &amp; vendita, pricing, amministrazione, acquisizione clienti, fidelizzazione, customer care, e tutte le quotidiane attività di problem-solving che ogni imprenditore conosce bene.</p>'
+					},
+					{
+						title: '2013 - 2016 &mdash; Geekville',
+						jobTitle: 'Creatore, Co-Founder, Designer',
+						body: '<p>Attivo da ottobre 2013, Geekville è il coworking per aziende e freelance del settore creativo, web, &amp; mobile a Verona. <a href="http://www.geekville.it">&rarr; Visita il sito</a></p><p>Ispirato agli uffici delle startup di Silicon Valley, Geekville è un ambiente di lavoro non convenzionale: offre tutto ciò che serve per essere produttivi, e allo stesso tempo favorisce l&#39;incontro e lo scambio di conoscenze tra coworkers grazie all&#39;atmosfera amichevole e informale.</p><p>Geekville è attivo anche nella produzione di corsi &amp; workshop, con il brand <a href="http://www.geekvillelearning.it">&rarr; Geekville Learning.</a></p><p>Credits: Geekville è stato fondato e realizzato col fondamentale aiuto del mio socio Francesco Adami, con il quale attualmente sto gestendo la società.</p>'
+					},
+					{
+						title: '2012 - 2013 &mdash; The Collective',
+						jobTitle: 'Creatore, Co-Founder, Designer',
+						body: '<p>Nel 2012 a Verona non esisteva una vera e propria offerta dedicata al coworking; certo, c&#39;era abbondanza di professionisti e aziende con uffici più grandi del necessario, che per arrotondare affittavano qualcuno dei loro locali. Ma ho sempre pensato che questo non si potesse chiamare coworking; piuttosto, sub-affitto.</p><p>Nessuno aveva ancora pensato di creare una realtà che facesse una cosa sola, e con la massima qualità: offrire spazi di lavoro come servizio per giovani aziende e professionisti, a un prezzo ragionevole. E&#39; in questo vuoto che si è inserito The Collective.</p><p>Durante la sua esistenza, in molti si sono incontrati a The Collective: alcuni hanno instaurato rapporti professionali, altri sono diventati semplicemente buoni amici. Alcuni ne hanno fatto quasi una seconda casa, altri ci hanno trovato lo spazio giusto per dare vita a quei progetti che da troppo tempo tenevano nel cassetto. Altri ancora si sono ispirati a The Collective per creare un proprio coworking. In ogni caso, The Collective ha lasciato il segno.</p><p>Credits: un fondamentale aiuto nel realizzare e gestire The Collective è venuto dal mio socio Francesco Adami, con il quale attualmente conduco Geekville.</p>'
+					},
+					{
+						title: '2011 - 2013 &mdash; The Digital League',
+						jobTitle: 'Founder, Designer',
+						body: '<p>I principali eventi tech/digital in Italia di norma sono un&#39;esclusiva delle grandi città come Roma o Milano. E&#39; nel 2009 che ho avuto per la prima volta l&#39;idea di creare un&#39;organizzazione in grado di portare quel tipo di manifestazioni a Verona. Due anni dopo, nel 2011, ho fondato The Digital League: un&#39;associazione con l&#39;obiettivo di portare a Verona i migliori eventi nazionali e internazionali su internet, tecnologia, startup e cultura digitale, favorendo così la nascita di una tech-community locale. </p><p>Nei suoi due anni di attività, The Digital League ha ottenuto molte conquiste:</p><ul><li>Ha creato The Collective, il primo coworking a Verona per professionisti creativi &amp; digitali;</li><li>Ha creato il format Digital Drink, ciclo di aperitivi di networking che hanno offerto a molte startup l&#39;opportunità di presentare il proprio prodotto a un pubblico selezionato;</li><li>Ha attivato relazioni e collaborazioni, nella forma della media partnership, con eventi e iniziative tech italiane e internazionali;</li><li>E&#39; stata uno degli sponsor paganti di Startup Weekend Verona 2012.</li></ul>'
+					},
+					{
+						title: '01-06/2011 &mdash; Ninja Marketing',
+						jobTitle: 'Contributor',
+						body: '<p>Ninja Marketing è uno dei principali blog di marketing italiani, con particolare specializzazione su social media &amp; unconventional.</p><p>Come contributor per la Sezione Startup ho scritto news e approfondimenti, interviste e analisi sul mondo startup italiano. <a href="http://www.ninjamarketing.it/author/alessandro-ditecco/">&rarr; Leggi i miei post</a></p>'
+					},
+					{
+						title: '04-06/2011 &mdash; Ninja Marketing',
+						jobTitle: 'Editor',
+						body: '<p>La Sezione Design è stata un&#39;assoluta novità per Ninja Marketing ed ha introdotto un grande cambiamento nella tradizione marketing-centrica del sito: sono stato scelto come editor per gestirne il lancio al pubblico, curarne la linea editoriale, reclutare e coordinare un team di contributors. <a href="http://www.ninjamarketing.it/2011/04/19/ninja-marketing-speaks-design-al-via-la-nuova-sezione-dedicata-alle-arti-visive-a-tutto-tondo/">&rarr; Post di lancio della Sezione Design</a></p>'
+					},
+					{
+						title: '2010 - 2011 &mdash; Clab Comunicazione',
+						jobTitle: 'Copywriter',
+						body: '<p>Clab Comunicazione è un&#39;agenzia pubblicitaria; ho lavorato principalmente come copywriter, ma anche in qualità di responsabile dell&#39;area digitale (siti web, adv online, e altri), sia come designer che come project manager.</p>'
+					},
+					{
+						title: '2007 - 2009 &mdash; BCF',
+						jobTitle: 'Copywriter',
+						body: '<p>BCF è un&#39;agenzia di pubblicità e studio di design industriale con oltre 30 anni di esperienza. Ho lavorato principalmente come copywriter, ma mi sono anche occupato di presentare progetti creativi ai maggiori clienti d&#39;agenzia e di ideare/gestire progetti digitali.</p>'
+					},
+					{
+						title: '03-05/2014 &mdash; Behance Portfolio Reviews',
+						jobTitle: 'Organizzatore',
+						body: '<p>Sono stato uno degli organizzatori di Behance Portfolio Reviews Verona 2014, prima edizione in assoluto per la città: <a href="http://www.geekvillelearning.it/offerta-formativa/behance-portfolio-review-verona/">&rarr; Behance Portfolio Reviews Verona 2014</a></p><p>Behance Portfolio Review è un format pensato per incitare i professionisti della creatività a scambiarsi feedback sui propri lavori.</p><p>Come organizzatore mi sono occupato di:</p><ul><li>Marketing dell&#39;evento;</li><li>Vendita dei biglietti;</li><li>Allestimento dei locali della manifestazione (pre &amp; post evento);</li><li>Conduzione dell&#39;evento;</li><li>Comunicazione con Behance HQ in USA.</li></ul><p>Credits: per il reclutamento degli ospiti speciali e dei Review Leaders un grande aiuto è venuto da Stefano Torregrossa &amp; Matteo Cuccato, che hanno messo a disposizione il loro network di conoscenze personali e professionali.</p>'
+					},
+					{
+						title: '04/2013 &mdash; Startup Weekend',
+						jobTitle: 'Coach',
+						body: '<p>Nell&#39;aprile 2013 <a href="http://www.h-farmventures.com/en/">H-Farm</a> (uno dei maggiori acceleratori di startup italiani) ha organizzato e ospitato Startup Weekend Venezia; sono stato invitato a partecipare all&#39;evento in qualità di Coach: <a href="https://web.archive.org/web/20131115072955/http://venice.startupweekend.org/">&rarr; Startup Weekend Venice 2013</a></p><p>Quello del Coach è un ruolo importante all&#39;interno di uno Startup Weekend: il Coach è fondamentalmente un esperto nella sua materia – nel mio caso, UI Design &amp; Logo Design – che assiste i team mettendo a disposizione la propria conoscenza.</p>'
+					},
+					{
+						title: '10-12/2012 &mdash; Startup Weekend',
+						jobTitle: 'Organizzatore',
+						body: '<p>Sono stato uno dei 3 organizzatori di Startup Weekend Verona 2012, per la prima volta in assoluto nella città: <a href="https://web.archive.org/web/20121217072032/http://verona.startupweekend.org/">&rarr; Startup Weekend Verona 2012</a></p><p>Organizzare uno Startup Weekend è un&#39;attività che richiede molta pianificazione, e l&#39;abilità di saper gestire una moltitudine di aspetti:</p><ol><li>Reperimento sponsor;</li><li>Reclutamento di coach e giuria;</li><li>Marketing dell&#39;evento;</li><li>Relazioni pubbliche dell&#39;evento;</li><li>Vendita dei biglietti e customer service;</li><li>Allestimento dei locali della manifestazione (pre &amp; post evento);</li><li>Conduzione dell&#39;evento secondo il programma stabilito;</li><li>Gestione dei premi e comunicazione con aziende partner;</li><li>Lavoro amministrativo (gestire gli incassi, emettere fatture, etc);</li><li>Comunicazione con gli HQ di Startup Weekend in USA.</li></ol><p>Personalmente ho lavorato soprattutto negli ambiti 2, 3, 5, 6, 8. Inoltre, ho realizzato l&#39;immagine dell&#39;evento: <a href="http://www.simplest.io/work/startup-weekend-verona.html">&rarr; Startup Weekend Verona 2012 on Simplest</a></p><p>Grazie al lavoro di tutti l&#39;evento ha avuto un grande successo, con 120+ partecipanti.</p>'
+					}
+				];
 
-			var locStoryBlockTitle = localizedStoryContent[i].storyBlockTitle,
-					locStoryBlockListBody = localizedStoryContent[i].storyBlockBody;
+				var locStoryBlockTitle = localizedStoryContent[i].title,
+						locStoryBlockJobTitle = localizedStoryContent[i].jobTitle,
+						locStoryBlockBody = localizedStoryContent[i].body;
 
-			$(e).find('h4').text(locStoryBlockTitle);
-			$(e).find('.story-block-body').html(locStoryBlockListBody);
-		});
+				$(e).find('h2').html(locStoryBlockTitle);
+				$(e).find('h4').text(locStoryBlockJobTitle);
+				$(e).find('.story-block-body').html(locStoryBlockBody);
+			});
 
-		window.alert('translated!');
+			// we need to show confirmation after the text has been replaced
+			function showConfirmation() {
+				var confMessage = '<p id="confMessage" style="padding: 20px; background-color: #fadf63; text-align: center">contenuti ora in italiano!</p>';
+
+				$('.page-controls').append(confMessage);
+			}; // immediately-invoked!
+
+			// we auto-remove the conf message after 2 seconds
+			function removeConfirmation() {
+				$('#confMessage').fadeOut(500, function() {
+					this.remove();
+				});
+				console.log('Removing confirmation message...');
+			};
+
+			showConfirmation();
+			setTimeout(removeConfirmation, 1000);
+
+			// change button label & flag
+			$(this).text('English version')
+						 .next().fadeOut();
+		}
 	});
 }); // document.ready
 
-// [IDEA]
-// when an el is selected,
-// (implementation)
-// fade out other els
-/* ---------------------------------
-$('.story-block').map((ind, el) => {
-	let jqt = $(el);
-	jqt.fadeTo('slow', 0.25);
-})
---------------------------------- */
+
+
+
+
+
+
+
+
