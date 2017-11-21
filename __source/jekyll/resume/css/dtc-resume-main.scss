@@ -221,6 +221,28 @@ new!
 }
 
 
+// elevator
+.elevator {
+	// or sticky?
+	visibility: hidden;
+	position: fixed;
+	// should it be relative to the wrapper?
+	top: 2%;
+	right: 2%;
+	box-sizing: border-box;
+	width: 55px;
+	height: 55px;
+	padding: 17px 0;
+	border-radius: 100%;
+	font-size: 14px;
+	color: #f1f1f1;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: rgba($accent-primary, .6);
+	@media(min-width: 990px) { visibility: visible; }
+}
+
+
 // notification-bar
 .notification-bar {
 	// visibility: hidden;
