@@ -6,295 +6,253 @@
 extends dtc-resume-tmp
 
 block content
-	//- ========================
-	//- quick-outline
-	//- ========================
-	section.quick-outline
-		header.section-header
-			h1.section-heading
-				span.underline Quick outline
+	.wrapper
+		.hero
+			h1.hero-head R&eacute;sum&eacute;
+			h4.hero-sub-head of Alessandro Di Tecco
 
-		.outline-block.quick-outline--profile
-			h2.outline-block-list-heading Profile &amp; skills
-			ul
-				li
-					span.list-heading User Interface Designer
-					br
-					| Since 2011, I’ve been designing interfaces for a diverse range of digital products.
-				li
-					span.list-heading I love coding!
-					br
-					| My primary output is high-fidelity mockups designed in my design tool of choice; however, I can code basic HTML &amp; CSS and I'm comfortable with the Unix/macOS command line.
-				li
-					span.list-heading Entrepreneurial experience
-					br
-					| In the past 6 years I've been working on my own ventures, developing firsthand experience of what it means to build, sell, and maintain a product or service.
+		.container
+			//- ========================
+			//- quick-outline
+			//- ========================
+			section.quick-outline
+				header.section-header
+					h1.section-heading
+						span.underline Quick outline
 
-		//- .outline-block.quick-outline--current
-		//- 	h2.outline-block-list-heading What I do today (2017)
-		//- 	ul
-		//- 		li
-		//- 			span.list-heading 2011 to present &mdash; Simplest
-		//- 			br
-		//- 			| Simplest is my one-man-band #[a(href='http://www.simplest.io/?ref=dtc-resume', target='_blank') User Interface Design studio]
+				.outline-block.quick-outline--profile
+					h2.outline-block-list-heading Profile &amp; skills
+					ul
+						li
+							span.list-heading User Interface Designer
+							br
+							| Since 2011, I’ve been designing interfaces for a diverse range of digital products.
+						li
+							span.list-heading I love coding!
+							br
+							| My primary output is high-fidelity mockups designed in my design tool of choice; however, I can code basic HTML &amp; CSS and I'm comfortable with the Unix/macOS command line.
+						li
+							span.list-heading Entrepreneurial experience
+							br
+							| In the past 6 years I've been working on my own ventures, developing firsthand experience of what it means to build, sell, and maintain a product or service.
 
-		//- .outline-block.quick-outline--past
-		//- 	h2.outline-block-list-heading Past work (2007-2017)
-		//- 	ul
-		//- 		li
-		//- 			span.list-heading 2013 - 2017 &mdash; Geekville
-		//- 			br
-		//- 			| I created #[a(href='/archive/geekville/en/', target='_blank') Geekville,] a coworking space for digital &amp; creative pros
-		//- 		li
-		//- 			span.list-heading 2012 - 2013 &mdash; The Collective
-		//- 			br
-		//- 			| I created #[a(href='/archive/the-collective/', target='_blank') The Collective,] the first authentic coworking space in Verona
-		//- 		li
-		//- 			span.list-heading 2011 - 2013 &mdash; The Digital League
-		//- 			br
-		//- 			| I created #[a(href='/archive/the-digital-league/', target='_blank') The Digital League,] a local community for tech enthusiasts
-		//- 		li
-		//- 			span.list-heading 01-06/2011 &mdash; Ninja Marketing
-		//- 			br
-		//- 			| I wrote for Ninja Marketing, one of the leading Italian marketing blogs, both as a contributor for the Startup section, and as an editor for the Design section: #[a(href='http://www.ninjamarketing.it/author/alessandro-ditecco/', target='_blank') my posts on Ninja Marketing]
-		//- 		li
-		//- 			span.list-heading 2010 - 2011 &mdash; Clab Comunicazione
-		//- 			br
-		//- 			| I worked as a Copywriter &amp; designer for digital projects at #[a(href='http://www.clabcomunicazione.it', target='_blank') Clab Comunicazione]
-		//- 		li
-		//- 			span.list-heading 2007 - 2009 &mdash; BCF
-		//- 			br
-		//- 			| I worked as a Copywriter at #[a(href='http://www.bcf.it', target='_blank') BCF]
+				.outline-block.quick-outline--contact
+					h2.outline-block-list-heading Contact info
+					.quick-outline--contact-inner
+						p The best way to get in touch with me is via good-old e-mail.
+						a.cta-button.contact-button(href!='mailto:' + '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;') Contact me
 
-		//- .outline-block.quick-outline--other
-		//- 	h2.outline-block-list-heading Other experiences (2012-2014)
-		//- 	ul
-		//- 		li
-		//- 			span.list-heading 03-05/2014 &mdash; Behance Portfolio Reviews Verona
-		//- 			br
-		//- 			| I was the lead organizer for #[a(href='http://www.geekvillelearning.it/offerta-formativa/behance-portfolio-review-verona/', target='_blank') Behance Portfolio Reviews Verona 2014]
-		//- 		li
-		//- 			span.list-heading 10-12/2012 &mdash; Startup Weekend Verona
-		//- 			br
-		//- 			| I was 1/3 of the organizing team for #[a(href='https://web.archive.org/web/20121217072032/http://verona.startupweekend.org/', target='_blank') Startup Weekend Verona 2012:]
+	.wrapper
+		.container
+			//- ========================
+			//- full-story
+			//- ========================
+			section.full-story
+				header.section-header
+					h1.section-heading
+						| The full story
+						span.special-char *
+					p
+						span.special-char *
+						|  This isn't exactly a r&eacute;sum&eacute;; it's more of a story of my professional path so far. However, those who don't have the time to read all this stuff will appreciate the previous "Quick Outline" section.
+						| Click on a section to show its contents, or #[a(href='#') expand all sections]
 
-		.outline-block.quick-outline--contact
-			h2.outline-block-list-heading Contact info
-			.quick-outline--contact-inner
-				p The best way to get in touch with me is via good-old e-mail.
-				a.cta-button.contact-button(href!='mailto:' + '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;') Contact me
+				.story-block
+					header.story-block-header
+						h2
+							| 2011 - 2017
+							span.rhide &mdash;
+							br.rbreak
+							| Simplest
+						h4 Freelance User Interface Designer
 
-	hr.section-separator
+					.story-block-body
+						p I've been designing interfaces as a freelancer since 2011; starting from 2015, I decided to create my solo User Interface Design studio: I called it Simplest, to remind myself that the simplest user interfaces &amp; interactions are the building blocks of the best digital experiences.
 
-	//- ========================
-	//- full-story
-	//- ========================
-	section.full-story
-		header.section-header
-			h1.section-heading
-				| The full story
-				span.special-char *
-			p
-				span.special-char *
-				|  This isn't exactly a r&eacute;sum&eacute;; it's more of a story of my professional path so far. However, those who don't have the time to read all this stuff will appreciate the previous "Quick Outline" section.
-				| Click on a section to show its contents.
+						p Over the past 6 years I designed a diverse range of digital products, often taking care of the full product image, from identity to marketing visuals: subscription e-commerce sites, highly detailed web apps, multi-platform apps, &amp; more. #[a(href='http://www.simplest.io/?ref=dtc-resume', target='_blank') &rarr; check out my works]
 
-		.story-block
-			header.story-block-header
-				h2
-					| 2011 - 2017
-					span.rhide &mdash;
-					br.rbreak
-					| Simplest
-				h4 Freelance User Interface Designer
+						p Moreover, given my past entrepreneurial experience in building and managing a coworking space, I developed a solid understanding of what it means to build a product: from design (both in the physical and digital realm) to marketing &amp; sales, pricing, admin, client acquisition, client retention, customer care, and all the daily problem-solving founders are accustomed to.
+						//- try adding a small separator after each block
+					//- .story-block-footer
 
-			.story-block-body
-				p I've been designing interfaces as a freelancer since 2011; starting from 2015, I decided to create my solo User Interface Design studio: I called it Simplest, to remind myself that the simplest user interfaces &amp; interactions are the building blocks of the best digital experiences.
+				.story-block
+					header.story-block-header
+						h2
+							| 2013 - 2017
+							span.rhide &mdash;
+							br.rbreak
+							| Geekville
+						h4 Creator, Co-Founder, All-around Designer
 
-				p Over the past 6 years I designed a diverse range of digital products, often taking care of the full product image, from identity to marketing visuals: subscription e-commerce sites, highly detailed web apps, multi-platform apps, &amp; more. #[a(href='http://www.simplest.io/?ref=dtc-resume', target='_blank') &rarr; check out my works]
+					.story-block-body
+						p Founded in oct. 2013, #[a(href='/archive/geekville/en/', target='_blank') Geekville] was a coworking space for digital and creative professionals operating in the Verona area.
 
-				p Moreover, given my past entrepreneurial experience in building and managing a coworking space, I developed a solid understanding of what it means to build a product: from design (both in the physical and digital realm) to marketing &amp; sales, pricing, admin, client acquisition, client retention, customer care, and all the daily problem-solving founders are accustomed to.
-				//- try adding a small separator after each block
-			//- .story-block-footer
+						p Inspired by the coolest startup HQs, Geekville was no ordinary workplace; while providing state-of-the-art office facilities, its friendly and creative vibe encouraged socializing and knowledge sharing among coworkers.
 
-		.story-block
-			header.story-block-header
-				h2
-					| 2013 - 2017
-					span.rhide &mdash;
-					br.rbreak
-					| Geekville
-				h4 Creator, Co-Founder, All-around Designer
+						p Geekville also created courses and workshops under the dedicated brand #[a(href='http://www.geekvillelearning.it', target='_blank') &rarr; Geekville Learning]
 
-			.story-block-body
-				p Founded in oct. 2013, #[a(href='/archive/geekville/en/', target='_blank') Geekville] was a coworking space for digital and creative professionals operating in the Verona area.
+						p Credits: I founded, built and ran Geekville with the help of my business associate Francesco Adami.
 
-				p Inspired by the coolest startup HQs, Geekville was no ordinary workplace; while providing state-of-the-art office facilities, its friendly and creative vibe encouraged socializing and knowledge sharing among coworkers.
+				.story-block
+					header.story-block-header
+						h2
+							| 2012 - 2013
+							span.rhide &mdash;
+							br.rbreak
+							| The Collective
+						h4 Creator, Co-Founder, All-around Designer
 
-				p Geekville also created courses and workshops under the dedicated brand #[a(href='http://www.geekvillelearning.it', target='_blank') &rarr; Geekville Learning]
+					.story-block-body
+						p In 2012 in Verona there weren't any significant coworking spaces; sure, there were plenty of professionals &amp; companies with more office space than they needed, who rented their spare rooms making some cash in the process: but I call this subletting, not coworking.
 
-				p Credits: I founded, built and ran Geekville with the help of my business associate Francesco Adami.
+						p So, there wasn't any company whose only focus was offering young professionals &amp; startups a place to work, for a reasonable price. #[a(href='/archive/the-collective/', target='_blank') The Collective] was built around this exact need, and effectively filled this void as the first authentic, state-of-the-art coworking space in Verona.
 
-		.story-block
-			header.story-block-header
-				h2
-					| 2012 - 2013
-					span.rhide &mdash;
-					br.rbreak
-					| The Collective
-				h4 Creator, Co-Founder, All-around Designer
+						p During its life span The Collective brought a lot of people together: some of them became business partners, others just good friends. Some people elected the space as a second house, some others realized it was the right place to work on those projects they kept in a closet for too long. Others were so inspired they decided to try and build a coworking space on their own. Either way, The Collective made a lasting impact.
 
-			.story-block-body
-				p In 2012 in Verona there weren't any significant coworking spaces; sure, there were plenty of professionals &amp; companies with more office space than they needed, who rented their spare rooms making some cash in the process: but I call this subletting, not coworking.
+						p Credits: a big help in building and running The Collective came from my business associate Francesco Adami.
 
-				p So, there wasn't any company whose only focus was offering young professionals &amp; startups a place to work, for a reasonable price. #[a(href='/archive/the-collective/', target='_blank') The Collective] was built around this exact need, and effectively filled this void as the first authentic, state-of-the-art coworking space in Verona.
+				.story-block
+					header.story-block-header
+						h2
+							| 2011 - 2013
+							span.rhide &mdash;
+							br.rbreak
+							| The Digital League
+						h4 Founder, All-around Designer
 
-				p During its life span The Collective brought a lot of people together: some of them became business partners, others just good friends. Some people elected the space as a second house, some others realized it was the right place to work on those projects they kept in a closet for too long. Others were so inspired they decided to try and build a coworking space on their own. Either way, The Collective made a lasting impact.
+					.story-block-body
+						p The coolest tech events in Italy, both big or small, are usually held only in major cities like Milan or Rome. I've been thinking of a way to bring them to Verona, my city, since 2009. It was only after 2 years, in 2011, that I founded #[a(href='/archive/the-digital-league/', target='_blank') The Digital League:] a non-profit association aiming to bring the best national/international tech &amp; digital events to Verona. By gathering people around topics such as internet culture, tehnology, startup &amp; entrepreneurship, TDL aimed to create a local digital community.
 
-				p Credits: a big help in building and running The Collective came from my business associate Francesco Adami.
+						p Here's the most significant achievements of TDL:
 
-		.story-block
-			header.story-block-header
-				h2
-					| 2011 - 2013
-					span.rhide &mdash;
-					br.rbreak
-					| The Digital League
-				h4 Founder, All-around Designer
+						ul
+							li Founded The Collective, the first authentic coworking space in Verona;
+							li Created DigitalDrink, a networking event that gave several startups the opportunity to pitch their product to a selected audience;
+							li Created connections and relationships, in the form of media partnerships, with many tech conferences in Italy and abroad;
+							li Contributed to Startup Weekend Verona 2012 with a paid sponsorship.
 
-			.story-block-body
-				p The coolest tech events in Italy, both big or small, are usually held only in major cities like Milan or Rome. I've been thinking of a way to bring them to Verona, my city, since 2009. It was only after 2 years, in 2011, that I founded #[a(href='/archive/the-digital-league/', target='_blank') The Digital League:] a non-profit association aiming to bring the best national/international tech &amp; digital events to Verona. By gathering people around topics such as internet culture, tehnology, startup &amp; entrepreneurship, TDL aimed to create a local digital community.
+				.story-block
+					header.story-block-header
+						h2
+							| 01-06/2011
+							span.rhide &mdash;
+							br.rbreak
+							| Ninja Marketing
+						h4 Contributing writer
 
-				p Here's the most significant achievements of TDL:
+					.story-block-body
+						p Ninja Marketing is one of the leading Italian marketing blogs, with a focus on unconventional &amp; social media marketing.
 
-				ul
-					li Founded The Collective, the first authentic coworking space in Verona;
-					li Created DigitalDrink, a networking event that gave several startups the opportunity to pitch their product to a selected audience;
-					li Created connections and relationships, in the form of media partnerships, with many tech conferences in Italy and abroad;
-					li Contributed to Startup Weekend Verona 2012 with a paid sponsorship.
+						p As a contributor for the Startup section I wrote news and features, interviews and analysis about the Italian startup scene. #[a(href='http://www.ninjamarketing.it/author/alessandro-ditecco/', target='_blank') &rarr; read my posts on Ninja Marketing (in Italian)]
 
-		.story-block
-			header.story-block-header
-				h2
-					| 01-06/2011
-					span.rhide &mdash;
-					br.rbreak
-					| Ninja Marketing
-				h4 Contributing writer
+				.story-block
+					header.story-block-header
+						h2
+							| 04-06/2011
+							span.rhide &mdash;
+							br.rbreak
+							| Ninja Marketing
+						h4 Editor
 
-			.story-block-body
-				p Ninja Marketing is one of the leading Italian marketing blogs, with a focus on unconventional &amp; social media marketing.
+					.story-block-body
+						p The Design Section introduced a big change in NM's marketing-centric tradition; as an editor I was given the task of launching the new section, establishing an editorial line, and recruiting a team of contributors. #[a(href='http://www.ninjamarketing.it/2011/04/19/ninja-marketing-speaks-design-al-via-la-nuova-sezione-dedicata-alle-arti-visive-a-tutto-tondo/', target='_blank') &rarr; read my post for the launch of Ninja Marketing Design (in Italian)]
 
-				p As a contributor for the Startup section I wrote news and features, interviews and analysis about the Italian startup scene. #[a(href='http://www.ninjamarketing.it/author/alessandro-ditecco/', target='_blank') &rarr; read my posts on Ninja Marketing (in Italian)]
+				.story-block
+					header.story-block-header
+						h2
+							| 2010 - 2011
+							span.rhide &mdash;
+							br.rbreak
+							| Clab Comunicazione
+						h4 Copywriter
 
-		.story-block
-			header.story-block-header
-				h2
-					| 04-06/2011
-					span.rhide &mdash;
-					br.rbreak
-					| Ninja Marketing
-				h4 Editor
+					.story-block-body
+						p Clab Comunicazione is an ad agency. I worked mainly as a Copywriter, but I was also in charge of everything digital (websites, online adv, et al) both from a design &amp; management standpoint.
 
-			.story-block-body
-				p The Design Section introduced a big change in NM's marketing-centric tradition; as an editor I was given the task of launching the new section, establishing an editorial line, and recruiting a team of contributors. #[a(href='http://www.ninjamarketing.it/2011/04/19/ninja-marketing-speaks-design-al-via-la-nuova-sezione-dedicata-alle-arti-visive-a-tutto-tondo/', target='_blank') &rarr; read my post for the launch of Ninja Marketing Design (in Italian)]
+				.story-block
+					header.story-block-header
+						h2
+							| 2007 - 2009
+							span.rhide &mdash;
+							br.rbreak
+							| BCF
+						h4 Copywriter
 
-		.story-block
-			header.story-block-header
-				h2
-					| 2010 - 2011
-					span.rhide &mdash;
-					br.rbreak
-					| Clab Comunicazione
-				h4 Copywriter
+					.story-block-body
+						p BCF is an advertising agency &amp; industrial design studio with 30+ years of experience. I worked mainly as a Copywriter, but also did a number of other things such as pitching creative projects to top agency clients and managing digital projects.
 
-			.story-block-body
-				p Clab Comunicazione is an ad agency. I worked mainly as a Copywriter, but I was also in charge of everything digital (websites, online adv, et al) both from a design &amp; management standpoint.
+				hr.section-separator
 
-		.story-block
-			header.story-block-header
-				h2
-					| 2007 - 2009
-					span.rhide &mdash;
-					br.rbreak
-					| BCF
-				h4 Copywriter
+				header.section-header
+					h1.section-heading Other experiences
 
-			.story-block-body
-				p BCF is an advertising agency &amp; industrial design studio with 30+ years of experience. I worked mainly as a Copywriter, but also did a number of other things such as pitching creative projects to top agency clients and managing digital projects.
+				.story-block
+					header.story-block-header
+						h2
+							| 03-05/2014
+							span.rhide &mdash;
+							br.rbreak
+							| Behance Portfolio Reviews
+						h4 Organizer
 
-		hr.section-separator
+					.story-block-body
+						p I was the lead organizer of #[a(href='http://www.geekvillelearning.it/offerta-formativa/behance-portfolio-review-verona/', target='_blank') Behance Portfolio Reviews Verona 2014,] for the first time ever in the city.
 
-		header.section-header
-			h1.section-heading Other experiences
+						p Behance Portfolio Review is a networking event aimed specifically at creatives, with the purpose of promoting the practice of design critique.
 
-		.story-block
-			header.story-block-header
-				h2
-					| 03-05/2014
-					span.rhide &mdash;
-					br.rbreak
-					| Behance Portfolio Reviews
-				h4 Organizer
+						p As an organizer, I took care of:
 
-			.story-block-body
-				p I was the lead organizer of #[a(href='http://www.geekvillelearning.it/offerta-formativa/behance-portfolio-review-verona/', target='_blank') Behance Portfolio Reviews Verona 2014,] for the first time ever in the city.
+						ul
+							li Marketing the event;
+							li Selling tickets;
+							li Preparing the event location (before &amp; after the event);
+							li Running the event;
+							li Communicating with Behance HQ in US.
 
-				p Behance Portfolio Review is a networking event aimed specifically at creatives, with the purpose of promoting the practice of design critique.
+						p Credits: a big help for recruiting Special Guests and Review Leaders came from Stefano Torregrossa &amp; Matteo Cuccato, who leveraged their personal and professional network for the cause.
 
-				p As an organizer, I took care of:
+				.story-block
+					header.story-block-header
+						h2
+							| 04/2013
+							span.rhide &mdash;
+							br.rbreak
+							| Startup Weekend
+						h4 Coach
 
-				ul
-					li Marketing the event;
-					li Selling tickets;
-					li Preparing the event location (before &amp; after the event);
-					li Running the event;
-					li Communicating with Behance HQ in US.
+					.story-block-body
+						p In april 2013, #[a(href='https://web.archive.org/web/20131115072955/http://venice.startupweekend.org/', target='_blank') H-Farm](http://www.h-farmventures.com/en/) (one of the top italian startup accelerators) organized and hosted [Startup Weekend Venice 2013;] I was invited to join the event as a Coach.
 
-				p Credits: a big help for recruiting Special Guests and Review Leaders came from Stefano Torregrossa &amp; Matteo Cuccato, who leveraged their personal and professional network for the cause.
+						p The role of Coaches in Startup Weekend's formula is an important one: a Coach is basically an expert in his field &mdash; in my case, UI Design &amp; Logo Design &mdash; who follows each team and contributes with his knowledge.
 
-		.story-block
-			header.story-block-header
-				h2
-					| 04/2013
-					span.rhide &mdash;
-					br.rbreak
-					| Startup Weekend
-				h4 Coach
+				.story-block
+					header.story-block-header
+						h2
+							| 10-12/2012
+							span.rhide &mdash;
+							br.rbreak
+							| Startup Weekend
+						h4 Organizer
 
-			.story-block-body
-				p In april 2013, #[a(href='https://web.archive.org/web/20131115072955/http://venice.startupweekend.org/', target='_blank') H-Farm](http://www.h-farmventures.com/en/) (one of the top italian startup accelerators) organized and hosted [Startup Weekend Venice 2013;] I was invited to join the event as a Coach.
+					.story-block-body
+						p I was one of the 3-people-team who organized #[a(href='https://web.archive.org/web/20121217072032/http://verona.startupweekend.org/', target='_blank') Startup Weekend Verona 2012,] for the first time ever in the city.
 
-				p The role of Coaches in Startup Weekend's formula is an important one: a Coach is basically an expert in his field &mdash; in my case, UI Design &amp; Logo Design &mdash; who follows each team and contributes with his knowledge.
+						p Organizing a Startup Weekend is no easy task: it involves a lot of planning and the ability to wear many different hats:
 
-		.story-block
-			header.story-block-header
-				h2
-					| 10-12/2012
-					span.rhide &mdash;
-					br.rbreak
-					| Startup Weekend
-				h4 Organizer
+						ol
+							li Finding sponsors;
+							li Recruiting Coaches and Jury members;
+							li Marketing the event;
+							li Doing PR for the event;
+							li Selling tickets and providing customer service;
+							li Preparing the event location (before &amp; after the event);
+							li Running the event, &amp; making sure it follows the planned schedule;
+							li Assigning prizes, and communicating with the sponsors who make them available;
+							li Doing admin work (collecting payments, invoicing, etc);
+							li Constantly communicating with Startup Weekend HQ in US.
 
-			.story-block-body
-				p I was one of the 3-people-team who organized #[a(href='https://web.archive.org/web/20121217072032/http://verona.startupweekend.org/', target='_blank') Startup Weekend Verona 2012,] for the first time ever in the city.
+						p I worked mostly in areas 02, 03, 05, 06, 08.
 
-				p Organizing a Startup Weekend is no easy task: it involves a lot of planning and the ability to wear many different hats:
+						p I also created the event identity: #[a(href='http://www.simplest.io/work/startup-weekend-verona.html?ref=dtc-resume', target='_blank') &rarr; Startup Weekend Verona 2012 on Simplest]
 
-				ol
-					li Finding sponsors;
-					li Recruiting Coaches and Jury members;
-					li Marketing the event;
-					li Doing PR for the event;
-					li Selling tickets and providing customer service;
-					li Preparing the event location (before &amp; after the event);
-					li Running the event, &amp; making sure it follows the planned schedule;
-					li Assigning prizes, and communicating with the sponsors who make them available;
-					li Doing admin work (collecting payments, invoicing, etc);
-					li Constantly communicating with Startup Weekend HQ in US.
-
-				p I worked mostly in areas 02, 03, 05, 06, 08.
-
-				p I also created the event identity: #[a(href='http://www.simplest.io/work/startup-weekend-verona.html?ref=dtc-resume', target='_blank') &rarr; Startup Weekend Verona 2012 on Simplest]
-
-				p Thanks to the work of everyone involved the event was a success, with 120+ attendees.
+						p Thanks to the work of everyone involved the event was a success, with 120+ attendees.
