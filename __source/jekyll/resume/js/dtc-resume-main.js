@@ -95,25 +95,33 @@ $(document).ready(function() {
 			--------------------------------- */
 
 			// replace EN content w/ hardcoded values
-			var outlineBlocks = $('.outline-block');
+			var target = $('.quick-outline').children();
 
-			$.map(outlineBlocks, function(e, i) {
-				var localizedOutlineContent = [
+			$.map(target, function(e, i) {
+				var localized = [
+					{
+						title: '<span class="underline">In breve</span>',
+						body: ''
+					},
 					{
 						title: 'Profilo &amp; skills',
 						body: '<li><span class="list-heading">UI Designer &amp; Imprenditore</span><br>User Interface Designer con approccio imprenditoriale, negli ultimi 5 anni ho lavorato sui miei progetti d&#39;impresa sviluppando un&#39;ampia esperienza nella creazione, vendita e mantenimento di prodotti o servizi.</li><li><span class="list-heading">Un designer che scrive codice</span><br>Il mio output principale è high-fidelity mockups in Adobe Photoshop, ma sono anche in grado di scrivere HTML &amp; CSS di base (l&#39;esempio più recente è <a href="http://www.simplest.io">il mio portfolio responsive.</a>)</li>'
 					},
 					{
 						title: 'Contatti',
-						body: 'Il modo migliore per contattarmi &egrave; via e-mail'
+						body: '<p>Il modo migliore per contattarmi &egrave; via e-mail</p><a class="cta-button contact-button" href="mailto:alessandro@ditecco.me">Contattami</a>'
 					}
 				];
 
-				var locOutlineBlockTitle = localizedOutlineContent[i].title,
-						locOutlineBlockListBody = localizedOutlineContent[i].body;
+				var localizedTitle = localized[i].title,
+						localizedBody = localized[i].body;
 
-				$(e).find('.outline-block-list-heading').html(locOutlineBlockTitle);
-				$(e).find('ul').html(locOutlineBlockListBody);
+				if ($(e).hasClass('section-header')) {
+					$(e).children().first().html(localizedTitle)
+				} else {
+					$(e).children().first().html(localizedTitle)
+					$(e).children().last().html(localizedBody);
+				}
 			});
 
 			// story blocks
