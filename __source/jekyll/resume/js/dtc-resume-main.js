@@ -10,8 +10,16 @@ $(document).ready(function() {
 	state management
 	--------------------------------- */
 
+	// on doc ready, we store the default EN text content
 	var state = [];
-	// console.log(state);
+
+	var storeState = function() {
+		var qoState = $('.quick-outline').html();
+		var fsState = $('.full-story').html();
+		state.push({ quickOutline: qoState }, { fullStory: fsState });
+	}(); // IIFE
+
+	console.log(state);
 
 
 	/* ---------------------------------
@@ -46,14 +54,6 @@ $(document).ready(function() {
 		// check which version, IT or EN, we're serving
 		var checkLang = $(this).text();
 
-		// starts in EN
-		// 	click translate
-		// 		stores EN content in var
-		// 		replaces EN content w/ IT (hardcoded)
-		// click translate
-		// 	loads previously saved EN content
-		// 	replaces IT content w/ EN
-
 		// handle translate button changes
 		var buttonHandler = function(label, flagCode) {
 			$('#lang-switcher').text(label)
@@ -80,6 +80,7 @@ $(document).ready(function() {
 			IT > EN
 			--------------------------------- */
 
+			// replace IT content w/ values previously stored in `state`
 			$('.quick-outline').html(state[0].quickOutline);
 			$('.full-story').html(state[1].fullStory);
 			// console.log(state);
@@ -93,11 +94,7 @@ $(document).ready(function() {
 			EN > IT (default state)
 			--------------------------------- */
 
-			// store the current content
-			state.push({ quickOutline: $('.quick-outline').html() }, { fullStory: $('.full-story').html() });
-			console.log(state);
-
-			// outline blocks
+			// replace EN content w/ hardcoded values
 			var outlineBlocks = $('.outline-block');
 
 			$.map(outlineBlocks, function(e, i) {
