@@ -233,12 +233,17 @@ new!
 	width: 55px;
 	height: 55px;
 	padding: 17px 0;
+	border: none;
 	border-radius: 100%;
 	font-size: 14px;
 	color: #f1f1f1;
 	text-transform: uppercase;
 	text-align: center;
 	background-color: rgba($accent-primary, .6);
+	&:hover {
+		color: #f1f1f1;
+		background-color: darken($accent-primary, 15%);
+	}
 	@media(min-width: 990px) { visibility: visible; }
 }
 
