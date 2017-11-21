@@ -95,9 +95,11 @@ $(document).ready(function() {
 			--------------------------------- */
 
 			// replace EN content w/ hardcoded values
-			var target = $('.quick-outline').children();
 
-			$.map(target, function(e, i) {
+			// quick-outline
+			var quickOutline = $('.quick-outline').children();
+
+			$.map(quickOutline, function(e, i) {
 				var localized = [
 					{
 						title: '<span class="underline">In breve</span>',
@@ -124,11 +126,16 @@ $(document).ready(function() {
 				}
 			});
 
-			// story blocks
-			var storyBlocks = $('.story-block');
+			// full-story
+			var fullStory = $('.full-story').children();
 
-			$.map(storyBlocks, function(e, i) {
-				var localizedStoryContent = [
+			$.map(fullStory, function(e, i) {
+				var localized = [
+					{
+						title: '<span class="underline">La storia completa</span>',
+						jobTitle: '',
+						body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam vitae dui. Nulla id libero nec eros pretium facilisis.'
+					},
 					{
 						title: '2011 - 2016 &mdash; Simplest',
 						jobTitle: 'Freelance User Interface Designer',
@@ -170,6 +177,16 @@ $(document).ready(function() {
 						body: '<p>BCF è un&#39;agenzia di pubblicità e studio di design industriale con oltre 30 anni di esperienza. Ho lavorato principalmente come copywriter, ma mi sono anche occupato di presentare progetti creativi ai maggiori clienti d&#39;agenzia e di ideare/gestire progetti digitali.</p>'
 					},
 					{
+						title: '',
+						jobTitle: '',
+						body: ''
+					},
+					{
+						title: '<span class="underline">Altre esperienze</span>',
+						jobTitle: '',
+						body: ''
+					},
+					{
 						title: '03-05/2014 &mdash; Behance Portfolio Reviews',
 						jobTitle: 'Organizzatore',
 						body: '<p>Sono stato uno degli organizzatori di Behance Portfolio Reviews Verona 2014, prima edizione in assoluto per la città: <a href="http://www.geekvillelearning.it/offerta-formativa/behance-portfolio-review-verona/">&rarr; Behance Portfolio Reviews Verona 2014</a></p><p>Behance Portfolio Review è un format pensato per incitare i professionisti della creatività a scambiarsi feedback sui propri lavori.</p><p>Come organizzatore mi sono occupato di:</p><ul><li>Marketing dell&#39;evento;</li><li>Vendita dei biglietti;</li><li>Allestimento dei locali della manifestazione (pre &amp; post evento);</li><li>Conduzione dell&#39;evento;</li><li>Comunicazione con Behance HQ in USA.</li></ul><p>Credits: per il reclutamento degli ospiti speciali e dei Review Leaders un grande aiuto è venuto da Stefano Torregrossa &amp; Matteo Cuccato, che hanno messo a disposizione il loro network di conoscenze personali e professionali.</p>'
@@ -186,13 +203,19 @@ $(document).ready(function() {
 					}
 				];
 
-				var locStoryBlockTitle = localizedStoryContent[i].title,
-						locStoryBlockJobTitle = localizedStoryContent[i].jobTitle,
-						locStoryBlockBody = localizedStoryContent[i].body;
+				var localizedTitle = localized[i].title,
+						localizedJobTitle = localized[i].jobTitle,
+						localizedBody = localized[i].body;
 
-				$(e).find('h2').html(locStoryBlockTitle);
-				$(e).find('h4').text(locStoryBlockJobTitle);
-				$(e).find('.story-block-body').html(locStoryBlockBody);
+				if ($(e).hasClass('section-header')) {
+					$(e).find('h1').html(localizedTitle);
+					$(e).find('p').html(localizedBody);
+					// what about the separator?
+				} else {
+					$(e).find('h2').html(localizedTitle);
+					$(e).find('h4').text(localizedJobTitle);
+					$(e).find('.story-block-body').html(localizedBody);
+				}
 			});
 
 			// calls
