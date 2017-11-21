@@ -33,14 +33,42 @@ $(document).ready(function() {
 	$('.page-controls').on('click', '#lang-switcher', function(e) {
 		e.preventDefault();
 
+		// pre-flight
+		var checkLang = $(this).text();
+		// var prevState = $.map($('.outline-block'), (e, i) => JSON.stringify($(e).html()))
+		var prevState = '<h2 class=\"outline-block-list-heading\">Profile &amp; skills</h2><ul><li><span class=\"list-heading\">User Interface Designer</span><br>Since 2011, I’ve been designing interfaces for a diverse range of digital products.</li><li><span class=\"list-heading\">I love coding!</span><br>My primary output is high-fidelity mockups designed in my design tool of choice; however, I can code basic HTML &amp; CSS and I\'m comfortable with the Unix/macOS command line.</li><li><span class=\"list-heading\">Entrepreneurial experience</span><br>In the past 6 years I\'ve been working on my own ventures, developing firsthand experience of what it means to build, sell, and maintain a product or service.</li></ul>';
+
+		var buttonHandler = function(label, flagCode) {
+			// change button label & flag
+			$('#lang-switcher').text(label)
+												 .next().attr('src', 'img/' + flagCode + '-flag.svg');
+		};
+
+		// we need to show confirmation after the text has been replaced
+		var showConfirmation = function(msg) {
+			$('.notification-bar').fadeIn(1000, function() {
+				$(this).text(msg);
+			})
+		};
+
+		// we auto-remove the conf message
+		var removeConfirmation = function() {
+			$('.notification-bar').fadeOut(500, function() {
+				$(this).text('');
+			});
+		};
+
 		// we need to prevent the script from being repeatedly executed
 		// when clicking the translation button multiple times
-		var checkLang = $(this).text();
-
 		if (checkLang === 'English version') {
 			// we need to offer a way to revert the process
-			// ...
-			console.log('Already translated!')
+			$('.outline-block.quick-outline--profile').replaceWith(prevState);
+			// $('.outline-block.quick-outline--profile').replaceWith(JSON.parse(prevState));
+
+			// calls
+			showConfirmation('Content has been translated to English.');
+			setTimeout(removeConfirmation, 3000);
+			buttonHandler('Versione italiana', 'it');
 		} else {
 			// outline blocks
 			var outlineBlocks = $('.outline-block');
@@ -135,30 +163,10 @@ $(document).ready(function() {
 				$(e).find('.story-block-body').html(locStoryBlockBody);
 			});
 
-			// we need to show confirmation after the text has been replaced
-			function showConfirmation() {
-				var confMessage = '<p id="confMessage" style="padding: 20px; background-color: #fadf63; text-align: center">contenuti ora in italiano!</p>';
-
-				$('.page-controls').append(confMessage);
-			}; // immediately-invoked!
-
-			// we auto-remove the conf message after 2 seconds
-			function removeConfirmation() {
-				$('#confMessage').fadeOut(500, function() {
-					this.remove();
-				});
-				console.log('Removing confirmation message...');
-			};
-
-			showConfirmation();
-			setTimeout(removeConfirmation, 1000);
-
-			var buttonHandler = function() {
-				// change button label & flag
-				$('#lang-switcher').text('English version')
-													 .next().attr('src', 'img/us-flag.png');
-			}();
-
+			// calls
+			showConfirmation('Contenuti tradotti in italiano');
+			setTimeout(removeConfirmation, 3000);
+			buttonHandler('English version', 'us');
 		}
 	});
 }); // document.ready
