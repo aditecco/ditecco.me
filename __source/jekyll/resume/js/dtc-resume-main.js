@@ -7,6 +7,14 @@ dtc-resume-main.js
 $(document).ready(function() {
 
 	/* ---------------------------------
+	state management
+	--------------------------------- */
+
+	var state = [];
+	// console.log(state);
+
+
+	/* ---------------------------------
 	story-block toggle
 	--------------------------------- */
 	// don't select directly
@@ -34,42 +42,61 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		// pre-flight
+		// ----------
+		// check which version, IT or EN, we're serving
 		var checkLang = $(this).text();
-		// var prevState = $.map($('.outline-block'), (e, i) => JSON.stringify($(e).html()))
-		var prevState = '<h2 class=\"outline-block-list-heading\">Profile &amp; skills</h2><ul><li><span class=\"list-heading\">User Interface Designer</span><br>Since 2011, I’ve been designing interfaces for a diverse range of digital products.</li><li><span class=\"list-heading\">I love coding!</span><br>My primary output is high-fidelity mockups designed in my design tool of choice; however, I can code basic HTML &amp; CSS and I\'m comfortable with the Unix/macOS command line.</li><li><span class=\"list-heading\">Entrepreneurial experience</span><br>In the past 6 years I\'ve been working on my own ventures, developing firsthand experience of what it means to build, sell, and maintain a product or service.</li></ul>';
 
+		// starts in EN
+		// 	click translate
+		// 		stores EN content in var
+		// 		replaces EN content w/ IT (hardcoded)
+		// click translate
+		// 	loads previously saved EN content
+		// 	replaces IT content w/ EN
+
+		// handle translate button changes
 		var buttonHandler = function(label, flagCode) {
-			// change button label & flag
 			$('#lang-switcher').text(label)
 												 .next().attr('src', 'img/' + flagCode + '-flag.svg');
 		};
 
-		// we need to show confirmation after the text has been replaced
+		// show confirmation after the translation
 		var showConfirmation = function(msg) {
 			$('.notification-bar').fadeIn(1000, function() {
 				$(this).text(msg);
 			})
 		};
 
-		// we auto-remove the conf message
+		// auto-remove the conf message
 		var removeConfirmation = function() {
 			$('.notification-bar').fadeOut(500, function() {
 				$(this).text('');
 			});
 		};
 
-		// we need to prevent the script from being repeatedly executed
-		// when clicking the translation button multiple times
+		// use a conditional to cycle IT/EN versions
 		if (checkLang === 'English version') {
-			// we need to offer a way to revert the process
-			$('.outline-block.quick-outline--profile').replaceWith(prevState);
-			// $('.outline-block.quick-outline--profile').replaceWith(JSON.parse(prevState));
+			/* ---------------------------------
+			IT > EN
+			--------------------------------- */
+
+			$('.quick-outline').html(state[0].quickOutline);
+			$('.full-story').html(state[1].fullStory);
+			// console.log(state);
 
 			// calls
-			showConfirmation('Content has been translated to English.');
+			showConfirmation('Translated to English!');
 			setTimeout(removeConfirmation, 3000);
 			buttonHandler('Versione italiana', 'it');
 		} else {
+			/* ---------------------------------
+			EN > IT (default state)
+			--------------------------------- */
+
+			// store the current content
+			state.push({ quickOutline: $('.quick-outline').html() }, { fullStory: $('.full-story').html() });
+			console.log(state);
+
 			// outline blocks
 			var outlineBlocks = $('.outline-block');
 
@@ -164,7 +191,7 @@ $(document).ready(function() {
 			});
 
 			// calls
-			showConfirmation('Contenuti tradotti in italiano');
+			showConfirmation('Tradotto in italiano!');
 			setTimeout(removeConfirmation, 3000);
 			buttonHandler('English version', 'us');
 		}
