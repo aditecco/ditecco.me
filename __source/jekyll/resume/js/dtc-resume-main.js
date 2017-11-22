@@ -11,25 +11,30 @@ $(document).ready(function() {
 	--------------------------------- */
 
 	// on doc ready, we store the default EN text content
-	var state = [];
+	var initialState = [];
 
 	var storeState = function() {
 		var qoState = $('.quick-outline').html();
 		var fsState = $('.full-story').html();
-		state.push({ quickOutline: qoState }, { fullStory: fsState });
+		initialState.push({ quickOutline: qoState }, { fullStory: fsState });
 	}(); // IIFE
-
-	console.log(state);
 
 
 	/* ---------------------------------
 	story-block toggle
 	--------------------------------- */
-	// don't select directly
-	$('.story-block-body').hide();
-	$('.story-block-header').on('click', function() {
-		$(this).next().slideToggle();
-	});
+
+	// set the initial state of '.story-block-body' as hidden
+	// and attach an event listener to '.story-block-header'
+	// to reveal '.story-block-body' on click
+	function setToggles(start, listener, target) {
+		$(start).find(target).hide();
+		$(start).on('click', listener, function(e) {
+			$(this).next().slideToggle();
+			// console.log(e)
+		});
+	}
+	setToggles('.story-block', '.story-block-header', '.story-block-body');
 
 	// [IDEA]
 	// when an el is selected,
@@ -81,11 +86,14 @@ $(document).ready(function() {
 			--------------------------------- */
 
 			// replace IT content w/ values previously stored in `state`
-			$('.quick-outline').html(state[0].quickOutline);
-			$('.full-story').html(state[1].fullStory);
+			$('.quick-outline').html(initialState[0].quickOutline);
+			$('.full-story').html(initialState[1].fullStory);
 			// console.log(state);
 
 			// calls
+			// since the DOM change loses the event listeners
+			// and the state of '.story-block-body', we re-set them
+			setToggles('.story-block', '.story-block-header', '.story-block-body');
 			showConfirmation('Translated to English!');
 			setTimeout(removeConfirmation, 3000);
 			buttonHandler('Versione italiana', 'it');
