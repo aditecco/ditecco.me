@@ -67,16 +67,13 @@ $(document).ready(function() {
 
 		// show confirmation after the translation
 		var showConfirmation = function(msg) {
-			$('.notification-bar').fadeIn(1000, function() {
-				$(this).text(msg);
-			})
+			$('.notification-bar').text(msg);
+			$('.notification-bar').css('opacity', '100');
 		};
 
 		// auto-remove the conf message
 		var removeConfirmation = function() {
-			$('.notification-bar').fadeOut(500, function() {
-				$(this).text('');
-			});
+			$('.notification-bar').css('opacity', '0');
 		};
 
 		// use a conditional to cycle IT/EN versions
@@ -95,7 +92,7 @@ $(document).ready(function() {
 			// and the state of '.story-block-body', we re-set them
 			setToggles('.story-block', '.story-block-header', '.story-block-body');
 			showConfirmation('Translated to English!');
-			setTimeout(removeConfirmation, 3000);
+			setTimeout(removeConfirmation, 2000);
 			buttonHandler('Versione italiana', 'it');
 		} else {
 			/* ---------------------------------
@@ -228,7 +225,7 @@ $(document).ready(function() {
 
 			// calls
 			showConfirmation('Tradotto in italiano!');
-			setTimeout(removeConfirmation, 3000);
+			setTimeout(removeConfirmation, 2000);
 			buttonHandler('English version', 'us');
 		}
 	});
