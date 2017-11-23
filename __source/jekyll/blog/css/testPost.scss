@@ -8,75 +8,11 @@ testPost.scss
 
 
 /* ---------------------------------
-
 imports
 --------------------------------- */
 
 @import '_normalize';
-@import '_flat-ui-colors';
-
-
-/* ---------------------------------
-vars, functions, mixins, other
---------------------------------- */
-
-// color vars
-// $accent-primary: ;
-// $accent-secondary: ;
-// $background-primary: ;
-// $background-secondary: ;
-// $cta-primary: ;
-// $cta-secondary: ;
-
-
-// typography vars
-$heading-font: 'Trocchi', sans-serif;
-$base-font: 'Karla', sans-serif;
-$system-font: 'Helvetica, Arial', sans-serif;
-$font-color-dark: $gunMetal;
-$font-color-bright: $paper;
-$font-color-secondary: $silver;
-
-
-// functions
-@function emCalc($target, $context: 10) {
-	// as seen on: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
-	@return ($target / $context) * 1em;
-}
-
-// reset margin and padding
-// + border?
-@mixin resetBox($pad: 0, $mar: 0, $isList: false) {
-	padding: $pad;
-	margin: $mar;
-	@if $isList {
-		list-style: none;
-	}
-}
-
-// set font properties
-// add line-height
-@mixin setFonts($size, $family: $base-font, $color: $font-color-primary, $weight: 400) {
-	font-family: $family;
-	font-weight: $weight;
-	font-size: emCalc($size);
-	color: $color;
-}
-
-// set flexbox properties
-@mixin setFlexbox($flow, $justify, $align) {
-	display: flex;
-	flex-flow: $flow;
-	justify-content: $justify;
-	align-items: $align;
-}
-
-// debugging
-$debugMode: false;
-
-* {
-	@if $debugMode { outline: 1px solid $purple; }
-}
+@import 'dtc-blog-logic';
 
 
 /* ---------------------------------
