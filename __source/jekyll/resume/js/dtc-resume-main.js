@@ -51,7 +51,7 @@ $(document).ready(function() {
 	/* ---------------------------------
 	language switcher
 	--------------------------------- */
-	$('.page-controls').on('click', '#lang-switcher', function(e) {
+	$('.page-controls').on('click', '.lang-switcher', function(e) {
 		e.preventDefault();
 
 		// pre-flight
@@ -61,7 +61,7 @@ $(document).ready(function() {
 
 		// handle translate button changes
 		var buttonHandler = function(label, flagCode) {
-			$('#lang-switcher').text(label)
+			$('.lang-switcher').text(label)
 												 .next().attr('src', 'img/' + flagCode + '-flag.svg');
 		};
 
