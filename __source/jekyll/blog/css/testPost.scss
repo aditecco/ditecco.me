@@ -1,0 +1,160 @@
+---
+# Front matter is needed in main files for SCSS > CSS conversion!
+---
+
+/* ========================
+testPost.scss
+======================== */
+
+
+/* ---------------------------------
+
+imports
+--------------------------------- */
+
+@import '_normalize';
+@import '_flat-ui-colors';
+
+
+/* ---------------------------------
+vars, functions, mixins, other
+--------------------------------- */
+
+@function getEmValue($target, $context: 10) {
+	// as seen on: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
+	@return ($target / $context) * 1em;
+}
+
+@mixin resetBox($pad: 0, $mar: 0) {
+	padding: $pad;
+	margin: $mar;
+}
+
+
+/* ---------------------------------
+common
+--------------------------------- */
+
+// setting `border-box`
+* { box-sizing: border-box; }
+
+// setting the global `font-size` at 10px
+body {
+	font-size: 62.5%;
+	font-family: 'Karla', sans-serif;
+	font-weight: 400;
+}
+
+
+/* ---------------------------------
+rules
+--------------------------------- */
+
+.container {
+	padding: getEmValue(20, 10);
+}
+
+.blog-post-nav {
+	background-color: $asphalt;
+	ul {
+		// add list-style to resetBox, maybe w/ conditional?
+		@include resetBox(1em, 0);
+		list-style: none;
+	}
+}
+
+// .blog-post
+.blog-post {
+	.blog-post-header {
+		position: relative;
+		height: getEmValue(200, 10);
+		overflow: hidden;
+		// background-color: rgba(black, .5);
+		.blog-post-header-inner {
+			position: absolute;
+			// necessary?
+			top: 0;
+			left: 0;
+			// create a flexbox mixin
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: flex-start;
+			height: 100%;
+			padding: getEmValue(20, 10);
+			color: $paper;
+			background-color: rgba(black, .25);
+			.blog-post-title,
+			.blog-post-subtitle,
+			.blog-post-timestamp { margin: 0; }
+			.blog-post-title {
+				margin-bottom: getEmValue(10, 10);
+				// use font shorthand, create mixin or template
+				font-family: 'Trocchi', sans-serif;
+				font-weight: 400;
+			}
+			.blog-post-subtitle {}
+			.blog-post-timestamp {}
+			.blog-post-meta {
+				// create a flexbox mixin
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+				align-items: center;
+				width: 100%;
+				@include resetBox;
+				list-style: none;
+				// can we manage spacing via flexbox?
+				li {
+					margin-right: 10px;
+					} &:last-child { margin-right: 0; }
+			}
+		}
+		.blog-post-hero-img {
+			min-height: 100%;
+			width: auto;
+		}
+	}
+	.blog-post-body {
+		padding: getEmValue(20, 10);
+	}
+	.blog-post-footer {}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

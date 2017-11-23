@@ -94,21 +94,21 @@ FORMATTING
 ======================== */
 
 	/* ===== HEADERS ===== */
-	
+
 	h1 {font-size: 3.8em;}
-	
+
 	h2 {font-size: 2.2em;}
-	
+
 	h3 {font-size: 1.8em;}
-	
+
 	h4 {font-size: 1.5em;}
-	
+
 	h1,h2,h3,h4 {
 		font-family: 'Trocchi', sans-serif;
 		font-weight: 400;
 		margin: 0;
 	}
-	
+
 	h5 {
 		font-family: 'Karla', sans-serif;
 		font-weight: 400;
@@ -120,7 +120,7 @@ FORMATTING
 
 
 	/* ===== BODY TXT ===== */
-	
+
 	.txt-wrap p {
 		font-size: 1.2em;
 		line-height: 1.7;
@@ -130,14 +130,14 @@ FORMATTING
 
 
 	/* ===== TXT FX ===== */
-	
+
 	strong {color: #333;}
-	
+
 	em {background-color: rgba(255, 208, 16, 0.6)} /* acts as highlight */
-	
-	
+
+
 	/* ===== SPECIAL TXT ===== */
-	
+
 	pre {
 		border-left: 3px solid #1abc9c;
 		padding: 2em 0.65em;
@@ -146,24 +146,24 @@ FORMATTING
 		line-height: 1.5em;
 		white-space: pre-wrap;
 	}
-	
+
 	code.inline-code {
 		padding: 0.1em 0.3em;
 		background-color: rgba(56, 55, 55, 0.1);
 		border-radius: 3px;
 		font-size: 0.9em;
 	}
-	
+
 	blockquote {
 		font-style: italic;
 		border-left: 3px solid #1abc9c;
 		padding: 0 1em;
 		margin: 1em 2em;
 	}
-	
-	
+
+
 	/* ===== LISTS ===== */
-	
+
 	.txt-wrap ul,ol {
 		font-size: 1.1em;
 		border-top: 1px solid #ccc;
@@ -171,69 +171,69 @@ FORMATTING
 		background-color: #f3f0eb;
 		padding: 1em 1.8em;
 	}
-	
+
 	.txt-wrap li {padding: 0.5em 0;}
-	
+
 	.txt-wrap li::marker {color: #fff;} // temp
-	
+
 	.txt-wrap ul {list-style: circle;}
-	
-	
+
+
 	/* ===== SEPARATORS ===== */
-	
+
 	hr {
 		width: 30%;
 		border: 0;
 		border-bottom: 3px double #ccc;
 	}
-	
-	
+
+
 	/* ===== LINKS ===== */
-	
+
 	.txt-wrap a {
 		color: inherit;
 		text-decoration: none;
 		border-bottom: 1px solid #1abc9c;
 	}
-	
+
 	.txt-wrap a:hover {
 		color: #333;
 		background-color: rgba(51, 51, 51, 0.1);
 		text-decoration: none;
 	}
-	
-	
+
+
 	/* ===== TXT SELECTION ===== */
-	
+
 	::selection {
 		background: #555;
 		color: #f4f5f2;
 	}
-	
-	
+
+
 	/* ===== FOOTNOTES ===== */
-	
+
 	.footnotes {
 		border-top: 1px dotted #ccc;
 		margin-top: 3.5em;
 		color: #ccc;
 	}
-	
+
 	.footnotes ol {
 		background-color: inherit;
-		border: 0px none;	
+		border: 0px none;
 	}
-	
+
 	.footnotes p {
 		color: #ccc;
 	}
-	
+
 	.footnotes p a {
 		color: #333;
 		text-decoration: none;
 		border-bottom: none;
 	}
-	
+
 	.footnotes p a:hover {
 		color: #ccc;
 		text-decoration: none;
@@ -314,3 +314,71 @@ RESPONSIVE
 ======================== */
 
 @import "dtc-blog-post-responsive";
+
+
+/* ---------------------------------
+new!
+--------------------------------- */
+
+// setting `border-box`
+* { box-sizing: border-box; }
+
+// setting the global `font-size` at 10px
+body { font-size: 62,5%; }
+
+@function getEmValue($target, $context) {
+	@return ($target / $context) + 'em';
+}
+
+.container {
+	padding: getEmValue(20, 16);
+}
+
+
+.blog-post {
+	.blog-post-header {}
+		.blog-post-title {}
+		.blog-post-subtitle {}
+		.blog-post-timestamp {}
+		.blog-post-hero-img {}
+.blog-post-body {}
+.blog-post-footer {}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

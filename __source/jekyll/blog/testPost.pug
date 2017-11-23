@@ -1,0 +1,49 @@
+---
+
+
+---
+
+doctype
+html
+	head
+		//- check contents against this: https://github.com/joshbuchea/HEAD
+		//- for unicode chars
+		//- https://stackoverflow.com/questions/1696619/displaying-unicode-symbols-in-html
+		meta(http-equiv='Content-Type', content='text/html', charset='utf-8')
+		meta(name="description" content="")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(href='http://fonts.googleapis.com/css?family=Montserrat|Roboto|Trocchi', rel='stylesheet', type='text/css')
+		//- link(rel="stylesheet", href="/blog/css/dtc-blog-post.css")
+		link(rel="stylesheet", href="css/testPost.css")
+		title Blog post
+	body
+		nav.blog-post-nav
+			ul
+				li
+					//- a(href="/index.html") &#8592; Back to homepage
+
+		main
+			article.blog-post
+				header.blog-post-header
+					.blog-post-header-inner
+						h1.blog-post-title Adding A Second External Display To An Early 2011 Macbook Pro
+						h4.blog-post-subtitle
+						h5.blog-post-timestamp Wednesday, 22 november 2017
+						ul.blog-post-meta
+							li
+								h6 Alessandro Di Tecco
+							li
+								h6 999 chars
+							li
+								h6.blog-post-tag tagName
+					img.blog-post-hero-img(src='img/testImg.jpg')
+				.blog-post-body
+					p
+						| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam vitae dui.
+						| Nulla id libero nec eros pretium facilisis. Donec nulla ipsum, elementum vitae, cursus vitae, accumsan sed, ligula.
+						| Curabitur metus dolor, euismod sed, vehicula nec, vestibulum sit amet, ipsum.
+				.blog-post-footer
+					.blog-post-cta
+
+		footer
+			p.subtext All content &copy; 2017 Alessandro Di Tecco
