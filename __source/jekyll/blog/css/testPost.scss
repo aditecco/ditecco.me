@@ -39,21 +39,35 @@ body {
 rules
 --------------------------------- */
 
+.blog-post-nav {
+	// avoid unique colors
+	background-color: $asphalt;
+	border-bottom: 1px solid darken($asphalt, 15%);
+	ul {
+		@include resetBox(1em, 0, true);
+		.button-nav {
+			font-size: emCalc(14);
+			color: $font-color-bright;
+			@extend %resetAnchors;
+			&:hover { border-bottom: 1px dotted $font-color-bright; }
+		}
+	}
+}
+
+
 main { flex-grow: 1; }
+
 
 .container {
 	padding: emCalc(20);
 }
 
-.blog-post-nav {
-	background-color: $asphalt;
-	ul { @include resetBox(1em, 0, true); }
-}
 
 // .blog-post
 .blog-post {
 	.blog-post-header {
 		position: relative;
+		// 300?
 		height: emCalc(280);
 		overflow: hidden;
 		.blog-post-header-text {
@@ -66,14 +80,21 @@ main { flex-grow: 1; }
 			padding: emCalc(20);
 			color: $paper;
 			background-color: rgba(black, .15);
+			@media(min-width: 760px) {
+				padding: $increased-container-padding;
+			}
 			.blog-post-title,
 			.blog-post-subtitle,
-			.blog-post-timestamp { margin: 0; }
+			.blog-post-timestamp { margin: 0 0 emCalc(15); }
 			.blog-post-title {
 				// is this override necessary?
 				flex-grow: 1;
 				margin-bottom: emCalc(5);
 				@include setFonts(32, $heading-font, $font-color-bright);
+				// check this breakpoint
+				@media(min-width: 650px) {
+					font-size: emCalc(40);
+				}
 			}
 			.blog-post-subtitle {}
 			// include in .blog-post-meta?
@@ -84,11 +105,19 @@ main { flex-grow: 1; }
 				@include setFlexbox(row nowrap, flex-start, center);
 				width: 100%;
 				@include resetBox(0, 0, true);
-				@include setFonts((16 * 0.8), $system-font, $font-color-secondary);
+				@include setFonts((16 * 0.8), $system-font, $font-color-bright);
 				// can we manage spacing via flexbox?
 				li {
-					margin-right: 10px;
-					} &:last-child { margin-right: 0; }
+					margin-right: 5px;
+					// watch out for text encoding errors!
+					// &::after { content: '·'; }
+					&:last-child { margin-right: 0; }
+				}
+				.blog-post-tag {
+					padding: emCalc(4) emCalc(8);
+					border: 2px solid $accent-bright;
+					border-radius: 16px;
+				}
 			}
 		}
 		.blog-post-header-img {
@@ -98,58 +127,28 @@ main { flex-grow: 1; }
 	}
 	.blog-post-body {
 		padding: emCalc(10) emCalc(20);
-		// update var w/ color
 		@include setFonts(16, $base-font, $utility-dark-gray);
 		// verify
 		line-height: 1.7;
-		h2, h3, h4, h5, h6 { font-family: $heading-font; }
-		/* ---------------------------------
-		legacy rules, need improvement
-		- remove unneeded properties
-		- store repeated props/values in vars/mixins
-		- normalize em values w/ emCalc
-		--------------------------------- */
-		&::selection {
-			background: $utility-dark-gray;
-			color: white;
+		h2, h3, h4, h5, h6 {
+			font-family: $heading-font;
+			// forcing the weight, otherwise normalize.css
+			// would override the font-weight of .blog-post-body
+			font-weight: 400;
 		}
-		em {
-			@extend %specialTextPad;
-			background-color: $utility-highlight;
-		}
-		strong { color: $utility-dark-gray; }
-		pre {
-			padding: emCalc(20) emCalc(10);
-			border-left: 3px solid $accent-bright;
-			background-color: rgba($utility-light-gray, .5);
-			tab-size: 2;
-			line-height: 1.5em;
-			white-space: pre-wrap;
-		}
-		code.inline-code {
-			@extend %specialTextPad;
-			background-color: rgba($utility-light-gray, .5);
-			border-radius: 3px;
-			font-size: 0.9em;
-		}
-		blockquote {
-			font-style: italic;
-			border-left: 3px solid $accent-bright;
-			padding: 0 1em;
-			margin: 1em 2em;
-		}
-		hr {
-			width: 30%;
-			border: 0;
-			border-bottom: 3px double $utility-light-gray;
-		}
+		// the context for emCalc is 16!
+		// that is, the font-size of .blog-post-body
+		h2 { font-size: emCalc(28, 16); }
+		h3 { font-size: emCalc(22, 16); }
+		h4 { font-size: emCalc(18, 16); }
+		h5 { font-size: emCalc(16, 16); }
+		h6 { font-size: emCalc(14, 16); }
 		ul,ol {
 			// convert
 			padding: 1em 1.8em;
-			// create a border mixin
 			@include setBorder(1px, solid, $utility-light-gray, top);
 			@include setBorder(1px, solid, $utility-light-gray, bottom);
-			background-color: $background-bright-secondary;
+			background-color: rgba($utility-light-gray, .25);
 			li {
 				// convert
 				padding: 0.5em 0;
@@ -157,17 +156,63 @@ main { flex-grow: 1; }
 			}
 		}
 		ul { list-style: circle; }
+		/* ---------------------------------
+		fx
+		--------------------------------- */
+		&::selection {
+			background: $utility-dark-gray;
+			color: white;
+		}
+		.highlighted {
+			@extend %specialTextPad;
+			background-color: $utility-highlight;
+		}
+		em {}
+		strong { color: $utility-dark-gray; }
+		/* ---------------------------------
+		special txt
+		--------------------------------- */
+		pre {
+			padding: emCalc(20) emCalc(10);
+			@include setBorder(3px, solid, $accent-bright, left);
+			background-color: rgba($utility-light-gray, .25);
+			tab-size: 2;
+			line-height: 1.5em;
+			white-space: pre-wrap;
+		}
+		code.inline-code {
+			@extend %specialTextPad;
+			background-color: rgba($utility-light-gray, .25);
+			border-radius: 3px;
+			font-size: 0.9em;
+		}
+		blockquote {
+			font-style: italic;
+			@include setBorder(3px, solid, $accent-bright, left);
+			// convert
+			padding: 0 1em;
+			margin: 1em 2em;
+		}
 		a {
 			@extend %specialTextPad;
-			border-bottom: 1px solid $accent-bright;
+			@include setBorder(1px, solid, $accent-bright, bottom);
 			// necessary?
 			color: inherit;
-			text-decoration: none;
+			@extend %resetAnchors;
 			&:hover {
+				@include setBorder(2px, solid, $accent-bright, bottom);
 				color: black;
-				border-bottom: 2px solid $accent-bright;
 				background-color: rgba($accent-bright, .1);
 			}
+		}
+		hr {
+			width: 30%;
+			border: 0;
+			border-bottom: 3px double $utility-light-gray;
+		}
+		@media(min-width: 760px) {
+			// doesn't match w/ .blog-post-header-text padding
+			padding: $increased-container-padding;
 		}
 	}
 	.blog-post-footer {
@@ -204,32 +249,6 @@ footer {
 		@include setFonts(12, $system-font, $font-color-secondary, center);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -20,7 +20,7 @@ html
 		nav.blog-post-nav
 			ul
 				li
-					a(href="/index.html") &#8592; Back
+					a(href="/index.html", class='button-link button-nav') &#8592; Back
 
 		main
 			article.blog-post
@@ -30,12 +30,11 @@ html
 						h4.blog-post-subtitle
 						h5.blog-post-timestamp Wednesday, 22 november 2017
 						ul.blog-post-meta
+							//- use an ::after
+							li Alessandro Di Tecco &middot;
+							li 999 chars &middot;
 							li
-								h5 Alessandro Di Tecco
-							li
-								h5 999 chars
-							li
-								h5.blog-post-tag tagName
+								span.blog-post-tag tagName
 					img.blog-post-header-img(src='img/testImg.jpg')
 				.blog-post-body
 					p When the news hit that #[a(href='#') Netflix was coming to Italy,] as a tech early adopter and a heavy movie & TV-Show watcher I was eager to try it: I subscribed on launch day.
@@ -51,8 +50,7 @@ html
 
 					hr
 
-					h3 Pros
-					h4 Netflix excels in:
+					h3 Netflix excels in:
 
 					ul
 						li Technical superiority &amp; performance #[a(href='#') they even built a custom CDN!]
@@ -61,8 +59,7 @@ html
 					blockquote
 						| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam vitae dui.
 
-					h3 Cons
-					h4 Netflix isn't that great in:
+					h3 Netflix isn't that great in:
 
 					ul
 						li Classic cinema, #[strong Auteur cinema], rare movies are practically non-existent;
@@ -70,7 +67,7 @@ html
 						li New content is added at a slow pace, and the user has a hard time finding it (must actively look for it);
 						li The catalougue 'feels' small.
 
-					p Yet, a discovery I made yesterday proved once again how #[em Netflix Originals are a powerful weapon] in the hands of the company.
+					p Yet, a discovery I made yesterday proved once again how #[span(class='highlighted') Netflix Originals are a powerful weapon] in the hands of the company.
 
 				.blog-post-footer
 					.blog-post-notes
