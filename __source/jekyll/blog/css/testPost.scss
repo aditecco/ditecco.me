@@ -20,14 +20,62 @@ imports
 vars, functions, mixins, other
 --------------------------------- */
 
-@function getEmValue($target, $context: 10) {
+// color vars
+// $accent-primary: ;
+// $accent-secondary: ;
+// $background-primary: ;
+// $background-secondary: ;
+// $cta-primary: ;
+// $cta-secondary: ;
+
+
+// typography vars
+$heading-font: 'Trocchi', sans-serif;
+$base-font: 'Karla', sans-serif;
+$system-font: 'Helvetica, Arial', sans-serif;
+$font-color-dark: $gunMetal;
+$font-color-bright: $paper;
+$font-color-secondary: $silver;
+
+
+// functions
+@function emCalc($target, $context: 10) {
 	// as seen on: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
 	@return ($target / $context) * 1em;
 }
 
-@mixin resetBox($pad: 0, $mar: 0) {
+// reset margin and padding
+// + border?
+@mixin resetBox($pad: 0, $mar: 0, $isList: false) {
 	padding: $pad;
 	margin: $mar;
+	@if $isList {
+		list-style: none;
+	}
+}
+
+// set font properties
+// add line-height
+@mixin setFonts($size, $family: $base-font, $color: $font-color-primary, $weight: 400) {
+	font-family: $family;
+	font-weight: $weight;
+	font-size: emCalc($size);
+	color: $color;
+}
+
+// set flexbox properties
+@mixin setFlexbox($flow, $justify, $align) {
+	display: flex;
+	flex-flow: $flow;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+// debugging
+$debugMode: false;
+
+* {
+	@if $debugMode { outline: 1px solid $purple; }
 }
 
 
@@ -39,11 +87,20 @@ common
 * { box-sizing: border-box; }
 
 // setting the global `font-size` at 10px
+// for em calculations in base 10
 body {
 	font-size: 62.5%;
-	font-family: 'Karla', sans-serif;
-	font-weight: 400;
+	// already defined in the setFonts mixin
+	// color: $font-color-primary;
 }
+
+// body {
+// 	display: flex;
+// 	flex-flow: column nowrap;
+// 	min-height: 100vh;
+// }
+
+// main {flex: 1;}
 
 
 /* ---------------------------------
@@ -51,72 +108,64 @@ rules
 --------------------------------- */
 
 .container {
-	padding: getEmValue(20, 10);
+	padding: emCalc(20);
 }
 
 .blog-post-nav {
 	background-color: $asphalt;
-	ul {
-		// add list-style to resetBox, maybe w/ conditional?
-		@include resetBox(1em, 0);
-		list-style: none;
-	}
+	ul { @include resetBox(1em, 0, true); }
 }
 
 // .blog-post
 .blog-post {
 	.blog-post-header {
 		position: relative;
-		height: getEmValue(200, 10);
+		height: emCalc(280);
 		overflow: hidden;
-		// background-color: rgba(black, .5);
-		.blog-post-header-inner {
+		.blog-post-header-text {
 			position: absolute;
 			// necessary?
 			top: 0;
 			left: 0;
-			// create a flexbox mixin
-			display: flex;
-			flex-flow: column nowrap;
-			justify-content: center;
-			align-items: flex-start;
+			@include setFlexbox(column nowrap, center, flex-start);
 			height: 100%;
-			padding: getEmValue(20, 10);
+			padding: emCalc(20);
 			color: $paper;
-			background-color: rgba(black, .25);
+			background-color: rgba(black, .15);
 			.blog-post-title,
 			.blog-post-subtitle,
 			.blog-post-timestamp { margin: 0; }
 			.blog-post-title {
-				margin-bottom: getEmValue(10, 10);
-				// use font shorthand, create mixin or template
-				font-family: 'Trocchi', sans-serif;
-				font-weight: 400;
+				// is this override necessary?
+				flex-grow: 1;
+				margin-bottom: emCalc(5);
+				@include setFonts(32, $heading-font, $font-color-bright);
 			}
 			.blog-post-subtitle {}
-			.blog-post-timestamp {}
+			// include in .blog-post-meta?
+			.blog-post-timestamp {
+				@include setFonts((16 * 0.8), $system-font, $font-color-secondary);
+			}
 			.blog-post-meta {
-				// create a flexbox mixin
-				display: flex;
-				flex-flow: row nowrap;
-				justify-content: flex-start;
-				align-items: center;
+				@include setFlexbox(row nowrap, flex-start, center);
 				width: 100%;
 				@include resetBox;
 				list-style: none;
+				@include setFonts((16 * 0.8), $system-font, $font-color-secondary);
 				// can we manage spacing via flexbox?
 				li {
 					margin-right: 10px;
 					} &:last-child { margin-right: 0; }
 			}
 		}
-		.blog-post-hero-img {
+		.blog-post-header-img {
 			min-height: 100%;
 			width: auto;
 		}
 	}
 	.blog-post-body {
-		padding: getEmValue(20, 10);
+		padding: emCalc(10) emCalc(20);
+		@include setFonts((16), $base-font, $font-color-dark);
 	}
 	.blog-post-footer {}
 }
