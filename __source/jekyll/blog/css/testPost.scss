@@ -25,23 +25,21 @@ common
 // setting the global `font-size` at 10px
 // for em calculations in base 10
 body {
+	// mixin?
+	display: flex;
+	flex-flow: column nowrap;
+	min-height: 100vh;
 	font-size: 62.5%;
 	// already defined in the setFonts mixin
 	// color: $font-color-primary;
 }
 
-// body {
-// 	display: flex;
-// 	flex-flow: column nowrap;
-// 	min-height: 100vh;
-// }
-
-// main {flex: 1;}
-
 
 /* ---------------------------------
 rules
 --------------------------------- */
+
+main { flex-grow: 1; }
 
 .container {
 	padding: emCalc(20);
@@ -85,8 +83,7 @@ rules
 			.blog-post-meta {
 				@include setFlexbox(row nowrap, flex-start, center);
 				width: 100%;
-				@include resetBox;
-				list-style: none;
+				@include resetBox(0, 0, true);
 				@include setFonts((16 * 0.8), $system-font, $font-color-secondary);
 				// can we manage spacing via flexbox?
 				li {
@@ -101,12 +98,112 @@ rules
 	}
 	.blog-post-body {
 		padding: emCalc(10) emCalc(20);
-		@include setFonts((16), $base-font, $font-color-dark);
+		// update var w/ color
+		@include setFonts(16, $base-font, $utility-dark-gray);
+		// verify
+		line-height: 1.7;
+		h2, h3, h4, h5, h6 { font-family: $heading-font; }
+		/* ---------------------------------
+		legacy rules, need improvement
+		- remove unneeded properties
+		- store repeated props/values in vars/mixins
+		- normalize em values w/ emCalc
+		--------------------------------- */
+		&::selection {
+			background: $utility-dark-gray;
+			color: white;
+		}
+		em {
+			@extend %specialTextPad;
+			background-color: $utility-highlight;
+		}
+		strong { color: $utility-dark-gray; }
+		pre {
+			padding: emCalc(20) emCalc(10);
+			border-left: 3px solid $accent-bright;
+			background-color: rgba($utility-light-gray, .5);
+			tab-size: 2;
+			line-height: 1.5em;
+			white-space: pre-wrap;
+		}
+		code.inline-code {
+			@extend %specialTextPad;
+			background-color: rgba($utility-light-gray, .5);
+			border-radius: 3px;
+			font-size: 0.9em;
+		}
+		blockquote {
+			font-style: italic;
+			border-left: 3px solid $accent-bright;
+			padding: 0 1em;
+			margin: 1em 2em;
+		}
+		hr {
+			width: 30%;
+			border: 0;
+			border-bottom: 3px double $utility-light-gray;
+		}
+		ul,ol {
+			// convert
+			padding: 1em 1.8em;
+			// create a border mixin
+			@include setBorder(1px, solid, $utility-light-gray, top);
+			@include setBorder(1px, solid, $utility-light-gray, bottom);
+			background-color: $background-bright-secondary;
+			li {
+				// convert
+				padding: 0.5em 0;
+				&::marker { color: white; }
+			}
+		}
+		ul { list-style: circle; }
+		a {
+			@extend %specialTextPad;
+			border-bottom: 1px solid $accent-bright;
+			// necessary?
+			color: inherit;
+			text-decoration: none;
+			&:hover {
+				color: black;
+				border-bottom: 2px solid $accent-bright;
+				background-color: rgba($accent-bright, .1);
+			}
+		}
 	}
-	.blog-post-footer {}
+	.blog-post-footer {
+		.blog-post-notes {
+			// need notes to test these rules!
+			/*
+			border-top: 1px dotted $utility-light-gray;
+			margin-top: 3.5em;
+			color: $utility-light-gray;
+			ol {
+				background-color: inherit;
+				border: 0px none;
+			}
+			p { color: $utility-light-gray; }
+			p a {
+				color: #333;
+				text-decoration: none;
+				border-bottom: none;
+			}
+			p a:hover {
+				color: $utility-light-gray;
+				text-decoration: none;
+				border-bottom: none;
+			}
+			*/
+		}
+		.blog-post-cta { background-color: $background-bright; }
+	}
 }
 
-
+footer {
+	small {
+		display: block;
+		@include setFonts(12, $system-font, $font-color-secondary, center);
+	}
+}
 
 
 

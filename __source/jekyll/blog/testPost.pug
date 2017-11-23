@@ -40,17 +40,16 @@ html
 				.blog-post-body
 					p When the news hit that #[a(href='#') Netflix was coming to Italy,] as a tech early adopter and a heavy movie & TV-Show watcher I was eager to try it: I subscribed on launch day.
 
-					p My expectations though, were pretty high: I was hoping for a 'Spotify for TV Shows', a single VOD service to rule them all, with a comprehensive and diverse catalogue. But when I tried searching for some of my favourite shows [^1] I had to realize things were going to be very different.
+					pre
+						code
+							| cd ~ && ls -alh && du -h ./
 
-					//- p After an initial disappointment, a reality check was due: the TV/Movie licensing arena must be a really tough one, and one can't expect content to just flow from one network/distributor to the other. For example, I guess we'll never see HBO shows on Netflix, so give up on The Sopranos, Game Of Thrones, et al. It's a 'walled garden' paradigm.
+					p
+						| My expectations though, were pretty high: I was hoping for a 'Spotify for TV Shows', a single VOD service to rule them all, with a comprehensive and diverse catalogue.
+						| But when I tried searching for some of my favourite shows [^1] I had to realize things were going to be very different.
+						code.inline-code var myVar = 'lorem';
 
-					//- p As a poignant example of this, just think that *even House of Cards – a Netflix original –* is unavailable in Italy, I suspect for previous distribution deals with other networks operating in the country.
-
-					//- p This must be tied also to the fact that licensing deals and content availability vary greatly on a regional basis. My guess is it'll take at least a full year for the Netflix catalogue to become wider and more complete.
-
-					//- p Also, while in Spotify most of the time I have no problem finding obscure and niche artists, for some reason Netflix seems to be overly optimized for mainstream content and very lacking on the other end of the spectrum.
-
-					//- p So after this initial test drive I formed an opinion on Netflix, which I'd summarize as follows:
+					hr
 
 					h3 Pros
 					h4 Netflix excels in:
@@ -58,6 +57,9 @@ html
 					ul
 						li Technical superiority &amp; performance #[a(href='#') they even built a custom CDN!]
 						li Original content: 'Netflix originals' are always interesting, they span very different genres, and they sometimes reach the status of masterpiece.
+
+					blockquote
+						| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam vitae dui.
 
 					h3 Cons
 					h4 Netflix isn't that great in:
@@ -70,21 +72,9 @@ html
 
 					p Yet, a discovery I made yesterday proved once again how #[em Netflix Originals are a powerful weapon] in the hands of the company.
 
-					pre
-						code
-							| cd ~ && ls -alh && du -h ./
-
-
-					//- h3 Surprise: the niche-cult anime I wasn't expecting
-					//- p I opened the app without much convinction, #[code prepared to skim] through the usual months-old titles, when my eye caught a new cover in the Anime section. I took a closer look and I found this authentic masterpiece: [Knights of Sidonia.](http://) The reason for my excitement is that Tsutomu Nihei is one of my favourite manga authors
-
-					//- blockquote
-					//- 	| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam vitae dui. Nulla id libero nec eros pretium facilisis. Donec nulla ipsum, elementum vitae
-
-					//- h3 A digression
-					//- p Regional availability in my opinion poses a relevant question, or a paradox if you will: technology today can overcome every boundary, yet it must obey to an archaic territorial logic that dictates who can watch what. You live in Italy? Then you'll watch only your specific-regionally-tailored selection. You can't peek into the other side of the world. I find this extremely inadequate in our digital era.
 				.blog-post-footer
+					.blog-post-notes
 					.blog-post-cta
 
 		footer
-			p.subtext All content &copy; 2017 Alessandro Di Tecco
+			small All content &copy; 2017 Alessandro Di Tecco
