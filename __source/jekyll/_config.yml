@@ -14,7 +14,6 @@ source: ./
 destination: ../../public
 layouts_dir: ./_layouts
 includes_dir: ./_includes
-# collections_dir: ./_collections
 
 
 # ---------------------------------
@@ -54,3 +53,7 @@ kramdown:
 # ---------------------------------
 
 error_mode: warn
+
+##################################
+# comment-out prior to deployment!
+exclude: [ archive, basecamp, projects, resume ]
