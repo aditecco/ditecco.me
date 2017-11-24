@@ -239,11 +239,43 @@ main { flex-grow: 1; }
 			}
 			*/
 		}
-		.blog-post-cta { background-color: $background-bright; }
+		.blog-post-cta {
+			@include resetBox(0, 0, true);
+			@include setFlexbox(column nowrap, center, center);
+			@include setBorder(1px, solid, $utility-light-gray, top);
+			// font properties should probably be set on .blog-post
+			@include setFonts(16, $base-font, $utility-dark-gray, center, 400);
+			@media(min-width: 650px) {
+				@include setFlexbox(row nowrap, center, center);
+				@include setBorder(1px, solid, $utility-light-gray, bottom);
+			}
+			.blog-post-cta-block {
+				width: 100%;
+				@include setBorder(1px, solid, $utility-light-gray, bottom);
+				@media(min-width: 650px) {
+					width: 50%;
+					@include setBorder(1px, solid, $utility-light-gray, right);
+					border-bottom: none;
+				}
+				.blog-post-cta-button {
+					display: block;
+					padding: emCalc(30);
+					color: inherit;
+					@extend %resetAnchors;
+					&:hover {
+						background-color: $accent-bright;
+						color: white;
+						transition: all, 300ms, ease-out;
+					}
+				}
+			}
+		}
 	}
 }
 
+
 footer {
+	margin-bottom: emCalc(40);
 	small {
 		display: block;
 		@include setFonts(12, $system-font, $font-color-secondary, center);
