@@ -42,14 +42,14 @@ rules
 .blog-post-nav {
 	// avoid unique colors
 	background-color: $asphalt;
-	border-bottom: 1px solid darken($asphalt, 15%);
+	border-bottom: 1px solid darken($asphalt, 10%);
 	ul {
 		@include resetBox(1em, 0, true);
 		.button-nav {
 			font-size: emCalc(14);
 			color: $font-color-bright;
 			@extend %resetAnchors;
-			&:hover { border-bottom: 1px dotted $font-color-bright; }
+			&:hover { @include setBorder(2px, solid, $font-color-bright, bottom); }
 		}
 	}
 }
@@ -65,10 +65,11 @@ main { flex-grow: 1; }
 
 // .blog-post
 .blog-post {
+	// move font-size from .blog-post-body here?
 	.blog-post-header {
 		position: relative;
 		// 300?
-		height: emCalc(280);
+		height: emCalc(320);
 		overflow: hidden;
 		.blog-post-header-text {
 			position: absolute;
@@ -81,7 +82,7 @@ main { flex-grow: 1; }
 			color: $paper;
 			background-color: rgba(black, .15);
 			@media(min-width: 760px) {
-				padding: $increased-container-padding;
+				padding: emCalc(20) emCalc(160);
 			}
 			.blog-post-title,
 			.blog-post-subtitle,
@@ -93,6 +94,7 @@ main { flex-grow: 1; }
 				@include setFonts(32, $heading-font, $font-color-bright);
 				// check this breakpoint
 				@media(min-width: 650px) {
+					// 45?
 					font-size: emCalc(40);
 				}
 			}
@@ -130,11 +132,22 @@ main { flex-grow: 1; }
 		@include setFonts(16, $base-font, $utility-dark-gray);
 		// verify
 		line-height: 1.7;
+		& > * { margin: 0 0 emCalc(10); }
+		@media(min-width: 760px) {
+			// doesn't match w/ .blog-post-header-text padding
+			padding: emCalc(20, 16) emCalc(160, 16);;
+		}
+
+
+		/* ---------------------------------
+		headings
+		--------------------------------- */
 		h2, h3, h4, h5, h6 {
 			font-family: $heading-font;
 			// forcing the weight, otherwise normalize.css
 			// would override the font-weight of .blog-post-body
 			font-weight: 400;
+			// need to fix the margin-bottom, computed ad 22px
 		}
 		// the context for emCalc is 16!
 		// that is, the font-size of .blog-post-body
@@ -143,19 +156,33 @@ main { flex-grow: 1; }
 		h4 { font-size: emCalc(18, 16); }
 		h5 { font-size: emCalc(16, 16); }
 		h6 { font-size: emCalc(14, 16); }
-		ul,ol {
-			// convert
-			padding: 1em 1.8em;
-			@include setBorder(1px, solid, $utility-light-gray, top);
-			@include setBorder(1px, solid, $utility-light-gray, bottom);
-			background-color: rgba($utility-light-gray, .25);
+
+
+		/* ---------------------------------
+		lists
+		--------------------------------- */
+		ul, ol {
+			padding: emCalc(10) emCalc(20);
+			@include setBorder(3px, solid, $utility-highlight, left);
+			background-color: rgba($utility-highlight, .15);
 			li {
-				// convert
-				padding: 0.5em 0;
+				margin-bottom: emCalc(10);
+				@include setBorder(1px, dotted, rgba($utility-dark-gray, .25), bottom);
+				&:last-child {
+					margin-bottom: 0;
+					border: none;
+				}
 				&::marker { color: white; }
+				// style links
+				a {
+					border: none;
+					color: black;
+				}
 			}
 		}
 		ul { list-style: circle; }
+
+
 		/* ---------------------------------
 		fx
 		--------------------------------- */
@@ -169,6 +196,8 @@ main { flex-grow: 1; }
 		}
 		em {}
 		strong { color: $utility-dark-gray; }
+
+
 		/* ---------------------------------
 		special txt
 		--------------------------------- */
@@ -187,12 +216,22 @@ main { flex-grow: 1; }
 			font-size: 0.9em;
 		}
 		blockquote {
-			font-style: italic;
+			// force overriding of browser styles
+			margin: 0 0 emCalc(10);
+			padding: emCalc(8);
 			@include setBorder(3px, solid, $accent-bright, left);
-			// convert
-			padding: 0 1em;
-			margin: 1em 2em;
+			font-style: italic;
+			&::before, &::after {
+				content: '" ';
+				font-size: emCalc(14);
+				color: $utility-light-gray;
+			}
 		}
+
+
+		/* ---------------------------------
+		links
+		--------------------------------- */
 		a {
 			@extend %specialTextPad;
 			@include setBorder(1px, solid, $accent-bright, bottom);
@@ -205,17 +244,21 @@ main { flex-grow: 1; }
 				background-color: rgba($accent-bright, .1);
 			}
 		}
+
+
+		/* ---------------------------------
+		other
+		--------------------------------- */
 		hr {
-			width: 30%;
+			width: 20%;
+			margin: emCalc(20) auto emCalc(20);
+			// needed to remove browser def border
 			border: 0;
-			border-bottom: 3px double $utility-light-gray;
-		}
-		@media(min-width: 760px) {
-			// doesn't match w/ .blog-post-header-text padding
-			padding: $increased-container-padding;
+			@include setBorder(3px, double, $utility-light-gray, bottom);
 		}
 	}
 	.blog-post-footer {
+		margin-bottom: emCalc(40);
 		.blog-post-notes {
 			// need notes to test these rules!
 			/*
