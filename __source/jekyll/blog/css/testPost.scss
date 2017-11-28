@@ -67,7 +67,7 @@ main { flex-grow: 1; }
 
 
 // .blog-post
-$blog-post-header-height: emCalc(320);
+$blog-post-header-height: emCalc(460);
 
 .blog-post {
 	position: relative;
@@ -78,9 +78,9 @@ $blog-post-header-height: emCalc(320);
 		z-index: 999;
 		width: 100%;
 		height: $blog-post-header-height;
-		background-color: rgba(black, .15);
+		background-color: rgba(black, .55);
 		.blog-post-header-text {
-			@include setFlexbox(column nowrap, center, flex-start);
+			@include setFlexbox(column nowrap, flex-end, flex-start);
 			height: 100%;
 			padding: emCalc(20);
 			color: $paper;
@@ -88,8 +88,6 @@ $blog-post-header-height: emCalc(320);
 			.blog-post-timestamp,
 			.blog-post-author { margin: 0 0 emCalc(15); }
 			.blog-post-title {
-				// is this override necessary?
-				flex-grow: 1;
 				margin-bottom: emCalc(5);
 				@include setFonts(32, $heading-font, $font-color-bright);
 				// check this breakpoint
@@ -101,6 +99,7 @@ $blog-post-header-height: emCalc(320);
 			.blog-post-timestamp,
 			.blog-post-author {
 				@include setFonts((16 * 0.8), $system-font, $font-color-secondary);
+				text-shadow: 0 2px 4px rgba(black, .55);
 			}
 			// include timestamp & author?
 			.blog-post-meta {
@@ -124,14 +123,11 @@ $blog-post-header-height: emCalc(320);
 		}
 	}
 	.blog-post-header-img-container {
+		@include setFlexbox(column nowrap, center, center);
 		height: $blog-post-header-height;
 		margin-bottom: emCalc(20);
 		overflow: hidden;
-		& > img {
-			width: 100%;
-			// temp
-			min-width: $blog-post-header-height * 2;
-		}
+		& > img { min-width: 100%; }
 	}
 	.blog-post-body {
 		padding: 0 emCalc(20, 16) 0;
