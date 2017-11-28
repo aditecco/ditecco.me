@@ -15,6 +15,14 @@ imports
 vars, functions, mixins, other
 --------------------------------- */
 
+// debugging
+$debugMode: false;
+
+* {
+	@if $debugMode { outline: 1px solid $purple; }
+}
+
+
 // color vars
 // $accent-dark: ;
 $accent-bright: #1abc9c;
@@ -29,7 +37,7 @@ $utility-highlight: rgba(255, 208, 16, 0.5);
 
 
 // typography vars
-$heading-font: 'Trocchi', sans-serif;
+$heading-font: 'Trocchi', serif;
 $base-font: 'Karla', sans-serif;
 $system-font: 'Helvetica, Arial', sans-serif;
 $font-color-dark: $gunMetal;
@@ -39,7 +47,7 @@ $font-color-secondary: $silver;
 
 // functions
 @function emCalc($target, $context: 10) {
-	// as seen on: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
+	// ref: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
 	@return ($target / $context) * 1em;
 }
 
@@ -100,24 +108,6 @@ $font-color-secondary: $silver;
 %resetAnchors {
 	text-decoration: none;
 }
-
-// debugging
-$debugMode: false;
-
-* {
-	@if $debugMode { outline: 1px solid $purple; }
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
