@@ -25,18 +25,18 @@ html
 		main
 			article.blog-post
 				header.blog-post-header
-					.blog-post-header-text
+					.blog-post-header-text.container
+						//- move all to .blog-post-header?
 						h1.blog-post-title Adding A Second External Display To An Early 2011 Macbook Pro
-						h4.blog-post-subtitle
 						h5.blog-post-timestamp Wednesday, 22 november 2017
+						h5.blog-post-author Alessandro Di Tecco
 						ul.blog-post-meta
 							//- use an ::after
-							li Alessandro Di Tecco &middot;
 							li 999 chars &middot;
-							li
-								span.blog-post-tag tagName
+							li #[span.blog-post-tag tagName]
+				.blog-post-header-img-container
 					img.blog-post-header-img(src='img/testImg.jpg')
-				.blog-post-body
+				.blog-post-body.container
 					p When the news hit that #[a(href='#') Netflix was coming to Italy,] as a tech early adopter and a heavy movie & TV-Show watcher I was eager to try it: I subscribed on launch day.
 
 					pre
@@ -67,13 +67,13 @@ html
 						li New content is added at a slow pace, and the user has a hard time finding it (must actively look for it);
 						li The catalougue 'feels' small.
 
-					p Yet, a discovery I made yesterday proved once again how #[span(class='highlighted') Netflix Originals are a powerful weapon] in the hands of the company.
+					p Yet, a discovery I made yesterday proved once again how #[span.highlighted Netflix Originals are a powerful weapon] in the hands of the company.
 
 				.blog-post-footer
 					.blog-post-notes
 
 		footer
-			ul.blog-post-cta
+			ul.blog-post-cta.container
 				li.blog-post-cta-block
 					a(href='https://twitter.com/intent/tweet?text=Check+out+this+post+on+http://ditecco.me&via=aditecco', target='_blank', class='blog-post-cta-button') Tweet this post
 				li.blog-post-cta-block
