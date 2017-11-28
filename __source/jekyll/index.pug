@@ -1,33 +1,17 @@
 ---
-
-
+title: Alessandro Di Tecco | UI designer &amp; entrepreneur
+description: The personal website of Alessandro Di Tecco, UI designer and entrepreneur.
 ---
 
 //- vars
-//- is `var` implicit?
-- vNumber = '5.0.0 (beta)'
-- copyYear = 2017
-- timeStamp = new Date();
-- printLastEdit = () => timeStamp.toLocaleString();
 - encodedEmail = '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;'
 
 doctype
 html
 	head
-		meta(charset="utf-8")
-		meta(name="keywords", content="Alessandro Di Tecco,ui design,user interface design,interface design,design,startup,user experience,ux design,coworking,entrepreneur,entrepreneurship")
-		meta(name="author", content="Alessandro Di Tecco")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		meta(name="description", content="The personal website of Alessandro Di Tecco, UI designer and entrepreneur.")
-
+		| {% include dtc-common-meta %}
 		link(href='http://fonts.googleapis.com/css?family=Montserrat|Roboto', rel='stylesheet', type='text/css')
 		link(rel="stylesheet", href="/css/dtc-home-main.css")
-
-		title Alessandro Di Tecco | UI designer &amp; entrepreneur
-
-		script.
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-57098011-1','auto');ga('send','pageview');
-
 	body
 		main.card-list-container
 			ul.card-list
@@ -99,4 +83,4 @@ html
 							span(class="card-list-item-tag") photography
 
 		footer
-			p &copy;#{copyYear} Alessandro Di Tecco&comma; All rights reserved. &mdash; v#{vNumber} &bull; #{printLastEdit()}
+			p | {% include dtc-common-footer %}

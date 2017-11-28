@@ -2,13 +2,9 @@
 doctype
 html
 	head
-		meta(charset='utf-8')
-		meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
-		title {{ page.title }} | {{ site.title }}
-		meta(name="description" content='{{ page.description }}')
+		| {% include dtc-common-meta %}
 		link(href='http://fonts.googleapis.com/css?family=Karla|Trocchi', rel='stylesheet', type='text/css')
 		link(rel="stylesheet", href="/blog/css/dtc-blog-post.css")
-		| {% include dtc-ga-snp.html %}
 	body
 		nav.blog-post-nav
 			ul
@@ -38,5 +34,5 @@ html
 					a(href='https://twitter.com/intent/tweet?text=Check+out+this+post+on+http://ditecco.me&via=aditecco', target='_blank', class='blog-post-cta-button') Tweet this post
 				li.blog-post-cta-block
 					a(href='https://twitter.com/intent/follow?screen_name=aditecco', target='_blank', class='blog-post-cta-button') Follow @aditecco on Twitter
-			small All content &copy; 2017 Alessandro Di Tecco
+			small | {% include dtc-common-footer %}
 		//- script(type="text/javascript", async src="//platform.twitter.com/widgets.js")
