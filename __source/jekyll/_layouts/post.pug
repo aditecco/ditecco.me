@@ -1,0 +1,45 @@
+
+doctype
+html
+	head
+		//- check contents against this: https://github.com/joshbuchea/HEAD
+		//- for unicode chars
+		//- https://stackoverflow.com/questions/1696619/displaying-unicode-symbols-in-html
+		meta(http-equiv='Content-Type', content='text/html', charset='utf-8')
+		meta(name="description" content='{{ page.description }}')
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(href='http://fonts.googleapis.com/css?family=Karla|Trocchi', rel='stylesheet', type='text/css')
+		link(rel="stylesheet", href="/blog/css/dtc-blog-post.css")
+		title {{ page.title }} | {{ site.title }}
+	body
+		nav.blog-post-nav
+			ul
+				li
+					a(href="/index.html", class='button-link button-nav') &#8592; Back
+
+		main
+			article.blog-post
+				header.blog-post-header
+					.blog-post-header-text.container
+						h1.blog-post-title {{ page.title }}
+						h5.blog-post-timestamp {{ page.timestamp }}
+						h5.blog-post-author {{ page.author }}
+						ul.blog-post-meta
+							//- use an ::after?
+							li {{ page.charCount }} &middot;
+							li #[span.blog-post-tag {{ page.taxonomy }}]
+				.blog-post-header-img-container
+					img.blog-post-header-img(src='/blog/img/{{ page.imgUrl }}')
+				.blog-post-body.container
+					| {{ content }}
+				.blog-post-footer
+					.blog-post-notes
+		footer
+			ul.blog-post-cta.container
+				li.blog-post-cta-block
+					a(href='https://twitter.com/intent/tweet?text=Check+out+this+post+on+http://ditecco.me&via=aditecco', target='_blank', class='blog-post-cta-button') Tweet this post
+				li.blog-post-cta-block
+					a(href='https://twitter.com/intent/follow?screen_name=aditecco', target='_blank', class='blog-post-cta-button') Follow @aditecco on Twitter
+			small All content &copy; 2017 Alessandro Di Tecco
+
+		//- script(type="text/javascript", async src="//platform.twitter.com/widgets.js")
