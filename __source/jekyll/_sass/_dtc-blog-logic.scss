@@ -12,7 +12,7 @@ imports
 
 
 /* ---------------------------------
-vars, functions, mixins, other
+vars
 --------------------------------- */
 
 // debugging
@@ -45,7 +45,34 @@ $font-color-bright: $paper;
 $font-color-secondary: $silver;
 
 
-// functions
+/* ---------------------------------
+resets & placeholders
+--------------------------------- */
+
+%setBorderBox { box-sizing: border-box; }
+
+%setBody {
+	display: flex;
+	flex-flow: column nowrap;
+	min-height: 100vh;
+	font-size: 62.5%;
+}
+
+// % { flex-grow: 1; }
+
+%specialTextPad {
+	padding: .1em .2em;
+}
+
+%resetAnchors {
+	text-decoration: none;
+}
+
+
+/* ---------------------------------
+functions & mixins
+--------------------------------- */
+
 @function emCalc($target, $context: 10) {
 	// ref: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
 	@return ($target / $context) * 1em;
@@ -98,27 +125,3 @@ $font-color-secondary: $silver;
 	justify-content: $justify;
 	align-items: $align;
 }
-
-//
-%specialTextPad {
-	padding: emCalc(1) emCalc(2);
-}
-
-//
-%resetAnchors {
-	text-decoration: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
