@@ -35,6 +35,7 @@ plugins:
 
 jekyll-pug:
   minify: true
+  debug: true
 
 autoprefixer:
   browsers:
@@ -56,4 +57,4 @@ error_mode: warn
 
 ##################################
 # comment-out prior to deployment!
-exclude: [ archive, basecamp, projects, resume ]
+# exclude: [ archive, basecamp, projects, resume ]
