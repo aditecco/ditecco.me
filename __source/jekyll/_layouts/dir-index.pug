@@ -1,0 +1,21 @@
+
+doctype
+html
+	head
+		| {% include dtc-common-meta %}
+		link(href='http://fonts.googleapis.com/css?family=Montserrat|Roboto', rel='stylesheet', type='text/css')
+		link(rel="stylesheet", href="/css/dtc-dir-index.css")
+	body
+		nav.index-nav
+			ul
+				li
+					a(href="/index.html") &#8592; Back
+		main
+			section
+				.index-hero
+					h1 {{ page.title }}
+			section
+				ul.index-item-list
+					| {{ content }}
+		footer.index-footer
+			small | {% include dtc-common-footer %}
