@@ -25,15 +25,16 @@ $fontContext: 16;
 
 .notice-body {
 	@extend %setBorderBox;
-	// justify-content: space-evenly?
-	// would like to use it but it doesn't respond well in all scenarios
-	// align-items: stretch ?
 	@include setFlexbox(row wrap, center, center);
 	position: fixed;
 	bottom: 0%;
 	z-index: 999;
 	width: 100%;
-	@include resetBox($pad: 0 emCalc(15, $fontContext), $mar: 0, $isList: false);
+	@include resetBox(
+		$pad: emCalc(30, $fontContext) emCalc(15, $fontContext),
+		$mar: 0,
+		$isList: false
+	);
 	// in setFonts, 10 / 10 = 1em = 16px w/ a context of font-size: 100%
 	@include setFonts(
 		10,
@@ -43,32 +44,28 @@ $fontContext: 16;
 		$weight: 400
 	);
 	background-color: rgba(black, .85);
-	// check
 	@media(max-width: 768px) {
 		@include setFlexbox(column nowrap, flex-start, flex-start);
-	}
-	.notice-left-block,
-	.notice-right-block {
-		padding: emCalc(40, $fontContext) 0;
-		@media(max-width: 768px) {
-			padding: emCalc(20, $fontContext) 0;
+		padding: {
+			top: emCalc(25, $fontContext);
+			bottom: emCalc(25, $fontContext);
 		}
 	}
-	.notice-left-block {
-		margin-right: emCalc(40, $fontContext);
-		.notice-back-button {
-			padding: emCalc(10, $fontContext);
-			border: 2px solid $background-bright;
-			border-radius: 4px;
-			color: $background-bright;
-			&:hover {
-				border: 2px solid $accent-bright;
-				text-decoration: none;
-				color: $accent-bright;
-			}
+	.notice-back-button {
+		padding: emCalc(10, $fontContext);
+		margin-right: emCalc(25, $fontContext);
+		border: 2px solid $background-bright;
+		border-radius: 4px;
+		color: $background-bright;
+		&:hover {
+			border: 2px solid $accent-bright;
+			text-decoration: none;
+			color: $accent-bright;
 		}
+		@media(max-width: 768px) { margin: 0 0 emCalc(25, $fontContext); }
 	}
-	.notice-right-block {
-		p { margin: 0; }
+	.notice-message {
+		margin: 0;
+		@media(max-width: 768px) { padding: 0; }
 	}
 }
