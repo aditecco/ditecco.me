@@ -2,11 +2,7 @@
 doctype
 html
 	head
-		//- check contents against this: https://github.com/joshbuchea/HEAD
-		//- for unicode chars
-		//- https://stackoverflow.com/questions/1696619/displaying-unicode-symbols-in-html
-		meta(http-equiv='Content-Type', content='text/html', charset='utf-8')
-		meta(name="description" content="")
+		| {% include dtc-common-meta %}
 		link(href='http://fonts.googleapis.com/css?family=Arvo|Kaushan+Script|Karla', rel='stylesheet', type='text/css')
 		link(rel="stylesheet", href="css/dtc-resume-main.css", type="text/css")
 		title
@@ -25,10 +21,10 @@ html
 		//- dynamically filled
 		.notification-bar
 
-		block content
+		| {{ content }}
 
 		footer
-			p.subtext All content &copy; 2017 Alessandro Di Tecco
+			p.subtext {% include dtc-common-footer %}
 
 		script(src="js/jquery.min.js")
 		script(src="js/dtc-resume-main.js")
