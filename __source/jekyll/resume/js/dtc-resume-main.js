@@ -165,11 +165,10 @@ $(document).ready(function() {
 				if ($(e).children().length === 1) {
 					$(e).children().first().html(localizedTitle)
 				} else if ($(e).children().length === 2) {
-					$(e).children().first().html(localizedTitle)
+					$(e).children().first().text(localizedTitle)
 					$(e).children().last().html(localizedBody);
 				} else {
-					// do nothing and log
-					console.log('Element ' + i + ' was skipped.');
+					$(e).find('.list-heading').first().text('Aree/linguaggi');
 				}
 			});
 
