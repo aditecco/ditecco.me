@@ -9,6 +9,13 @@ dtc-resume-main.scss
 ======================== */
 
 /* ---------------------------------
+imports
+--------------------------------- */
+
+@import '_dtc-blog-logic';
+
+
+/* ---------------------------------
 colors
 --------------------------------- */
 
@@ -55,11 +62,11 @@ a {
 }
 
 a:hover {
-	background-color: #fadf63;
+	background-color: $utility-highlight;
 	color: #5a5a5a;
 }
 
-::selection {background-color: #fadf63;}
+::selection {background-color: $utility-highlight;}
 
 
 /* ========================
@@ -152,6 +159,13 @@ h1 {
 new!
 --------------------------------- */
 
+/* ---------------------------------
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+integrate _dtc-blog-logic
+
+(in progress)
+--------------------------------- */
+
 // other
 .rbreak { display: none; }
 
@@ -178,6 +192,12 @@ new!
 .special-char { color: red; }
 
 .underline { border-bottom: 2px solid #E0D6CC; }
+
+.supertext {
+	background-color: $utility-highlight;
+	padding: 1px 2px;
+	border-radius: 2px;
+}
 
 
 // hero
@@ -255,10 +275,10 @@ new!
 	left: 50%;
 	width: 70%;
 	padding: 10px;
-	border: 1px solid darken(#fadf63, 20%);
+	border: 1px solid darken($utility-highlight, 20%);
 	border-radius: 4px;
 	text-align: center;
-	background-color: #fadf63;
+	background-color: $utility-highlight;
 	transform: translate(-50%, 0);
 	opacity: 0;
 	transition: opacity 500ms ease-out;
@@ -276,6 +296,11 @@ new!
 }
 
 
+/* ---------------------------------
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+we need to reflect HTML changes in
+the IT text, inside dtc-resume-main.js!!
+--------------------------------- */
 // outline-block
 .outline-block {
 	margin-bottom: 50px;
@@ -301,6 +326,35 @@ new!
 		}
 	}
 }
+
+
+// .quick-outline--profile
+.quick-outline--profile {
+	.list-heading, p { margin: 0; }
+}
+
+
+// .quick-outline--skills
+.quick-outline--skills {
+	.skill-list {
+		// try baseline in HP, too
+		@include setFlexbox(row wrap, flex-start, baseline);
+		padding: 0;
+		list-style: none;
+		@media(max-width: 380px) { @include setFlexbox(column nowrap, center, stretch); }
+		.skill-list-item {
+			padding: 5px 10px;
+			margin-right: 10px;
+			border: 2px solid #f2f2f2;
+			border-radius: 6px;
+			@media(max-width: 380px) {
+				margin-right: 0;
+				text-align: center;
+			}
+		}
+	}
+}
+
 
 // quick-outline--contact
 .quick-outline--contact {
