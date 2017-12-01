@@ -155,7 +155,7 @@ $(document).ready(function() {
 					},
 					{
 						title: 'Contatti',
-						body: '<p>Il modo migliore per contattarmi &egrave; via e-mail</p><a class="cta-button contact-button" href="mailto:&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;">Contattami</a>'
+						body: '<p>Il modo migliore per contattarmi &egrave; via e-mail.</p><a class="cta-button contact-button" href="mailto:&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;">Contattami</a>'
 					}
 				];
 
@@ -193,7 +193,7 @@ $(document).ready(function() {
 					{
 						title: '2013 - 2016 &mdash; Geekville',
 						jobTitle: 'Creatore, Co-Founder, Designer',
-						body: '<p>Attivo da ottobre 2013, Geekville è il coworking per aziende e freelance del settore creativo, web, &amp; mobile a Verona. <a href="http://www.geekville.it">&rarr; Visita il sito</a></p><p>Ispirato agli uffici delle startup di Silicon Valley, Geekville è un ambiente di lavoro non convenzionale: offre tutto ciò che serve per essere produttivi, e allo stesso tempo favorisce l&#39;incontro e lo scambio di conoscenze tra coworkers grazie all&#39;atmosfera amichevole e informale.</p><p>Geekville è attivo anche nella produzione di corsi &amp; workshop, con il brand Geekville Learning.</p><p>Credits: Geekville è stato fondato e realizzato col fondamentale aiuto del mio socio Francesco Adami, con il quale attualmente sto gestendo la società.</p>'
+						body: '<p>Attivo da ottobre 2013, Geekville è il coworking per aziende e freelance del settore creativo, web, &amp; mobile a Verona. <a href="/archive/geekville/" target="_blank">Visita il sito</a></p><p>Ispirato agli uffici delle startup di Silicon Valley, Geekville è un ambiente di lavoro non convenzionale: offre tutto ciò che serve per essere produttivi, e allo stesso tempo favorisce l&#39;incontro e lo scambio di conoscenze tra coworkers grazie all&#39;atmosfera amichevole e informale.</p><p>Geekville è attivo anche nella produzione di corsi &amp; workshop, con il brand Geekville Learning.</p><p>Credits: Geekville è stato fondato e realizzato col fondamentale aiuto del mio socio Francesco Adami, con il quale attualmente sto gestendo la società.</p>'
 					},
 					{
 						title: '2012 - 2013 &mdash; The Collective',
