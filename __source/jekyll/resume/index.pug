@@ -17,26 +17,51 @@ layout: resume
 					span.underline Quick outline
 
 			.outline-block.quick-outline--profile
-				h2.outline-block-list-heading Profile &amp; skills
+				h2.outline-block-list-heading Profile
 				ul
 					li
-						span.list-heading User Interface Designer
-						br
-						| Since 2011, I’ve been designing interfaces for a diverse range of digital products.
+						h3.list-heading Front-End Web Designer
+						p Since #{startYear}, I’ve been designing interfaces for a diverse range of digital products. I can deliver high-fidelity mockups or HTML/CSS/JS. #[sup.supertext new!]
 					li
-						span.list-heading I love coding!
-						br
-						| My primary output is high-fidelity mockups designed in my design tool of choice; however, I can code basic HTML &amp; CSS and I'm comfortable with the Unix/macOS command line.
-					li
-						span.list-heading Entrepreneurial experience
-						br
-						| In the past 6 years I've been working on my own ventures, developing firsthand experience of what it means to build, sell, and maintain a product or service.
+						h3.list-heading Entrepreneurial experience
+						p In the past #{since} years I've been working on my own ventures, developing firsthand experience in building, selling, and maintaining a product or service.
+
+			.outline-block.quick-outline--skills
+				h2.outline-block-list-heading Skills
+
+				h3.list-heading Areas/Languages
+				ul.skill-list
+					li.skill-list-item UI Design
+					li.skill-list-item HTML5
+					li.skill-list-item CSS3
+					li.skill-list-item JavaScript
+					li.skill-list-item pug
+					li.skill-list-item Markdown
+					li.skill-list-item Sass
+					li.skill-list-item jQuery
+					li.skill-list-item ES6
+					li.skill-list-item React
+
+				h3.list-heading Toolbox
+				ul.skill-list
+					li.skill-list-item Sublime Text
+					li.skill-list-item Emmet
+					li.skill-list-item npm, Yarn
+					li.skill-list-item gulp
+					li.skill-list-item Bootstrap
+					li.skill-list-item Jekyll, SSGs
+					li.skill-list-item git
+					li.skill-list-item Unix CLI
+					li.skill-list-item Firefox Dev Tools
+					li.skill-list-item Sketch
+					li.skill-list-item Photoshop
+					li.skill-list-item macOS
 
 			.outline-block.quick-outline--contact
 				h2.outline-block-list-heading Contact info
 				.quick-outline--contact-inner
 					p The best way to get in touch with me is via good-old e-mail.
-					a.cta-button.contact-button(href!='mailto:' + '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;') Contact me
+					a.cta-button.contact-button(href!='mailto:' + encodedEmail) Contact me
 
 .wrapper
 	.container
