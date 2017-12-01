@@ -127,6 +127,7 @@ $blog-post-header-height: emCalc(440);
 		height: $blog-post-header-height;
 		margin-bottom: emCalc(20);
 		overflow: hidden;
+		background: radial-gradient(at top left, #444, $utility-dark-gray);
 		& > img { min-width: 100%; }
 	}
 	.blog-post-body {

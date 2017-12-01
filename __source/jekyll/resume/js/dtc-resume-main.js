@@ -36,6 +36,39 @@ $(document).ready(function() {
 	}
 	setToggles('.story-block', '.story-block-header', '.story-block-body');
 
+/*
+	// toggle all story blocks at once
+
+	// fadeToggle()
+	// - all targets are closed
+	// - all targets are open
+
+	// - some targets are open
+	// - some targets are closed
+
+	$('.toggle-all-switch').on('click', function(e) {
+		e.preventDefault();
+		var label = ['expand', 'collapse'];
+		var target = $(this).closest('.full-story').find('.story-block-body');
+
+		// force hiding of already visibile story blocks
+		if (target.css('style') !== 'display: none;') {
+			// target.hide();
+			target.css('style', 'display: none;');
+			target.show();
+		} else {
+			// toggle all
+			target.fadeToggle();
+		}
+
+		// change button text according to blocks' state
+		$(this).text(label[0] + ' all sections');
+
+		// [FIX] - button text should reflect the current state of story blocks (expand/collapse); how do we detect the state?
+		// [FIX] - If a block has already been manually toggled, this handler should take precedence and reset it
+	})
+*/
+
 	// [IDEA]
 	// when an el is selected,
 	// (implementation)
@@ -89,7 +122,7 @@ $(document).ready(function() {
 
 			// calls
 			// since the DOM change loses the event listeners
-			// and the state of '.story-block-body', we re-set them
+			// and the state of '.story-block-body', we set them again
 			setToggles('.story-block', '.story-block-header', '.story-block-body');
 			showConfirmation('Translated to English!');
 			setTimeout(removeConfirmation, 2000);
@@ -132,6 +165,9 @@ $(document).ready(function() {
 				if ($(e).hasClass('section-header')) {
 					$(e).children().first().html(localizedTitle)
 				} else {
+					// [FIX]
+					// doesn't work for more structured layouts
+					// such as `.outline-block quick-outline--skills`
 					$(e).children().first().html(localizedTitle)
 					$(e).children().last().html(localizedBody);
 				}

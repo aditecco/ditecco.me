@@ -2,7 +2,7 @@
 /* ========================
 _dtc-blog-logic.scss
 ======================== */
-
+// should be renamed to: _dtc-sass-logic.scss
 
 /* ---------------------------------
 imports
@@ -79,7 +79,8 @@ functions & mixins
 }
 
 // reset margin and padding
-// + border?
+// should rename this to 'setBox',
+// and include emCalc()
 @mixin resetBox($pad: 0, $mar: 0, $isList: false) {
 	padding: $pad;
 	margin: $mar;
