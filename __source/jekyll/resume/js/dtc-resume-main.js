@@ -162,14 +162,14 @@ $(document).ready(function() {
 				var localizedTitle = localized[i].title,
 						localizedBody = localized[i].body;
 
-				if ($(e).hasClass('section-header')) {
+				if ($(e).children().length === 1) {
 					$(e).children().first().html(localizedTitle)
-				} else {
-					// [FIX]
-					// doesn't work for more structured layouts
-					// such as `.outline-block quick-outline--skills`
+				} else if ($(e).children().length === 2) {
 					$(e).children().first().html(localizedTitle)
 					$(e).children().last().html(localizedBody);
+				} else {
+					// do nothing and log
+					console.log('Element ' + i + ' was skipped.');
 				}
 			});
 
