@@ -105,18 +105,24 @@ $(document).ready(function() {
 			var quickOutline = $('.quick-outline').children();
 
 			$.map(quickOutline, function(e, i) {
+				// [OPTIM] move this to an external data file, convert to JSON
+				// require contents w/ $.get()
 				var localized = [
 					{
 						title: '<span class="underline">In breve</span>',
 						body: ''
 					},
 					{
-						title: 'Profilo &amp; skills',
-						body: '<li><span class="list-heading">UI Designer &amp; Imprenditore</span><br>User Interface Designer con approccio imprenditoriale, negli ultimi 5 anni ho lavorato sui miei progetti d&#39;impresa sviluppando un&#39;ampia esperienza nella creazione, vendita e mantenimento di prodotti o servizi.</li><li><span class="list-heading">Un designer che scrive codice</span><br>Il mio output principale è high-fidelity mockups in Adobe Photoshop, ma sono anche in grado di scrivere HTML &amp; CSS di base (l&#39;esempio più recente è <a href="http://www.simplest.io">il mio portfolio responsive.</a>)</li>'
+						title: 'Profilo',
+						body: '<li><h3 class="list-heading">Front-End Web Designer</h3><p>Dal 2011 creo design per una vasta gamma di prodotti digitali. Sono in grado di sviluppare high-fidelity mockups o HTML/CSS/JS. <sup class="supertext">new!</sup></p></li><li><h3 class="list-heading">Esperienza d&#39;impresa</h3><p>Negli ultimi 6 anni ho lavorato sui miei progetti d&#39;impresa sviluppando un&#39;ampia esperienza nella creazione, vendita e mantenimento di prodotti o servizi.</p></li>'
+					},
+					{
+						title: 'Skills',
+						body: ''
 					},
 					{
 						title: 'Contatti',
-						body: '<p>Il modo migliore per contattarmi &egrave; via e-mail</p><a class="cta-button contact-button" href="mailto:alessandro@ditecco.me">Contattami</a>'
+						body: '<p>Il modo migliore per contattarmi &egrave; via e-mail</p><a class="cta-button contact-button" href="mailto:&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;">Contattami</a>'
 					}
 				];
 
@@ -135,31 +141,34 @@ $(document).ready(function() {
 			var fullStory = $('.full-story').children();
 
 			$.map(fullStory, function(e, i) {
+				// [FIX] all accented letters need escaping
+				// [OPTIM] move this to an external data file, convert to JSON
+				// require contents w/ $.get()
 				var localized = [
 					{
 						title: '<span class="underline">La storia completa</span>',
 						jobTitle: '',
-						body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam vitae dui. Nulla id libero nec eros pretium facilisis.'
+						body: 'Segue una storia del mio percorso professionale fino ad oggi; clicca su una sezione per rivelare/nascondere i suoi contenuti.'
 					},
 					{
-						title: '2011 - 2016 &mdash; Simplest',
+						title: '2011 - 2017 &mdash; Simplest',
 						jobTitle: 'Freelance User Interface Designer',
-						body: '<p>Mi occupo stabilmente di UI Design dal 2011, e dal 2015 ho deciso di dare un nome alla mia attività: l&#39;ho chiamata Simplest, per ricordare a me stesso che le interfacce utente e le interazioni più semplici sono il fondamento delle migliori esperienze digitali.</p><p>Negli ultimi 5 anni ho progettato una vasta gamma di prodotti digitali, spesso curandone l&#39;immagine completa dall&#39;identità al marketing: subscription e-commerce, web apps, applicazioni multi-piattaforma, &amp; molto altro.<a href="http://www.simplest.io">&rarr; Tutti i miei lavori</a></p><p>Inoltre, data la mia attuale esperienza nella creazione e gestione di uno spazio di coworking, ho sviluppato una comprensione a tutto tondo del ciclo di vita di un prodotto: progettazione (nell&#39;ambito fisico o digitale), marketing &amp; vendita, pricing, amministrazione, acquisizione clienti, fidelizzazione, customer care, e tutte le quotidiane attività di problem-solving che ogni imprenditore conosce bene.</p>'
+						body: '<p>Mi occupo stabilmente di UI Design dal 2011, e dal 2015 ho deciso di dare un nome alla mia attività: l&#39;ho chiamata Simplest, per ricordare a me stesso che le interfacce utente e le interazioni più semplici sono il fondamento delle migliori esperienze digitali.</p><p>Negli ultimi 6 anni ho progettato una vasta gamma di prodotti digitali, spesso curandone l&#39;immagine completa dall&#39;identità al marketing: subscription e-commerce, web apps, applicazioni multi-piattaforma, &amp; molto altro. <a href="http://www.simplest.io">&rarr; Tutti i miei lavori</a></p><p>Inoltre, data la mia passata esperienza nella creazione e gestione di uno spazio di coworking, ho sviluppato una comprensione a tutto tondo del ciclo di vita di un prodotto: progettazione (nell&#39;ambito fisico o digitale), marketing &amp; vendita, pricing, amministrazione, acquisizione clienti, fidelizzazione, customer care, e tutte le quotidiane attività di problem-solving che ogni imprenditore conosce bene.</p>'
 					},
 					{
 						title: '2013 - 2016 &mdash; Geekville',
 						jobTitle: 'Creatore, Co-Founder, Designer',
-						body: '<p>Attivo da ottobre 2013, Geekville è il coworking per aziende e freelance del settore creativo, web, &amp; mobile a Verona. <a href="http://www.geekville.it">&rarr; Visita il sito</a></p><p>Ispirato agli uffici delle startup di Silicon Valley, Geekville è un ambiente di lavoro non convenzionale: offre tutto ciò che serve per essere produttivi, e allo stesso tempo favorisce l&#39;incontro e lo scambio di conoscenze tra coworkers grazie all&#39;atmosfera amichevole e informale.</p><p>Geekville è attivo anche nella produzione di corsi &amp; workshop, con il brand <a href="http://www.geekvillelearning.it">&rarr; Geekville Learning.</a></p><p>Credits: Geekville è stato fondato e realizzato col fondamentale aiuto del mio socio Francesco Adami, con il quale attualmente sto gestendo la società.</p>'
+						body: '<p>Attivo da ottobre 2013, Geekville è il coworking per aziende e freelance del settore creativo, web, &amp; mobile a Verona. <a href="http://www.geekville.it">&rarr; Visita il sito</a></p><p>Ispirato agli uffici delle startup di Silicon Valley, Geekville è un ambiente di lavoro non convenzionale: offre tutto ciò che serve per essere produttivi, e allo stesso tempo favorisce l&#39;incontro e lo scambio di conoscenze tra coworkers grazie all&#39;atmosfera amichevole e informale.</p><p>Geekville è attivo anche nella produzione di corsi &amp; workshop, con il brand Geekville Learning.</p><p>Credits: Geekville è stato fondato e realizzato col fondamentale aiuto del mio socio Francesco Adami, con il quale attualmente sto gestendo la società.</p>'
 					},
 					{
 						title: '2012 - 2013 &mdash; The Collective',
 						jobTitle: 'Creatore, Co-Founder, Designer',
-						body: '<p>Nel 2012 a Verona non esisteva una vera e propria offerta dedicata al coworking; certo, c&#39;era abbondanza di professionisti e aziende con uffici più grandi del necessario, che per arrotondare affittavano qualcuno dei loro locali. Ma ho sempre pensato che questo non si potesse chiamare coworking; piuttosto, sub-affitto.</p><p>Nessuno aveva ancora pensato di creare una realtà che facesse una cosa sola, e con la massima qualità: offrire spazi di lavoro come servizio per giovani aziende e professionisti, a un prezzo ragionevole. E&#39; in questo vuoto che si è inserito The Collective.</p><p>Durante la sua esistenza, in molti si sono incontrati a The Collective: alcuni hanno instaurato rapporti professionali, altri sono diventati semplicemente buoni amici. Alcuni ne hanno fatto quasi una seconda casa, altri ci hanno trovato lo spazio giusto per dare vita a quei progetti che da troppo tempo tenevano nel cassetto. Altri ancora si sono ispirati a The Collective per creare un proprio coworking. In ogni caso, The Collective ha lasciato il segno.</p><p>Credits: un fondamentale aiuto nel realizzare e gestire The Collective è venuto dal mio socio Francesco Adami, con il quale attualmente conduco Geekville.</p>'
+						body: '<p>Nel 2012 a Verona non esisteva una vera e propria offerta dedicata al coworking; certo, c&#39;era abbondanza di professionisti e aziende con uffici più grandi del necessario, che per arrotondare affittavano qualcuno dei loro locali. Ma ho sempre pensato che questo non si potesse chiamare coworking; piuttosto, sub-affitto.</p><p>Nessuno aveva ancora pensato di creare una realtà che facesse una cosa sola, e con la massima qualità: offrire spazi di lavoro come servizio per giovani aziende e professionisti, a un prezzo ragionevole. E&#39; in questo vuoto che si è inserito <a href="/archive/the-collective/" target="_blank">The Collective.</a></p><p>Durante la sua esistenza, in molti si sono incontrati a The Collective: alcuni hanno instaurato rapporti professionali, altri sono diventati semplicemente buoni amici. Alcuni ne hanno fatto quasi una seconda casa, altri ci hanno trovato lo spazio giusto per dare vita a quei progetti che da troppo tempo tenevano nel cassetto. Altri ancora si sono ispirati a The Collective per creare un proprio coworking. In ogni caso, The Collective ha lasciato il segno.</p><p>Credits: un fondamentale aiuto nel realizzare e gestire The Collective è venuto dal mio socio Francesco Adami, con il quale attualmente conduco Geekville.</p>'
 					},
 					{
 						title: '2011 - 2013 &mdash; The Digital League',
 						jobTitle: 'Founder, Designer',
-						body: '<p>I principali eventi tech/digital in Italia di norma sono un&#39;esclusiva delle grandi città come Roma o Milano. E&#39; nel 2009 che ho avuto per la prima volta l&#39;idea di creare un&#39;organizzazione in grado di portare quel tipo di manifestazioni a Verona. Due anni dopo, nel 2011, ho fondato The Digital League: un&#39;associazione con l&#39;obiettivo di portare a Verona i migliori eventi nazionali e internazionali su internet, tecnologia, startup e cultura digitale, favorendo così la nascita di una tech-community locale. </p><p>Nei suoi due anni di attività, The Digital League ha ottenuto molte conquiste:</p><ul><li>Ha creato The Collective, il primo coworking a Verona per professionisti creativi &amp; digitali;</li><li>Ha creato il format Digital Drink, ciclo di aperitivi di networking che hanno offerto a molte startup l&#39;opportunità di presentare il proprio prodotto a un pubblico selezionato;</li><li>Ha attivato relazioni e collaborazioni, nella forma della media partnership, con eventi e iniziative tech italiane e internazionali;</li><li>E&#39; stata uno degli sponsor paganti di Startup Weekend Verona 2012.</li></ul>'
+						body: '<p>I principali eventi tech/digital in Italia di norma sono un&#39;esclusiva delle grandi città come Roma o Milano. E&#39; nel 2009 che ho avuto per la prima volta l&#39;idea di creare un&#39;organizzazione in grado di portare quel tipo di manifestazioni a Verona. Due anni dopo, nel 2011, ho fondato <a href="/archive/the-digital-league/" target="_blank">The Digital League.</a> un&#39;associazione con l&#39;obiettivo di portare a Verona i migliori eventi nazionali e internazionali su internet, tecnologia, startup e cultura digitale, favorendo così la nascita di una tech-community locale. </p><p>Nei suoi due anni di attività, The Digital League ha ottenuto molte conquiste:</p><ul><li>Ha creato The Collective, il primo coworking a Verona per professionisti creativi &amp; digitali;</li><li>Ha creato il format Digital Drink, ciclo di aperitivi di networking che hanno offerto a molte startup l&#39;opportunità di presentare il proprio prodotto a un pubblico selezionato;</li><li>Ha attivato relazioni e collaborazioni, nella forma della media partnership, con eventi e iniziative tech italiane e internazionali;</li><li>E&#39; stata uno degli sponsor paganti di Startup Weekend Verona 2012.</li></ul>'
 					},
 					{
 						title: '01-06/2011 &mdash; Ninja Marketing',
