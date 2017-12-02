@@ -102,7 +102,7 @@ card list
 		&:last-child { margin: 0; }
 		&:hover {
 			border-bottom: 4px solid $accent-primary;
-			// transform: scale(1.05);
+			transform: rotate(-1.5deg);
 		}
 		&.card-list-item--master {
 			// bad override! find a cleaner solution
@@ -110,6 +110,7 @@ card list
 			background: $gunMetal url('/img/adt-hero.jpg') center center no-repeat;
 			// check this
 			background-size: 140% auto;
+			&:hover { transform: none; }
 			.card-list-item-body {
 				padding: 40px 20px;
 				background-color: hsla(0, 0%, 0%, 0.6);
@@ -121,7 +122,10 @@ card list
 		}
 		&.card-list-item--intro {
 			// bad override! find a cleaner solution
-			&:hover { border-bottom: 4px solid rgba($clouds, .99); }
+			&:hover {
+				border-bottom: 4px solid rgba($clouds, .99);
+				transform: none;
+			}
 			.card-list-item-body {
 				padding: 20px;
 				p {
