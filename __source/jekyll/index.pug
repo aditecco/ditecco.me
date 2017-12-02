@@ -12,7 +12,7 @@ html
 		| {% include dtc-common-meta %}
 		link(href='http://fonts.googleapis.com/css?family=Montserrat|Roboto', rel='stylesheet', type='text/css')
 		link(rel="stylesheet", href="/css/dtc-home-main.css")
-		| {% include dtc-ga-snp.html %}
+		include dtc-ga-snp.html
 	body
 		main.card-list-container
 			ul.card-list
@@ -82,6 +82,5 @@ html
 							h3 I take pictures
 							p A mini-site for my experiments in photography.
 							span(class="card-list-item-tag") photography
-
 		footer
 			p {% include dtc-common-footer %}
