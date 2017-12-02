@@ -20,7 +20,7 @@ includes_dir: ./_includes
 # vars
 # ---------------------------------
 
-title: Alessandro Di Tecco | Interface designer & entrepreneur
+title: Alessandro Di Tecco, Interface designer & entrepreneur
 name: The personal website of Alessandro Di Tecco
 description: Alessandro Di Tecco is an interface designer and entrepreneur. This is his personal website.
 
@@ -57,4 +57,6 @@ error_mode: warn
 
 ##################################
 # comment-out prior to deployment!
-# exclude: [ archive, basecamp, projects, resume ]
+
+# all dirs:
+# exclude: [ archive, basecamp, blog, _posts, projects, resume ]
