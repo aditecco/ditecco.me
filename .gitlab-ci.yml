@@ -9,7 +9,7 @@ before_script:
   - export LC_ALL=en_US.UTF-8
 
 pugPrep:
-  image: node:4.2.2
+  image: node:8.9.1
   script:
     - npm i -g npm@latest
     - npm i -g pug
