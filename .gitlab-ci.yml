@@ -6,7 +6,7 @@ cache:
     - vendor
     - node_modules
 
-before-script:
+before_script:
   - apt-get update -y
   - echo "================================"
   - echo "=> Setting en_US UTF-8 locale..."
