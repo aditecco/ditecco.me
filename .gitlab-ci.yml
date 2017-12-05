@@ -1,33 +1,39 @@
 
 image: ruby:2.4
 
-# services:
-#   - node:latest
+cache:
+  paths:
+    - vendor
+    - node_modules
+    - /etc/locale.gen
 
-# cache:
-#   paths:
-#     - vendor
-#     - node_modules
-
-before_script:
-  # - apt-get update -y
-  # - echo "=> Setting en_US UTF-8 locale..."
-  # - apt-get install -y locales
-  # - echo "en_US UTF-8" > /etc/locale.gen
-  # - locale-gen en_US.UTF-8
-  # - export LANG=en_US.UTF-8
-  # - export LANGUAGE=en_US:en
-  # - export LC_ALL=en_US.UTF-8
-  # - echo "=> Installing node packages..."
-  # - yarn global add pug-cli
-  # - pug --version
-  - curl -SLO "https://nodejs.org/dist/v9.2.0/node-v9.2.0-linux-x64.tar.xz"
-  - tar -xJf "node-v9.2.0-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
-  - ln -s /usr/local/bin/node /usr/local/bin/nodejs
-  - npm i -g pug-cli
-  - pug --version
+prep:
+  cache:
+    # The default behaviour of a caching job is to download the files at the start of execution, and to re-upload them at the end. (https://docs.gitlab.com/ce/ci/yaml/README.html)
+    paths:
+      - node_modules
+      - /etc/locale.gen
+  script:
+    - apt-get update -y
+    - echo "=> Setting en_US UTF-8 locale..."
+    - apt-get install -y locales
+    - echo "en_US UTF-8" > /etc/locale.gen
+    - locale-gen en_US.UTF-8
+    - export LANG=en_US.UTF-8
+    - export LANGUAGE=en_US:en
+    - export LC_ALL=en_US.UTF-8
+    - echo "=> Installing node..."
+    - curl -SLO "https://nodejs.org/dist/v9.2.0/node-v9.2.0-linux-x64.tar.xz"
+    - tar -xJf "node-v9.2.0-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
+    - ln -s /usr/local/bin/node /usr/local/bin/nodejs
+    - echo "=> Installing node packages..."
+    - npm i -g pug-cli
+    - pug --version
 
 pages:
+  cache:
+    paths:
+      - vendor
   script:
     - bundle install --deployment
     - cd __source/jekyll
