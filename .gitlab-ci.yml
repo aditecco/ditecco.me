@@ -1,12 +1,6 @@
 
 image: ruby:2.4
 
-cache:
-  paths:
-    - vendor
-    - node_modules
-    - /etc/locale.gen
-
 prep:
   cache:
     # The default behaviour of a caching job is to download the files at the start of execution, and to re-upload them at the end. (https://docs.gitlab.com/ce/ci/yaml/README.html)
