@@ -21,8 +21,8 @@ before_script:
   # - echo "=> Installing node packages..."
   # - yarn global add pug-cli
   # - pug --version
-  - curl -SLO "https://nodejs.org/dist/v9.2.0/node-v9.2.0-linux-$ARCH.tar.xz"
-  - tar -xJf "node-v9.2.0-linux-$ARCH.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
+  - curl -SLO "https://nodejs.org/dist/v9.2.0/node-v9.2.0-linux-x64.tar.xz"
+  - tar -xJf "node-v9.2.0-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
   - ln -s /usr/local/bin/node /usr/local/bin/nodejs
   - npm i -g pug-cli
   - pug --version
