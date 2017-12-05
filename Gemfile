@@ -4,8 +4,8 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
+
+#gems
 gem 'jekyll'
 gem 'jekyll-pug'
 gem 'jekyll-autoprefixer'
-gem 'execjs'
-gem 'therubyracer'
