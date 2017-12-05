@@ -15,6 +15,7 @@ before_script:
   - tar -xJf "node-v9.2.0-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
   - ln -s /usr/local/bin/node /usr/local/bin/nodejs
   - echo "=> Installing node packages..."
+  - npm i -g pug
   - npm i -g pug-cli
   - pug --version
 
