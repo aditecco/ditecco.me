@@ -1,37 +1,26 @@
 
 image: ruby:2.4
 
-cache:
-  paths:
-    - vendor
-    - node_modules
+services:
+  - node:latest
+
+# cache:
+#   paths:
+#     - vendor
+#     - node_modules
 
 before_script:
   - apt-get update -y
-  - echo "================================"
   - echo "=> Setting en_US UTF-8 locale..."
-  - echo "================================"
   - apt-get install -y locales
   - echo "en_US UTF-8" > /etc/locale.gen
   - locale-gen en_US.UTF-8
   - export LANG=en_US.UTF-8
   - export LANGUAGE=en_US:en
   - export LC_ALL=en_US.UTF-8
-  - echo "================================"
-  - echo "=> Installing curl..."
-  - echo "================================"
-  - apt-get -qqy install curl
-  - echo "================================"
-  - echo "=> Installing nodejs..."
-  - echo "================================"
-  - curl -sL https://deb.nodesource.com/setup_9.x | bash -
-  - apt-get update -q && apt-get -qqy install nodejs npm
-  - npm install
-  - echo "================================"
   - echo "=> Installing node packages..."
-  - echo "================================"
   - npm i -g pug-cli
-  - npm i pug
+  - pug --version
 
 pages:
   script:
