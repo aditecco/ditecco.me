@@ -3,11 +3,11 @@ layout: dir-index
 title: ditecco.me/blog
 ---
 
-{% for blogPost in site.posts %}
+| {% for blogPost in site.posts %}
 li.index-item
 	a(href='{{ blogPost.url }}')
 		article.index-item-inner
 			span.index-item-timestamp {{ blogPost.timestamp }}
 			h3.index-item-title {{ blogPost.title }}
 			span.index-item-tag {{ blogPost.taxonomy }}
-{% endfor %}
+| {% endfor %}

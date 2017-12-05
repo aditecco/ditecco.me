@@ -1,18 +1,16 @@
 
 # ---------------------------------
-# source
+# source dir
 # ---------------------------------
 
 __source/_assets/
 __source/_tmp/
 __source/_discontinued/
-__source/jekyll/.sass-cache/
 __source/jekyll/_drafts/
-__source/jekyll/.jekyll-metadata
 
 
 # ---------------------------------
-# deploy
+# deploy dir
 # ---------------------------------
 
 public/
@@ -23,8 +21,8 @@ __deploy/
 # packages
 # ---------------------------------
 
-.bundle/
 # should I include .bundle/config ?
+.bundle/
 vendor/
 node_modules/
 
@@ -32,6 +30,15 @@ node_modules/
 # ---------------------------------
 # assets
 # ---------------------------------
+
+
+# ---------------------------------
+# caches
+# ---------------------------------
+
+__source/jekyll/.jekyll-metadata
+__source/jekyll/.sass-cache/
+__source/jekyll/.pug-cache/
 
 
 # --------------
