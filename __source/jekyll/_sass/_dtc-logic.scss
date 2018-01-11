@@ -2,47 +2,20 @@
 /* ========================
 _dtc-blog-logic.scss
 ======================== */
-// should be renamed to: _dtc-sass-logic.scss
 
 /* ---------------------------------
 imports
 --------------------------------- */
 
-@import '_flat-ui-colors';
+@import '_normalize';
+@import '_dtc-colors-typography';
 
 
 /* ---------------------------------
 vars
 --------------------------------- */
 
-// debugging
-$debugMode: false;
 
-* {
-	@if $debugMode { outline: 1px solid $purple; }
-}
-
-
-// color vars
-// $accent-dark: ;
-$accent-bright: #1abc9c;
-// $background-dark: ;
-$background-bright: $clouds;
-$background-bright-secondary: #f3f0eb;
-$utility-light-gray: #ccc;
-$utility-dark-gray: #555;
-$utility-highlight: rgba(255, 208, 16, 0.5);
-// $cta-primary: ;
-// $cta-secondary: ;
-
-
-// typography vars
-$heading-font: 'Trocchi', serif;
-$base-font: 'Karla', sans-serif;
-$system-font: 'Helvetica, Arial', sans-serif;
-$font-color-dark: $gunMetal;
-$font-color-bright: $paper;
-$font-color-secondary: $silver;
 
 
 /* ---------------------------------
@@ -89,6 +62,15 @@ functions & mixins
 	}
 }
 
+// should replace prev, watch for broken includes
+@mixin setBox($pad: 0, $mar: 0, $isList: false) {
+	padding: $pad;
+	margin: $mar;
+	@if $isList {
+		list-style: none;
+	}
+}
+
 @mixin setBorder(
 	$width,
 	$style,
@@ -125,4 +107,16 @@ functions & mixins
 	flex-flow: $flow;
 	justify-content: $justify;
 	align-items: $align;
+}
+
+
+/* ---------------------------------
+other
+--------------------------------- */
+
+// debugging
+$debugMode: false;
+
+* {
+	@if $debugMode { outline: 1px solid $purple; }
 }
