@@ -1,5 +1,5 @@
 
-image: ruby:2.4
+image: ruby:latest
 
 before_script:
   - apt-get update -y
@@ -11,9 +11,14 @@ before_script:
   - export LANGUAGE=en_US:en
   - export LC_ALL=en_US.UTF-8
   - echo "=> Installing node..."
-  - curl -SLO "https://nodejs.org/dist/v9.2.0/node-v9.2.0-linux-x64.tar.xz"
-  - tar -xJf "node-v9.2.0-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
+  - curl -SLO "https://nodejs.org/dist/v9.3.0/node-v9.3.0-linux-x64.tar.xz"
+  - tar -xJf "node-v9.3.0-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
   - ln -s /usr/local/bin/node /usr/local/bin/nodejs
+  - echo "=> Checking correct installation..."
+  - which node
+  - node -v
+  - which npm
+  - npm -v
   - echo "=> Installing node packages..."
   - npm i -g pug
   - npm i -g pug-cli
