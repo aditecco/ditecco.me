@@ -1,11 +1,22 @@
 ---
 title: Homepage
-description: The personal website of Alessandro Di Tecco, UI designer and entrepreneur.
+description: Personal website of Alessandro Di Tecco, Front-End Web Designer.
 ---
 
 //- vars
 - var encodedEmail = '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;'
 
+//- mixins
+mixin cardItem(url, cat, title, desc, tag)
+	li.card-list-item
+		a(href="#{url}")
+			article.card-list-item-body
+				h5 #{cat}
+				h3 #{title}
+				p #{desc}
+				span(class="card-list-item-tag") #{tag}
+
+//- page start
 doctype
 html
 	head
@@ -17,22 +28,39 @@ html
 		main.card-list-container
 			ul.card-list
 				li.card-list-item.card-list-item--master
-					article.card-list-item-body
-						h2
-							| Hi, this is
-							| Alessandro
-							br
-							| Di Tecco.
-				li.card-list-item.card-list-item--intro
-					article.card-list-item-body
-						h3 About me
-						p
-							| I design and code #[a(href='http://www.simplest.io/?ref=dtc-home') user interfaces] for web &amp; mobile apps.
-							| To get in touch with me you can #[a(href!='mailto:' + encodedEmail) send me an email] (old fashioned!).
-							br
-							| I'm also on:
-							| #[a(href='https://twitter.com/aditecco') Twitter] &middot;
-							| #[a(href='https://dribbble.com/alessandroditecco') Dribbble]
+					article
+						.card-list-item-header
+							h2
+								| Hi,
+								| I'm
+								br
+								| Alessandro
+								br
+								| Di Tecco.
+						.card-list-item-body
+							p
+								| Hi there!
+								br
+								| I'm Alessandro Di Tecco, a #[abbr(title='From the Front-end Handbook by Frontend Masters: when the word Designer is included in the job title, this will denote that the designer will posses front-end skills (i.e., HTML & CSS) but also professional design (Visual Design and Interaction Design) skills.') front-end web designer.]
+								| I love the web, open technology standards, and building products &amp; experiences with code.
+								| To get in touch with me you can #[a(href!='mailto:' + encodedEmail) send me an email] (old fashioned!).
+						.card-list-item-footer
+							h6 Find me also on:
+							ul.social-list
+								li #[a(href!='mailto:' + encodedEmail) Email]
+								li &middot;
+								li #[a(href='https://twitter.com/aditecco') Twitter]
+								li &middot;
+								li #[a(href='https://dribbble.com/alessandroditecco') Dribbble]
+								li &middot;
+								li #[a(href='#') GitHub]
+				+cardItem(
+					'#',
+					'projects',
+					'An example project',
+					'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+					'example'
+				)
 				li.card-list-item
 					a(href="/blog/")
 						article.card-list-item-body
