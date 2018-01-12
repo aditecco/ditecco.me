@@ -76,88 +76,123 @@ card list
 --------------------------------- */
 
 .card-list-container {
-	margin: 40px 0;
-	// iPhone 6 Plus
-	@media(max-width: 420px) {
-		margin: 20px 0;
+	// create a function or mixin for all the calc()s
+	max-width: calc(
+		(300px * 3) + (20px * 2) + (20px * 2)
+	);
+	margin: 20px auto 40px;
+	@media(max-width: 980px) {
+		width: calc(
+			(300px * 2) + (20px * 1) + (20px * 2)
+		);
+	}
+	@media(max-width: 660px) {
+		width: calc(
+			(300px * 1) + (20px * 2)
+		);
+	}
+	@media(max-width: 340px) {
+		width: 320px;
 	}
 }
 
 .card-list {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	padding: 0;
-	margin: 0;
-	list-style: none;
+	// grid
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 300px);
+	grid-auto-rows: 200px;
+  grid-gap: 20px;
+	@include setBox(0 20px, 0, true);
+	@media(max-width: 340px) { padding: 0 10px; }
 	.card-list-item {
-		flex-basis: 300px;
-		height: 200px;
-		margin: 0 20px 20px 0;
 		border-radius: 4px;
 		border-bottom: 4px solid rgba($clouds, .99);
 		text-align: left;
-		color: #444;
+		color: $utility-dark-gray;
 		box-shadow: 0 2px 4px rgba(#777, .15);
-		background-color: #fff;
+		background-color: white;
 		transition: all 0.5s ease;
-		&:last-child { margin: 0; }
 		&:hover {
 			border-bottom: 4px solid $accent-bright;
 			transform: rotate(-1.5deg);
 		}
-		// iPhone 6 Plus
-		@media(max-width: 420px) {
-			margin-right: 0;
+		&.card-list-item--3col {
+			// grid-row?
+			grid-row-end: span 3;
 		}
-		@media(max-width: 360px) {
-			flex-basis: 280px;
-			height: auto;
+		.card-list-item-body {
+			// use flexbox for the children!
+			// add feature query?
+			@include setFlexbox(column nowrap, space-evenly, flex-start);
+			height: 100%;
+			// padding: 25px 20px;
+			padding: 0 20px;
+			& > * { margin: 0; }
+			h5 {
+				// margin: 0 0 7px;
+				color: $silver;
+				text-transform: uppercase;
+			}
+			// h3 { margin: 0; }
+			// p { margin: 15px 0; }
 		}
 	}
 }
 
-.card-list-item-body {
-	padding: 25px 20px;
-	h5 {
-		margin: 0 0 7px;
-		color: $silver;
-		text-transform: uppercase;
-	}
-	h3 { margin: 0; }
-	p {
-		margin: 15px 0;
-	}
-	.card-list-item-tag {
-		padding: 0.2em 1em;
-		border: 2px solid $silver;
-		border-radius: 20px;
-		font-family: 'Montserrat', sans-serif;
-		font-weight: 400;
-		font-size: 0.9em;
-		letter-spacing: 0.025em;
-		text-transform: uppercase;
-		color: $silver;
-		&.card-list-item-tag--featured {
-			color: #470ff4;
-			border: 2px solid #470ff4;
+// for browsers not supporting grid
+@supports not (display: grid) {
+	.card-list {
+		@include setFlexbox(row wrap, center, center);
+		.card-list-item {
+			flex-basis: 300px;
+			height: 200px;
+			margin: 0 20px 20px 0;
+			&:last-child { margin: 0; }
+			@media(max-width: 420px) {
+				margin-right: 0;
+			}
+			@media(max-width: 360px) {
+				flex-basis: 280px;
+				height: auto;
+			}
 		}
-		&.card-list-item-tag--archived {
-			color: $deepPurple;
-			border: 2px solid $deepPurple;
-		}
+	}
+}
+
+.card-list-item-tag {
+	padding: 0.2em 1em;
+	border: 2px solid $silver;
+	border-radius: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 0.9em;
+	letter-spacing: 0.025em;
+	text-transform: uppercase;
+	color: $silver;
+	// try to name all colors
+	&.card-list-item-tag--featured {
+		color: #470ff4;
+		border: 2px solid #470ff4;
+	}
+	&.card-list-item-tag--archived {
+		color: $deepPurple;
+		border: 2px solid $deepPurple;
 	}
 }
 
 .card-list-item.card-list-item--master {
-	height: auto;
-	& > a { padding: 1px 2px; }
 	&:hover {
 		// is there a more elegant way to override hover borders?
 		border-bottom: 4px solid rgba($clouds, .99);
 		transform: none;
 	}
-	article > *:not(.card-list-item-header) { padding: 20px; }
+	article {
+		@include setFlexbox(column nowrap, center, center);
+		height: 100%;
+		a { padding: 1px 2px; }
+		& > * { width: 100%; }
+		& > *:not(.card-list-item-header) { padding: 20px; }
+	}
 	.card-list-item-header {
 		padding: 40px 20px;
 		border-top-left-radius: 4px;
