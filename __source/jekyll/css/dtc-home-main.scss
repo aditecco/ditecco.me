@@ -94,7 +94,7 @@ card list
 	display: grid;
 	grid-template-columns: repeat(auto-fill, 300px);
 	grid-auto-rows: 200px;
-  grid-gap: 20px;
+	grid-gap: 20px;
 	@include setBox(0 20px, 0, true);
 	@media(max-width: 340px) { padding: 0 10px; }
 	.card-list-item {
@@ -109,10 +109,7 @@ card list
 			border-bottom: 4px solid $accent-bright;
 			transform: rotate(-1.5deg);
 		}
-		&.card-list-item--3rows {
-			// grid-row?
-			grid-row-end: span 3;
-		}
+		article { height: 100%; }
 		.card-list-item-body {
 			@include setFlexbox(column nowrap, space-evenly, flex-start);
 			height: 100%;
@@ -124,6 +121,19 @@ card list
 				text-transform: uppercase;
 			}
 		}
+		&.card-list-item--2rows {
+			grid-row-end: span 2;
+			.card-list-item-hero,
+			.card-list-item-body { height: 50%; }
+			.card-list-item-hero {
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+				background-color: $utility-light-gray;
+				overflow: hidden;
+			}
+			.card-list-item-body {}
+		}
+		&.card-list-item--3rows { grid-row-end: span 3; }
 	}
 }
 
@@ -176,12 +186,12 @@ card list
 	}
 	article {
 		@include setFlexbox(column nowrap, center, center);
-		height: 100%;
+		// height: 100%;
 		a { padding: 1px 2px; }
 		& > * { width: 100%; }
-		& > *:not(.card-list-item-header) { padding: 20px; }
+		& > *:not(.card-list-item-hero) { padding: 20px; }
 	}
-	.card-list-item-header {
+	.card-list-item-hero {
 		padding: 40px 20px;
 		border-top-left-radius: 4px;
 		border-top-right-radius: 4px;
@@ -196,6 +206,7 @@ card list
 		}
 	}
 	.card-list-item-body {
+		// disable inherited display:flex?
 		flex-grow: 1;
 		p {
 			margin: 0 0 10px;
