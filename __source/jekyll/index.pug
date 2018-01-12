@@ -41,7 +41,7 @@ html
 			ul.card-list
 				li.card-list-item.card-list-item--master.card-list-item--3rows
 					article
-						.card-list-item-header
+						.card-list-item-hero
 							h2
 								| Hi, I'm
 								br
@@ -67,58 +67,76 @@ html
 								//- li #[a(href='https://github.com/aditecco') GitHub]
 				li.card-list-item
 					a(href="/blog/")
-						article.card-list-item-body
-							h5 projects
-							h3 Blog
-							p Thoughts about technology, web development, and more.
-							span(class="card-list-item-tag") writing
+						article
+							.card-list-item-body
+								h5 projects
+								h3 Blog
+								p Thoughts about technology, web development, and more.
+								span(class="card-list-item-tag") writing
+
+				li.card-list-item.card-list-item--2rows
+					a(href="#")
+						article
+							.card-list-item-hero
+								img(src='http://placekitten.com/g/300/310')
+							.card-list-item-body
+								h5 work
+								h3 Lorem ipsum
+								p Read more about my current &amp; past activities.
+								span(class="card-list-item-tag") cats
 
 				li.card-list-item
 					a(href="/resume/")
-						article.card-list-item-body
-							h5 work
-							h3 R&eacute;sum&eacute;
-							p Read more about my current &amp; past activities.
-							span(class="card-list-item-tag") r&eacute;sum&eacute; &amp; cv
+						article
+							.card-list-item-body
+								h5 work
+								h3 R&eacute;sum&eacute;
+								p Read more about my current &amp; past activities.
+								span(class="card-list-item-tag") r&eacute;sum&eacute; &amp; cv
 
 				li.card-list-item
 					a(href="http://www.simplest.io/?ref=dtc-home")
-						article.card-list-item-body
-							h5 work &middot; 2011&ndash;Present
-							h3 Simplest
-							p My one-man-band user interface design studio.
-							span(class="card-list-item-tag") UI Design
+						article
+							.card-list-item-body
+								h5 work &middot; 2011&ndash;Present
+								h3 Simplest
+								p My one-man-band user interface design studio.
+								span(class="card-list-item-tag") UI Design
 
 				li.card-list-item
 					a(href="/archive/geekville/en/")
-						article.card-list-item-body
-							h5 work &middot; 2013&ndash;2017
-							h3 Geekville
-							p A coworking space for tech &amp; creative professionals.
-							span(class="card-list-item-tag") entrepreneurship
+						article
+							.card-list-item-body
+								h5 work &middot; 2013&ndash;2017
+								h3 Geekville
+								p A coworking space for tech &amp; creative professionals.
+								span(class="card-list-item-tag") entrepreneurship
 
 				li.card-list-item
 					a(href="/archive/the-collective/")
-						article.card-list-item-body
-							h5 work &middot; 2012&ndash;2013
-							h3 The Collective
-							p The first authentic coworking space in Verona.
-							span(class="card-list-item-tag") community
+						article
+							.card-list-item-body
+								h5 work &middot; 2012&ndash;2013
+								h3 The Collective
+								p The first authentic coworking space in Verona.
+								span(class="card-list-item-tag") community
 
 				li.card-list-item
 					a(href="/archive/the-digital-league/")
-						article.card-list-item-body
-							h5 Work &middot; 2011&ndash;2013
-							h3 The Digital League
-							p A community for tech pros &amp; innovators in the Verona area.
-							span(class="card-list-item-tag") community
+						article
+							.card-list-item-body
+								h5 Work &middot; 2011&ndash;2013
+								h3 The Digital League
+								p A community for tech pros &amp; innovators in the Verona area.
+								span(class="card-list-item-tag") community
 
 				li.card-list-item
 					a(href="/projects/itakepictures/")
-						article.card-list-item-body
-							h5 projects
-							h3 I take pictures
-							p A mini-site for my experiments in photography.
-							span(class="card-list-item-tag") photography
+						article
+							.card-list-item-body
+								h5 projects
+								h3 I take pictures
+								p A mini-site for my experiments in photography.
+								span(class="card-list-item-tag") photography
 		footer
 			p {% include dtc-common-footer %}
