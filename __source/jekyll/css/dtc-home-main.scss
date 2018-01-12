@@ -43,24 +43,32 @@ h2 {
 
 h3 { font-size: 1.6em; }
 
-a,
-abbr[title] {
+a {
 	border-bottom: 1px solid $accent-bright;
 	color: inherit;
 	text-decoration: none;
-}
-a:hover,
-abbr[title]:hover {
-	color: black;
-	border-bottom: 2px solid $accent-bright;
-	background-color: rgba($accent-bright, .1);
+	&:hover {
+		color: black;
+		border-bottom: 2px solid $accent-bright;
+		background-color: rgba($accent-bright, .1);
+	}
 }
 
-abbr::after {
-	content: ' (?)';
-	font-size: 60%;
-	color: $utility-light-gray;
-	vertical-align: text-top;
+abbr.definition {
+	// @extend %specialTextPad;
+	padding: 4px 2px 4px 0;
+	border-bottom: none;
+	text-decoration: none;
+	&:hover {
+		border-radius: 4px;
+		background-color: rgba($utility-highlight, .25);
+	}
+	&::after {
+		content: ' (?)';
+		font-size: 60%;
+		color: $utility-light-gray;
+		vertical-align: text-top;
+	}
 }
 
 ::selection {
