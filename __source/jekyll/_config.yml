@@ -20,9 +20,9 @@ includes_dir: ./_includes
 # vars
 # ---------------------------------
 
-title: Alessandro Di Tecco, Interface designer & entrepreneur
+title: Alessandro Di Tecco, Alessandro Di Tecco, Front-End Web Designer
 name: The personal website of Alessandro Di Tecco
-description: Alessandro Di Tecco is an interface designer and entrepreneur. This is his personal website.
+description: Alessandro Di Tecco is a Front-End Web Designer. This is his personal website.
 
 
 # ---------------------------------
@@ -36,7 +36,6 @@ plugins:
 jekyll-pug:
   minify: true
   debug: true
-  # shipped_version: 2.0.0-rc.1
 
 autoprefixer:
   browsers:
