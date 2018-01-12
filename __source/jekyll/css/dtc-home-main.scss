@@ -16,15 +16,6 @@ imports
 
 
 /* ---------------------------------
-vars
---------------------------------- */
-
-// colors
-$accent-bright: #1abc9c;
-// define other color vars
-
-
-/* ---------------------------------
 common
 --------------------------------- */
 
@@ -35,8 +26,8 @@ body {
 	font-weight: 400;
 	font-size: 1em;
 	text-align: center;
-	color: #555;
-	background-color: #f4f5f2;
+	color: $utility-dark-gray;
+	background-color: $background-bright-03;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -44,14 +35,14 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight: 400;
 }
 
-h1 {font-size: 2.4em;}
+h1 { font-size: 2.4em; }
 
 h2 {
 	font-size: 2em;
 	margin: 0.8em 0;
 }
 
-h3 {font-size: 1.6em;}
+h3 { font-size: 1.6em; }
 
 a,
 abbr[title] {
@@ -66,9 +57,17 @@ abbr[title]:hover {
 	background-color: rgba($accent-bright, .1);
 }
 
+abbr::after {
+	// content: '(?)';
+	content: ' (?)';
+	font-size: 60%;
+	color: $utility-light-gray;
+	vertical-align: text-top;
+}
+
 ::selection {
-	background: #1abc9c;
-	color: #f1f1f1;
+	background: $accent-bright;
+	color: $utility-dim-white;
 }
 
 
@@ -196,36 +195,12 @@ card list
 
 
 /* ---------------------------------
-grid!
---------------------------------- */
-
-.card-list {
-	display: grid;
-	// margin: 0 auto;
-	// grid-template-columns: repeat(2, 360px);
-	// grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	grid-template-columns: repeat(auto-fill, 300px);
-	// grid-auto-rows: minmax(200px, auto);
-	grid-auto-rows: 200px;
-  grid-gap: 20px;
-}
-
-.card-list-item--3col {
-	grid-row-end: span 3;
-}
-
-@supports(display: grid) {
-	//
-}
-
-
-/* ---------------------------------
 footer
 --------------------------------- */
 
 footer {
 	padding: 0 20px 20px;
-	color: #ccc;
+	color: $utility-light-gray;
 	p {
 		font-size: 0.7em;
 		margin: 0;
