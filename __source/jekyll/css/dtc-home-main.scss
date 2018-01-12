@@ -74,24 +74,11 @@ card list
 --------------------------------- */
 
 .card-list-container {
-	// create a function or mixin for all the calc()s
-	max-width: calc(
-		(300px * 3) + (20px * 2) + (20px * 2)
-	);
+	max-width: calcContWidth(3);
 	margin: 20px auto 40px;
-	@media(max-width: 980px) {
-		width: calc(
-			(300px * 2) + (20px * 1) + (20px * 2)
-		);
-	}
-	@media(max-width: 660px) {
-		width: calc(
-			(300px * 1) + (20px * 2)
-		);
-	}
-	@media(max-width: 340px) {
-		width: 320px;
-	}
+	@media(max-width: 980px) { width: calcContWidth(2); }
+	@media(max-width: 660px) { width: calcContWidth(1); }
+	@media(max-width: 340px) { width: 320px; }
 }
 
 .card-list {

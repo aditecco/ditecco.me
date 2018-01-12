@@ -46,6 +46,18 @@ resets & placeholders
 functions & mixins
 --------------------------------- */
 
+@function calcContWidth($nCol) {
+	$pad: 40;
+	$colWidth: 300;
+	$colGut: 20;
+
+	@if $nCol == 1 {
+		@return	($colWidth + $pad) * 1px;
+	} @else {
+		@return (($colWidth * $nCol) + ($colGut * ($nCol - 1)) + $pad) * 1px;
+	}
+}
+
 @function emCalc($target, $context: 10) {
 	// ref: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
 	@return ($target / $context) * 1em;
