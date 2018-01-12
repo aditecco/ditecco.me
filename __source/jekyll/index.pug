@@ -3,71 +3,76 @@ title: Homepage
 description: Personal website of Alessandro Di Tecco, Front-End Web Designer.
 ---
 
+
+//- ---------------------------------
+//- logic
+//- ---------------------------------
+
 //- vars
 - var encodedEmail = '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;'
 
+
 //- mixins
+//- we could iterate & populate data from JSON/obj, as in /archive/index.pug
+//- look into HTML entities in strings before implementing
 mixin cardItem(url, cat, title, desc, tag)
 	li.card-list-item
-		a(href="#{url}")
+		a(href!=`${url}`)
 			article.card-list-item-body
 				h5 #{cat}
 				h3 #{title}
 				p #{desc}
 				span(class="card-list-item-tag") #{tag}
 
+
+//- ---------------------------------
 //- page start
+//- ---------------------------------
 doctype
 html
 	head
 		| {% include dtc-common-meta %}
-		link(href='http://fonts.googleapis.com/css?family=Montserrat|Roboto', rel='stylesheet', type='text/css')
+		//- work sans as main font?
+		link(href='https://fonts.googleapis.com/css?family=Montserrat:400|Roboto:400', rel='stylesheet', type='text/css')
 		link(rel="stylesheet", href="/css/dtc-home-main.css")
 		include dtc-ga-snp.html
 	body
 		main.card-list-container
 			ul.card-list
-				li.card-list-item.card-list-item--master
+				li.card-list-item.card-list-item--master.card-list-item--3rows
 					article
 						.card-list-item-header
 							h2
-								| Hi,
-								| I'm
+								| Hi, I'm
 								br
 								| Alessandro
 								br
 								| Di Tecco.
 						.card-list-item-body
 							p
-								| Hi there!
-								br
-								| I'm Alessandro Di Tecco, a #[abbr(title='From the Front-end Handbook by Frontend Masters: when the word Designer is included in the job title, this will denote that the designer will posses front-end skills (i.e., HTML & CSS) but also professional design (Visual Design and Interaction Design) skills.') front-end web designer.]
-								| I love the web, open technology standards, and building products &amp; experiences with code.
+								| Hi there! I'm Alessandro Di Tecco, a #[abbr(title='From the Front-end Handbook by Frontend Masters: when the word Designer is included in the job title, this will denote that the designer will posses front-end skills (i.e., HTML & CSS) but also professional design (Visual Design and Interaction Design) skills.') front-end web designer]
+							p
+								| I love the open web and I'm passionate about building products &amp; experiences with code.
+							p
 								| To get in touch with me you can #[a(href!='mailto:' + encodedEmail) send me an email] (old fashioned!).
 						.card-list-item-footer
 							h6 Find me also on:
-							ul.social-list
+							ul.contact-list
 								li #[a(href!='mailto:' + encodedEmail) Email]
 								li &middot;
 								li #[a(href='https://twitter.com/aditecco') Twitter]
 								li &middot;
 								li #[a(href='https://dribbble.com/alessandroditecco') Dribbble]
-								li &middot;
-								li #[a(href='#') GitHub]
-				+cardItem(
-					'#',
-					'projects',
-					'An example project',
-					'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-					'example'
-				)
+								//- li &middot;
+								//- li #[a(href='https://github.com/aditecco') GitHub]
 				li.card-list-item
 					a(href="/blog/")
 						article.card-list-item-body
 							h5 projects
 							h3 Blog
-							p Thoughts &amp; writings about technology, development, and more.
+							p Thoughts about technology, web development, and more.
 							span(class="card-list-item-tag") writing
+
 				li.card-list-item
 					a(href="/resume/")
 						article.card-list-item-body
