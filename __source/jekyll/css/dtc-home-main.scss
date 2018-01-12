@@ -24,7 +24,6 @@ common
 body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
-	font-size: 1em;
 	text-align: center;
 	color: $utility-dark-gray;
 	background-color: $background-bright-03;
@@ -58,7 +57,6 @@ abbr[title]:hover {
 }
 
 abbr::after {
-	// content: '(?)';
 	content: ' (?)';
 	font-size: 60%;
 	color: $utility-light-gray;
@@ -116,25 +114,19 @@ card list
 			border-bottom: 4px solid $accent-bright;
 			transform: rotate(-1.5deg);
 		}
-		&.card-list-item--3col {
+		&.card-list-item--3rows {
 			// grid-row?
 			grid-row-end: span 3;
 		}
 		.card-list-item-body {
-			// use flexbox for the children!
-			// add feature query?
 			@include setFlexbox(column nowrap, space-evenly, flex-start);
 			height: 100%;
-			// padding: 25px 20px;
 			padding: 0 20px;
 			& > * { margin: 0; }
 			h5 {
-				// margin: 0 0 7px;
 				color: $silver;
 				text-transform: uppercase;
 			}
-			// h3 { margin: 0; }
-			// p { margin: 15px 0; }
 		}
 	}
 }
@@ -204,13 +196,13 @@ card list
 		background-size: 140% auto;
 		h2 {
 			margin: 0;
-			color: #eee;
+			color: $utility-dim-white;
 		}
 	}
 	.card-list-item-body {
-		padding: 30px 0;
+		flex-grow: 1;
 		p {
-			margin: 0;
+			margin: 0 0 10px;
 			line-height: 1.8;
 		}
 	}
@@ -221,7 +213,7 @@ card list
 			font-size: 12px;
 			color: $font-color-secondary;
 		}
-		.social-list {
+		.contact-list {
 			@include setFlexbox(row nowrap, space-evenly, center);
 			@include setBox(0, 0, true);
 		}
