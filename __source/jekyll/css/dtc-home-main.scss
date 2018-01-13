@@ -130,8 +130,11 @@ card list
 				border-top-right-radius: 4px;
 				background-color: $utility-light-gray;
 				overflow: hidden;
+				img {
+					width: 105%;
+					height: auto;
+				}
 			}
-			.card-list-item-body {}
 		}
 		&.card-list-item--3rows { grid-row-end: span 3; }
 	}
