@@ -107,7 +107,7 @@ card list
 		transition: all 0.5s ease;
 		&:hover {
 			border-bottom: 4px solid $accent-bright;
-			transform: rotate(-1.5deg);
+			transform: translateY(10px);
 		}
 		article { height: 100%; }
 		.card-list-item-body {
@@ -189,7 +189,6 @@ card list
 	}
 	article {
 		@include setFlexbox(column nowrap, center, center);
-		// height: 100%;
 		a { padding: 1px 2px; }
 		& > * { width: 100%; }
 		& > *:not(.card-list-item-hero) { padding: 20px; }
@@ -209,7 +208,7 @@ card list
 		}
 	}
 	.card-list-item-body {
-		// disable inherited display:flex?
+		// nested flexbox, see @114
 		flex-grow: 1;
 		p {
 			margin: 0 0 10px;
