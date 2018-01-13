@@ -146,7 +146,8 @@ card list
 		@include setFlexbox(row wrap, center, center);
 		.card-list-item {
 			flex-basis: 300px;
-			height: 200px;
+			// how do we support multiple card formats?
+			min-height: 200px;
 			margin: 0 20px 20px 0;
 			&:last-child { margin: 0; }
 			@media(max-width: 420px) {
