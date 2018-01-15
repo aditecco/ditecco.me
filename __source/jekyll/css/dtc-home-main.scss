@@ -78,7 +78,7 @@ abbr.definition {
 
 
 /* ---------------------------------
-card list
+.card-list-container & .card-list
 --------------------------------- */
 
 .card-list-container {
@@ -133,7 +133,7 @@ card list
 				img {
 					width: 105%;
 					height: auto;
-					filter: brightness(80%);
+					filter: brightness(105%);
 				}
 			}
 		}
@@ -183,6 +183,11 @@ card list
 	}
 }
 
+
+/* ---------------------------------
+.card-list-item--master
+--------------------------------- */
+
 .card-list-item.card-list-item--master {
 	&:hover {
 		// is there a more elegant way to override hover borders?
@@ -213,7 +218,7 @@ card list
 		// nested flexbox, see @114
 		flex-grow: 1;
 		p {
-			margin: 0 0 10px;
+			margin: 0;
 			line-height: 1.8;
 		}
 	}
