@@ -129,11 +129,7 @@ abbr.definition {
 				border-top-right-radius: 4px;
 				background-color: $utility-light-gray;
 				overflow: hidden;
-				img {
-					width: 105%;
-					height: auto;
-					filter: brightness(105%);
-				}
+				img { filter: brightness(102%); }
 			}
 		}
 		&.card-list-item--3rows { grid-row-end: span 3; }
@@ -149,7 +145,7 @@ fallbacks
 	.card-list {
 		@include setFlexbox(row wrap, flex-start, flex-start);
 		.card-list-item {
-			flex-basis: 300px;
+			width: 300px;
 			height: 200px;
 			margin: 0 20px 20px 0;
 			&:nth-child(3n) { margin-right: 0; }
