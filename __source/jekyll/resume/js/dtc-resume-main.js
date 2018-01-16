@@ -50,8 +50,7 @@ $(document).ready(function() {
 
 		// handle translate button changes
 		var buttonHandler = function(label, flagCode) {
-			$('.lang-switcher').text(label)
-												 .next().attr('src', 'img/' + flagCode + '-flag.svg');
+			$('.lang-switcher').text(label).next().attr('src', 'img/' + flagCode + '-flag.svg');
 		};
 
 		// show confirmation after the translation
