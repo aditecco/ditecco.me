@@ -84,13 +84,12 @@ abbr.definition {
 .card-list-container {
 	max-width: calcContWidth(3);
 	margin: 20px auto 40px;
-	@media(max-width: 980px) { width: calcContWidth(2); }
+	@media(max-width: 996px) { width: calcContWidth(2); }
 	@media(max-width: 660px) { width: calcContWidth(1); }
 	@media(max-width: 340px) { width: 320px; }
 }
 
 .card-list {
-	// grid
 	display: grid;
 	grid-template-columns: repeat(auto-fill, 300px);
 	grid-auto-rows: 200px;
@@ -141,26 +140,51 @@ abbr.definition {
 	}
 }
 
-// for browsers not supporting grid
+
+/* ---------------------------------
+fallbacks
+--------------------------------- */
+
 @supports not (display: grid) {
 	.card-list {
-		@include setFlexbox(row wrap, center, center);
+		@include setFlexbox(row wrap, flex-start, flex-start);
 		.card-list-item {
 			flex-basis: 300px;
-			// how do we support multiple card formats?
-			min-height: 200px;
+			height: 200px;
 			margin: 0 20px 20px 0;
-			&:last-child { margin: 0; }
-			@media(max-width: 420px) {
-				margin-right: 0;
+			&:nth-child(3n) { margin-right: 0; }
+			// check calc() compat
+			&.card-list-item--2rows { height: calc(200px * 2); }
+			&.card-list-item--3rows { height: calc(200px * 3); }
+			@media(max-width: 996px) {
+				// find a better way for :162
+				&:nth-child(3) { margin-right: 20px; }
+				&:nth-child(2n) { margin-right: 0; }
 			}
-			@media(max-width: 360px) {
-				flex-basis: 280px;
-				height: auto;
+			@media(max-width: 660px) {
+				// selects all elems
+				// must use pseudo-sel for specificity,
+				// otherwise would be overwritten by :162
+				&:nth-child(n) { margin-right: 0; }
 			}
 		}
 	}
 }
+
+// WIP
+// @supports not (display: flex) {
+// 	ul.card-list > * {
+// 		float: left;
+// 		width: 300px;
+// 		min-height: 200px;
+// 		margin: 0 20px 20px 0;
+// 	}
+// }
+
+
+/* ---------------------------------
+.card-list-item-tag
+--------------------------------- */
 
 .card-list-item-tag {
 	padding: 0.2em 1em;
