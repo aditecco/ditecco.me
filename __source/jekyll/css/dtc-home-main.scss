@@ -153,9 +153,16 @@ fallbacks
 			height: 200px;
 			margin: 0 20px 20px 0;
 			&:nth-child(3n) { margin-right: 0; }
-			// check calc() compat
-			&.card-list-item--2rows { height: calc(200px * 2); }
-			&.card-list-item--3rows { height: calc(200px * 3); }
+			&.card-list-item--2rows {
+				// for compat
+				height: 400px;
+				height: calc(200px * 2);
+			}
+			&.card-list-item--3rows {
+				// for compat
+				height: 600px;
+				height: calc(200px * 3);
+			}
 			@media(max-width: 996px) {
 				// find a better way for :162
 				&:nth-child(3) { margin-right: 20px; }
@@ -170,16 +177,6 @@ fallbacks
 		}
 	}
 }
-
-// WIP
-// @supports not (display: flex) {
-// 	ul.card-list > * {
-// 		float: left;
-// 		width: 300px;
-// 		min-height: 200px;
-// 		margin: 0 20px 20px 0;
-// 	}
-// }
 
 
 /* ---------------------------------
