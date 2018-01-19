@@ -1,6 +1,5 @@
 ---
-
-
+# required JK front matter
 ---
 
 
@@ -13,8 +12,6 @@ dtc-dir-index.scss
 imports
 --------------------------------- */
 
-// should we import normalize in `_dtc-blog-logic`?
-@import '_normalize';
 @import '_dtc-logic';
 
 

@@ -1,6 +1,5 @@
 ---
-
-
+# required JK front matter
 ---
 
 
@@ -138,7 +137,6 @@ h1 {
 // 	border-left: 4px solid #27ae60;
 // }
 
-// change this to a heading!
 .container .list-heading {
 	font-family: 'Arvo', serif;
 	font-weight: 400;
@@ -156,14 +154,7 @@ h1 {
 
 
 /* ---------------------------------
-new!
---------------------------------- */
-
-/* ---------------------------------
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-integrate _dtc-blog-logic
-
-(in progress)
+new & WIP
 --------------------------------- */
 
 // other
@@ -296,11 +287,6 @@ integrate _dtc-blog-logic
 }
 
 
-/* ---------------------------------
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-we need to reflect HTML changes in
-the IT text, inside dtc-resume-main.js!!
---------------------------------- */
 // outline-block
 .outline-block {
 	margin-bottom: 50px;
