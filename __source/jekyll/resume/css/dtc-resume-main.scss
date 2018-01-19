@@ -191,21 +191,30 @@ new & WIP
 }
 
 
-// hero
+/* ---------------------------------
+hero
+--------------------------------- */
+
 .hero {
-	padding: 45px 0;
+	@include setFlexbox(row nowrap, space-between, center);
+	@include setBox(0 40px 0 10px, 0, false);
+	height: 220px;
+	@media(max-width: 490px) {
+		@include setFlexbox(column nowrap, center, center);
+		height: auto;
+	}
 	.hero-head {
-		margin: 0 0 0 -0.25em;
-		font-family: 'Kaushan Script', cursive;
+		flex-grow: .1;
+		margin: 0;
+		font-family: 'Kaushan Script', sans-serif;
 		font-weight: 400;
-		font-size: 11em;
 		letter-spacing: -0.09em;
+		font-size: 80px;
 		color: #00a0b0;
 	}
 	.hero-sub-head {
-		text-align: center;
-		color: #00a0b0;
-		margin: 0;
+		margin: 16px 0 0;
+		color: inherit
 	}
 }
 
