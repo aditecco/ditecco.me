@@ -58,5 +58,12 @@ error_mode: warn
 ##################################
 # comment-out prior to deployment!
 
-# all dirs:
-# exclude: [ archive, basecamp, blog, _posts, projects, resume ]
+exclude: [
+  index.pug,
+  archive,
+  basecamp,
+  blog,
+  _posts,
+  projects,
+  #resume
+]
