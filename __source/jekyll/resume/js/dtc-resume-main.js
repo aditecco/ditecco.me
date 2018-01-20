@@ -96,10 +96,10 @@ $(document).ready(function() {
 				// [OPTIM] move this to an external data file, convert to JSON
 				// require contents w/ $.get()
 				var localized = [
-					{
-						title: '<span class="underline">In breve</span>',
-						body: ''
-					},
+					// {
+					// 	title: '<span class="underline">In breve</span>',
+					// 	body: ''
+					// },
 					{
 						title: 'Profilo',
 						body: '<li><h3 class="list-heading">Front-End Web Designer</h3><p>Dal 2011 creo design per una vasta gamma di prodotti digitali. Sono in grado di sviluppare high-fidelity mockups o HTML/CSS/JS. <sup class="supertext">new!</sup></p></li><li><h3 class="list-heading">Esperienza d&#39;impresa</h3><p>Per diversi anni ho lavorato sui miei progetti d&#39;impresa sviluppando un&#39;ampia esperienza nella creazione, vendita e mantenimento di prodotti o servizi.</p></li>'
@@ -136,7 +136,7 @@ $(document).ready(function() {
 				// require contents w/ $.get()
 				var localized = [
 					{
-						title: '<span class="underline">La storia completa</span>',
+						title: '<span class="underline">Esperienze lavorative</span>',
 						jobTitle: '',
 						body: 'Segue una storia del mio percorso professionale fino ad oggi; clicca su una sezione per rivelare/nascondere i suoi contenuti.'
 					},

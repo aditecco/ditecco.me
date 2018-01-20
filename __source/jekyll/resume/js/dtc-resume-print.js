@@ -22,13 +22,13 @@ var printPrep = () => {
 	// edit/alter content for print layout
 
 	// - sect header
-	let x = $('.page-controls').find('.lang-switcher').text();
+	// let x = $('.page-controls').find('.lang-switcher').text();
 
-	if ( x === 'Versione italiana' ) {
-		$('.full-story').find('.section-heading').first().text('Work experience');
-	} else if ( x === 'English version' ) {
-		$('.full-story').find('.section-heading').first().text('Esperienze lavorative');
-	}
+	// if ( x === 'Versione italiana' ) {
+	// 	$('.full-story').find('.section-heading').first().text('Work experience');
+	// } else if ( x === 'English version' ) {
+	// 	$('.full-story').find('.section-heading').first().text('Esperienze lavorative');
+	// }
 
 	// - contact section
 	let t = $('.outline-block.quick-outline--contact');
