@@ -86,11 +86,11 @@ text formatting
 .subtext {
 	text-align: center;
 	font-size: 0.9em;
-	color: #E0D6CC;
+	color: #bbb;
 	a {
-		color: #E0D6CC;
+		color: #bbb;
 		text-decoration: none;
-		border-bottom: 1px solid #E0D6CC;
+		border-bottom: 1px solid #bbb;
 		&:hover {
 			color: #444;
 			border-bottom: 1px solid #444;
@@ -250,6 +250,7 @@ notification-bar
 	position: absolute;
 	top: 70px;
 	left: 50%;
+	// set to 30%, adapt to < 900px
 	width: 70%;
 	padding: 10px;
 	border: 1px solid darken($utility-highlight, 20%);
