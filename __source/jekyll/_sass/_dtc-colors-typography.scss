@@ -11,8 +11,12 @@ imports
 
 
 /* ---------------------------------
-colors
+homepage, common
 --------------------------------- */
+
+/*
+	colors
+*/
 
 // $accent-dark: ;
 $accent-bright: #1abc9c;
@@ -30,9 +34,9 @@ $cta-primary: $accent-bright;
 // $cta-secondary: ;
 
 
-/* ---------------------------------
-typography
---------------------------------- */
+/*
+	typography
+*/
 
 $heading-font: 'Trocchi', serif;
 $base-font: 'Karla', sans-serif;
@@ -40,3 +44,16 @@ $system-font: 'Helvetica, Arial', sans-serif;
 $font-color-dark: $gunMetal;
 $font-color-bright: $paper;
 $font-color-secondary: $silver;
+
+
+/* ---------------------------------
+resume
+--------------------------------- */
+
+/*
+	colors
+*/
+
+$rm-background-page-outer: #F7ECE1;
+$rm-background-page-inner: #f2f2f2;
+$rm-accent-bright: #00a0b0;

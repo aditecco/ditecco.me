@@ -15,19 +15,11 @@ imports
 
 
 /* ---------------------------------
-colors
+common
 --------------------------------- */
 
-$background-page-outer: #F7ECE1;
-$background-page-inner: #f2f2f2;
-$accent-primary: #00a0b0;
-
-/* ========================
-COMMON
-======================== */
-
 body {
-	background-color: #F7ECE1;
+	background-color: $rm-background-page-outer;
 	font-family: 'Karla', sans-serif;
 	font-weight: 400;
 	line-height: 1.5;
@@ -39,7 +31,7 @@ body {
 .separator {
 	width: 100%;
 	border: 0;
-	border-bottom: 0.25em solid #f2f2f2;
+	border-bottom: 0.25em solid $rm-background-page-inner;
 	margin: 2.5em auto;
 }
 
@@ -55,22 +47,21 @@ li {margin-bottom: 0.5em;}
 .multiline-list li {margin-bottom: 1em;}
 
 a {
-	color: #00a0b0;
+	color: $rm-accent-bright;
 	text-decoration: none;
-	border-bottom: 1px dotted #00a0b0;
+	border-bottom: 1px dotted $rm-accent-bright;
+	&:hover {
+		background-color: $utility-highlight;
+		color: #5a5a5a;
+	}
 }
 
-a:hover {
-	background-color: $utility-highlight;
-	color: #5a5a5a;
-}
-
-::selection {background-color: $utility-highlight;}
+::selection { background-color: $utility-highlight; }
 
 
-/* ========================
-CONTAINERS
-======================== */
+/* ---------------------------------
+containers
+--------------------------------- */
 
 .wrapper {
 	max-width: 50em;
@@ -87,9 +78,9 @@ CONTAINERS
 }
 
 
-/* ========================
-TEXT FORMATTING
-======================== */
+/* ---------------------------------
+text formatting
+--------------------------------- */
 
 .subtext {
 	text-align: center;
@@ -154,7 +145,7 @@ h1 {
 
 
 /* ---------------------------------
-new & WIP
+special
 --------------------------------- */
 
 // other
@@ -166,20 +157,29 @@ new & WIP
 	&::after { content: ' ' }
 }
 
-// buttons
+
+
+/* ---------------------------------
+buttons
+--------------------------------- */
+
 .cta-button {
 	padding: 10px;
 	border-radius: 4px;
 	text-align: center;
-	color: $background-page-inner;
-	background-color: $accent-primary;
+	color: $rm-background-page-inner;
+	background-color: $rm-accent-bright;
 	&:hover {
-		color: $background-page-inner;
-		background-color: darken($accent-primary, 15%);
+		color: $rm-background-page-inner;
+		background-color: darken($rm-accent-bright, 15%);
 	}
 }
 
-// special formatting
+
+/* ---------------------------------
+special formatting
+--------------------------------- */
+
 .special-char { color: red; }
 
 .underline { border-bottom: 2px solid #E0D6CC; }
@@ -219,7 +219,10 @@ hero
 }
 
 
-// nav
+/* ---------------------------------
+nav
+--------------------------------- */
+
 .page-controls {
 	ul {
 		display: flex;
@@ -241,7 +244,10 @@ hero
 }
 
 
-// elevator
+/* ---------------------------------
+elevator
+--------------------------------- */
+
 .elevator {
 	// or sticky?
 	visibility: hidden;
@@ -259,16 +265,21 @@ hero
 	color: #f1f1f1;
 	text-transform: uppercase;
 	text-align: center;
-	background-color: rgba($accent-primary, .6);
+	background-color: $rm-accent-bright;
+	box-shadow: 0 4px 16px rgba(black, .25);
 	&:hover {
 		color: #f1f1f1;
-		background-color: darken($accent-primary, 15%);
+		background-color: darken($rm-accent-bright, 15%);
 	}
+	// add anim for visibility
 	@media(min-width: 990px) { visibility: visible; }
 }
 
 
-// notification-bar
+/* ---------------------------------
+notification-bar
+--------------------------------- */
+
 .notification-bar {
 	position: absolute;
 	top: 70px;
@@ -285,7 +296,10 @@ hero
 }
 
 
-// section header
+/* ---------------------------------
+section header
+--------------------------------- */
+
 .section-header {
 	margin-bottom: 40px;
 	.section-heading {
@@ -296,7 +310,10 @@ hero
 }
 
 
-// outline-block
+/* ---------------------------------
+outline-block
+--------------------------------- */
+
 .outline-block {
 	margin-bottom: 50px;
 	// &::after { content: '* * *' }
@@ -323,13 +340,19 @@ hero
 }
 
 
-// .quick-outline--profile
+/* ---------------------------------
+.quick-outline--profile
+--------------------------------- */
+
 .quick-outline--profile {
 	.list-heading, p { margin: 0; }
 }
 
 
-// .quick-outline--skills
+/* ---------------------------------
+.quick-outline--skills
+--------------------------------- */
+
 .quick-outline--skills {
 	.skill-list {
 		// try baseline in HP, too
@@ -340,7 +363,7 @@ hero
 		.skill-list-item {
 			padding: 5px 10px;
 			margin-right: 10px;
-			border: 2px solid #f2f2f2;
+			border: 2px solid $rm-background-page-inner;
 			border-radius: 6px;
 			@media(max-width: 380px) {
 				margin-right: 0;
@@ -351,7 +374,10 @@ hero
 }
 
 
-// quick-outline--contact
+/* ---------------------------------
+quick-outline--contact
+--------------------------------- */
+
 .quick-outline--contact {
 	.quick-outline--contact-inner {
 		display: flex;
@@ -375,7 +401,10 @@ hero
 }
 
 
-// story-block
+/* ---------------------------------
+story-block
+--------------------------------- */
+
 .story-block {
 	&:nth-of-type(1),
 	&:nth-of-type(9) { border-top: 1px dotted #E0D6CC; }
@@ -389,7 +418,7 @@ hero
 		}
 		h4 { color: inherit; }
 		&:hover {
-			border-bottom: 1px solid #00a0b0;
+			border-bottom: 1px solid $rm-accent-bright;
 			background-color: rgba(#E0D6CC, .15);
 			cursor: pointer;
 			&::before {
@@ -399,7 +428,7 @@ hero
 				padding: 5px 10px;
 				border-radius: 20px;
 				content: 'click to toggle';
-				background-color: $background-page-outer;
+				background-color: $rm-background-page-outer;
 				// too much nesting?
 				@media(max-width: 750px) {
 					content: none;
