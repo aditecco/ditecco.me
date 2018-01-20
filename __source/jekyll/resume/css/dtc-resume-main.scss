@@ -203,20 +203,20 @@ hero
 
 .hero {
 	@include setFlexbox(row nowrap, space-between, center);
-	@include setBox(0 40px 0 10px, 0, false);
+	@include setBox(0 40px 0, 0, false);
 	height: 220px;
-	@media(max-width: 490px) {
+	@media(max-width: 500px) {
 		@include setFlexbox(column nowrap, center, center);
 		height: auto;
+		padding: 40px;
 	}
 	.hero-head {
-		flex-grow: .1;
-		margin: 0;
+		margin: 0 0 0 -10px;
 		font-family: 'Kaushan Script', sans-serif;
 		font-weight: 400;
 		letter-spacing: -0.09em;
 		font-size: 80px;
-		color: #00a0b0;
+		color: $rm-accent-bright;
 	}
 	.hero-sub-head {
 		margin: 16px 0 0;
