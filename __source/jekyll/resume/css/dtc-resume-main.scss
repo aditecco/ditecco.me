@@ -66,7 +66,7 @@ containers
 	margin: 0 auto 40px;
 	// border: 0.25em solid #E0D6CC;
 	background-color: $rm-background-page-inner;
-	box-shadow: 0 8px 80px rgba(black, .25);
+	box-shadow: 0 4px 30px rgba(black, .1);
 	&:last-child { margin-bottom: 0; }
 	@media(max-width: 500px) { width: 90%; }
 }
@@ -84,16 +84,17 @@ text formatting
 --------------------------------- */
 
 .subtext {
+	margin: 0;
 	text-align: center;
 	font-size: 0.9em;
-	color: #bbb;
+	color: #777;
 	a {
-		color: #bbb;
+		color: #777;
 		text-decoration: none;
-		border-bottom: 1px solid #bbb;
+		border-bottom: 1px dotted #777;
 		&:hover {
-			color: #444;
-			border-bottom: 1px solid #444;
+			color: black;
+			border-bottom: 1px solid black;
 			background-color: transparent;
 		}
 	}
@@ -107,7 +108,22 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* ---------------------------------
-special
+special formatting
+--------------------------------- */
+
+.special-char { color: red; }
+
+.underline { border-bottom: 2px solid #E0D6CC; }
+
+.supertext {
+	background-color: $utility-highlight;
+	padding: 1px 2px;
+	border-radius: 2px;
+}
+
+
+/* ---------------------------------
+responsive layout control
 --------------------------------- */
 
 .rbreak { display: none; }
@@ -138,21 +154,6 @@ buttons
 		color: $rm-background-page-inner;
 		background-color: darken($rm-accent-bright, 15%);
 	}
-}
-
-
-/* ---------------------------------
-special formatting
---------------------------------- */
-
-.special-char { color: red; }
-
-.underline { border-bottom: 2px solid #E0D6CC; }
-
-.supertext {
-	background-color: $utility-highlight;
-	padding: 1px 2px;
-	border-radius: 2px;
 }
 
 
@@ -189,12 +190,11 @@ nav
 --------------------------------- */
 
 .page-controls {
+	padding: 16px;
 	ul {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: center;
-		padding: 0;
-		list-style: none;
+		@include setFlexbox(row nowrap, center, center);
+		@include setBox(0, 0, true);
+		@media(max-width: 320px) { flex-wrap: wrap; }
 		li {
 			margin: 0 10px 0 0;
 			&::after { content: none; }
@@ -214,12 +214,10 @@ elevator
 --------------------------------- */
 
 .elevator {
-	// or sticky?
 	visibility: hidden;
 	position: fixed;
 	// should it be relative to the wrapper?
-	// top: 2%;
-	top: 50px;
+	top: 55px;
 	right: 2%;
 	box-sizing: border-box;
 	width: 55px;
@@ -237,7 +235,6 @@ elevator
 		color: #f1f1f1;
 		background-color: darken($rm-accent-bright, 15%);
 	}
-	// add anim for visibility
 	@media(min-width: 990px) { visibility: visible; }
 }
 
@@ -250,8 +247,7 @@ notification-bar
 	position: absolute;
 	top: 70px;
 	left: 50%;
-	// set to 30%, adapt to < 900px
-	width: 70%;
+	width: 33%;
 	padding: 10px;
 	border: 1px solid darken($utility-highlight, 20%);
 	border-radius: 4px;
@@ -260,6 +256,7 @@ notification-bar
 	transform: translate(-50%, 0);
 	opacity: 0;
 	transition: opacity 500ms ease-out;
+	@media(max-width: 500px) { width: 50%; }
 }
 
 
@@ -274,7 +271,10 @@ section header
 		font-size: 30px;
 		text-align: center;
 	}
-	p { margin-bottom: 0; }
+	p {
+		margin-bottom: 0;
+		text-align: center;
+	}
 }
 
 
@@ -420,4 +420,14 @@ story-block
 		p:first-child { margin-top: 0; }
 		p:last-child { margin-bottom: 0; }
 	}
+}
+
+
+/* ---------------------------------
+footer
+--------------------------------- */
+
+footer {
+	padding: 0 16px;
+	margin-bottom: 40px;
 }
