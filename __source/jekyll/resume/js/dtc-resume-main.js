@@ -138,7 +138,7 @@ $(document).ready(function() {
 					{
 						title: '<span class="underline">Esperienze lavorative</span>',
 						jobTitle: '',
-						body: 'Segue una storia del mio percorso professionale fino ad oggi; clicca su una sezione per rivelare/nascondere i suoi contenuti.'
+						body: 'Segue una storia del mio percorso professionale fino ad oggi; clicca su una sezione per rivelare/nascondere i suoi contenuti.<!--, o <a href="#" id="js-toggle-all-stories">clicca qui per mostrare tutte le sezioni.</a>-->'
 					},
 					{
 						title: '2011 - 2018 &mdash; Simplest',
