@@ -114,16 +114,16 @@ $(document).ready(function() {
 					}
 				];
 
-				var localizedTitle = localized[i].title,
-						localizedBody = localized[i].body;
+				var locTitle = localized[i].title,
+						locBody = localized[i].body;
 
 				if ($(e).children().length === 1) {
-					$(e).children().first().html(localizedTitle)
+					$(e).children().first().html(locTitle)
 				} else if ($(e).children().length === 2) {
-					$(e).children().first().text(localizedTitle)
-					$(e).children().last().html(localizedBody);
+					$(e).children().first().text(locTitle);
+					$(e).children().last().html(locBody);
 				} else {
-					$(e).find('.list-heading').first().text('Aree/linguaggi');
+					$(e).find('h4').first().text('Aree/linguaggi');
 				}
 			});
 
@@ -207,18 +207,18 @@ $(document).ready(function() {
 					}
 				];
 
-				var localizedTitle = localized[i].title,
-						localizedJobTitle = localized[i].jobTitle,
-						localizedBody = localized[i].body;
+				var locTitle = localized[i].title,
+						locJobTitle = localized[i].jobTitle,
+						locBody = localized[i].body;
 
 				if ($(e).hasClass('section-header')) {
-					$(e).find('h1').html(localizedTitle);
-					$(e).find('p').html(localizedBody);
+					$(e).find('h1').html(locTitle);
+					$(e).find('p').html(locBody);
 					// what about the separator?
 				} else {
-					$(e).find('h2').html(localizedTitle);
-					$(e).find('h4').text(localizedJobTitle);
-					$(e).find('.story-block-body').html(localizedBody);
+					$(e).find('h2').html(locTitle);
+					$(e).find('h4').text(locJobTitle);
+					$(e).find('.story-block-body').html(locBody);
 				}
 			});
 
