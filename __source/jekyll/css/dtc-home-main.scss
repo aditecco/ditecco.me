@@ -54,23 +54,6 @@ a {
 	}
 }
 
-abbr.definition {
-	// @extend %specialTextPad;
-	padding: 4px 2px 4px 0;
-	border-bottom: none;
-	text-decoration: none;
-	&:hover {
-		border-radius: 4px;
-		background-color: rgba($utility-highlight, .25);
-	}
-	&::after {
-		content: ' (?)';
-		font-size: 60%;
-		color: $utility-light-gray;
-		vertical-align: text-top;
-	}
-}
-
 ::selection {
 	background: $accent-bright;
 	color: $utility-dim-white;
