@@ -24,31 +24,34 @@ description: Alessandro Di Tecco's R&eacute;sum&eacute;
 		section.quick-outline
 			.outline-block.quick-outline--profile
 				h2.outline-block-list-heading Profile
+
 				ul
 					li
-						h3.list-heading Front-End Web Designer
-						p Since #{startYear}, I’ve been designing interfaces for a diverse range of digital products. I can deliver high-fidelity mockups or HTML/CSS/JS. #[sup.supertext new!]
+						h3 Front-End Developer (advanced beginner)
+						| Starting from #{currYear} I'm looking for opportunities to specialize in HTML/CSS/JS dev. #[sup.supertext new!]
 					li
-						h3.list-heading Entrepreneurial experience
-						p I've been working on my own ventures for several years, developing firsthand experience in building, selling, and maintaining a product or service.
+						h3 Design background
+						| From #{startYear} to #{currYear - 2} I’ve been designing interfaces for a diverse range of digital products.
+					li
+						h3 Entrepreneurial experience
+						| I've been working on my own ventures for several years, developing firsthand experience in building, selling, and maintaining a product or service.
 
 			.outline-block.quick-outline--skills
 				h2.outline-block-list-heading Skills
 
-				h3.list-heading Areas/Languages
+				h4 Areas/Languages
 				ul.skill-list
 					li.skill-list-item UI Design
 					li.skill-list-item HTML5
 					li.skill-list-item CSS3
-					li.skill-list-item JavaScript
+					li.skill-list-item JavaScript ES6
 					li.skill-list-item pug
 					li.skill-list-item Markdown
 					li.skill-list-item Sass
 					li.skill-list-item jQuery
-					li.skill-list-item ES6
 					li.skill-list-item React
 
-				h3.list-heading Toolbox
+				h4 Toolbox
 				ul.skill-list
 					li.skill-list-item Sublime Text
 					li.skill-list-item Emmet
@@ -65,7 +68,8 @@ description: Alessandro Di Tecco's R&eacute;sum&eacute;
 					li.skill-list-item macOS
 
 			.outline-block.quick-outline--contact
-				h2.outline-block-list-heading Contact info
+				h2.outline-block-list-heading Contacts
+
 				.quick-outline--contact-inner
 					p The best way to get in touch with me is via good-old e-mail.
 					a.cta-button.contact-button(href!='mailto:' + encodedEmail) Contact me
@@ -79,25 +83,22 @@ description: Alessandro Di Tecco's R&eacute;sum&eacute;
 			header.section-header
 				h1.section-heading
 					span.underline Work experience
-					span.special-char *
-				p
-					span.special-char *
-					|  Here's a story of my professional path so far; click on a section to show/hide its contents.
+				p Here's a story of my professional path so far; click on a section to show/hide its contents.
 					//- , or #[a(href='#' id='js-toggle-all-stories') click here to show all sections.]
 
 			.story-block
 				header.story-block-header
 					h2
-						| 2011 - #{currYear}
+						| 2011 - #{currYear - 2}
 						span.rhide &mdash;
 						br.rbreak
 						| Simplest
 					h4 Freelance User Interface Designer
 
 				.story-block-body
-					p I've been designing interfaces as a freelancer since 2011; starting from 2015, I decided to create my solo User Interface Design studio: I called it Simplest, to remind myself that the simplest user interfaces &amp; interactions are the building blocks of the best digital experiences.
+					p I've been designing interfaces as a freelancer since #{startYear}; starting from 2015, I decided to create my solo User Interface Design studio: I called it Simplest, to remind myself that the simplest user interfaces &amp; interactions are the building blocks of the best digital experiences.
 
-					p Over the past #{since} years I designed a diverse range of digital products, often taking care of the full product image:
+					p Over the course of #{since - 2} years I designed a diverse range of digital products, often taking care of the full product image:
 
 					ul
 						li web-app UIs
@@ -109,7 +110,7 @@ description: Alessandro Di Tecco's R&eacute;sum&eacute;
 
 					p Check out my complete portfolio: #[a(href='http://www.simplest.io/?ref=dtc-resume') &rarr; simplest.io]
 
-					p Moreover, given my past entrepreneurial experience in building and managing a coworking space, I developed a solid understanding of what building a product means: from design (both in the physical and digital realm) to marketing &amp; sales, pricing, admin, client acquisition, client retention, customer care, and all the daily problem-solving founders are accustomed to.
+					p Moreover, given my past entrepreneurial experience, I developed a solid understanding of what building a product means: from design (both in the physical and digital realm) to marketing &amp; sales, pricing, admin, client acquisition, client retention, customer care, and all the daily problem-solving founders are accustomed to.
 					//- try adding a small separator after each block
 				//- .story-block-footer
 

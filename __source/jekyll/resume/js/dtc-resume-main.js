@@ -102,7 +102,7 @@ $(document).ready(function() {
 					// },
 					{
 						title: 'Profilo',
-						body: '<li><h3 class="list-heading">Front-End Web Designer</h3><p>Dal 2011 creo design per una vasta gamma di prodotti digitali. Sono in grado di sviluppare high-fidelity mockups o HTML/CSS/JS. <sup class="supertext">new!</sup></p></li><li><h3 class="list-heading">Esperienza d&#39;impresa</h3><p>Per diversi anni ho lavorato sui miei progetti d&#39;impresa sviluppando un&#39;ampia esperienza nella creazione, vendita e mantenimento di prodotti o servizi.</p></li>'
+						body: '<li><h3 class="list-heading">Front-End Developer (principiante avanzato)</h3>Dal 2018 cerco opportunit&agrave; per specializzarmi in sviluppo HTML/CSS/JS. <sup class="supertext">new!</sup></li><li><h3 class="list-heading">Design background</h3>Dal 2011 al 2016 ho creato UI Design per una vasta gamma di prodotti digitali.</li><li><h3 class="list-heading">Esperienza d&#39;impresa</h3>Per diversi anni ho lavorato sui miei progetti d&#39;impresa sviluppando un&#39;ampia esperienza nella creazione, vendita e mantenimento di prodotti o servizi.</li>'
 					},
 					{
 						title: 'Skills',
@@ -141,9 +141,9 @@ $(document).ready(function() {
 						body: 'Segue una storia del mio percorso professionale fino ad oggi; clicca su una sezione per rivelare/nascondere i suoi contenuti.<!--, o <a href="#" id="js-toggle-all-stories">clicca qui per mostrare tutte le sezioni.</a>-->'
 					},
 					{
-						title: '2011 - 2018 &mdash; Simplest',
+						title: '2011 - 2016 &mdash; Simplest',
 						jobTitle: 'Freelance User Interface Designer',
-						body: '<p>Mi occupo di UI Design dal 2011, e dal 2015 ho deciso di dare un nome alla mia attivit&agrave;: l&#39;ho chiamata Simplest, perch&eacute; le pi&ugrave; semplici interazioni e interfacce utente sono il fondamento delle migliori esperienze digitali.</p><p>Negli ultimi 7 anni ho progettato una vasta gamma di prodotti digitali, spesso curandone l&#39;immagine a tutto tondo:</p><ul><li>web-app UIs</li><li>mobile UIs</li><li>product/marketing websites</li><li>e-commerce</li><li>landing pages</li><li>identity, marketing visuals, banners, etc</li></ul><p>Ecco il mio portfolio completo: <a href="http://www.simplest.io/?ref=dtc-resume">&rarr; simplest.io</a></p><p>Inoltre, data la mia passata esperienza nella creazione e gestione di uno spazio di coworking, ho sviluppato una comprensione a tutto tondo del ciclo di vita di un prodotto: progettazione (nell&#39;ambito fisico o digitale), marketing &amp; vendita, pricing, amministrazione, acquisizione clienti, fidelizzazione, customer care, e tutte le quotidiane attivit&agrave; di problem-solving che ogni imprenditore conosce bene.</p>'
+						body: '<p>Mi occupo di UI Design dal 2011, e dal 2015 ho deciso di dare un nome alla mia attivit&agrave;: l&#39;ho chiamata Simplest, perch&eacute; le pi&ugrave; semplici interazioni e interfacce utente sono il fondamento delle migliori esperienze digitali.</p><p>In 5 anni ho progettato una vasta gamma di prodotti digitali, spesso curandone l&#39;immagine a tutto tondo:</p><ul><li>web-app UIs</li><li>mobile UIs</li><li>product/marketing websites</li><li>e-commerce</li><li>landing pages</li><li>identity, marketing visuals, banners, etc</li></ul><p>Ecco il mio portfolio completo: <a href="http://www.simplest.io/?ref=dtc-resume">&rarr; simplest.io</a></p><p>Inoltre, data la mia passata esperienza imprenditoriale, ho sviluppato una comprensione a tutto tondo del ciclo di vita di un prodotto: progettazione (nell&#39;ambito fisico o digitale), marketing &amp; vendita, pricing, amministrazione, acquisizione clienti, fidelizzazione, customer care, e tutte le quotidiane attivit&agrave; di problem-solving che ogni imprenditore conosce bene.</p>'
 					},
 					{
 						title: '2013 - 2016 &mdash; Geekville',
