@@ -283,7 +283,7 @@ outline-block
 --------------------------------- */
 
 .outline-block {
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 	.outline-block-list-heading {
 		padding-left: 0.2em;
 		margin: 0 0 20px;
@@ -295,13 +295,12 @@ outline-block
 		}
 	}
 	ul {
+		padding-left: 20px;
 		margin: 0;
-		list-style: circle;
-		.list-heading {
-			font-family: 'Arvo', serif;
-			font-weight: 400;
+		list-style: none;
+		h3 {
+			margin: 0;
 			font-size: 1.17em;
-			color: #3a3a3a;
 		}
 		@media(max-width: 500px) {
 			padding: 0;
@@ -323,7 +322,7 @@ outline-block
 --------------------------------- */
 
 .quick-outline--profile {
-	.list-heading, p { margin: 0; }
+	p { margin-top: 0; }
 }
 
 
@@ -332,11 +331,12 @@ outline-block
 --------------------------------- */
 
 .quick-outline--skills {
+	h4 { margin: 0 0 10px; }
 	.skill-list {
 		// try baseline in HP, too
 		@include setFlexbox(row wrap, flex-start, baseline);
-		padding: 0;
-		list-style: none;
+		@include setBox(0, 0 0 10px, true);
+		&:last-child { margin-bottom: 0; }
 		@media(max-width: 380px) { @include setFlexbox(column nowrap, center, stretch); }
 		.skill-list-item {
 			padding: 5px 10px;
