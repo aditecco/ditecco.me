@@ -59,10 +59,11 @@ error_mode: warn
 # comment-out prior to deployment!
 
 # exclude: [
-#   index.pug,
 #   archive,
 #   basecamp,
 #   blog,
+#   css,
+#   index.pug,
 #   _posts,
 #   projects,
 #   resume
