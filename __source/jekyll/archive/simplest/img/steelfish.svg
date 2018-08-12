@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="140px" height="140px" viewBox="0 0 140 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>steelfish</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="steelfish-copy" sketch:type="MSLayerGroup" fill="#FFFFFF">
+            <g id="Description-+-St" transform="translate(9.000000, 35.000000)">
+                <text id="Description" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="13" font-weight="normal" sketch:alignment="middle">
+                    <tspan x="27.1805" y="68">STEELFISH</tspan>
+                </text>
+                <path d="M55.802,40.89 C55.802,42.572 55.048,43.442 53.424,43.442 C51.916,43.442 51.162,42.456 51.162,40.89 L51.162,30.74 L46,30.74 L46,40.89 C46,45.936 48.32,48.778 53.598,48.778 C58.934,48.778 61.138,45.936 61.138,40.89 L61.138,34.046 C61.138,30.798 60.732,28.71 59.108,26.448 C57.02,23.548 54.526,20.996 52.38,18.212 C51.626,17.226 51.452,16.24 51.452,14.964 L51.452,7.888 C51.452,6.148 52.148,5.394 53.714,5.394 C55.338,5.394 55.976,6.438 55.976,7.946 L55.976,16.588 L60.964,16.588 L60.964,7.888 C60.964,2.552 58.934,0 53.598,0 C48.494,0 46,2.552 46,7.888 L46,15.022 C46,17.4 46.29,19.43 47.45,21.054 C49.77,24.36 51.974,26.564 54.12,29.29 C55.396,30.914 55.802,32.074 55.802,34.104 L55.802,40.89 Z M75.144,44.544 C74.912,44.602 74.622,44.602 74.39,44.602 C72.65,44.602 71.722,43.442 71.722,41.296 L71.722,16.588 L75.028,16.588 L75.028,12.354 L71.722,12.354 L71.722,0.986 L66.85,0.986 L66.85,12.354 L65.11,12.354 L65.11,16.588 L66.85,16.588 L66.85,41.354 C66.85,45.994 68.996,48.778 73.346,48.778 C73.984,48.778 74.68,48.72 75.144,48.546 L75.144,44.544 Z" id="St" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

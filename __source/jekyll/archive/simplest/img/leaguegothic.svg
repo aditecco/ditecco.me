@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="140px" height="140px" viewBox="0 0 140 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>leaguegothic</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="leaguegothic-copy" sketch:type="MSLayerGroup" fill="#FFFFFF">
+            <g id="Description-+-Le" transform="translate(9.000000, 35.000000)">
+                <text id="Description" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="13" font-weight="normal" sketch:alignment="middle">
+                    <tspan x="9.1235" y="68">LEAGUE GOTHIC</tspan>
+                </text>
+                <path d="M42,47.775 L58.315,47.775 L58.315,41.275 L49.02,41.275 L49.02,0 L42,0 L42,47.775 Z M73.51,35.035 L73.51,38.935 C73.51,38.935 73.64,42.51 71.17,42.51 C68.765,42.51 68.765,38.935 68.765,38.935 L68.765,31.2 L79.62,31.2 L79.62,20.865 C79.62,20.865 79.685,11.7 71.17,11.7 C62.72,11.7 62.655,21.06 62.655,21.06 L62.655,38.935 C62.655,38.935 62.655,48.295 71.105,48.295 C79.62,48.295 79.62,39.13 79.62,39.13 L79.62,35.035 L73.51,35.035 Z M68.765,21.06 C68.765,21.06 68.765,17.42 71.17,17.42 C73.64,17.42 73.51,21.06 73.51,21.06 L73.51,26.065 L68.765,26.065 L68.765,21.06 Z" id="Le" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

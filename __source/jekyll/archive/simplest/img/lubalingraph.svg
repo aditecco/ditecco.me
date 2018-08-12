@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="140px" height="140px" viewBox="0 0 140 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>lubalingraph</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="lubalingraph-copy" sketch:type="MSLayerGroup" fill="#FFFFFF">
+            <g id="Description-+-Lu" transform="translate(9.000000, 36.000000)">
+                <text id="Description" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="13" font-weight="normal" sketch:alignment="middle">
+                    <tspan x="9.728" y="67">LUBALIN GRAPH</tspan>
+                </text>
+                <path d="M24,46.215 L55.85,46.215 L55.85,34.645 L51.625,34.645 L51.625,41.99 L33.75,41.99 L33.75,4.095 L38.95,4.095 L38.95,0 L24,0 L24,4.095 L29.2,4.095 L29.2,41.99 L24,41.99 L24,46.215 Z M90.495,41.015 L90.495,46.215 L100.05,46.215 L100.05,42.25 L94.85,42.25 L94.85,11.31 L85.23,11.31 L85.23,15.34 L90.495,15.34 L90.495,28.275 C90.495,37.895 87.05,42.64 79.835,42.64 C75.545,42.64 72.425,40.82 70.995,37.44 C70.085,35.165 70.02,32.565 70.02,29.445 L70.02,28.275 L70.02,11.31 L60.465,11.31 L60.465,15.34 L65.6,15.34 L65.6,30.745 C65.6,34.645 65.73,37.895 68.07,41.21 C70.605,44.85 74.83,46.93 79.77,46.93 C84.58,46.93 88.025,44.98 90.495,41.015 Z" id="Lu" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,32 @@
+###############
+# Rewrite rules
+
+RewriteEngine On
+
+#################
+# For /work pages
+# To-do: write a RedirectMatch rule to include all the following
+
+Redirect 301 /work/3wine.html /work/3wine/
+Redirect 301 /work/beerbet.html /work/beerbet/
+Redirect 301 /work/caffeina.html /work/caffeina/
+Redirect 301 /work/curricoolum.html /work/curricoolum/
+Redirect 301 /work/geekville.html /work/geekville/
+Redirect 301 /work/prezzipazzi.html /work/prezzipazzi/
+Redirect 301 /work/save-the-mom.html /work/save-the-mom/
+Redirect 301 /work/startup-weekend-verona.html /work/startup-weekend-verona/
+Redirect 301 /work/the-collective.html /work/the-collective/
+Redirect 301 /work/the-digital-league.html /work/the-digital-league/
+
+##########################
+# For other internal pages
+# To-do: write a RedirectMatch rule to include all the following
+
+Redirect 301 /about.html /about/
+Redirect 301 /easter-egg.html /bicycles/
+
+
+#############
+# Other rules
+
+DirectoryIndex index.html index.php parking-page.html

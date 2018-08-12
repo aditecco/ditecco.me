@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="140px" height="140px" viewBox="0 0 140 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>interstate</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="interstate-copy" sketch:type="MSLayerGroup" fill="#FFFFFF">
+            <g id="Description-+-In" transform="translate(9.000000, 36.000000)">
+                <text id="Description" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="13" font-weight="normal" sketch:alignment="middle">
+                    <tspan x="22.611" y="67">INTERSTATE</tspan>
+                </text>
+                <path d="M46.035,46.9 L46.035,0 L39,0 L39,46.9 L46.035,46.9 Z M85.833,46.9 L85.833,26.733 C85.833,16.348 81.478,10.988 73.304,10.988 C69.686,10.988 66.202,12.529 64.46,15.075 L64.46,11.725 L57.559,11.725 L57.559,46.9 L64.46,46.9 L64.46,26.331 C64.46,20.636 67.073,17.353 71.696,17.353 C76.252,17.353 78.932,19.899 78.932,27.001 L78.932,46.9 L85.833,46.9 Z" id="In" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
