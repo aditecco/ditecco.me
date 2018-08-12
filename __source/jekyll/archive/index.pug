@@ -8,33 +8,39 @@ description: This is Alessandro Di Tecco's archive of past projects.
 //- using 'block unbuffered code' as per:
 //- https://pugjs.org/language/code.html
 -
-	var iterables = [
-		{
-			title: 'Geekville',
-			timestamp: '2013-2017',
-			url: 'geekville/en/',
-			taxonomy: 'entrepreneurship'
-		},
-		{
-			title: 'The Collective',
-			timestamp: '2012-2013',
-			url: 'the-collective/',
-			taxonomy: 'community'
-		},
-		{
-			title: 'The Digital League',
-			timestamp: '2011-2013',
-			url: 'the-digital-league/',
-			taxonomy: 'community'
-		}
-	]
+  var iterables = [
+    {
+      title: 'Simplest',
+      timestamp: '2011-2016',
+      url: 'simplest/',
+      taxonomy: 'design'
+    },
+    {
+      title: 'Geekville',
+      timestamp: '2013-2016',
+      url: 'geekville/en/',
+      taxonomy: 'entrepreneurship'
+    },
+    {
+      title: 'The Collective',
+      timestamp: '2012-2013',
+      url: 'the-collective/',
+      taxonomy: 'community'
+    },
+    {
+      title: 'The Digital League',
+      timestamp: '2011-2013',
+      url: 'the-digital-league/',
+      taxonomy: 'community'
+    }
+  ]
 
 each item in iterables
-	li.index-item
-		//- using attribute interpolation, as per:
-		//- https://pugjs.org/language/attributes.html
-		a(href=`${item.url}`)
-			article.index-item-inner
-				span.index-item-timestamp #{item.timestamp}
-				h3.index-item-title #{item.title}
-				span.index-item-tag #{item.taxonomy}
+  li.index-item
+    //- using attribute interpolation, as per:
+    //- https://pugjs.org/language/attributes.html
+    a(href=`${item.url}`)
+      article.index-item-inner
+        span.index-item-timestamp #{item.timestamp}
+        h3.index-item-title #{item.title}
+        span.index-item-tag #{item.taxonomy}
