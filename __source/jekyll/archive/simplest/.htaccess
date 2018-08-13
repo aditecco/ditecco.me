@@ -29,4 +29,4 @@ Redirect 301 /easter-egg.html /bicycles/
 #############
 # Other rules
 
-DirectoryIndex index.html index.php parking-page.html
+DirectoryIndex index.html
