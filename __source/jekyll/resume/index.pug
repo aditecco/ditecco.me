@@ -83,7 +83,8 @@ description: Alessandro Di Tecco's R&eacute;sum&eacute;
 			header.section-header
 				h1.section-heading
 					span.underline Work experience
-				p Here's a story of my professional path so far; click on a section to show/hide its contents, or #[a(href='#' id='js-toggle-all-stories' onclick='toggleAll()') click here to show all sections].
+				p Here's a story of my professional path so far; click on a section to show/hide its contents.
+				//- , or #[a(href='#' id='js-toggle-all-stories' onclick='toggleAll()') click here to show all sections].
 
 			.story-block
 				header.story-block-header
@@ -308,12 +309,3 @@ description: Alessandro Di Tecco's R&eacute;sum&eacute;
 					p I also created the event identity: #[a(href='/archive/simplest/work/startup-weekend-verona/') &rarr; Startup Weekend Verona 2012]
 
 					p Thanks to the work of everyone involved the event was a success, with 120+ attendees.
-
-script
-	const toggleAll = () => {
-		const t = $('.story-block-header');
-
-		for (const el of t) {
-			$(el).next().slideToggle();
-		}
-	}
