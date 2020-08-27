@@ -69,4 +69,5 @@ yarn-error.log
 .yarn-integrity
 
 # new ignores
+#__source/jekyll/**/*
 __source/jekyll/.sass-cache/
