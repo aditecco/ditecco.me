@@ -1,4 +1,3 @@
-
 /* ========================
 _dtc-colors-typography.scss
 ======================== */
@@ -7,18 +6,14 @@ _dtc-colors-typography.scss
 imports
 --------------------------------- */
 
-@import '_flat-ui-colors';
-
+@import "_flat-ui-colors";
 
 /* ---------------------------------
 homepage, common
 --------------------------------- */
-
 /*
 	colors
-*/
-
-// $accent-dark: ;
+*/ // $accent-dark: ;
 $accent-bright: #1abc9c;
 
 // $background-dark: ;
@@ -33,18 +28,16 @@ $utility-highlight: rgba(255, 208, 16, 0.5);
 $cta-primary: $accent-bright;
 // $cta-secondary: ;
 
-
 /*
 	typography
 */
 
-$heading-font: 'Trocchi', serif;
-$base-font: 'Karla', sans-serif;
-$system-font: 'Helvetica, Arial', sans-serif;
+$heading-font: "Trocchi", serif;
+$base-font: "Karla", sans-serif;
+$system-font: "Helvetica, Arial", sans-serif;
 $font-color-dark: $gunMetal;
 $font-color-bright: $paper;
 $font-color-secondary: $silver;
-
 
 /* ---------------------------------
 resume
@@ -54,6 +47,6 @@ resume
 	colors
 */
 
-$rm-background-page-outer: #F7ECE1;
+$rm-background-page-outer: #f7ece1;
 $rm-background-page-inner: #f2f2f2;
 $rm-accent-bright: #00a0b0;
