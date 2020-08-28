@@ -1,4 +1,5 @@
 ---
+order: 3
 title: "2011 - 2016 — Simplest"
 subtitle: "Freelance User Interface Designer"
 ---
