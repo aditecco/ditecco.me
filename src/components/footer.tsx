@@ -4,6 +4,7 @@ Footer
 
 import React, { ReactElement } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import "../styles/footer.scss"
 
 interface IOwnProps {}
 
