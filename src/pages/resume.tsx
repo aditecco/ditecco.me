@@ -6,8 +6,11 @@ import React, { ReactElement, useState } from "react"
 import { Link } from "gatsby"
 import Footer from "../components/footer"
 import { Helmet } from "react-helmet"
-import { stories } from "../data/data"
+import { stories } from "../content/data"
 import "../styles/resume.scss"
+import itFlag from "../images/resume/it-flag.svg"
+import usFlag from "../images/resume/us-flag.svg"
+import bullet from "../images/resume/bullet-01.svg"
 
 interface IOwnProps {}
 
@@ -18,6 +21,11 @@ export default function Resume(props: IOwnProps): ReactElement {
   // - var encodedEmail = '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;'
 
   const [visibleStory, setVisibleStory] = useState({})
+  const [lang, setLang] = useState("us")
+
+  function handleChangeLanguage() {
+    setLang(lang => (lang === "us" ? "it" : "us"))
+  }
 
   return (
     <div className="Resume">
@@ -37,10 +45,12 @@ export default function Resume(props: IOwnProps): ReactElement {
           </li>
 
           <li>
-            <button className="lang-switcher">Versione italiana</button>
+            <button className="lang-switcher" onClick={handleChangeLanguage}>
+              Versione italiana
+            </button>
 
             <img
-              src="img/it-flag.svg"
+              src={lang === "us" ? itFlag : usFlag}
               alt="change language"
               width="16"
               height="auto"
