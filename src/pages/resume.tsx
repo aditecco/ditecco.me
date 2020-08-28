@@ -236,7 +236,7 @@ export default function Resume({ data }: TProps): ReactElement {
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: frontmatter___order }) {
       edges {
         node {
           html
