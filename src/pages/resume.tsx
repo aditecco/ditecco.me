@@ -16,6 +16,7 @@ import "../styles/resume.scss"
 import itFlag from "../images/resume/it-flag.svg"
 import usFlag from "../images/resume/us-flag.svg"
 import bullet from "../images/resume/bullet-01.svg"
+import Layout from "../components/layout"
 
 interface IOwnProps {}
 
@@ -95,166 +96,164 @@ export default function Resume({ data }: TProps): ReactElement {
   }
 
   return (
-    <div className="Resume">
-      <Helmet>
-        {/* TODO move to SEO */}
+    <Layout title="Resume">
+      <div className="Resume">
+        {/* <Helmet
+      >
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Arvo:400|Kaushan+Script:400|Karla:400"
           type="text/css"
         />
-      </Helmet>
+      </Helmet> */}
 
-      <nav className="page-controls">
-        <ul className="subtext">
-          <li>
-            <Link to="/">&#8592; Back to homepage</Link>
-          </li>
+        <nav className="page-controls">
+          <ul className="subtext">
+            <li>
+              <Link to="/">&#8592; Back to homepage</Link>
+            </li>
 
-          <li>
-            <button className="lang-switcher" onClick={handleChangeLanguage}>
-              {lang === "us" ? "Versione italiana" : "English version"}
-            </button>
+            <li>
+              <button className="lang-switcher" onClick={handleChangeLanguage}>
+                {lang === "us" ? "Versione italiana" : "English version"}
+              </button>
 
-            <img
-              src={lang === "us" ? itFlag : usFlag}
-              alt="change language"
-              width="16"
-              height="auto"
-            />
-          </li>
-        </ul>
-      </nav>
+              <img
+                src={lang === "us" ? itFlag : usFlag}
+                alt="change language"
+                width="16"
+                height="auto"
+              />
+            </li>
+          </ul>
+        </nav>
 
-      <button className="elevator" onClick={() => window.scrollTo(0, 0)}>
-        &#x25B2; top
-      </button>
+        <button className="elevator" onClick={() => window.scrollTo(0, 0)}>
+          &#x25B2; top
+        </button>
 
-      <div className="notification-bar" />
+        <div className="notification-bar" />
 
-      {/* CONTENT */}
-      <div className="wrapper">
-        <div className="hero">
-          <h1 className="hero-head">R&eacute;sum&eacute;</h1>
-          <h4 className="hero-sub-head">of Alessandro Di Tecco</h4>
+        {/* CONTENT */}
+        <div className="wrapper">
+          <div className="hero">
+            <h1 className="hero-head">R&eacute;sum&eacute;</h1>
+            <h4 className="hero-sub-head">of Alessandro Di Tecco</h4>
+          </div>
+
+          <div className="container">
+            {/* QUICK-OUTLINE */}
+            <section className="quick-outline">
+              <div className="outline-block quick-outline--profile">
+                <h2 className="outline-block-list-heading">Profile</h2>
+
+                <ul>
+                  <li>
+                    <h3>Front-End Developer</h3>I code web &amp; mobile layouts
+                    and interfaces, with modern CSS and JavaScript.
+                  </li>
+
+                  <li>
+                    <h3>Design background</h3>
+                    From {startYear} to 2016 I’ve been designing interfaces for
+                    a diverse range of digital products.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="outline-block quick-outline--skills">
+                <h2 className="outline-block-list-heading">Skills</h2>
+
+                <h4>Areas/Languages</h4>
+                <ul className="skill-list">
+                  {[
+                    "CSS3",
+                    "Sass",
+                    "JavaScript ES6",
+                    "React",
+                    "HTML5",
+                    "UI Design",
+                  ].map(skill => (
+                    <li className="skill-list-item">{skill}</li>
+                  ))}
+                </ul>
+
+                <h4>Toolbox</h4>
+                <ul className="skill-list">
+                  {[
+                    "Visual Studio Code",
+                    "Sublime Text",
+                    "git",
+                    "fish shell",
+                    "Unix CLI",
+                    "Dev Tools",
+                    "npm, yarn",
+                    "gulp",
+                    "Sketch",
+                    "Adobe XD",
+                    "Photoshop",
+                    "macOS",
+                  ].map(skill => (
+                    <li className="skill-list-item">{skill}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="outline-block quick-outline--contact">
+                <h2 className="outline-block-list-heading">Contacts</h2>
+
+                <div className="quick-outline--contact-inner">
+                  <p>
+                    The best way to get in touch with me is via good-old e-mail.
+                  </p>
+
+                  <a
+                    href="mailto:&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;"
+                    className="cta-button contact-button"
+                  >
+                    Contact me
+                  </a>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
 
-        <div className="container">
-          {/* QUICK-OUTLINE */}
-          <section className="quick-outline">
-            <div className="outline-block quick-outline--profile">
-              <h2 className="outline-block-list-heading">Profile</h2>
+        <div className="wrapper">
+          <div className="container">
+            {/* FULL STORY */}
+            <section className="full-story">
+              {/* WORK */}
+              <header className="section-header">
+                <h1 className="section-heading">
+                  <span className="underline"></span>Work experience
+                </h1>
 
-              <ul>
-                <li>
-                  <h3>Front-End Developer</h3>I code web &amp; mobile layouts
-                  and interfaces, with modern CSS and JavaScript.
-                </li>
-
-                <li>
-                  <h3>Design background</h3>
-                  From {startYear} to 2016 I’ve been designing interfaces for a
-                  diverse range of digital products.
-                </li>
-              </ul>
-            </div>
-
-            <div className="outline-block quick-outline--skills">
-              <h2 className="outline-block-list-heading">Skills</h2>
-
-              <h4>Areas/Languages</h4>
-              <ul className="skill-list">
-                {[
-                  "CSS3",
-                  "Sass",
-                  "JavaScript ES6",
-                  "React",
-                  "HTML5",
-                  "UI Design",
-                ].map(skill => (
-                  <li className="skill-list-item">{skill}</li>
-                ))}
-              </ul>
-
-              <h4>Toolbox</h4>
-              <ul className="skill-list">
-                {[
-                  "Visual Studio Code",
-                  "Sublime Text",
-                  "git",
-                  "fish shell",
-                  "Unix CLI",
-                  "Dev Tools",
-                  "npm, yarn",
-                  "gulp",
-                  "Sketch",
-                  "Adobe XD",
-                  "Photoshop",
-                  "macOS",
-                ].map(skill => (
-                  <li className="skill-list-item">{skill}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="outline-block quick-outline--contact">
-              <h2 className="outline-block-list-heading">Contacts</h2>
-
-              <div className="quick-outline--contact-inner">
                 <p>
-                  The best way to get in touch with me is via good-old e-mail.
+                  Here's a story of my professional path so far; click on a
+                  section to show/hide its contents.
                 </p>
 
-                <a
-                  href="mailto:&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;"
-                  className="cta-button contact-button"
-                >
-                  Contact me
-                </a>
-              </div>
-            </div>
-          </section>
+                <button onClick={handleToggleAll}>TODO toggle all</button>
+              </header>
+
+              {stories.slice(0, 10).map(renderStories)}
+
+              <hr className="separator" />
+
+              {/* OTHER XP */}
+              <header className="section-header">
+                <h1 className="section-heading">
+                  <span className="underline"></span>Other experiences
+                </h1>
+              </header>
+
+              {stories.slice(10).map(renderStories)}
+            </section>
+          </div>
         </div>
       </div>
-
-      <div className="wrapper">
-        <div className="container">
-          {/* FULL STORY */}
-          <section className="full-story">
-            {/* WORK */}
-            <header className="section-header">
-              <h1 className="section-heading">
-                <span className="underline"></span>Work experience
-              </h1>
-
-              <p>
-                Here's a story of my professional path so far; click on a
-                section to show/hide its contents.
-              </p>
-
-              {/* <button onClick={() => {
-                if (visibleStory)
-              }}>TODO toggle all</button> */}
-            </header>
-
-            {stories.slice(0, 10).map(renderStories)}
-
-            <hr className="separator" />
-
-            {/* OTHER XP */}
-            <header className="section-header">
-              <h1 className="section-heading">
-                <span className="underline"></span>Other experiences
-              </h1>
-            </header>
-
-            {stories.slice(10).map(renderStories)}
-          </section>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 
