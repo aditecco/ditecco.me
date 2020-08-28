@@ -3,10 +3,15 @@ Resume
 --------------------------------- */
 
 import React, { ReactElement, useState } from "react"
-import { Link } from "gatsby"
+import {
+  Link,
+  GatsbyGraphQLInputObjectType,
+  graphql,
+  GatsbyGraphQLObjectType,
+} from "gatsby"
 import Footer from "../components/footer"
 import { Helmet } from "react-helmet"
-import { stories } from "../content/data"
+// import { stories } from "../content/data"
 import "../styles/resume.scss"
 import itFlag from "../images/resume/it-flag.svg"
 import usFlag from "../images/resume/us-flag.svg"
@@ -14,11 +19,31 @@ import bullet from "../images/resume/bullet-01.svg"
 
 interface IOwnProps {}
 
-export default function Resume(props: IOwnProps): ReactElement {
+interface IGatsbyProps {
+  data // TODO the right type?
+}
+
+interface IGraphQLQueryResponseNode {
+  node: {
+    html: string
+    frontmatter: {
+      title: string
+      subtitle: string
+    }
+  }
+}
+
+type TProps = IOwnProps & IGatsbyProps
+
+export default function Resume({ data }: TProps): ReactElement {
   const currYear = 2020
   const startYear = 2011
   const since = currYear - startYear
   // - var encodedEmail = '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;'
+
+  const {
+    allMarkdownRemark: { edges: stories },
+  } = data
 
   const [visibleStory, setVisibleStory] = useState({})
   const [lang, setLang] = useState("us")
@@ -163,33 +188,39 @@ export default function Resume(props: IOwnProps): ReactElement {
               </p>
             </header>
 
-            {stories.map(story => (
-              <div
-                className="story-block"
-                onClick={() =>
-                  setVisibleStory(visibleStories => ({
-                    ...visibleStories,
-                    [story.title]: !visibleStories[story.title],
-                  }))
-                }
-              >
-                <header className="story-block-header">
-                  <h2>
-                    {story.title}
-                    <span className="rhide"></span>
-                    <br className="rbreak" />
-                  </h2>
+            {stories.map(
+              (
+                { node: { html, frontmatter } }: IGraphQLQueryResponseNode,
+                i
+              ) => (
+                <div
+                  key={i}
+                  className="story-block"
+                  onClick={() =>
+                    setVisibleStory(visibleStories => ({
+                      ...visibleStories,
+                      [frontmatter.title]: !visibleStories[frontmatter.title],
+                    }))
+                  }
+                >
+                  <header className="story-block-header">
+                    <h2>
+                      {frontmatter.title}
+                      <span className="rhide"></span>
+                      <br className="rbreak" />
+                    </h2>
 
-                  <h4>{story.subtitle}</h4>
-                </header>
+                    <h4>{frontmatter.subtitle}</h4>
+                  </header>
 
-                {visibleStory[story.title] && (
-                  <div className="story-block-body">
-                    <p>{story.body}</p>
-                  </div>
-                )}
-              </div>
-            ))}
+                  {visibleStory[frontmatter.title] && (
+                    <div className="story-block-body">
+                      <div dangerouslySetInnerHTML={{ __html: html }} />
+                    </div>
+                  )}
+                </div>
+              )
+            )}
           </section>
         </div>
       </div>
@@ -198,3 +229,19 @@ export default function Resume(props: IOwnProps): ReactElement {
     </div>
   )
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+            subtitle
+          }
+        }
+      }
+    }
+  }
+`

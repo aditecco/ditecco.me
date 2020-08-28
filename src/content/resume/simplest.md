@@ -3,10 +3,6 @@ title: "2011 - 2016 — Simplest"
 subtitle: "Freelance User Interface Designer"
 ---
 
-## 2011 - 2016 &mdash; Simplest
-
-#### Freelance User Interface Designer
-
 I've been designing interfaces as a freelancer since #{startYear}; starting from 2015, I decided to create my solo User Interface Design studio: I called it Simplest, to remind myself that the simplest user interfaces &amp; interactions are the building blocks of the best digital experiences.
 
 Over the course of 5 years I designed a diverse range of digital products, often taking care of the full product image:
