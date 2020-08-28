@@ -3,12 +3,12 @@ import { Link } from "gatsby"
 
 import SEO from "../components/seo"
 import Footer from "../components/footer"
-import cards from "../data/cards"
+import { cards } from "../data/data"
 import "../styles/home.scss"
 
 export default function IndexPage() {
   return (
-    <>
+    <div className="Home">
       <SEO title="Home" />
 
       <main className="card-list-container">
@@ -124,6 +124,6 @@ export default function IndexPage() {
       </main>
 
       <Footer />
-    </>
+    </div>
   )
 }

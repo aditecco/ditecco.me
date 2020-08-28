@@ -1,4 +1,4 @@
-export default [
+export const cards = [
   {
     master: true,
     expanded: false,
@@ -86,5 +86,74 @@ export default [
     tags: ["writing"],
     heroImg: "",
     heroAlt: "",
+  },
+]
+
+export const stories = [
+  {
+    title: "2019 - Present — Intesys",
+    subtitle: "Front-End Developer",
+    body:
+      "At Intesys I'm part of the front-end team, where we build modern enterprise SPAs with React and other state-of-the-art technology.",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    body: "",
   },
 ]

@@ -2,10 +2,11 @@
 Resume
 --------------------------------- */
 
-import React, { ReactElement } from "react"
+import React, { ReactElement, useState } from "react"
 import { Link } from "gatsby"
 import Footer from "../components/footer"
 import { Helmet } from "react-helmet"
+import { stories } from "../data/data"
 import "../styles/resume.scss"
 
 interface IOwnProps {}
@@ -15,6 +16,8 @@ export default function Resume(props: IOwnProps): ReactElement {
   const startYear = 2011
   const since = currYear - startYear
   // - var encodedEmail = '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;'
+
+  const [visibleStory, setVisibleStory] = useState({})
 
   return (
     <div className="Resume">
@@ -117,6 +120,7 @@ export default function Resume(props: IOwnProps): ReactElement {
 
             <div className="outline-block quick-outline--contact">
               <h2 className="outline-block-list-heading">Contacts</h2>
+
               <div className="quick-outline--contact-inner">
                 <p>
                   The best way to get in touch with me is via good-old e-mail.
@@ -130,6 +134,52 @@ export default function Resume(props: IOwnProps): ReactElement {
                 </a>
               </div>
             </div>
+          </section>
+        </div>
+      </div>
+
+      <div className="wrapper">
+        <div className="container">
+          {/* FULL STORY */}
+          <section className="full-story">
+            <header className="section-header">
+              <h1 className="section-heading">
+                <span className="underline"></span>Work experience
+              </h1>
+
+              <p>
+                Here's a story of my professional path so far; click on a
+                section to show/hide its contents.
+              </p>
+            </header>
+
+            {stories.map(story => (
+              <div
+                className="story-block"
+                onClick={() =>
+                  setVisibleStory(visibleStories => ({
+                    ...visibleStories,
+                    [story.title]: !visibleStories[story.title],
+                  }))
+                }
+              >
+                <header className="story-block-header">
+                  <h2>
+                    {story.title}
+                    <span className="rhide"></span>
+                    <br className="rbreak" />
+                  </h2>
+
+                  <h4>{story.subtitle}</h4>
+                </header>
+
+                {visibleStory[story.title] && (
+                  <div className="story-block-body">
+                    <p>{story.body}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </section>
         </div>
       </div>
