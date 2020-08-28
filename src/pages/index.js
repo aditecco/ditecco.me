@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Footer from "../components/footer"
 import cards from "../data/cards"
 import "../styles/home.scss"
 
@@ -37,6 +38,7 @@ export default function IndexPage() {
                     : ""
                 }`}
               >
+                {/* TODO Link */}
                 <a href={href}>
                   <article>
                     {master ? (
@@ -119,6 +121,8 @@ export default function IndexPage() {
           })}
         </ul>
       </main>
+
+      <Footer />
     </>
   )
 }

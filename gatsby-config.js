@@ -1,9 +1,14 @@
 module.exports = {
+  // metadata
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `ditecco.me`,
+    description: `Personal website of Alessandro Di Tecco, Front-End Developer.`,
+    author: `Alessandro Di Tecco`,
+    version: "6.0.3 (beta)",
+    currentYear: "2020",
   },
+
+  // plugins
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
