@@ -126,7 +126,9 @@ export default function Resume({ data }: TProps): ReactElement {
         </ul>
       </nav>
 
-      <button className="elevator">&#x25B2; top</button>
+      <button className="elevator" onClick={() => window.scrollTo(0, 0)}>
+        &#x25B2; top
+      </button>
 
       <div className="notification-bar" />
 
