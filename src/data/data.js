@@ -97,14 +97,16 @@ export const stories = [
       "At Intesys I'm part of the front-end team, where we build modern enterprise SPAs with React and other state-of-the-art technology.",
   },
   {
-    title: "",
-    subtitle: "",
-    body: "",
+    title: "2018 - 2019 — Fornace",
+    subtitle: "Front-End Developer",
+    body:
+      "At Fornace, I code web & mobile layouts and interfaces, with modern CSS and JavaScript; my work ranges from building small CMS-backed brochure sites to taking part in the development of large enterprise React applications. I also occasionally take care of UX/UI design for select projects.",
   },
   {
-    title: "",
-    subtitle: "",
-    body: "",
+    title: "2011 - 2016 — Simplest",
+    subtitle: "Freelance User Interface Designer",
+    body:
+      "I've been designing interfaces as a freelancer since #{startYear}; starting from 2015, I decided to create my solo User Interface Design studio: I called it Simplest, to remind myself that the simplest user interfaces &amp; interactions are the building blocks of the best digital experiences.",
   },
   {
     title: "",
