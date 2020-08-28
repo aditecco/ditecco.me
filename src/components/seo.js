@@ -72,7 +72,7 @@ function SEO({ description, lang, meta, title }) {
       <link
         rel="stylesheet"
         type="text/css"
-        href="https://fonts.googleapis.com/css?family=Montserrat:400|Roboto:400"
+        href="https://fonts.googleapis.com/css?family=Montserrat:400|Roboto:400|Arvo:400|Kaushan+Script:400|Karla:400"
       />
     </Helmet>
   )
