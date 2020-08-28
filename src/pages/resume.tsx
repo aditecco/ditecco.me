@@ -237,7 +237,7 @@ export default function Resume({ data }: TProps): ReactElement {
               }}>TODO toggle all</button> */}
             </header>
 
-            {[...stories].slice(0, 10).map(renderStories)}
+            {stories.slice(0, 10).map(renderStories)}
 
             <hr className="separator" />
 
@@ -248,7 +248,7 @@ export default function Resume({ data }: TProps): ReactElement {
               </h1>
             </header>
 
-            {[...stories].slice(10).map(renderStories)}
+            {stories.slice(10).map(renderStories)}
           </section>
         </div>
       </div>
