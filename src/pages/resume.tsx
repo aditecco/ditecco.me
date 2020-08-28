@@ -25,8 +25,10 @@ interface IGatsbyProps {
 
 interface IGraphQLQueryResponseNode {
   node: {
+    id: string
     html: string
     frontmatter: {
+      order: number
       title: string
       subtitle: string
     }
@@ -48,8 +50,48 @@ export default function Resume({ data }: TProps): ReactElement {
   const [visibleStory, toggleVisibleStory] = useState({})
   const [lang, setLang] = useState("us")
 
+  /**
+   * handles language switching
+   */
   function handleChangeLanguage() {
     setLang(lang => (lang === "us" ? "it" : "us"))
+  }
+
+  /**
+   * renders data into resume stories
+   */
+  function renderStories(
+    { node: { id, html, frontmatter } }: IGraphQLQueryResponseNode,
+    i
+  ) {
+    return (
+      <div
+        key={i}
+        className="story-block"
+        onClick={() =>
+          toggleVisibleStory(visibleStories => ({
+            ...visibleStories,
+            [id]: !visibleStories[id],
+          }))
+        }
+      >
+        <header className="story-block-header">
+          <h2>
+            {frontmatter.title}
+            <span className="rhide"></span>
+            <br className="rbreak" />
+          </h2>
+
+          <h4>{frontmatter.subtitle}</h4>
+        </header>
+
+        {visibleStory[id] && (
+          <div className="story-block-body">
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </div>
+        )}
+      </div>
+    )
   }
 
   return (
@@ -177,6 +219,7 @@ export default function Resume({ data }: TProps): ReactElement {
         <div className="container">
           {/* FULL STORY */}
           <section className="full-story">
+            {/* WORK */}
             <header className="section-header">
               <h1 className="section-heading">
                 <span className="underline"></span>Work experience
@@ -192,39 +235,18 @@ export default function Resume({ data }: TProps): ReactElement {
               }}>TODO toggle all</button> */}
             </header>
 
-            {stories.map(
-              (
-                { node: { html, frontmatter } }: IGraphQLQueryResponseNode,
-                i
-              ) => (
-                <div
-                  key={i}
-                  className="story-block"
-                  onClick={() =>
-                    toggleVisibleStory(visibleStories => ({
-                      ...visibleStories,
-                      [frontmatter.title]: !visibleStories[frontmatter.title],
-                    }))
-                  }
-                >
-                  <header className="story-block-header">
-                    <h2>
-                      {frontmatter.title}
-                      <span className="rhide"></span>
-                      <br className="rbreak" />
-                    </h2>
+            {[...stories].slice(0, 10).map(renderStories)}
 
-                    <h4>{frontmatter.subtitle}</h4>
-                  </header>
+            <hr className="separator" />
 
-                  {visibleStory[frontmatter.title] && (
-                    <div className="story-block-body">
-                      <div dangerouslySetInnerHTML={{ __html: html }} />
-                    </div>
-                  )}
-                </div>
-              )
-            )}
+            {/* OTHER XP */}
+            <header className="section-header">
+              <h1 className="section-heading">
+                <span className="underline"></span>Other experiences
+              </h1>
+            </header>
+
+            {[...stories].slice(10).map(renderStories)}
           </section>
         </div>
       </div>
@@ -239,8 +261,10 @@ export const query = graphql`
     allMarkdownRemark(sort: { fields: frontmatter___order }) {
       edges {
         node {
+          id
           html
           frontmatter {
+            order
             title
             subtitle
           }
