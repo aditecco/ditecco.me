@@ -14,473 +14,475 @@ body {
   margin: 0;
 }
 
-.separator {
-  width: 100%;
-  border: 0;
-  border-bottom: 0.25em solid $rm-background-page-inner;
-  margin: 2.5em auto;
-}
-
-.section-separator {
-  width: 100%;
-  border: 0;
-  border-bottom: 0.4em double #e0d6cc;
-  margin: 2.5em auto;
-}
-
-li {
-  margin-bottom: 0.5em;
-}
-
-a {
-  color: $rm-accent-bright;
-  text-decoration: none;
-  border-bottom: 1px dotted $rm-accent-bright;
-  &:hover {
-    background-color: $utility-highlight;
-    color: #5a5a5a;
+.Resume {
+  .separator {
+    width: 100%;
+    border: 0;
+    border-bottom: 0.25em solid $rm-background-page-inner;
+    margin: 2.5em auto;
   }
-}
 
-::selection {
-  background-color: $utility-highlight;
-}
-
-/* ---------------------------------
-containers
---------------------------------- */
-
-.wrapper {
-  max-width: 50em;
-  margin: 0 auto 40px;
-  // border: 0.25em solid #E0D6CC;
-  background-color: $rm-background-page-inner;
-  box-shadow: 0 4px 30px rgba(black, 0.1);
-  &:last-child {
-    margin-bottom: 0;
+  .section-separator {
+    width: 100%;
+    border: 0;
+    border-bottom: 0.4em double #e0d6cc;
+    margin: 2.5em auto;
   }
-  @media (max-width: 500px) {
-    width: 90%;
+
+  li {
+    margin-bottom: 0.5em;
   }
-}
 
-.container {
-  padding: 2.5em;
-  margin: 0;
-  background-color: #fff;
-  @media (max-width: 500px) {
-    padding: 1.5em;
-  }
-}
-
-/* ---------------------------------
-text formatting
---------------------------------- */
-
-.subtext {
-  margin: 0;
-  text-align: center;
-  font-size: 0.9em;
-  color: #777;
-  a,
-  button {
-    color: #777;
-    text-decoration: none;
-    border: {
-      top: none;
-      right: none;
-      left: none;
-    }
-    border-bottom: 1px dotted #777;
-
-    &:hover {
-      color: black;
-      border-bottom: 1px solid black;
-      background-color: transparent;
-    }
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Arvo", sans-serif;
-  font-weight: 400;
-  color: #3a3a3a;
-}
-
-/* ---------------------------------
-special formatting
---------------------------------- */
-
-.special-char {
-  color: red;
-}
-
-.underline {
-  border-bottom: 2px solid #e0d6cc;
-}
-
-.supertext {
-  background-color: $utility-highlight;
-  padding: 1px 2px;
-  border-radius: 2px;
-}
-
-/* ---------------------------------
-responsive layout control
---------------------------------- */
-
-.rbreak {
-  display: none;
-}
-
-.rhide {
-  // inserts a space before and after separator
-  &::before {
-    content: " ";
-  }
-  &::after {
-    content: " ";
-  }
-}
-
-@media (max-width: 500px) {
-  .rbreak {
-    display: block;
-  }
-  .rhide {
-    display: none;
-  }
-}
-
-/* ---------------------------------
-buttons
---------------------------------- */
-
-.cta-button {
-  padding: 10px;
-  border-radius: 4px;
-  text-align: center;
-  color: $rm-background-page-inner;
-  background-color: $rm-accent-bright;
-  &:hover {
-    color: $rm-background-page-inner;
-    background-color: darken($rm-accent-bright, 15%);
-  }
-}
-
-/* ---------------------------------
-hero
---------------------------------- */
-
-.hero {
-  @include setFlexbox(row nowrap, space-between, center);
-  @include setBox(0 40px 0, 0, false);
-  height: 220px;
-  @media (max-width: 500px) {
-    @include setFlexbox(column nowrap, center, center);
-    height: auto;
-    padding: 40px;
-  }
-  .hero-head {
-    margin: 0 0 0 -10px;
-    font-family: "Kaushan Script", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.09em;
-    font-size: 80px;
+  a {
     color: $rm-accent-bright;
-  }
-  .hero-sub-head {
-    margin: 16px 0 0;
-    color: inherit;
-  }
-}
-
-/* ---------------------------------
-nav
---------------------------------- */
-
-.page-controls {
-  padding: 16px;
-  ul {
-    @include setFlexbox(row nowrap, center, center);
-    @include setBox(0, 0, true);
-    @media (max-width: 320px) {
-      flex-wrap: wrap;
-    }
-    li {
-      margin: 0 10px 0 0;
-
-      &::after {
-        content: none;
-      }
-
-      &:last-child {
-        margin: 0;
-      }
-
-      &:last-child::after {
-        content: none;
-      }
-
-      img {
-        margin-left: 5px;
-        vertical-align: middle;
-      }
-
-      .lang-switcher {
-        background-color: transparent;
-        outline: none;
-        // border: none;
-      }
+    text-decoration: none;
+    border-bottom: 1px dotted $rm-accent-bright;
+    &:hover {
+      background-color: $utility-highlight;
+      color: #5a5a5a;
     }
   }
-}
 
-/* ---------------------------------
-elevator
---------------------------------- */
-
-.elevator {
-  visibility: hidden;
-  position: fixed;
-  // should it be relative to the wrapper?
-  top: 55px;
-  right: 2%;
-  box-sizing: border-box;
-  width: 55px;
-  height: 55px;
-  padding: 6px 0;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  color: #f1f1f1;
-  text-transform: uppercase;
-  text-align: center;
-  background-color: $rm-accent-bright;
-  box-shadow: 0 4px 16px rgba(black, 0.25);
-  &:hover {
-    color: #f1f1f1;
-    background-color: darken($rm-accent-bright, 15%);
+  ::selection {
+    background-color: $utility-highlight;
   }
-  @media (min-width: 990px) {
-    visibility: visible;
-  }
-}
 
-/* ---------------------------------
-notification-bar
---------------------------------- */
+  /* ---------------------------------
+	containers
+	--------------------------------- */
 
-.notification-bar {
-  position: absolute;
-  top: 70px;
-  left: 50%;
-  width: 33%;
-  padding: 10px;
-  border: 1px solid darken($utility-highlight, 20%);
-  border-radius: 4px;
-  text-align: center;
-  background-color: $utility-highlight;
-  transform: translate(-50%, 0);
-  opacity: 0;
-  transition: opacity 500ms ease-out;
-  @media (max-width: 500px) {
-    width: 50%;
-  }
-}
-
-/* ---------------------------------
-section header
---------------------------------- */
-
-.section-header {
-  margin-bottom: 40px;
-  .section-heading {
-    margin: 0;
-    font-size: 30px;
-    text-align: center;
-  }
-  p {
-    margin-bottom: 0;
-    text-align: center;
-  }
-}
-
-/* ---------------------------------
-outline-block
---------------------------------- */
-
-.outline-block {
-  margin-bottom: 40px;
-  .outline-block-list-heading {
-    padding-left: 0.2em;
-    margin: 0 0 20px;
-    border-left: 4px solid #27ae60;
-    @media (max-width: 500px) {
-      padding-left: 0;
-      border-left: 0;
-      border-bottom: 4px solid #27ae60;
-    }
-  }
-  ul {
-    padding-left: 20px;
-    margin: 0;
-    list-style: none;
-    h3 {
-      margin: 0;
-      font-size: 1.17em;
-    }
-    @media (max-width: 500px) {
-      padding: 0;
-      list-style: none;
-      li {
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-        border-bottom: 1px dotted #e0d6cc;
-        &:last-child {
-          margin-bottom: 0;
-        }
-        a {
-          border-bottom: none;
-        }
-      }
-    }
-  }
-}
-
-/* ---------------------------------
-.quick-outline--profile
---------------------------------- */
-
-.quick-outline--profile {
-  p {
-    margin-top: 0;
-  }
-}
-
-/* ---------------------------------
-.quick-outline--skills
---------------------------------- */
-
-.quick-outline--skills {
-  h4 {
-    margin: 0 0 10px;
-  }
-  .skill-list {
-    // try baseline in HP, too
-    @include setFlexbox(row wrap, flex-start, baseline);
-    @include setBox(0, 0 0 10px, true);
+  .wrapper {
+    max-width: 50em;
+    margin: 0 auto 40px;
+    // border: 0.25em solid #E0D6CC;
+    background-color: $rm-background-page-inner;
+    box-shadow: 0 4px 30px rgba(black, 0.1);
     &:last-child {
       margin-bottom: 0;
     }
-    @media (max-width: 380px) {
-      @include setFlexbox(column nowrap, center, stretch);
+    @media (max-width: 500px) {
+      width: 90%;
     }
-    .skill-list-item {
-      padding: 5px 10px;
-      margin-right: 10px;
-      border: 2px solid $rm-background-page-inner;
-      border-radius: 6px;
-      @media (max-width: 380px) {
-        margin-right: 0;
-        text-align: center;
+  }
+
+  .container {
+    padding: 2.5em;
+    margin: 0;
+    background-color: #fff;
+    @media (max-width: 500px) {
+      padding: 1.5em;
+    }
+  }
+
+  /* ---------------------------------
+	text formatting
+	--------------------------------- */
+
+  .subtext {
+    margin: 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    a,
+    button {
+      color: #777;
+      text-decoration: none;
+      border: {
+        top: none;
+        right: none;
+        left: none;
+      }
+      border-bottom: 1px dotted #777;
+
+      &:hover {
+        color: black;
+        border-bottom: 1px solid black;
+        background-color: transparent;
       }
     }
   }
-}
 
-/* ---------------------------------
-quick-outline--contact
---------------------------------- */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Arvo", sans-serif;
+    font-weight: 400;
+    color: #3a3a3a;
+  }
 
-.quick-outline--contact {
-  margin-bottom: 0;
-  .quick-outline--contact-inner {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    p {
-      flex-basis: 70%;
-      margin: 0 15px 0 0;
+  /* ---------------------------------
+	special formatting
+	--------------------------------- */
+
+  .special-char {
+    color: red;
+  }
+
+  .underline {
+    border-bottom: 2px solid #e0d6cc;
+  }
+
+  .supertext {
+    background-color: $utility-highlight;
+    padding: 1px 2px;
+    border-radius: 2px;
+  }
+
+  /* ---------------------------------
+	responsive layout control
+	--------------------------------- */
+
+  .rbreak {
+    display: none;
+  }
+
+  .rhide {
+    // inserts a space before and after separator
+    &::before {
+      content: " ";
     }
-    .contact-button {
-      flex-basis: 30%;
-    }
-    @media (max-width: 600px) {
-      flex-flow: column nowrap;
-      p {
-        margin: 0 0 20px;
-      }
-      .contact-button {
-        // should be applied globally!
-        box-sizing: border-box;
-        width: 100%;
-      }
+    &::after {
+      content: " ";
     }
   }
-}
 
-/* ---------------------------------
-story-block
---------------------------------- */
-
-.story-block {
-  &:nth-of-type(1),
-  &:nth-of-type(9) {
-    border-top: 1px dotted #e0d6cc;
-  }
-  .story-block-header {
-    position: relative;
-    padding: 30px 10px;
-    border-bottom: 1px dotted #e0d6cc;
-    h2,
-    h4 {
-      padding: 0;
-      margin: 0;
+  @media (max-width: 500px) {
+    .rbreak {
+      display: block;
     }
-    h4 {
+    .rhide {
+      display: none;
+    }
+  }
+
+  /* ---------------------------------
+	buttons
+	--------------------------------- */
+
+  .cta-button {
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    color: $rm-background-page-inner;
+    background-color: $rm-accent-bright;
+    &:hover {
+      color: $rm-background-page-inner;
+      background-color: darken($rm-accent-bright, 15%);
+    }
+  }
+
+  /* ---------------------------------
+	hero
+	--------------------------------- */
+
+  .hero {
+    @include setFlexbox(row nowrap, space-between, center);
+    @include setBox(0 40px 0, 0, false);
+    height: 220px;
+    @media (max-width: 500px) {
+      @include setFlexbox(column nowrap, center, center);
+      height: auto;
+      padding: 40px;
+    }
+    .hero-head {
+      margin: 0 0 0 -10px;
+      font-family: "Kaushan Script", sans-serif;
+      font-weight: 400;
+      letter-spacing: -0.09em;
+      font-size: 80px;
+      color: $rm-accent-bright;
+    }
+    .hero-sub-head {
+      margin: 16px 0 0;
       color: inherit;
     }
-    &:hover {
-      border-bottom: 1px solid $rm-accent-bright;
-      background-color: rgba(#e0d6cc, 0.15);
-      cursor: pointer;
-      &::before {
-        position: absolute;
-        right: 10px;
-        top: 45px;
-        padding: 5px 10px;
-        border-radius: 20px;
-        content: "click to toggle";
-        background-color: $rm-background-page-outer;
-        // too much nesting?
-        @media (max-width: 750px) {
+  }
+
+  /* ---------------------------------
+	nav
+	--------------------------------- */
+
+  .page-controls {
+    padding: 16px;
+    ul {
+      @include setFlexbox(row nowrap, center, center);
+      @include setBox(0, 0, true);
+      @media (max-width: 320px) {
+        flex-wrap: wrap;
+      }
+      li {
+        margin: 0 10px 0 0;
+
+        &::after {
           content: none;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+
+        &:last-child::after {
+          content: none;
+        }
+
+        img {
+          margin-left: 5px;
+          vertical-align: middle;
+        }
+
+        .lang-switcher {
+          background-color: transparent;
+          outline: none;
+          // border: none;
         }
       }
     }
   }
-  .story-block-body {
-    padding: 20px 10px;
-    p:first-child {
-      margin-top: 0;
+
+  /* ---------------------------------
+	elevator
+	--------------------------------- */
+
+  .elevator {
+    visibility: hidden;
+    position: fixed;
+    // should it be relative to the wrapper?
+    top: 55px;
+    right: 2%;
+    box-sizing: border-box;
+    width: 55px;
+    height: 55px;
+    padding: 6px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: $rm-accent-bright;
+    box-shadow: 0 4px 16px rgba(black, 0.25);
+    &:hover {
+      color: #f1f1f1;
+      background-color: darken($rm-accent-bright, 15%);
     }
-    p:last-child {
-      margin-bottom: 0;
+    @media (min-width: 990px) {
+      visibility: visible;
     }
   }
-}
 
-/* ---------------------------------
-footer
---------------------------------- */
+  /* ---------------------------------
+	notification-bar
+	--------------------------------- */
 
-footer {
-  padding: 0 16px;
-  margin-bottom: 40px;
+  .notification-bar {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    width: 33%;
+    padding: 10px;
+    border: 1px solid darken($utility-highlight, 20%);
+    border-radius: 4px;
+    text-align: center;
+    background-color: $utility-highlight;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: opacity 500ms ease-out;
+    @media (max-width: 500px) {
+      width: 50%;
+    }
+  }
+
+  /* ---------------------------------
+	section header
+	--------------------------------- */
+
+  .section-header {
+    margin-bottom: 40px;
+    .section-heading {
+      margin: 0;
+      font-size: 30px;
+      text-align: center;
+    }
+    p {
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  /* ---------------------------------
+	outline-block
+	--------------------------------- */
+
+  .outline-block {
+    margin-bottom: 40px;
+    .outline-block-list-heading {
+      padding-left: 0.2em;
+      margin: 0 0 20px;
+      border-left: 4px solid #27ae60;
+      @media (max-width: 500px) {
+        padding-left: 0;
+        border-left: 0;
+        border-bottom: 4px solid #27ae60;
+      }
+    }
+    ul {
+      padding-left: 20px;
+      margin: 0;
+      list-style: none;
+      h3 {
+        margin: 0;
+        font-size: 1.17em;
+      }
+      @media (max-width: 500px) {
+        padding: 0;
+        list-style: none;
+        li {
+          padding-bottom: 15px;
+          margin-bottom: 15px;
+          border-bottom: 1px dotted #e0d6cc;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          a {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+
+  /* ---------------------------------
+	.quick-outline--profile
+	--------------------------------- */
+
+  .quick-outline--profile {
+    p {
+      margin-top: 0;
+    }
+  }
+
+  /* ---------------------------------
+	.quick-outline--skills
+	--------------------------------- */
+
+  .quick-outline--skills {
+    h4 {
+      margin: 0 0 10px;
+    }
+    .skill-list {
+      // try baseline in HP, too
+      @include setFlexbox(row wrap, flex-start, baseline);
+      @include setBox(0, 0 0 10px, true);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @media (max-width: 380px) {
+        @include setFlexbox(column nowrap, center, stretch);
+      }
+      .skill-list-item {
+        padding: 5px 10px;
+        margin-right: 10px;
+        border: 2px solid $rm-background-page-inner;
+        border-radius: 6px;
+        @media (max-width: 380px) {
+          margin-right: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  /* ---------------------------------
+	quick-outline--contact
+	--------------------------------- */
+
+  .quick-outline--contact {
+    margin-bottom: 0;
+    .quick-outline--contact-inner {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      p {
+        flex-basis: 70%;
+        margin: 0 15px 0 0;
+      }
+      .contact-button {
+        flex-basis: 30%;
+      }
+      @media (max-width: 600px) {
+        flex-flow: column nowrap;
+        p {
+          margin: 0 0 20px;
+        }
+        .contact-button {
+          // should be applied globally!
+          box-sizing: border-box;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /* ---------------------------------
+	story-block
+	--------------------------------- */
+
+  .story-block {
+    &:nth-of-type(1),
+    &:nth-of-type(9) {
+      border-top: 1px dotted #e0d6cc;
+    }
+    .story-block-header {
+      position: relative;
+      padding: 30px 10px;
+      border-bottom: 1px dotted #e0d6cc;
+      h2,
+      h4 {
+        padding: 0;
+        margin: 0;
+      }
+      h4 {
+        color: inherit;
+      }
+      &:hover {
+        border-bottom: 1px solid $rm-accent-bright;
+        background-color: rgba(#e0d6cc, 0.15);
+        cursor: pointer;
+        &::before {
+          position: absolute;
+          right: 10px;
+          top: 45px;
+          padding: 5px 10px;
+          border-radius: 20px;
+          content: "click to toggle";
+          background-color: $rm-background-page-outer;
+          // too much nesting?
+          @media (max-width: 750px) {
+            content: none;
+          }
+        }
+      }
+    }
+    .story-block-body {
+      padding: 20px 10px;
+      p:first-child {
+        margin-top: 0;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  /* ---------------------------------
+	footer
+	--------------------------------- */
+
+  footer {
+    padding: 0 16px;
+    margin-bottom: 40px;
+  }
 }
