@@ -13,7 +13,7 @@ export default function IndexPage() {
 
       <main className="card-list-container">
         <ul className="card-list">
-          {cards.map(card => {
+          {cards.map((card, i) => {
             const {
               master,
               expanded,
@@ -28,6 +28,7 @@ export default function IndexPage() {
 
             return (
               <li
+                key={i}
                 className={`card-list-item${
                   master
                     ? " card-list-item--master card-list-item--3rows"
@@ -37,7 +38,8 @@ export default function IndexPage() {
                 }`}
               >
                 {/* TODO Link */}
-                <a href={href}>
+                <Link to={href}>
+                  {/* <a href={href}> */}
                   <article>
                     {master ? (
                       <div className="card-list-item-hero">
@@ -113,7 +115,8 @@ export default function IndexPage() {
                       </div>
                     )}
                   </article>
-                </a>
+                  {/* </a> */}
+                </Link>
               </li>
             )
           })}
