@@ -45,7 +45,7 @@ export default function Resume({ data }: TProps): ReactElement {
     allMarkdownRemark: { edges: stories },
   } = data
 
-  const [visibleStory, setVisibleStory] = useState({})
+  const [visibleStory, toggleVisibleStory] = useState({})
   const [lang, setLang] = useState("us")
 
   function handleChangeLanguage() {
@@ -71,7 +71,7 @@ export default function Resume({ data }: TProps): ReactElement {
 
           <li>
             <button className="lang-switcher" onClick={handleChangeLanguage}>
-              Versione italiana
+              {lang === "us" ? "Versione italiana" : "English version"}
             </button>
 
             <img
@@ -186,6 +186,10 @@ export default function Resume({ data }: TProps): ReactElement {
                 Here's a story of my professional path so far; click on a
                 section to show/hide its contents.
               </p>
+
+              {/* <button onClick={() => {
+                if (visibleStory)
+              }}>TODO toggle all</button> */}
             </header>
 
             {stories.map(
@@ -197,7 +201,7 @@ export default function Resume({ data }: TProps): ReactElement {
                   key={i}
                   className="story-block"
                   onClick={() =>
-                    setVisibleStory(visibleStories => ({
+                    toggleVisibleStory(visibleStories => ({
                       ...visibleStories,
                       [frontmatter.title]: !visibleStories[frontmatter.title],
                     }))
