@@ -1,8 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import cards from "../data/cards"
@@ -11,7 +9,7 @@ import "../styles/home.scss"
 export default function IndexPage() {
   return (
     <>
-      <SEO title="ditecco.me | Home" />
+      <SEO title="Home" />
 
       <main className="card-list-container">
         <ul className="card-list">
@@ -46,7 +44,7 @@ export default function IndexPage() {
                         <h2>
                           Hi, I'm Alessandro
                           <br />
-                          Di Tecco
+                          Di Tecco.
                         </h2>
                       </div>
                     ) : expanded ? (
