@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import SEO from "../components/seo"
 import Footer from "../components/footer"
-import { cards } from "../data/data"
+import { cards } from "../content/data"
 import "../styles/home.scss"
 
 export default function IndexPage() {
