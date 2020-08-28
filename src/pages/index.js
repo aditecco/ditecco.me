@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import { cards } from "../content/data"
+import cards from "../content/home/cards"
 import "../styles/home.scss"
 
 export default function IndexPage() {

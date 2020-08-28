@@ -1,4 +1,4 @@
-export const cards = [
+export default [
   {
     master: true,
     expanded: false,
