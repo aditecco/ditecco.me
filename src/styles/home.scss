@@ -264,26 +264,4 @@ body {
       }
     }
   }
-
-  /* ---------------------------------
-  footer
-  --------------------------------- */
-
-  footer {
-    padding: 0 20px 20px;
-    color: $font-color-dark;
-    text-align: center;
-
-    a {
-      @extend %resetAnchors;
-      color: inherit;
-      border-bottom: 1px dotted $utility-dark-gray;
-
-      &:hover {
-        color: $utility-dark-gray;
-
-        border-bottom-style: solid;
-      }
-    }
-  }
 }
