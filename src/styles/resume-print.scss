@@ -1,0 +1,176 @@
+/* ---------------------------------
+resume-print.scss
+--------------------------------- */
+
+// ! normalize is imported 2 times
+@import "_dtc-logic";
+
+// we don't use the media query approach
+// b/c the page needs to be modified before printing
+// @media print {}
+
+/* ---------------------------------
+headers
+	page-break-after: avoid;
+lists, images
+	page-break-inside: avoid;
+expand links
+	a[href^=http]:after {
+		content: "< " attr(href) " >";
+	}
+--------------------------------- */
+
+.page-controls,
+.notification-bar,
+.elevator,
+.special-char,
+footer,
+.full-story .section-header > p {
+  display: none;
+}
+
+body,
+.wrapper {
+  color: black;
+  background-color: white;
+  box-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+}
+
+a {
+  // this color is not in the var library
+  color: #888;
+  @include setBorder(1px, solid, #888, bottom);
+  &[href^="http"]:not(.contact-list a)::after {
+    content: " (" attr(href) ")";
+  }
+}
+
+.underline {
+  border-bottom: none;
+}
+
+.supertext {
+  padding: 0;
+  border-radius: 0;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.section-separator {
+  @include setBorder(4px, solid, black, bottom);
+}
+
+.hero {
+  @include setBox(0, 0 0 40px, false);
+  @include setBorder(2px, solid, black, bottom);
+  height: 140px;
+  @include setFlexbox(row nowrap, flex-start, center);
+  .hero-head {
+    flex-grow: 0.1;
+    font-size: 60px;
+    color: inherit;
+  }
+  .hero-sub-head {
+    margin: 16px 0 0;
+    color: inherit;
+  }
+}
+
+.wrapper {
+  border: none;
+}
+
+.container {
+  padding: 0;
+  .section-heading {
+    text-align: left;
+    &::before {
+      content: url("../img/bullet-01.svg");
+      margin-right: 6px;
+      vertical-align: text-bottom;
+    }
+  }
+  .outline-block-list-heading {
+    padding-left: 0;
+    border: none;
+  }
+}
+
+.quick-outline > * {
+  margin-bottom: 40px;
+}
+
+.quick-outline--contact {
+  .contact-list {
+    @include setFlexbox(row nowrap, center, center);
+    @include setBox(0, 0, true);
+    page-break-after: always;
+    li {
+      flex-grow: 0.33;
+      h5 {
+        margin: 0;
+        font-family: "Karla", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.full-story {
+  .story-block,
+  .section-heading {
+    page-break-after: always;
+    break-after: page;
+  }
+  .section-heading {
+    margin-top: 55%;
+  }
+}
+
+.story-block {
+  // page-break-after: always;
+  // break-after: page;
+  // for specificity
+  &:nth-of-type(n) {
+    border: none;
+  }
+  .story-block-header {
+    // not selecting correctly
+    &:not(:nth-child(1)),
+    &:not(:nth-child(9)) {
+      // name colors
+      @include setBorder(1px, solid, #bbb, top);
+      @include setBorder(1px, solid, #bbb, bottom);
+      margin-top: 40px;
+    }
+  }
+}
+
+// footer {
+// 	max-width: 800px;
+// 	margin: 0 auto;
+// 	@include setBorder(2px, solid, black, top);
+// 	.subtext { color: $utility-dark-gray; }
+// }
+
+@page {
+  size: A4 portrait;
+  margin: 1.25cm;
+  // margin: 0 1cm 0;
+}
+
+@page :first {
+  // size: A4 portrait;
+  margin-top: 0;
+}
