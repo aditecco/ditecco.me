@@ -158,14 +158,14 @@ export default function Resume({ data }: TProps): ReactElement {
             <li>
               <button className="lang-switcher" onClick={handleChangeLanguage}>
                 {lang === "EN" ? "Versione italiana" : "English version"}
-              </button>
 
-              <img
-                src={lang === "EN" ? itFlag : usFlag}
-                alt="change language"
-                width="16"
-                height="auto"
-              />
+                <img
+                  src={lang === "EN" ? itFlag : usFlag}
+                  alt="change language"
+                  width="16"
+                  height="auto"
+                />
+              </button>
             </li>
           </ul>
         </nav>
