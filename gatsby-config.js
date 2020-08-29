@@ -4,7 +4,7 @@ module.exports = {
     title: `ditecco.me`,
     description: `Personal website of Alessandro Di Tecco, Front-End Developer.`,
     author: `Alessandro Di Tecco`,
-    version: "6.0.3 (beta)",
+    version: "6",
     currentYear: "2020",
   },
 
