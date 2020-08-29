@@ -53,12 +53,16 @@ export default function Resume({ data }: TProps): ReactElement {
    */
   function handleChangeLanguage() {
     setLang(lang => (lang === "EN" ? "IT" : "EN"))
+    // also reset the toggle state
+    toggleVisibleStory({})
   }
 
   /**
    * toggles visibility for all stories
    */
-  function handleToggleAll() {
+  function handleToggleAll(e) {
+    e.preventDefault()
+
     const keys = Object.keys(visibleStory)
 
     function reduceFn(value: boolean) {
@@ -299,8 +303,15 @@ export default function Resume({ data }: TProps): ReactElement {
                     </h1>
 
                     <p>
-                      Here's a story of my professional path so far; click on a
-                      section to show/hide its contents.
+                      Here's a timeline of my professional path; click on a
+                      section to reveal its contents, or{" "}
+                      <a
+                        href="#"
+                        className="toggleAllButton"
+                        onClick={handleToggleAll}
+                      >
+                        toggle all.
+                      </a>
                     </p>
                   </>
                 ) : (
@@ -311,13 +322,18 @@ export default function Resume({ data }: TProps): ReactElement {
 
                     <p>
                       Segue una storia del mio percorso professionale fino ad
-                      oggi; clicca su una sezione per rivelare/nascondere i suoi
-                      contenuti.
+                      oggi; clicca su una sezione per rivelare i suoi contenuti,
+                      o{" "}
+                      <a
+                        href="#"
+                        className="toggleAllButton"
+                        onClick={handleToggleAll}
+                      >
+                        mostra/nascondi tutti.
+                      </a>
                     </p>
                   </>
                 )}
-
-                <button onClick={handleToggleAll}>TODO toggle all</button>
               </header>
 
               {stories
@@ -370,26 +386,3 @@ export const query = graphql`
     }
   }
 `
-
-/**
- * {
-    title: "Profilo",
-    body:
-      '<li><h3 class="list-heading">Front-End Developer</h3>Sviluppo layout e interfacce web &amp; mobile, con i pi&ugrave; recenti standard CSS e JavaScript.</li><li><h3 class="list-heading">Design background</h3>Dal 2011 al 2016 ho creato UI Design per una vasta gamma di prodotti digitali.</li>',
-  },
-  {
-    title: "Skills",
-    body: "",
-  },
-  {
-    title: "Contatti",
-    body:
-      '<p>Il modo migliore per contattarmi &egrave; via e-mail.</p><a class="cta-button contact-button" href="mailto:&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;">Contattami</a>',
-  },
-  {
-    title: '<span class="underline">Esperienze lavorative</span>',
-    jobTitle: "",
-    body:
-      'Segue una storia del mio percorso professionale fino ad oggi; clicca su una sezione per rivelare/nascondere i suoi contenuti.<!--, o <a href="#" id="js-toggle-all-stories">clicca qui per mostrare tutte le sezioni.</a>-->',
-  },
- */
