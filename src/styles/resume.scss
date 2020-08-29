@@ -435,18 +435,35 @@ body {
     &:nth-of-type(9) {
       border-top: 1px dotted #e0d6cc;
     }
+
     .story-block-header {
       position: relative;
       padding: 30px 10px;
       border-bottom: 1px dotted #e0d6cc;
+
+      .story-block-current-indicator {
+        $s: 16px;
+        //
+        position: absolute;
+        // top: calc(50% - 21px);
+        top: calc(50% - (#{$s} / 2));
+        left: -10px;
+        width: $s;
+        height: $s;
+        border-radius: 50%;
+        background-color: $amber;
+      }
+
       h2,
       h4 {
         padding: 0;
         margin: 0;
       }
+
       h4 {
         color: inherit;
       }
+
       &:hover {
         border-bottom: 1px solid $rm-accent-bright;
         background-color: rgba(#e0d6cc, 0.15);

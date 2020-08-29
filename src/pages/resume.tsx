@@ -119,6 +119,11 @@ export default function Resume({ data }: TProps): ReactElement {
         }
       >
         <header className="story-block-header">
+          {/* indicator on 1st story */}
+          {frontmatter.order === 1 && (
+            <span className="story-block-current-indicator" />
+          )}
+
           <h2>
             {frontmatter.title}
             {/* TODO */}
