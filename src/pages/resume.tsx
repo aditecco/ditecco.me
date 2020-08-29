@@ -49,8 +49,9 @@ export default function Resume({ data }: TProps): ReactElement {
     allMarkdownRemark: { edges: stories },
   } = data
 
-  const [visibleStory, toggleVisibleStory] = useState({})
-  const [lang, setLang] = useState("EN")
+  const storyIds = stories
+    .filter(filterStoriesByLanguage)
+    .map((story: IGraphQLQueryResponseNode) => story.node.id)
 
   /**
    * handles language switching
@@ -58,6 +59,48 @@ export default function Resume({ data }: TProps): ReactElement {
   function handleChangeLanguage() {
     setLang(lang => (lang === "EN" ? "IT" : "EN"))
   }
+
+  /**
+   * toggles visibility for all stories
+   */
+  function handleToggleAll() {
+    const keys = Object.keys(visibleStory)
+
+    function reduceFn(value: boolean) {
+      return function (acc, id) {
+        acc[id] = value
+        return acc
+      }
+    }
+
+    // initial state, toggle all open
+    if (!keys.length) {
+      toggleVisibleStory(storyIds.reduce(reduceFn(true), {}))
+      return
+    }
+
+    // all are open: toggle all closed
+    if (keys.length === storyIds.length && keys.every(k => visibleStory[k])) {
+      toggleVisibleStory(storyIds.reduce(reduceFn(false), {}))
+      return
+    }
+
+    // all are closed: toggle all open
+    if (keys.length === storyIds.length && keys.every(k => !visibleStory[k])) {
+      toggleVisibleStory(storyIds.reduce(reduceFn(true), {}))
+      return
+    }
+
+    // some are open: toggle all open
+    if (keys.some(k => visibleStory[k])) {
+      toggleVisibleStory(storyIds.reduce(reduceFn(true), {}))
+      return
+    }
+  }
+
+  /**
+   * filters stories based on language
+   */
   function filterStoriesByLanguage({ node }: IGraphQLQueryResponseNode) {
     return node.frontmatter.language === lang
   }
