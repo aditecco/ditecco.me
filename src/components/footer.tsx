@@ -29,7 +29,7 @@ export default function Footer(props: IOwnProps): ReactElement {
     <footer>
       <small>
         &copy; {site?.siteMetadata?.currentYear} {site?.siteMetadata?.author},
-        All rights reserved. &mdash; v{site?.siteMetadata?.version} &bull; last
+        All rights reserved. &bull; v{site?.siteMetadata?.version} &bull; last
         build @{site?.buildTime} &bull; hand-coded with love &{" "}
         <a href="https://www.gatsbyjs.com/" target="_blank">
           Gatsby
