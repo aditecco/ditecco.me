@@ -153,6 +153,7 @@ export default function Resume({ data }: TProps): ReactElement {
   }, [])
 
   useEffect(() => {
+    // TODO
     if (lang) {
       notifBar.current.style.opacity = "100"
 
@@ -388,7 +389,10 @@ Resume query
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: frontmatter___order }) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { glob: "/**/resume/**/*" } }
+      sort: { fields: frontmatter___order }
+    ) {
       edges {
         node {
           id
