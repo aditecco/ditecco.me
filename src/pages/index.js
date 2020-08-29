@@ -34,9 +34,7 @@ export default function IndexPage() {
                       : ""
                   }`}
                 >
-                  {/* TODO Link */}
                   <Link to={href}>
-                    {/* <a href={href}> */}
                     <article>
                       {master ? (
                         <div className="card-list-item-hero">
@@ -112,7 +110,6 @@ export default function IndexPage() {
                         </div>
                       )}
                     </article>
-                    {/* </a> */}
                   </Link>
                 </li>
               )
