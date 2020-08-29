@@ -2,6 +2,7 @@
 order: 3
 title: "2011 - 2016 — Simplest"
 subtitle: "Freelance User Interface Designer"
+language: EN
 ---
 
 I've been designing interfaces as a freelancer since #{startYear}; starting from 2015, I decided to create my solo User Interface Design studio: I called it Simplest, to remind myself that the simplest user interfaces &amp; interactions are the building blocks of the best digital experiences.

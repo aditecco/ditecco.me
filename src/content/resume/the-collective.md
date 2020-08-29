@@ -1,7 +1,8 @@
 ---
 order: 5
-title: "2012 - 2013 — The Collective"
-subtitle: "Creator, Co-Founder, All-around Designer"
+title: 2012 - 2013 — The Collective
+subtitle: Creator, Co-Founder, All-around Designer
+language: EN
 ---
 
 In 2012 in Verona there was no shortage of professionals and companies renting excess office space; yet, there wasn't any company whose only focus was offering young freelancers &amp; startups a place to work, for a reasonable price.

@@ -1,7 +1,8 @@
 ---
 order: 11
-title: "10-12/2012 — Startup Weekend"
-subtitle: "Organizer"
+title: 10-12/2012 — Startup Weekend
+subtitle: Organizer
+language: EN
 ---
 
 I was one of the 3-people-team who organized [Startup Weekend Verona 2012,](https://web.archive.org/web/20121217072032/http://verona.startupweekend.org/) for the first time ever in the city.

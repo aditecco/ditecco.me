@@ -2,6 +2,7 @@
 order: 4
 title: "2013 - 2016 — Geekville"
 subtitle: "Creator, Co-Founder, All-around Designer"
+language: EN
 ---
 
 Founded in oct. 2013, [Geekville](/archive/geekville/en/) was a coworking space for digital and creative professionals operating in the Verona area.

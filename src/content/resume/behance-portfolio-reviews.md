@@ -1,7 +1,8 @@
 ---
 order: 9
-title: "03-05/2014 — Behance Portfolio Reviews"
-subtitle: "Organizer"
+title: 03-05/2014 — Behance Portfolio Reviews
+subtitle: Organizer
+language: EN
 ---
 
 I was the lead organizer of Behance Portfolio Reviews Verona 2014, for the first time ever in the city.
