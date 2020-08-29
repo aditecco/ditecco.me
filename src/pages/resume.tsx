@@ -3,7 +3,7 @@ Resume
 --------------------------------- */
 
 import { graphql, Link } from "gatsby"
-import React, { ReactElement, useState } from "react"
+import React, { ReactElement, useState, useEffect, useRef } from "react"
 import Layout from "../components/layout"
 import itFlag from "../images/resume/it-flag.svg"
 import usFlag from "../images/resume/us-flag.svg"
@@ -33,6 +33,7 @@ type TProps = IOwnProps & IGatsbyProps
 export default function Resume({ data }: TProps): ReactElement {
   const [visibleStory, toggleVisibleStory] = useState({})
   const [lang, setLang] = useState("EN")
+  const notifBar = useRef<HTMLDivElement>(null)
 
   // TODO
   const currYear = 2020
@@ -147,6 +148,20 @@ export default function Resume({ data }: TProps): ReactElement {
     )
   }
 
+  useEffect(() => {
+    notifBar.current = document.querySelector(".notification-bar")
+  }, [])
+
+  useEffect(() => {
+    if (lang) {
+      notifBar.current.style.opacity = "100"
+
+      setTimeout(() => {
+        notifBar.current.style.opacity = "0"
+      }, 2000)
+    }
+  }, [lang])
+
   return (
     <Layout title="Resume">
       <div className="Resume">
@@ -155,8 +170,11 @@ export default function Resume({ data }: TProps): ReactElement {
           &#x25B2; top
         </button>
 
-        {/* TODO */}
-        <div className="notification-bar" />
+        <div className="notification-bar">
+          {lang === "EN"
+            ? "Changed language to English!"
+            : "Lingua impostata ad italiano!"}
+        </div>
 
         {/* NAV */}
         <nav className="page-controls">

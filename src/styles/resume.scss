@@ -290,21 +290,18 @@ body {
 	--------------------------------- */
 
   .notification-bar {
-    position: absolute;
+    $w: 260px;
+    position: fixed;
     top: 70px;
-    left: 50%;
-    width: 33%;
+    left: calc(50% - (#{$w} / 2));
+    width: $w;
     padding: 10px;
     border: 1px solid darken($utility-highlight, 20%);
     border-radius: 4px;
     text-align: center;
     background-color: $utility-highlight;
-    transform: translate(-50%, 0);
     opacity: 0;
     transition: opacity 500ms ease-out;
-    @media (max-width: 500px) {
-      width: 50%;
-    }
   }
 
   /* ---------------------------------
