@@ -1,4 +1,3 @@
-
 /* ========================
 _dtc-logic.scss
 ======================== */
@@ -7,120 +6,117 @@ _dtc-logic.scss
 imports
 --------------------------------- */
 
-@import '_normalize';
-@import '_dtc-colors-typography';
-
+@import "_normalize";
+@import "_dtc-colors-typography";
 
 /* ---------------------------------
 vars
 --------------------------------- */
 
-
-
-
 /* ---------------------------------
 resets & placeholders
 --------------------------------- */
 
-%setBorderBox { box-sizing: border-box; }
+%setBorderBox {
+  box-sizing: border-box;
+}
 
 %setBody {
-	display: flex;
-	flex-flow: column nowrap;
-	min-height: 100vh;
-	font-size: 62.5%;
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  font-size: 62.5%;
 }
 
 // % { flex-grow: 1; }
 
 %specialTextPad {
-	padding: .1em .2em;
+  padding: 0.1em 0.2em;
 }
 
 %resetAnchors {
-	text-decoration: none;
+  text-decoration: none;
+  color: inherit;
 }
 
+%resetButtons {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
 
 /* ---------------------------------
 functions & mixins
 --------------------------------- */
 
 @function calcContWidth($nCol) {
-	$pad: 40;
-	$colWidth: 300;
-	$colGut: 20;
+  $pad: 40;
+  $colWidth: 300;
+  $colGut: 20;
 
-	@if $nCol == 1 {
-		@return	($colWidth + $pad) * 1px;
-	} @else {
-		@return (($colWidth * $nCol) + ($colGut * ($nCol - 1)) + $pad) * 1px;
-	}
+  @if $nCol == 1 {
+    @return ($colWidth + $pad) * 1px;
+  } @else {
+    @return (($colWidth * $nCol) + ($colGut * ($nCol - 1)) + $pad) * 1px;
+  }
 }
 
 @function emCalc($target, $context: 10) {
-	// ref: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
-	@return ($target / $context) * 1em;
+  // ref: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
+  @return ($target / $context) * 1em;
 }
 
 // reset margin and padding
 // should rename this to 'setBox',
 // and include emCalc()
 @mixin resetBox($pad: 0, $mar: 0, $isList: false) {
-	padding: $pad;
-	margin: $mar;
-	@if $isList {
-		list-style: none;
-	}
+  padding: $pad;
+  margin: $mar;
+  @if $isList {
+    list-style: none;
+  }
 }
 
 // should replace prev, watch for broken includes
 @mixin setBox($pad: 0, $mar: 0, $isList: false) {
-	padding: $pad;
-	margin: $mar;
-	@if $isList {
-		list-style: none;
-	}
+  padding: $pad;
+  margin: $mar;
+  @if $isList {
+    list-style: none;
+  }
 }
 
-@mixin setBorder(
-	$width,
-	$style,
-	$color,
-	$side: '',
-	$radius: 0
-) {
-	border#{'-' + $side}: $width $style $color;
-	@if $radius != 0 {
-		border-radius: $radius;
-	}
+@mixin setBorder($width, $style, $color, $side: "", $radius: 0) {
+  border#{'-' + $side}: $width $style $color;
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
 }
 
 // set font properties
 // add line-height
 // add default font-size?
 @mixin setFonts(
-	$size,
-	$family: $base-font,
-	$color: $font-color-dark,
-	$alignment: left,
-	$weight: 400
+  $size,
+  $family: $base-font,
+  $color: $font-color-dark,
+  $alignment: left,
+  $weight: 400
 ) {
-	font-family: $family;
-	font-weight: $weight;
-	font-size: emCalc($size);
-	text-align: $alignment;
-	color: $color;
+  font-family: $family;
+  font-weight: $weight;
+  font-size: emCalc($size);
+  text-align: $alignment;
+  color: $color;
 }
 
 // set flexbox properties
 @mixin setFlexbox($flow, $justify, $align) {
-	display: flex;
-	flex-flow: $flow;
-	justify-content: $justify;
-	align-items: $align;
+  display: flex;
+  flex-flow: $flow;
+  justify-content: $justify;
+  align-items: $align;
 }
-
 
 /* ---------------------------------
 other
@@ -130,5 +126,7 @@ other
 $debugMode: false;
 
 * {
-	@if $debugMode { outline: 1px solid $purple; }
+  @if $debugMode {
+    outline: 1px solid $purple;
+  }
 }

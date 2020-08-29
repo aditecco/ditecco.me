@@ -454,12 +454,12 @@ body {
       border-bottom: 1px dotted #e0d6cc;
 
       .story-block-current-indicator {
-        $s: 16px;
+        $s: 8px;
         //
         position: absolute;
         // top: calc(50% - 21px);
         top: calc(50% - (#{$s} / 2));
-        left: -10px;
+        left: -$s / 2;
         width: $s;
         height: $s;
         border-radius: 50%;
