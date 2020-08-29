@@ -7,7 +7,6 @@ import React, { ReactElement, useState } from "react"
 import Layout from "../components/layout"
 import itFlag from "../images/resume/it-flag.svg"
 import usFlag from "../images/resume/us-flag.svg"
-// import { stories } from "../content/data"
 import "../styles/resume.scss"
 
 interface IOwnProps {}
@@ -35,6 +34,7 @@ export default function Resume({ data }: TProps): ReactElement {
   const [visibleStory, toggleVisibleStory] = useState({})
   const [lang, setLang] = useState("EN")
 
+  // TODO
   const currYear = 2020
   const startYear = 2011
   const since = currYear - startYear
@@ -146,6 +146,7 @@ export default function Resume({ data }: TProps): ReactElement {
           &#x25B2; top
         </button>
 
+        {/* TODO */}
         <div className="notification-bar" />
 
         {/* NAV */}
@@ -181,19 +182,39 @@ export default function Resume({ data }: TProps): ReactElement {
             {/* QUICK-OUTLINE */}
             <section className="quick-outline">
               <div className="outline-block quick-outline--profile">
-                <h2 className="outline-block-list-heading">Profile</h2>
+                <h2 className="outline-block-list-heading">
+                  {lang === "EN" ? `Profile` : `Profilo`}
+                </h2>
 
                 <ul>
-                  <li>
-                    <h3>Front-End Developer</h3>I code web &amp; mobile layouts
-                    and interfaces, with modern CSS and JavaScript.
-                  </li>
+                  {lang === "EN" ? (
+                    <>
+                      <li>
+                        <h3>Front-End Developer</h3>I code web &amp; mobile
+                        layouts and interfaces, with modern CSS and JavaScript.
+                      </li>
 
-                  <li>
-                    <h3>Design background</h3>
-                    From {startYear} to 2016 I’ve been designing interfaces for
-                    a diverse range of digital products.
-                  </li>
+                      <li>
+                        <h3>Design background</h3>
+                        From {startYear} to 2016 I’ve been designing interfaces
+                        for a diverse range of digital products.
+                      </li>
+                    </>
+                  ) : (
+                    <>
+                      <li>
+                        <h3>Front-End Developer</h3>
+                        Sviluppo layout e interfacce web &amp; mobile, con i
+                        pi&ugrave; recenti standard CSS e JavaScript.
+                      </li>
+
+                      <li>
+                        <h3>Design background</h3>
+                        Dal {startYear} al 2016 ho creato UI Design per una
+                        vasta gamma di prodotti digitali.
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
 
@@ -203,10 +224,11 @@ export default function Resume({ data }: TProps): ReactElement {
                 <h4>Areas/Languages</h4>
                 <ul className="skill-list">
                   {[
+                    "React",
+                    "JavaScript ES6",
+                    "TypeScript",
                     "CSS3",
                     "Sass",
-                    "JavaScript ES6",
-                    "React",
                     "HTML5",
                     "UI Design",
                   ].map(skill => (
@@ -218,13 +240,13 @@ export default function Resume({ data }: TProps): ReactElement {
                 <ul className="skill-list">
                   {[
                     "Visual Studio Code",
-                    "Sublime Text",
                     "git",
                     "fish shell",
                     "Unix CLI",
                     "Dev Tools",
                     "npm, yarn",
-                    "gulp",
+                    "gulp, webpack, parcel",
+                    "Cypress",
                     "Sketch",
                     "Adobe XD",
                     "Photoshop",
@@ -236,18 +258,22 @@ export default function Resume({ data }: TProps): ReactElement {
               </div>
 
               <div className="outline-block quick-outline--contact">
-                <h2 className="outline-block-list-heading">Contacts</h2>
+                <h2 className="outline-block-list-heading">
+                  {lang === "EN" ? `Contacts` : `Contatti`}
+                </h2>
 
                 <div className="quick-outline--contact-inner">
                   <p>
-                    The best way to get in touch with me is via good-old e-mail.
+                    {lang === "EN"
+                      ? `The best way to get in touch with me is via good-old e-mail.`
+                      : `Il modo migliore per contattarmi è via e-mail.`}
                   </p>
 
                   <a
                     href="mailto:&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;"
                     className="cta-button contact-button"
                   >
-                    Contact me
+                    {lang === "EN" ? `Contact me` : `Contattami`}
                   </a>
                 </div>
               </div>
@@ -261,14 +287,30 @@ export default function Resume({ data }: TProps): ReactElement {
             <section className="full-story">
               {/* WORK */}
               <header className="section-header">
-                <h1 className="section-heading">
-                  <span className="underline"></span>Work experience
-                </h1>
+                {lang === "EN" ? (
+                  <>
+                    <h1 className="section-heading">
+                      <span className="underline">Work experience</span>
+                    </h1>
 
-                <p>
-                  Here's a story of my professional path so far; click on a
-                  section to show/hide its contents.
-                </p>
+                    <p>
+                      Here's a story of my professional path so far; click on a
+                      section to show/hide its contents.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <h1 className="section-heading">
+                      <span className="underline">Esperienze lavorative</span>
+                    </h1>
+
+                    <p>
+                      Segue una storia del mio percorso professionale fino ad
+                      oggi; clicca su una sezione per rivelare/nascondere i suoi
+                      contenuti.
+                    </p>
+                  </>
+                )}
 
                 <button onClick={handleToggleAll}>TODO toggle all</button>
               </header>
@@ -283,7 +325,9 @@ export default function Resume({ data }: TProps): ReactElement {
               {/* OTHER XP */}
               <header className="section-header">
                 <h1 className="section-heading">
-                  <span className="underline"></span>Other experiences
+                  <span className="underline">
+                    {lang === "EN" ? `Other experiences` : `Altre esperienze`}
+                  </span>
                 </h1>
               </header>
 
