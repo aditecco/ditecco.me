@@ -9,32 +9,46 @@
 // exports.onCreateNode = ({ node }) => {
 // }
 
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions
-//   const result = await graphql(`
-//     query {
-//       allMarkdownRemark {
-//         edges {
-//           node {
-//             fields {
-//               slug
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `)
-//   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-//     console.log(node)
+const path = require("path")
 
-//     createPage({
-//       path: node.fields.slug,
-//       component: path.resolve(`./src/templates/blog-post.js`),
-//       context: {
-//         // Data passed to context is available
-//         // in page queries as GraphQL variables.
-//         slug: node.fields.slug,
-//       },
-//     })
-//   })
-// }
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    query {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { glob: "/**/blog/**/*" } }
+      ) {
+        edges {
+          node {
+            id
+            html
+            timeToRead
+            excerpt
+            frontmatter {
+              title
+              subtitle
+              language
+              timestamp
+              author
+              tags
+            }
+          }
+        }
+      }
+    }
+  `)
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    console.log(node)
+
+    createPage({
+      path: `/blog/${node.frontmatter.title
+        .toLowerCase()
+        .replace(" ", "-")
+        .replace("!", "")}/`,
+      component: path.resolve(`./src/templates/BlogPost.tsx`),
+      context: {
+        node,
+      },
+    })
+  })
+}
