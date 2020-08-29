@@ -32,6 +32,7 @@ interface IGraphQLQueryResponseNode {
       order: number
       title: string
       subtitle: string
+      language: string
     }
   }
 }
@@ -49,13 +50,16 @@ export default function Resume({ data }: TProps): ReactElement {
   } = data
 
   const [visibleStory, toggleVisibleStory] = useState({})
-  const [lang, setLang] = useState("us")
+  const [lang, setLang] = useState("EN")
 
   /**
    * handles language switching
    */
   function handleChangeLanguage() {
-    setLang(lang => (lang === "us" ? "it" : "us"))
+    setLang(lang => (lang === "EN" ? "IT" : "EN"))
+  }
+  function filterStoriesByLanguage({ node }: IGraphQLQueryResponseNode) {
+    return node.frontmatter.language === lang
   }
 
   /**
@@ -115,11 +119,11 @@ export default function Resume({ data }: TProps): ReactElement {
 
             <li>
               <button className="lang-switcher" onClick={handleChangeLanguage}>
-                {lang === "us" ? "Versione italiana" : "English version"}
+                {lang === "EN" ? "Versione italiana" : "English version"}
               </button>
 
               <img
-                src={lang === "us" ? itFlag : usFlag}
+                src={lang === "EN" ? itFlag : usFlag}
                 alt="change language"
                 width="16"
                 height="auto"
@@ -237,7 +241,10 @@ export default function Resume({ data }: TProps): ReactElement {
                 <button onClick={handleToggleAll}>TODO toggle all</button>
               </header>
 
-              {stories.slice(0, 10).map(renderStories)}
+              {stories
+                .filter(filterStoriesByLanguage)
+                .slice(0, 10)
+                .map(renderStories)}
 
               <hr className="separator" />
 
@@ -248,7 +255,10 @@ export default function Resume({ data }: TProps): ReactElement {
                 </h1>
               </header>
 
-              {stories.slice(10).map(renderStories)}
+              {stories
+                .filter(filterStoriesByLanguage)
+                .slice(10)
+                .map(renderStories)}
             </section>
           </div>
         </div>
@@ -256,6 +266,10 @@ export default function Resume({ data }: TProps): ReactElement {
     </Layout>
   )
 }
+
+/* ---------------------------------
+Resume query
+--------------------------------- */
 
 export const query = graphql`
   query {
@@ -268,9 +282,33 @@ export const query = graphql`
             order
             title
             subtitle
+            language
           }
         }
       }
     }
   }
 `
+
+/**
+ * {
+    title: "Profilo",
+    body:
+      '<li><h3 class="list-heading">Front-End Developer</h3>Sviluppo layout e interfacce web &amp; mobile, con i pi&ugrave; recenti standard CSS e JavaScript.</li><li><h3 class="list-heading">Design background</h3>Dal 2011 al 2016 ho creato UI Design per una vasta gamma di prodotti digitali.</li>',
+  },
+  {
+    title: "Skills",
+    body: "",
+  },
+  {
+    title: "Contatti",
+    body:
+      '<p>Il modo migliore per contattarmi &egrave; via e-mail.</p><a class="cta-button contact-button" href="mailto:&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;">Contattami</a>',
+  },
+  {
+    title: '<span class="underline">Esperienze lavorative</span>',
+    jobTitle: "",
+    body:
+      'Segue una storia del mio percorso professionale fino ad oggi; clicca su una sezione per rivelare/nascondere i suoi contenuti.<!--, o <a href="#" id="js-toggle-all-stories">clicca qui per mostrare tutte le sezioni.</a>-->',
+  },
+ */
