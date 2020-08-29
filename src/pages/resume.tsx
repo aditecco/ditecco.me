@@ -2,21 +2,13 @@
 Resume
 --------------------------------- */
 
+import { graphql, Link } from "gatsby"
 import React, { ReactElement, useState } from "react"
-import {
-  Link,
-  GatsbyGraphQLInputObjectType,
-  graphql,
-  GatsbyGraphQLObjectType,
-} from "gatsby"
-import Footer from "../components/footer"
-import { Helmet } from "react-helmet"
-// import { stories } from "../content/data"
-import "../styles/resume.scss"
+import Layout from "../components/layout"
 import itFlag from "../images/resume/it-flag.svg"
 import usFlag from "../images/resume/us-flag.svg"
-import bullet from "../images/resume/bullet-01.svg"
-import Layout from "../components/layout"
+// import { stories } from "../content/data"
+import "../styles/resume.scss"
 
 interface IOwnProps {}
 
@@ -40,6 +32,9 @@ interface IGraphQLQueryResponseNode {
 type TProps = IOwnProps & IGatsbyProps
 
 export default function Resume({ data }: TProps): ReactElement {
+  const [visibleStory, toggleVisibleStory] = useState({})
+  const [lang, setLang] = useState("EN")
+
   const currYear = 2020
   const startYear = 2011
   const since = currYear - startYear
@@ -126,8 +121,9 @@ export default function Resume({ data }: TProps): ReactElement {
         <header className="story-block-header">
           <h2>
             {frontmatter.title}
-            <span className="rhide"></span>
-            <br className="rbreak" />
+            {/* TODO */}
+            {/* <span className="rhide"></span>
+            <br className="rbreak" /> */}
           </h2>
 
           <h4>{frontmatter.subtitle}</h4>
@@ -145,15 +141,14 @@ export default function Resume({ data }: TProps): ReactElement {
   return (
     <Layout title="Resume">
       <div className="Resume">
-        {/* <Helmet
-      >
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Arvo:400|Kaushan+Script:400|Karla:400"
-          type="text/css"
-        />
-      </Helmet> */}
+        {/* NOTIFS & UI HELPERS */}
+        <button className="elevator" onClick={() => window.scrollTo(0, 0)}>
+          &#x25B2; top
+        </button>
 
+        <div className="notification-bar" />
+
+        {/* NAV */}
         <nav className="page-controls">
           <ul className="subtext">
             <li>
@@ -174,12 +169,6 @@ export default function Resume({ data }: TProps): ReactElement {
             </li>
           </ul>
         </nav>
-
-        <button className="elevator" onClick={() => window.scrollTo(0, 0)}>
-          &#x25B2; top
-        </button>
-
-        <div className="notification-bar" />
 
         {/* CONTENT */}
         <div className="wrapper">
