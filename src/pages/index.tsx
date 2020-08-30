@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import cards from "../content/home/cards"
+import { GITLAB_URL, TWITTER_URL } from "../constants"
 import "../styles/home.scss"
 
 export default function IndexPage() {
@@ -100,11 +101,11 @@ export default function IndexPage() {
                             </li>
                             <li>&middot;</li>
                             <li>
-                              <a href="https://gitlab.com/aditecco">GitLab</a>
+                              <a href={GITLAB_URL}>GitLab</a>
                             </li>
                             <li>&middot;</li>
                             <li>
-                              <a href="https://twitter.com/aditecco">Twitter</a>
+                              <a href={TWITTER_URL}>Twitter</a>
                             </li>
                           </ul>
                         </div>
