@@ -3,8 +3,8 @@ Blog
 --------------------------------- */
 
 import React, { ReactElement } from "react"
-import { graphql } from "gatsby"
-import { link } from "../../../../../../../Library/Caches/typescript/3.9/node_modules/@types/graceful-fs"
+import { graphql, Link } from "gatsby"
+import ContentIndex from "../components/ContentIndex/ContentIndex"
 
 interface IOwnProps {}
 interface IGatsbyProps {
@@ -17,20 +17,29 @@ export default function Blog({ data }: TProps): ReactElement {
     allMarkdownRemark: { edges: posts },
   } = data
 
-  console.log(posts)
-
   return (
-    <ul>
-      {posts.map(({ node: { id, timeToRead, excerpt, frontmatter } }) => (
-        <li key={id}>
-          {frontmatter.title}
-          {frontmatter.author}
-          {frontmatter.timestamp}
-          {excerpt}
-          {timeToRead}
+    <ContentIndex
+      title="Blog index"
+      content={posts}
+      contentRenderer={({ node: { id, timeToRead, excerpt, frontmatter } }) => (
+        <li className="index-item" key={id}>
+          {/* TODO path */}
+          <Link to={"/"}>
+            <article className="index-item-inner">
+              <span className="index-item-timestamp">
+                {frontmatter.timestamp}
+              </span>
+
+              <h3 className="index-item-title">{frontmatter.title}</h3>
+
+              <span className="index-item-tag">{frontmatter.tags}</span>
+              {/* {excerpt}
+{timeToRead} */}
+            </article>
+          </Link>
         </li>
-      ))}
-    </ul>
+      )}
+    />
   )
 }
 
