@@ -1,0 +1,377 @@
+/* ---------------------------------
+BlogPost
+--------------------------------- */
+
+@import "../../styles/dtc-logic";
+
+.BlogPost {
+  // TODO these rules should be set globally
+  * {
+    box-sizing: border-box;
+  }
+
+  //
+
+  // .blog-post-nav
+  .blog-post-nav {
+    // avoid unique colors
+    background-color: $asphalt;
+    border-bottom: 1px solid darken($asphalt, 10%);
+    ul {
+      @include resetBox(1em, 0, true);
+      .button-nav {
+        font-size: emCalc(14);
+        color: $font-color-bright;
+        @extend %resetAnchors;
+        &:hover {
+          @include setBorder(2px, solid, $font-color-bright, bottom);
+        }
+      }
+    }
+  }
+
+  // main
+  main {
+    flex-grow: 1;
+  }
+
+  // .container
+  .container {
+    @media (min-width: 760px) {
+      width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  // .blog-post
+  $blog-post-header-height: emCalc(440);
+
+  .blog-post-content {
+    position: relative;
+    // margin-bottom: emCalc(40);
+    // move font-size from .blog-post-body here?
+
+    .blog-post-header {
+      // background: radial-gradient(
+      //   at top left,
+      //   $utility-dim-white,
+      //   $utility-light-gray
+      // );
+      background-color: darken($rm-background-page-outer, 3%);
+
+      .blog-post-header-text {
+        // @include setFlexbox(column nowrap, flex-end, flex-start);
+        // height: 100%;
+        padding: emCalc(40, 16);
+        padding-left: 20px;
+        padding-right: 20px;
+        // color: $font-color-dark;
+
+        .blog-post-title,
+        .blog-post-timestamp,
+        .blog-post-author {
+          margin: 0 0 emCalc(15, 16);
+        }
+
+        .blog-post-title {
+          margin-bottom: emCalc(5);
+          font-family: $heading-font;
+          font-size: emCalc(24, 16);
+          // @include setFonts(32, $heading-font, $font-color-bright);
+          // check this breakpoint
+          @media (min-width: 650px) {
+            // 45?
+            font-size: emCalc(28);
+          }
+        }
+
+        .blog-post-meta {
+          $spacer: 6px;
+
+          padding-top: 10px;
+          border-top: 1px solid darken($rm-background-page-outer, 10%);
+
+          > * {
+            display: inline-block;
+            margin-right: $spacer;
+
+            &::after {
+              content: "•";
+              margin-left: $spacer;
+            }
+
+            &:last-child {
+              margin-right: 0;
+
+              &::after {
+                content: none;
+              }
+            }
+          }
+        }
+
+        .blog-post-timestamp,
+        .blog-post-author {
+          font-size: 16px;
+          // @include setFonts((16 * 0.8), $system-font, $font-color-secondary);
+          // text-shadow: 0 2px 4px rgba(black, 0.55);
+        }
+
+        // include timestamp & author?
+        .blog-post-tags {
+          @include setFlexbox(row nowrap, flex-start, center);
+          width: 100%;
+          @include resetBox(0, 0, true);
+          @include setFonts((16 * 0.8), $system-font, $font-color-bright);
+
+          .blog-post-tag {
+            padding: 1px 16px 2px;
+            border: 2px solid $accent-bright;
+            border-radius: 6px;
+            margin-right: 5px;
+            font-size: small;
+            color: $font-color-dark;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .blog-post-body {
+      padding: 40px emCalc(20, 16);
+      // @include setFonts(16, $base-font, $utility-dark-gray);
+      // verify
+      font-family: $base-font;
+      color: $utility-dark-gray;
+      line-height: 1.7;
+
+      & > * {
+        margin: 0 0 emCalc(10);
+      }
+
+      /* ---------------------------------
+      headings
+      --------------------------------- */
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: $heading-font;
+        // forcing the weight, otherwise normalize.css
+        // would override the font-weight of .blog-post-body
+        font-weight: 400;
+        // need to fix the margin-bottom, computed ad 22px
+      }
+      // the context for emCalc is 16!
+      // that is, the font-size of .blog-post-body
+      h2 {
+        font-size: emCalc(28, 16);
+      }
+      h3 {
+        font-size: emCalc(22, 16);
+      }
+      h4 {
+        font-size: emCalc(18, 16);
+      }
+      h5 {
+        font-size: emCalc(16, 16);
+      }
+      h6 {
+        font-size: emCalc(14, 16);
+      }
+
+      /* ---------------------------------
+      lists
+      --------------------------------- */
+      ul,
+      ol {
+        // should normalize emCalc() calls w/ the appropriate context of 16px
+        padding: emCalc(10, 16) emCalc(20, 16);
+        @include setBorder(3px, solid, $utility-highlight, left);
+        background-color: rgba($utility-highlight, 0.15);
+        padding-inline-start: 30px;
+
+        li {
+          margin-bottom: emCalc(10, 16);
+          @include setBorder(
+            1px,
+            dotted,
+            rgba($utility-dark-gray, 0.25),
+            bottom
+          );
+          &:last-child {
+            margin-bottom: 0;
+            border: none;
+          }
+          &::marker {
+            color: white;
+          }
+          // style links
+          a {
+            border: none;
+            color: black;
+          }
+        }
+      }
+      ul {
+        list-style: circle;
+      }
+
+      /* ---------------------------------
+      fx
+      --------------------------------- */
+      &::selection {
+        background: $utility-dark-gray;
+        color: white;
+      }
+      .highlighted {
+        @extend %specialTextPad;
+        background-color: $utility-highlight;
+      }
+      em {
+      }
+      strong {
+        color: $utility-dark-gray;
+      }
+
+      /* ---------------------------------
+      special txt
+      --------------------------------- */
+      pre {
+        padding: emCalc(20, 16) emCalc(10, 16);
+        @include setBorder(3px, solid, $accent-bright, left);
+        background-color: rgba($utility-light-gray, 0.25);
+        tab-size: 2;
+        line-height: 1.5em;
+        white-space: pre-wrap;
+      }
+      code.inline-code {
+        @extend %specialTextPad;
+        background-color: rgba($utility-light-gray, 0.25);
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      blockquote {
+        // force overriding of browser styles
+        margin: 0 0 emCalc(10, 16);
+        padding: emCalc(8, 16);
+        @include setBorder(3px, solid, $accent-bright, left);
+        font-style: italic;
+
+        > * {
+          margin: 0 0 0 20px;
+        }
+
+        &::before,
+        &::after {
+          // TODO
+          content: '" ';
+          font-size: emCalc(24, 16);
+          color: $utility-light-gray;
+          display: block;
+          height: 16px;
+        }
+      }
+
+      /* ---------------------------------
+      links
+      --------------------------------- */
+      a {
+        @extend %specialTextPad;
+        @include setBorder(1px, solid, $accent-bright, bottom);
+        // necessary?
+        color: inherit;
+        @extend %resetAnchors;
+        &:hover {
+          @include setBorder(2px, solid, $accent-bright, bottom);
+          color: black;
+          background-color: rgba($accent-bright, 0.1);
+        }
+      }
+
+      /* ---------------------------------
+      other
+      --------------------------------- */
+      hr {
+        width: 20%;
+        margin: emCalc(20, 16) auto emCalc(20, 16);
+        // needed to remove browser def border
+        border: 0;
+        @include setBorder(3px, double, $utility-light-gray, bottom);
+      }
+    }
+    .blog-post-footer {
+      .blog-post-notes {
+        // need notes to test these rules!
+        /*
+        border-top: 1px dotted $utility-light-gray;
+        margin-top: 3.5em;
+        color: $utility-light-gray;
+        ol {
+          background-color: inherit;
+          border: 0px none;
+        }
+        p { color: $utility-light-gray; }
+        p a {
+          color: #333;
+          text-decoration: none;
+          border-bottom: none;
+        }
+        p a:hover {
+          color: $utility-light-gray;
+          text-decoration: none;
+          border-bottom: none;
+        }
+        */
+      }
+    }
+  }
+
+  .blog-post-cta {
+    // margin-top: emCalc(40, 16);
+    @include resetBox($pad: 0, $isList: true);
+    // overrides resetBox
+    // margin: 0 auto emCalc(30, 16);
+    margin: 40px auto;
+    @include setBorder(1px, dotted, $utility-light-gray, top);
+    // font properties should probably be set on .blog-post
+    @include setFonts(16, $base-font, $utility-dark-gray, center, 400);
+    @media (min-width: 650px) {
+      @include setFlexbox(row nowrap, center, center);
+      @include setBorder(1px, dotted, $utility-light-gray, bottom);
+    }
+
+    .blog-post-cta-block {
+      width: 100%;
+      @include setBorder(1px, dotted, $utility-light-gray, bottom);
+      @media (min-width: 650px) {
+        width: 50%;
+        @include setBorder(1px, dotted, $utility-light-gray, right);
+        border-bottom: none;
+        &:last-child {
+          border-right: none;
+        }
+      }
+      .blog-post-cta-button {
+        font-size: 18px;
+        display: block;
+        padding: emCalc(30, 16);
+        color: inherit;
+        @extend %resetAnchors;
+        &:hover {
+          background-color: $accent-bright;
+          color: white;
+          transition: all, 200ms, ease;
+        }
+      }
+    }
+  }
+  small {
+    display: block;
+    @include setFonts(12, $system-font, $font-color-secondary, center);
+  }
+}
