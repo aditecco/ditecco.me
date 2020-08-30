@@ -2,9 +2,10 @@
 footer
 --------------------------------- */
 
-@import "_dtc-logic";
+@import "_logic";
 
 footer {
+  font-family: $base-font;
   padding: 20px;
   color: $font-color-dark;
   text-align: center;

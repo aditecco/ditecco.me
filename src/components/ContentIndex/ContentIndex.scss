@@ -2,37 +2,13 @@
 .ContentIndex
 --------------------------------- */
 
-@import "../../styles/dtc-logic";
-
-// text-align center should be the default in this layout
-// look for other frequently repeated rules
-
-body {
-  // @extend %setBody;
-  // store in var or find a declared color
-  background-color: #f4f5f2;
-}
+@import "../../styles/_logic";
 
 .ContentIndex {
-  // common
-  * {
-    @extend %setBorderBox;
-  }
+  text-align: center;
 
   a {
     @extend %resetAnchors;
-  }
-
-  //
-  .index-nav,
-  main,
-  .index-footer {
-    // font-size: emCalc(16);
-  }
-
-  // main
-  main {
-    flex-grow: 1;
   }
 
   // .index-nav

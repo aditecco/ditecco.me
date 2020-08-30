@@ -2,25 +2,15 @@
 home.scss
 --------------------------------- */
 
-@import "_dtc-logic";
+@import "_logic";
 
-/* ---------------------------------
-common
---------------------------------- */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
+.Home {
+  // typography
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   text-align: center;
   color: $utility-dark-gray;
-  background-color: $background-bright-03;
-}
 
-.Home {
   h1,
   h2,
   h3,

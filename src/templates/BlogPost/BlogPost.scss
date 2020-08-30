@@ -2,17 +2,10 @@
 BlogPost
 --------------------------------- */
 
-@import "../../styles/dtc-logic";
+@import "../../styles/_logic";
 
 .BlogPost {
-  // TODO these rules should be set globally
-  * {
-    box-sizing: border-box;
-  }
-
-  //
-
-  // .blog-post-nav
+  // TODO refactor emCalc (?)
   .blog-post-nav {
     // avoid unique colors
     background-color: $asphalt;
@@ -28,11 +21,6 @@ BlogPost
         }
       }
     }
-  }
-
-  // main
-  main {
-    flex-grow: 1;
   }
 
   // .container

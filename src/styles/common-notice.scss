@@ -1,0 +1,71 @@
+---
+# required JK front matter
+---
+
+/* ========================
+dtc-common-notice.scss
+======================== */
+
+/* ---------------------------------
+imports
+--------------------------------- */
+
+@import "_logic";
+
+/* ---------------------------------
+rules
+--------------------------------- */
+
+// .notice-body
+$fontContext: 16;
+
+.notice-body {
+  @extend %setBorderBox;
+  @include setFlexbox(row wrap, center, center);
+  position: fixed;
+  bottom: 0%;
+  z-index: 999;
+  width: 100%;
+  @include resetBox(
+    $pad: emCalc(30, $fontContext) emCalc(15, $fontContext),
+    $mar: 0,
+    $isList: false
+  );
+  // in setFonts, 10 / 10 = 1em = 16px w/ a context of font-size: 100%
+  @include setFonts(
+    10,
+    $family: $system-font,
+    $color: $font-color-bright,
+    $alignment: left,
+    $weight: 400
+  );
+  background-color: rgba(black, 0.85);
+  @media (max-width: 768px) {
+    @include setFlexbox(column nowrap, flex-start, flex-start);
+    padding: {
+      top: emCalc(25, $fontContext);
+      bottom: emCalc(25, $fontContext);
+    }
+  }
+  .notice-back-button {
+    padding: emCalc(10, $fontContext);
+    margin-right: emCalc(25, $fontContext);
+    border: 2px solid $background-bright;
+    border-radius: 4px;
+    color: $background-bright;
+    &:hover {
+      border: 2px solid $accent-bright;
+      text-decoration: none;
+      color: $accent-bright;
+    }
+    @media (max-width: 768px) {
+      margin: 0 0 emCalc(25, $fontContext);
+    }
+  }
+  .notice-message {
+    margin: 0;
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+}

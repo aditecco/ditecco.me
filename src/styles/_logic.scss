@@ -1,21 +1,39 @@
-/* ========================
-_dtc-logic.scss
-======================== */
-
 /* ---------------------------------
-imports
+logic
 --------------------------------- */
 
-@import "_normalize";
-@import "_dtc-colors-typography";
-
-/* ---------------------------------
-vars
---------------------------------- */
+@import "_colors-typography";
 
 /* ---------------------------------
 resets & placeholders
 --------------------------------- */
+
+%globals {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+%typography {
+  font-size: 62.5%;
+
+  body {
+    font-family: "Helvetica, Arial", sans-serif;
+    font-size: 1.6rem;
+  }
+}
+
+%bottomFooter {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+
+  main {
+    flex-grow: 1;
+  }
+}
 
 %setBorderBox {
   box-sizing: border-box;
@@ -64,6 +82,23 @@ functions & mixins
 @function emCalc($target, $context: 10) {
   // ref: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
   @return ($target / $context) * 1em;
+}
+
+// initializes the stylesheet
+// w/ the selected placeholders
+@mixin init($bf: false, $t: true) {
+  :root {
+    @extend %globals;
+    @if ($t) {
+      @extend %typography;
+    }
+  }
+
+  body {
+    @if ($bf) {
+      @extend %bottomFooter;
+    }
+  }
 }
 
 // reset margin and padding

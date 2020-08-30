@@ -1,0 +1,11 @@
+/* ---------------------------------
+common
+--------------------------------- */
+
+@import "_logic";
+
+@include init(false, false);
+
+body {
+  background-color: $background-bright-03;
+}
