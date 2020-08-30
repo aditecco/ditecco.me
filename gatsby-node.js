@@ -43,7 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
         .toLowerCase()
         .replace(" ", "-")
         .replace("!", "")}/`,
-      component: path.resolve(`./src/templates/BlogPost.tsx`),
+      component: path.resolve(`./src/templates/BlogPost/BlogPost.tsx`),
       context: {
         node,
       },

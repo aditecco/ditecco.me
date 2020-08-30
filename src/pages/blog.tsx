@@ -7,9 +7,27 @@ import { graphql, Link } from "gatsby"
 import ContentIndex from "../components/ContentIndex/ContentIndex"
 
 interface IOwnProps {}
+
 interface IGatsbyProps {
-  data
+  data // TODO the right type?
 }
+
+interface IGraphQLQueryResponseNode {
+  node: {
+    id: string
+    timeToRead: number
+    excerpt: string
+    frontmatter: {
+      title: string
+      subtitle: string | null
+      language: string
+      timestamp: string
+      author: string
+      tags: string
+    }
+  }
+}
+
 type TProps = IOwnProps & IGatsbyProps
 
 export default function Blog({ data }: TProps): ReactElement {
@@ -21,10 +39,12 @@ export default function Blog({ data }: TProps): ReactElement {
     <ContentIndex
       title="Blog index"
       content={posts}
-      contentRenderer={({ node: { id, timeToRead, excerpt, frontmatter } }) => (
+      contentRenderer={({
+        node: { id, timeToRead, excerpt, frontmatter },
+      }: IGraphQLQueryResponseNode) => (
         <li className="index-item" key={id}>
-          {/* TODO path */}
-          <Link to={"/"}>
+          {/* TODO slug */}
+          <Link to={"/blog/lorem-ipsum%20dolor%20sit%20amet/"}>
             <article className="index-item-inner">
               <span className="index-item-timestamp">
                 {frontmatter.timestamp}
@@ -33,8 +53,6 @@ export default function Blog({ data }: TProps): ReactElement {
               <h3 className="index-item-title">{frontmatter.title}</h3>
 
               <span className="index-item-tag">{frontmatter.tags}</span>
-              {/* {excerpt}
-{timeToRead} */}
             </article>
           </Link>
         </li>
