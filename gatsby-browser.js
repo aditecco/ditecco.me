@@ -6,6 +6,7 @@
 
 import "typeface-montserrat"
 import "typeface-roboto"
+// import "typeface-work-sans"
 import "typeface-arvo"
 import "typeface-kaushan-Script"
 import "typeface-karla"
