@@ -4,6 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
-
+import "typeface-montserrat"
+import "typeface-roboto"
+import "typeface-arvo"
+import "typeface-kaushan-Script"
+import "typeface-karla"
+import "typeface-trocchi"
 import "./src/styles/index.scss"
