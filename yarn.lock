@@ -13945,6 +13945,36 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-arvo@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/typeface-arvo/-/typeface-arvo-1.1.3.tgz#afea58c7a8b93571bff07e41839b7409a51c5370"
+  integrity sha512-OqblHZ458xYWjXfbyPSpQrhKle1ySYUlIC/abiWfngxduB+9zuP9ODfXh263zF0ebwBZ8qhAPDESEoLzGw2pVA==
+
+typeface-karla@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-karla/-/typeface-karla-0.0.72.tgz#b0eec7f2f13e638d274c0bac6bd0c82379c958e9"
+  integrity sha512-PKqhkf7MxnRMCdWfLXYsY2eGY3R9aGO630P5CCXnndvmfTlEGgXtb6J6kx1UDcCgzNh115Cd0IP5AnFU8cCpKw==
+
+typeface-kaushan-script@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-kaushan-script/-/typeface-kaushan-script-0.0.72.tgz#c20acaa3169767f51dd773eb375e6f98e7127dc5"
+  integrity sha512-5j59GEOPVoVRIm8mzTDIcMo2Ya+L+M2ESNiA8aA879UmswSPXsIVt41DS8vxODDhAR3rHtg8527UHxl2ZzIc0Q==
+
+typeface-montserrat@^0.0.75:
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/typeface-montserrat/-/typeface-montserrat-0.0.75.tgz#b796d9c767ab8ed1343271985beb1e44b382b7b3"
+  integrity sha512-8ski20t3hdwu2T85pVfjK4jsDbwW8yWzd+LAKxYEmu+JVLVlB7G2yfmdKZz06pUwYCLVFvHvup+NYYulHDpE+w==
+
+typeface-roboto@^0.0.75:
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/typeface-roboto/-/typeface-roboto-0.0.75.tgz#98d5ba35ec234bbc7172374c8297277099cc712b"
+  integrity sha512-VrR/IiH00Z1tFP4vDGfwZ1esNqTiDMchBEXYY9kilT6wRGgFoCAlgkEUMHb1E3mB0FsfZhv756IF0+R+SFPfdg==
+
+typeface-trocchi@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-trocchi/-/typeface-trocchi-0.0.72.tgz#aa56109c118926d2c2600555845faf093d67e2b7"
+  integrity sha512-VuK757L4mUks5S8Glh/EjRlW1LD4uAfHOArfhwSDHOZDcGf2VB1gZaOxDOlplX6OUr0AjPHNyoVr4Utb2KY3nA==
+
 unbzip2-stream@^1.0.9:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/unbzip2-stream/-/unbzip2-stream-1.4.3.tgz#b0da04c4371311df771cdc215e87f2130991ace7"
