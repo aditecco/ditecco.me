@@ -5,6 +5,13 @@
 @import "../../styles/_logic";
 
 .ContentIndex {
+  // custom page bg
+  background-color: $background-bright-03;
+
+  + footer {
+    background-color: $background-bright-03;
+  }
+
   text-align: center;
 
   a {

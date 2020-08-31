@@ -5,6 +5,13 @@ home.scss
 @import "_logic";
 
 .Home {
+  // custom page bg
+  background-color: $background-bright-03;
+
+  + footer {
+    background-color: $background-bright-03;
+  }
+
   // typography
   font-family: "Roboto", sans-serif;
   font-weight: 400;
