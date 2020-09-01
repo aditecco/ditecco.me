@@ -6,10 +6,10 @@ BlogPost
 
 .BlogPost {
   // custom page bg
-  background-color: $rm-background-page-outer;
+  // background-color: $rm-background-page-outer;
 
   + footer {
-    background-color: $rm-background-page-outer;
+    // background-color: $rm-background-page-outer;
     padding-top: 60px;
   }
 
@@ -20,21 +20,24 @@ BlogPost
   text-align: left;
   color: #5a5a5a;
 
-  // TODO refactor emCalc (?)
-  .blog-post-nav {
-    // avoid unique colors
-    background-color: $asphalt;
-    border-bottom: 1px solid darken($asphalt, 10%);
-    ul {
-      @include resetBox(1em, 0, true);
-      .button-nav {
-        font-size: emCalc(14);
-        color: $font-color-bright;
-        @extend %resetAnchors;
-        &:hover {
-          @include setBorder(2px, solid, $font-color-bright, bottom);
-        }
-      }
+  // TODO make it a common snippet
+  .backButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2px 6px;
+    border: 2px solid transparent;
+    color: inherit;
+
+    &:hover {
+      border: 2px solid black;
+      border-radius: 4px;
+      color: black;
+    }
+
+    a {
+      @extend %resetAnchors;
+      margin-left: 6px;
     }
   }
 
@@ -45,9 +48,6 @@ BlogPost
       margin: 0 auto;
     }
   }
-
-  // .blog-post
-  $blog-post-header-height: emCalc(440);
 
   .blog-post-content {
     position: relative;
@@ -60,7 +60,7 @@ BlogPost
       //   $utility-dim-white,
       //   $utility-light-gray
       // );
-      background-color: darken($rm-background-page-outer, 3%);
+      background-color: #f1f1eb;
 
       .blog-post-header-text {
         // @include setFlexbox(column nowrap, flex-end, flex-start);
@@ -84,7 +84,7 @@ BlogPost
           // check this breakpoint
           @media (min-width: 650px) {
             // 45?
-            font-size: emCalc(28);
+            font-size: emCalc(48, 16);
           }
         }
 
@@ -92,7 +92,7 @@ BlogPost
           $spacer: 6px;
 
           padding-top: 10px;
-          border-top: 1px solid darken($rm-background-page-outer, 10%);
+          border-top: 1px solid rgba(black, 0.1);
 
           > * {
             display: inline-block;
@@ -116,6 +116,7 @@ BlogPost
         .blog-post-timestamp,
         .blog-post-author {
           font-size: 16px;
+          font-weight: 400;
           // @include setFonts((16 * 0.8), $system-font, $font-color-secondary);
           // text-shadow: 0 2px 4px rgba(black, 0.55);
         }

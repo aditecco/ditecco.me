@@ -1,5 +1,5 @@
 ---
-title: Lorem ipsum dolor sit amet
+title: How I migrated my website from Jekyll to Gatsby
 subtitle:
 language: EN
 timestamp: 30/08/2020
@@ -37,9 +37,9 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam vitae dui. Nul
 
 > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam vitae dui.
 
-- A
-- B
-- C
+- Lorem
+- Ipsum
+- Dolor
 
 ---
 

@@ -43,8 +43,6 @@ export default function BlogPost({
 
   return (
     <Layout title={node.frontmatter.title}>
-      <Link to="/">&larr; Home</Link>
-
       <div className="BlogPost">
         <article className="blog-post-content">
           <header
@@ -55,6 +53,11 @@ export default function BlogPost({
             }
           >
             <div className="blog-post-header-text container">
+              <div className="backButton">
+                <i className="material-icons">keyboard_backspace</i>
+                <Link to="/">Home</Link>
+              </div>
+
               <h1 className="blog-post-title">{title}</h1>
 
               <div className="blog-post-meta">
