@@ -10,6 +10,21 @@
 // }
 
 const path = require("path")
+const { createFilePath } = require(`gatsby-source-filesystem`)
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages/blog` })
+
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
+}
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -24,6 +39,9 @@ exports.createPages = async ({ graphql, actions }) => {
             html
             timeToRead
             excerpt
+            fields {
+              slug
+            }
             frontmatter {
               title
               subtitle
@@ -39,10 +57,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: `/blog/${node.frontmatter.title
-        .toLowerCase()
-        .replace(" ", "-")
-        .replace("!", "")}/`,
+      path: node.fields.slug,
       component: path.resolve(`./src/templates/BlogPost/BlogPost.tsx`),
       context: {
         node,

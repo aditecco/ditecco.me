@@ -17,6 +17,9 @@ interface IGraphQLQueryResponseNode {
     id: string
     timeToRead: number
     excerpt: string
+    fields: {
+      slug: string
+    }
     frontmatter: {
       title: string
       subtitle: string | null
@@ -40,18 +43,16 @@ export default function Blog({ data }: TProps): ReactElement {
       title="Blog index"
       content={posts}
       contentRenderer={({
-        node: { id, timeToRead, excerpt, frontmatter },
+        node: { id, timeToRead, excerpt, fields, frontmatter },
       }: IGraphQLQueryResponseNode) => (
         <li className="index-item" key={id}>
-          {/* TODO slug */}
-          <Link to={"/blog/lorem-ipsum%20dolor%20sit%20amet/"}>
+          <Link to={fields.slug}>
             <article className="index-item-inner">
               <span className="index-item-timestamp">
                 {frontmatter.timestamp}
               </span>
 
               <h3 className="index-item-title">{frontmatter.title}</h3>
-
               <span className="index-item-tag">{frontmatter.tags}</span>
             </article>
           </Link>
@@ -69,6 +70,9 @@ export const query = graphql`
           id
           timeToRead
           excerpt
+          fields {
+            slug
+          }
           frontmatter {
             title
             subtitle
