@@ -71,3 +71,6 @@ yarn-error.log
 # new ignores
 #__source/jekyll/**/*
 __source/jekyll/.sass-cache/
+
+# Local Netlify folder
+.netlify
