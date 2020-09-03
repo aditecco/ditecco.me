@@ -85,7 +85,7 @@ BlogPost
     $spacer: 6px;
 
     padding: 10px 0;
-    border-top: 1px solid rgba(black, 0.1);
+    border-top: 1px dotted rgba(black, 0.25);
 
     > * {
       display: inline-block;
@@ -124,7 +124,7 @@ BlogPost
       border-radius: 18px;
       margin: 5px 2px;
       font-size: small;
-      color: $font-color-dark;
+      color: $accent-bright;
       text-transform: uppercase;
     }
   }
