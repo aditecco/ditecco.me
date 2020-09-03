@@ -55,7 +55,7 @@ export default function BlogPost({
             <div className="blog-post-header-text container">
               <div className="backButton">
                 <i className="material-icons">keyboard_backspace</i>
-                <Link to="/">Home</Link>
+                <Link to="/blog">Index</Link>
               </div>
 
               <h1 className="blog-post-title">{title}</h1>
@@ -91,12 +91,12 @@ export default function BlogPost({
         </article>
 
         <ul className="blog-post-cta container">
-          <li className="blog-post-cta-block">
+          <li className="blog-post-cta-item">
             <a href={TWITTER_SHARE_URL} className="blog-post-cta-button">
               Share on Twitter
             </a>
           </li>
-          <li className="blog-post-cta-block">
+          <li className="blog-post-cta-item">
             <a href={TWITTER_FOLLOW_URL} className="blog-post-cta-button">
               Follow {author}
             </a>

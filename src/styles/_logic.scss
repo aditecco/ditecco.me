@@ -153,6 +153,14 @@ functions & mixins
   align-items: $align;
 }
 
+// creates a centered container
+// of the desired width
+@mixin container($w) {
+  display: block;
+  max-width: $w;
+  margin: 0 auto;
+}
+
 /* ---------------------------------
 other
 --------------------------------- */
