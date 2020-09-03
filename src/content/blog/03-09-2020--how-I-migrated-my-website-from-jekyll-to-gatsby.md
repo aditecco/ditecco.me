@@ -7,6 +7,8 @@ author: Alessandro Di Tecco
 tags: meta
 ---
 
+It's still a work in progress, but I managed to finally migrate my website to Gatsby. While I write a blog post about the transition, please enjoy this filler text : )
+
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam vitae dui. Nulla id libero nec eros pretium facilisis. Donec nulla ipsum, elementum vitae, cursus vitae, accumsan sed, ligula. Curabitur metus dolor, euismod sed, vehicula nec, vestibulum sit amet, ipsum.
 
 ```html
