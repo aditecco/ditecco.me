@@ -28,6 +28,7 @@ BlogPost
     padding: 2px 6px;
     border: 2px solid transparent;
     color: inherit;
+    cursor: pointer;
 
     &:hover {
       border: 2px solid black;
@@ -43,23 +44,17 @@ BlogPost
 
   // .container
   .container {
-    @media (min-width: 760px) {
-      width: 700px;
-      margin: 0 auto;
-    }
+    max-width: 700px;
+    margin: 0 auto;
   }
 
   .blog-post-content {
-    position: relative;
-    // margin-bottom: emCalc(40);
-    // move font-size from .blog-post-body here?
+    max-width: 900px;
+    margin: 20px auto 40px;
+    // border: 3px double $utility-light-gray;
+    box-shadow: 0 4px 30px #00000022;
 
     .blog-post-header {
-      // background: radial-gradient(
-      //   at top left,
-      //   $utility-dim-white,
-      //   $utility-light-gray
-      // );
       background-color: #f1f1eb;
 
       .blog-post-header-text {
