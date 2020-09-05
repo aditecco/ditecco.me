@@ -2,61 +2,44 @@
 ITakePictures
 --------------------------------- */
 
-// body {
-//   font-family: "Work Sans", sans-serif;
-//   font-weight: 400;
-//   color: #444;
-//   background-color: #333;
-//   font-size: 100%;
-//   margin: 0;
-// }
+@import "./logic";
 
 .wrapper {
-  margin-top: -12px;
   font-family: MONOSPACE;
   color: #444;
   background-color: #333;
 }
 
 .header {
-  padding: 20px;
-}
-
-.wrapper h1 {
-  font-weight: 400;
-  font-size: 1.25em;
-  color: #f1f1f1;
+  padding: rel(20);
   text-align: center;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.1em;
-}
-
-.wrapper h2 {
   font-weight: 400;
-  font-size: 1em;
-  color: #555;
-  text-align: center;
-  text-transform: lowercase;
-  margin-top: 0;
+
+  > * {
+    font-weight: inherit;
+  }
+
+  .title {
+    font-size: rel(21);
+    color: #f1f1f1;
+    letter-spacing: rel(2);
+    margin: 0 0 rel(6);
+  }
+
+  .subtitle {
+    font-size: rel(15);
+    color: #777;
+    text-transform: lowercase;
+    margin: 0;
+  }
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
   background-color: #111;
   margin: 0;
@@ -77,8 +60,7 @@ ITakePictures
 
 .module {
   height: 480px;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
+  width: 100%;
   flex-grow: 1;
   background-color: #111;
   overflow: hidden;
@@ -88,14 +70,14 @@ ITakePictures
 
 .module.full {
   max-width: 960px;
-  -webkit-box-flex: 2;
-  -ms-flex-positive: 2;
   flex-grow: 2;
 }
+
 .module.half {
   max-width: 480px;
 }
-.capt {
+
+.caption {
   width: 100%;
   position: absolute;
   bottom: 0%;
@@ -103,25 +85,25 @@ ITakePictures
   padding-left: 1em;
   background-color: rgba(0, 0, 0, 0.25);
 }
-.capt p {
+
+.caption p {
   padding-left: 0.5em;
   border-left: 3px solid gold;
 }
-footer {
-  text-align: center;
-  font-size: 90%;
-}
+
 @media screen and (max-width: 960px) {
   .module {
     width: 100%;
     height: auto;
   }
+
   .module.full img,
   .module.half img {
     width: 100%;
     height: auto;
   }
-  .capt p {
+
+  .caption p {
     font-size: 75%;
   }
 }

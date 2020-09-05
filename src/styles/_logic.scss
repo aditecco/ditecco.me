@@ -79,6 +79,10 @@ functions & mixins
   }
 }
 
+@function rel($t, $c: 16, $u: "rem") {
+  @return ($t / $c) * 1#{$u};
+}
+
 @function emCalc($target, $context: 10) {
   // ref: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
   @return ($target / $context) * 1em;
