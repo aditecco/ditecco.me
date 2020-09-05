@@ -4,7 +4,9 @@ Projects
 
 import { Link } from "gatsby"
 import React, { ReactElement } from "react"
-import ContentIndex from "../components/ContentIndex/ContentIndex"
+import ContentIndex, {
+  ContentIndexItem,
+} from "../components/ContentIndex/ContentIndex"
 
 interface IOwnProps {}
 
@@ -41,8 +43,24 @@ export default function Projects({ data }: TProps): ReactElement {
   return (
     <ContentIndex
       title="Projects index"
-      content={[1]}
-      contentRenderer={_ => <Link to="/itakepictures">Itakepictures</Link>}
+      content={[
+        {
+          id: "0",
+          fields: { slug: "/itakepictures" },
+          frontmatter: { title: "I take pictures" },
+          timestamp: "",
+          tags: "projects",
+        },
+      ]}
+      contentRenderer={_ => (
+        <ContentIndexItem
+          id={_.id}
+          slug={_.fields.slug}
+          timestamp={_.frontmatter.timestamp}
+          title={_.frontmatter.title}
+          tags={_.frontmatter.tags}
+        />
+      )}
     />
   )
 }

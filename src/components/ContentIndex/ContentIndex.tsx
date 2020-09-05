@@ -17,6 +17,34 @@ interface IOwnProps {
   title: string
 }
 
+interface ContentIndexItemProps {
+  id: string
+  slug: string
+  timestamp: string
+  title: string
+  tags: string
+}
+
+export function ContentIndexItem({
+  id,
+  slug,
+  timestamp,
+  title,
+  tags,
+}: ContentIndexItemProps): ReactElement {
+  return (
+    <li className="index-item" key={id}>
+      <Link to={slug}>
+        <article className="index-item-inner">
+          <span className="index-item-timestamp">{timestamp}</span>
+          <h3 className="index-item-title">{title}</h3>
+          <span className="index-item-tag">{tags}</span>
+        </article>
+      </Link>
+    </li>
+  )
+}
+
 export default function ContentIndex({
   content,
   contentRenderer,

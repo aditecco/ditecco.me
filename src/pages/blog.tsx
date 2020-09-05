@@ -4,7 +4,9 @@ Blog
 
 import React, { ReactElement } from "react"
 import { graphql, Link } from "gatsby"
-import ContentIndex from "../components/ContentIndex/ContentIndex"
+import ContentIndex, {
+  ContentIndexItem,
+} from "../components/ContentIndex/ContentIndex"
 
 interface IOwnProps {}
 
@@ -45,18 +47,13 @@ export default function Blog({ data }: TProps): ReactElement {
       contentRenderer={({
         node: { id, timeToRead, excerpt, fields, frontmatter },
       }: IGraphQLQueryResponseNode) => (
-        <li className="index-item" key={id}>
-          <Link to={fields.slug}>
-            <article className="index-item-inner">
-              <span className="index-item-timestamp">
-                {frontmatter.timestamp}
-              </span>
-
-              <h3 className="index-item-title">{frontmatter.title}</h3>
-              <span className="index-item-tag">{frontmatter.tags}</span>
-            </article>
-          </Link>
-        </li>
+        <ContentIndexItem
+          id={id}
+          slug={fields.slug}
+          timestamp={frontmatter.timestamp}
+          title={frontmatter.title}
+          tags={frontmatter.tags}
+        />
       )}
     />
   )
