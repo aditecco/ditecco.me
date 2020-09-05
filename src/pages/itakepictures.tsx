@@ -4,8 +4,8 @@ ITakePictures
 
 import React, { ReactElement } from "react"
 import { graphql, Link } from "gatsby"
-import ContentIndex from "../components/ContentIndex/ContentIndex"
 import Img from "gatsby-image"
+import "../styles/itakepictures.scss"
 
 interface IOwnProps {}
 
@@ -41,13 +41,26 @@ export default function ITakePictures({ data }: TProps): ReactElement {
   console.log(data)
 
   return (
-    <ContentIndex
-      title="ITakePictures"
-      content={data.allFile.edges}
-      contentRenderer={image => (
-        <Img fluid={image.node.childImageSharp.fluid} alt="" />
-      )}
-    />
+    <div className="wrapper">
+      <header className="header">
+        <h1>I take pictures.</h1>
+        <h2>photos by Alessandro Di Tecco.</h2>
+      </header>
+
+      <div className="container">
+        {data.allFile.edges.map(image => (
+          <div className="module">
+            <Link to={"/projects"}>
+              <Img fixed={image.node.childImageSharp.fixed} fadeIn alt="" />
+
+              <div className="capt">
+                <p>Grass</p>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
 
@@ -57,8 +70,8 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+            fixed {
+              ...GatsbyImageSharpFixed
             }
           }
         }
