@@ -10,6 +10,7 @@ BackButton
   justify-content: space-evenly;
   padding: 2px 6px;
   border: 2px solid transparent;
+  border-radius: 4px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: inherit;
@@ -20,7 +21,6 @@ BackButton
 
   &:hover {
     border: 2px solid $asphalt;
-    border-radius: 4px;
     color: $asphalt;
   }
 
