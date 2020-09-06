@@ -24,6 +24,11 @@ ITakePictures
     text-align: center;
     font-weight: 400;
 
+    .accent {
+      @include container(20px);
+      border-top: 4px solid gold;
+    }
+
     .heading {
       > * {
         font-weight: inherit;
@@ -35,6 +40,18 @@ ITakePictures
         color: #f1f1f1;
         letter-spacing: rel(2);
         margin: 0 0 rel(6);
+
+        &::before {
+          $w: 250px;
+
+          content: "";
+          position: fixed;
+          top: 0;
+          left: calc(50% - (#{$w} / 2));
+          width: $w;
+          border-top: 3px solid gold;
+          z-index: 0;
+        }
       }
 
       .subtitle {
