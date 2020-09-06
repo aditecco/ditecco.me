@@ -24,10 +24,21 @@ type TProps = IOwnProps & IGatsbyProps
 export default function ITakePictures({ data }: TProps): ReactElement {
   return (
     <div className="ITakePictures">
+      <BackButton
+        target="/projects"
+        style={{
+          position: "fixed",
+          bottom: 20,
+          left: 20,
+          zIndex: 1,
+          backgroundColor: "#0000004d",
+          color: "#ffffffd6",
+          border: "2px solid #ffffffd6",
+        }}
+      />
+
       <div className="wrapper">
         <header className="header">
-          <BackButton target="/projects" style={{ color: "#777" }} />
-
           <div className="heading">
             <h1 className="title">I take pictures.</h1>
             <h5 className="subtitle">

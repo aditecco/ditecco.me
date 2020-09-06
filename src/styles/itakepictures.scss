@@ -20,17 +20,14 @@ ITakePictures
   }
 
   .header {
-    @include flex(row, flex-start, center);
-    padding: rel(18) rel(18) rel(50);
+    padding: rel(20) rel(30);
     text-align: center;
     font-weight: 400;
 
     .heading {
-      margin-left: auto;
-      margin-right: auto;
-
       > * {
         font-weight: inherit;
+        line-height: 1.75;
       }
 
       .title {
@@ -85,12 +82,11 @@ ITakePictures
     left: 0;
     right: 0;
     color: #f1f1f1;
-    padding-left: rel(10);
     background-color: rgba(0, 0, 0, 0.25);
 
     span {
       display: block;
-      padding: rel(12) rel(6);
+      padding: rel(12) rel(6) rel(12) rel(16);
       border-left: 3px solid gold;
       text-transform: capitalize;
       font-size: rel(14);
@@ -100,16 +96,6 @@ ITakePictures
   @media screen and (max-width: 960px) {
     .module {
       height: auto;
-    }
-
-    // .module.full img,
-    // .module.half img {
-    //   width: 100%;
-    //   height: auto;
-    // }
-
-    .caption span {
-      font-size: 75%;
     }
   }
 }
