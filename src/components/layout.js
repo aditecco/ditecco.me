@@ -7,7 +7,7 @@
 
 import PropTypes from "prop-types"
 import React from "react"
-import Footer from "./footer"
+import Footer from "./Footer/Footer"
 import SEO from "./seo"
 
 const Layout = ({ title, children }) => {
