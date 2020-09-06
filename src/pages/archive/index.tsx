@@ -42,7 +42,7 @@ export default function Archive({ data }: TProps): ReactElement {
   // TODO get content dynamically
   return (
     <ContentIndex
-      title="Projects index"
+      title="Archive index"
       content={[
         {
           id: "06c699dd1a7e41689d877ad49b3f7a30",

@@ -51,7 +51,7 @@
 
   // .index-item-list
   .index-item-list {
-    @include resetBox(0, 0 0 1em, true);
+    @include resetBox(0, 0, true);
     .index-item {
       @include setBorder(1px, dashed, $utility-light-gray, bottom);
       transition: background-color 0.6s ease;

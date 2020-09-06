@@ -3,7 +3,7 @@ ContentIndex
 --------------------------------- */
 
 import { Link } from "gatsby"
-import React, { ReactElement } from "react"
+import React, { ReactElement, useRef, useEffect } from "react"
 import Layout from "../layout"
 import BackButton from "../BackButton/BackButton"
 import "./ContentIndex.scss"
@@ -54,6 +54,23 @@ export default function ContentIndex({
   contentRenderer,
   title,
 }: IOwnProps) {
+  const footer = useRef<HTMLElement>(null)
+  const contentIndexItemList = useRef<HTMLLIElement>(null)
+
+  useEffect(() => {
+    footer.current = document.querySelector("footer")
+    contentIndexItemList.current = document.querySelector(".index-item-list")
+
+    if (footer.current && contentIndexItemList.current) {
+      const footerHeight = footer.current.getBoundingClientRect().height
+
+      contentIndexItemList.current.setAttribute(
+        "style",
+        `margin-bottom: ${footerHeight}px`
+      )
+    }
+  }, [])
+
   return (
     <Layout title={title}>
       <div className="ContentIndex">
