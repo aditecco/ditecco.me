@@ -2,11 +2,10 @@
 Projects
 --------------------------------- */
 
-import { Link } from "gatsby"
 import React, { ReactElement } from "react"
 import ContentIndex, {
   ContentIndexItem,
-} from "../components/ContentIndex/ContentIndex"
+} from "../../components/ContentIndex/ContentIndex"
 
 interface IOwnProps {}
 

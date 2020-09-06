@@ -5,8 +5,8 @@ ITakePictures
 import React, { ReactElement } from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import posts from "../content/projects/itakepictures/data"
-import "../styles/itakepictures.scss"
+import posts from "../../content/projects/itakepictures/data"
+import "../../styles/itakepictures.scss"
 
 interface IOwnProps {}
 
@@ -26,7 +26,9 @@ export default function ITakePictures({ data }: TProps): ReactElement {
       <div className="wrapper">
         <header className="header">
           <h1 className="title">I take pictures.</h1>
-          <h5 className="subtitle">photos by Alessandro Di Tecco.</h5>
+          <h5 className="subtitle">
+            photographic experiments by Alessandro Di Tecco.
+          </h5>
         </header>
 
         <div className="container">
