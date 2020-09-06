@@ -29,25 +29,10 @@
     font-size: inherit;
     background-color: $accent-bright;
     @include setBorder(1px, solid, rgba($utility-dark-gray, 0.35), bottom);
+
     ul {
       // translate
-      @include resetBox($pad: 10px 15px, $mar: 0, $isList: true);
-      li {
-        a {
-          display: inline-block;
-          // tr
-          padding: 0.5em;
-          border: 2px solid transparent;
-          // override
-          // font-size: 95%;
-          color: inherit;
-          &:hover {
-            border: 2px solid white;
-            border-radius: 4px;
-            color: white;
-          }
-        }
-      }
+      @include resetBox($pad: 14px 20px, $mar: 0, $isList: true);
     }
   }
 

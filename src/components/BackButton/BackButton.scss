@@ -1,0 +1,30 @@
+/* ---------------------------------
+BackButton
+--------------------------------- */
+
+@import "../../styles/logic";
+
+.BackButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2px 6px;
+  border: 2px solid transparent;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid black;
+    border-radius: 4px;
+    color: black;
+  }
+
+  a {
+    @extend %resetAnchors;
+    margin-left: 6px;
+  }
+
+  .label {
+    text-transform: capitalize;
+  }
+}

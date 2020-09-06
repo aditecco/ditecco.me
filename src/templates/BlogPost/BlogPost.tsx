@@ -7,6 +7,7 @@ import "./BlogPost.scss"
 import { Link } from "gatsby"
 import Layout from "../../components/layout"
 import { TWITTER_SHARE_URL, TWITTER_FOLLOW_URL } from "../../constants"
+import BackButton from "../../components/BackButton/BackButton"
 
 interface IOwnProps {}
 
@@ -53,10 +54,7 @@ export default function BlogPost({
             }
           >
             <div className="blog-post-header-text container">
-              <div className="backButton">
-                <i className="material-icons">keyboard_backspace</i>
-                <Link to="/blog">Index</Link>
-              </div>
+              <BackButton target="/blog" label="index" />
 
               <h1 className="blog-post-title">{title}</h1>
 

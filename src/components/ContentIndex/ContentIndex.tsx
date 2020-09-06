@@ -5,6 +5,7 @@ ContentIndex
 import { Link } from "gatsby"
 import React, { ReactElement } from "react"
 import Layout from "../layout"
+import BackButton from "../BackButton/BackButton"
 import "./ContentIndex.scss"
 
 interface IContentNode {
@@ -17,13 +18,16 @@ interface IOwnProps {
   title: string
 }
 
-interface ContentIndexItemProps {
+export interface ContentIndexItemProps {
   id: string
   slug: string
   timestamp: string
   title: string
   tags: string
 }
+
+// we export the default list item,
+// which has all the right CSS classes
 
 export function ContentIndexItem({
   id,
@@ -56,7 +60,7 @@ export default function ContentIndex({
         <nav className="index-nav">
           <ul>
             <li>
-              <Link to="/">&larr; Back</Link>
+              <BackButton target="/" />
             </li>
           </ul>
         </nav>
