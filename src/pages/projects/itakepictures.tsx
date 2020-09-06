@@ -7,6 +7,7 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import posts from "../../content/projects/itakepictures/data"
 import "../../styles/itakepictures.scss"
+import BackButton from "../../components/BackButton/BackButton"
 
 interface IOwnProps {}
 
@@ -25,16 +26,21 @@ export default function ITakePictures({ data }: TProps): ReactElement {
     <div className="ITakePictures">
       <div className="wrapper">
         <header className="header">
-          <h1 className="title">I take pictures.</h1>
-          <h5 className="subtitle">
-            photographic experiments by Alessandro Di Tecco.
-          </h5>
+          <BackButton target="/projects" style={{ color: "#777" }} />
+
+          <div className="heading">
+            <h1 className="title">I take pictures.</h1>
+            <h5 className="subtitle">
+              photographic experiments by Alessandro Di Tecco.
+            </h5>
+          </div>
         </header>
 
         <div className="container">
           {/* TODO sorting */}
-          {[...data.allFile.edges].sort().map(image => (
+          {[...data.allFile.edges].sort().map((image, i) => (
             <div
+              key={i}
               className={
                 image.node.childImageSharp.fluid.originalName.includes("-wd")
                   ? "module full"

@@ -60,7 +60,7 @@ export default function ContentIndex({
         <nav className="index-nav">
           <ul>
             <li>
-              <BackButton target="/" />
+              <BackButton target="/" label="home" />
             </li>
           </ul>
         </nav>

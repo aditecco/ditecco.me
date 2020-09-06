@@ -20,26 +20,32 @@ ITakePictures
   }
 
   .header {
+    @include flex(row, flex-start, center);
     padding: rel(18) rel(18) rel(50);
     text-align: center;
     font-weight: 400;
 
-    > * {
-      font-weight: inherit;
-    }
+    .heading {
+      margin-left: auto;
+      margin-right: auto;
 
-    .title {
-      font-size: rel(21);
-      color: #f1f1f1;
-      letter-spacing: rel(2);
-      margin: 0 0 rel(6);
-    }
+      > * {
+        font-weight: inherit;
+      }
 
-    .subtitle {
-      font-size: rel(15);
-      color: #777;
-      text-transform: lowercase;
-      margin: 0;
+      .title {
+        font-size: rel(21);
+        color: #f1f1f1;
+        letter-spacing: rel(2);
+        margin: 0 0 rel(6);
+      }
+
+      .subtitle {
+        font-size: rel(15);
+        color: #777;
+        text-transform: lowercase;
+        margin: 0;
+      }
     }
   }
 

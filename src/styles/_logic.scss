@@ -157,6 +157,15 @@ functions & mixins
   align-items: $align;
 }
 
+// sets flexbox properties
+@mixin flex($direction, $justify, $align, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 // creates a centered container
 // of the desired width
 @mixin container($w) {
