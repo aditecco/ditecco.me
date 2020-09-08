@@ -41,39 +41,49 @@ export default function ITakePictures({ data }: TProps): ReactElement {
           <div className="heading">
             <h1 className="title">I take pictures.</h1>
             <h5 className="subtitle">
-              photographic experiments by Alessandro Di Tecco.
+              photographic experiments <br className="mobileToggle" />
+              by Alessandro Di Tecco.
             </h5>
           </div>
         </header>
 
         <div className="container">
-          {/* TODO sorting */}
-          {[...data.allFile.edges].sort().map((image, i) => (
+          {data.allFile.edges.map(edge => (
             <div
-              key={i}
+              key={edge.node.childMarkdownRemark.id}
               className={
-                image.node.childImageSharp.fluid.originalName.includes("-wd")
+                edge.node.childMarkdownRemark.frontmatter.image.childImageSharp.fluid.originalName.includes(
+                  "-wd"
+                )
                   ? "module full"
                   : "module half"
               }
             >
-              {/* TODO link to detail page */}
               <Link
-                to={"/projects"}
-                state={{ from: image.node.childImageSharp.fluid.originalName }}
+                to={`/projects/itakepictures/photo/${edge.node.childMarkdownRemark.frontmatter.caption.replace(
+                  " ",
+                  "-"
+                )}`}
+                state={{
+                  image:
+                    edge.node.childMarkdownRemark.frontmatter.image
+                      .childImageSharp.fluid,
+                }}
               >
-                <Img fluid={image.node.childImageSharp.fluid} fadeIn alt="" />
+                <Img
+                  fluid={
+                    edge.node.childMarkdownRemark.frontmatter.image
+                      .childImageSharp.fluid
+                  }
+                  fadeIn
+                  alt={edge.node.childMarkdownRemark.frontmatter.title}
+                />
 
-                {posts[image.node.childImageSharp.fluid.originalName] && (
-                  <div className="caption">
-                    <span>
-                      {
-                        posts[image.node.childImageSharp.fluid.originalName]
-                          .caption
-                      }
-                    </span>
-                  </div>
-                )}
+                <div className="caption">
+                  <span>
+                    {edge.node.childMarkdownRemark.frontmatter.caption}
+                  </span>
+                </div>
               </Link>
             </div>
           ))}
@@ -86,13 +96,30 @@ export default function ITakePictures({ data }: TProps): ReactElement {
 // TODO take directly from sharp
 export const query = graphql`
   query {
-    allFile(filter: { absolutePath: { glob: "/**/images/itakepictures/*" } }) {
+    allFile(
+      filter: {
+        absolutePath: { glob: "/**/content/projects/itakepictures/*.md" }
+      }
+      sort: { fields: childMarkdownRemark___frontmatter___order }
+    ) {
       edges {
         node {
-          childImageSharp {
-            fluid {
-              originalName
-              ...GatsbyImageSharpFluid
+          childMarkdownRemark {
+            id
+            frontmatter {
+              author
+              caption
+              order
+              timestamp
+              title
+              image {
+                childImageSharp {
+                  fluid {
+                    originalName
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }
