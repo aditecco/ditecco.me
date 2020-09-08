@@ -19,8 +19,8 @@ export default function BackButton({
 }: IOwnProps): ReactElement {
   return (
     <div className="BackButton" style={style || {}}>
-      <i className="material-icons">keyboard_backspace</i>
-      <Link to={target}>
+      <Link to={target} className="BackButtonLink">
+        <i className="material-icons">keyboard_backspace</i>
         <span className="label">{label || "Back"}</span>
       </Link>
     </div>

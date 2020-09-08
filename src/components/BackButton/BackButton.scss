@@ -5,10 +5,7 @@ BackButton
 @import "../../styles/logic";
 
 .BackButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 2px 6px;
+  display: inline-block;
   border: 2px solid transparent;
   border-radius: 4px;
   font-family: "Roboto", sans-serif;
@@ -24,12 +21,17 @@ BackButton
     color: $asphalt;
   }
 
-  a {
+  .BackButtonLink {
     @extend %resetAnchors;
-    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2px 6px;
+    border: 2px solid transparent;
   }
 
   .label {
+    margin-left: 6px;
     text-transform: capitalize;
   }
 }
