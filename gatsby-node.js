@@ -30,9 +30,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
+/**
+ * createPages
+ */
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const result = await graphql(`
+  const blogPages = await graphql(`
     query {
       allMarkdownRemark(
         filter: { fileAbsolutePath: { glob: "/**/blog/**/*" } }
@@ -59,10 +62,55 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+
+  const iTakePicturesPages = await graphql(`
+    query {
+      allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { glob: "/**/projects/itakepictures/**/*" }
+        }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              author
+              caption
+              image {
+                childImageSharp {
+                  fluid {
+                    originalName
+                  }
+                }
+              }
+              order
+              timestamp
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  blogPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/BlogPost/BlogPost.tsx`),
+      context: {
+        node,
+      },
+    })
+  })
+
+  iTakePicturesPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path:
+        `/projects/itakepictures/photo/` +
+        node.frontmatter.caption.replace(" ", "-"),
+      component: path.resolve(
+        `./src/templates/ITakePicturesPost/ITakePicturesPost.tsx`
+      ),
       context: {
         node,
       },
