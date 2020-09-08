@@ -1,3 +1,33 @@
 /* ---------------------------------
 ITakePicturesPost
 --------------------------------- */
+
+@import "../../styles/logic";
+
+.ITakePicturesPost {
+  background-color: #111;
+  height: 100vh;
+
+  .wrapper {
+    @include container(960px);
+    padding: rel(20) 0;
+  }
+
+  .postHeader {
+    padding: rel(12) rel(24);
+    border-left: 3px solid gold;
+
+    .postTitle {
+      margin: 0;
+      text-transform: capitalize;
+      font-size: rel(20);
+      font-family: monospace;
+      font-weight: 400;
+      color: #e2e2e2;
+    }
+  }
+
+  .imageContainer {
+    padding: rel(20) 0 rel(80);
+  }
+}
