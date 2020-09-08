@@ -45,9 +45,13 @@ export default function Projects({ data }: TProps): ReactElement {
       title="Projects index"
       content={[
         {
-          id: "0",
+          id: "4b2b81a2037543969db96dfdfc9f7fe7",
           fields: { slug: "/projects/itakepictures/" },
-          frontmatter: { title: "I take pictures" },
+          frontmatter: {
+            title: "I take pictures",
+            timestamp: "",
+            tags: "photography",
+          },
           timestamp: "",
           tags: "projects",
         },
