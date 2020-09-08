@@ -6,21 +6,21 @@
 
 // You can delete this file if you're not using it
 
-// exports.onCreateNode = ({ node }) => {
-// }
-
 const path = require("path")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+/**
+ * onCreateNode
+ */
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
+  // TODO execute only on /blog posts
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `content` })
 
     const slugParts = slug.split("--")
 
-    console.log(slug, slugParts)
     createNodeField({
       node,
       name: `slug`,
