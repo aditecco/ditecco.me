@@ -60,10 +60,9 @@ export default function ITakePictures({ data }: TProps): ReactElement {
               }
             >
               <Link
-                to={`/projects/itakepictures/photo/${edge.node.childMarkdownRemark.frontmatter.caption.replace(
-                  " ",
-                  "-"
-                )}`}
+                to={`/projects/itakepictures/photo/${edge.node.childMarkdownRemark.frontmatter.caption
+                  .toLowerCase()
+                  .replace(" ", "-")}`}
                 state={{
                   image:
                     edge.node.childMarkdownRemark.frontmatter.image

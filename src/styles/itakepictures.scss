@@ -107,14 +107,14 @@ ITakePictures
     left: 0;
     right: 0;
     color: #f1f1f1;
-    background-color: rgba(0, 0, 0, 0.25);
 
     span {
-      display: block;
-      padding: rel(12) rel(6) rel(12) rel(16);
+      display: inline-block;
+      padding: rel(12) rel(24);
       border-left: 3px solid gold;
       text-transform: capitalize;
       font-size: rel(14);
+      background-color: rgba(0, 0, 0, 0.25);
     }
   }
 
