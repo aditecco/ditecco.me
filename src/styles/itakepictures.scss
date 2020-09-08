@@ -13,6 +13,14 @@ ITakePictures
     background-color: #000;
   }
 
+  .mobileToggle {
+    display: none;
+
+    @media screen and (max-width: 425px) {
+      display: block;
+    }
+  }
+
   .wrapper {
     font-family: MONOSPACE;
     color: #444;
