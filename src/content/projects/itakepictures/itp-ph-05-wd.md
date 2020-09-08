@@ -1,8 +1,8 @@
 ---
 author: Alessandro Di Tecco
-caption: "ripped"
+caption: "Red"
 image: ../../../images/itakepictures/itp-ph-05-wd.jpg
-order: 13
+order: 12
 timestamp: 7 Sep 2020
-title: "Ripped"
+title: "Red"
 ---

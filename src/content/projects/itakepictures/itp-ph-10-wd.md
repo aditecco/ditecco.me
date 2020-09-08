@@ -1,8 +1,8 @@
 ---
 author: Alessandro Di Tecco
-caption: "astratto 20"
+caption: "Lights"
 image: ../../../images/itakepictures/itp-ph-10-wd.jpg
-order: 20
+order: 19
 timestamp: 7 Sep 2020
-title: "Astratto 20"
+title: "Lights"
 ---
