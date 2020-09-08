@@ -104,15 +104,15 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   iTakePicturesPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const slug = node.frontmatter.caption.toLowerCase().replace(" ", "-")
     createPage({
-      path:
-        `/projects/itakepictures/photo/` +
-        node.frontmatter.caption.replace(" ", "-"),
+      path: `/projects/itakepictures/photo/` + slug,
       component: path.resolve(
         `./src/templates/ITakePicturesPost/ITakePicturesPost.tsx`
       ),
       context: {
         node,
+        slug,
       },
     })
   })
