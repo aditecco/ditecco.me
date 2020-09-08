@@ -5,7 +5,6 @@ ITakePictures
 import React, { ReactElement } from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import posts from "../../content/projects/itakepictures/data"
 import "../../styles/itakepictures.scss"
 import BackButton from "../../components/BackButton/BackButton"
 
