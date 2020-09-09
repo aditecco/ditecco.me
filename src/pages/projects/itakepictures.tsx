@@ -15,7 +15,7 @@ interface IGatsbyProps {
 }
 
 interface IGraphQLQueryResponseNode {
-  node: {}
+  node: {} // TODO
 }
 
 type TProps = IOwnProps & IGatsbyProps

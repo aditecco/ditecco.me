@@ -55,7 +55,8 @@ export default function ITakePicturesPost({
         </header>
 
         <div className="imageContainer">
-          <Img fluid={location.state.image} fadeIn />
+          {/* TODO */}
+          <Img fluid={(location.state && location.state.image) || ""} fadeIn />
         </div>
       </div>
     </div>

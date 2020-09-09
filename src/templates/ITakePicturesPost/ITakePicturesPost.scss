@@ -6,7 +6,7 @@ ITakePicturesPost
 
 .ITakePicturesPost {
   background-color: #111;
-  height: 100vh;
+  min-height: 100vh;
 
   .wrapper {
     @include container(960px);
