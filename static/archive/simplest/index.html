@@ -1,173 +1,275 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-<meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<title>User Interface Design for web &amp; mobile applications. | Simplest</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>
+      User Interface Design for web &amp; mobile applications. | Simplest
+    </title>
 
+    <meta
+      name="description"
+      content="Simplest is Alessandro Di Tecco's User Interface Design studio."
+    />
 
-	<meta name="description" content="Simplest is Alessandro Di Tecco's User Interface Design studio." />
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans:300|Roboto:400,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/spl-home.css" />
 
+    <style>
+      .notice {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px 40px;
+        z-index: 1;
+        box-shadow: 0 4px 25px 15px rgba(0, 0, 0, 0.3);
+      }
 
+      .notice > * {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial,
+          sans-serif;
+        color: whitesmoke;
+        line-height: 1.6;
+      }
 
-		<link href='https://fonts.googleapis.com/css?family=Work+Sans:300|Roboto:400,300' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/spl-home.css">
+      .notice .notice-title {
+        display: inline-block;
+        padding-bottom: 6px;
+        text-transform: capitalize;
+        color: #777;
+        margin-top: 0;
+        border-bottom: 1px dashed #444;
+        font-size: 16px;
+      }
 
-		<!-- GA trk -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-57098011-1', 'auto');ga('send', 'pageview');
-</script>
-	</head>
+      .notice .notice-body {
+        margin-bottom: 0;
+        font-weight: 300;
+        font-size: 15px;
+      }
 
-	<body>
-		<!-- /// header-nav ///  -->
-		<header id="top">
-			<div class="wrapper">
-					<a href="#top" class="logo js-scroll">
-						<img src="img/spl-logo-v2.svg" width="123px" height="17px" alt="Simplest UI Design">
-					</a>
-			</div>
-		</header>
+      @media screen and (max-width: 768px) {
+        .notice {
+          bottom: 10px;
+          right: 10px;
+          left: 10px;
+          padding: 20px;
+          max-width: 180px;
+        }
+      }
+    </style>
+  </head>
 
-		<!-- /// hero ///  -->
-		<section>
-			<div class="hero">
-				<div class="hero-inner wrapper">
-					<h1> User Interface Design for web &amp; mobile applications. </h1>
+  <body>
+    <div class="notice">
+      <h6 class="notice-title">Notice</h6>
+      <p class="notice-body">
+        This website has been archived. Data could be incomplete, inaccurate, or
+        a placeholder.
+      </p>
+    </div>
 
+    <!-- /// header-nav ///  -->
+    <header id="top">
+      <div class="wrapper">
+        <a href="#top" class="logo js-scroll">
+          <img
+            src="img/spl-logo-v2.svg"
+            width="123px"
+            height="17px"
+            alt="Simplest UI Design"
+          />
+        </a>
+      </div>
+    </header>
 
+    <!-- /// hero ///  -->
+    <section>
+      <div class="hero">
+        <div class="hero-inner wrapper">
+          <h1>User Interface Design for web &amp; mobile applications.</h1>
 
+          <p>
+            I’m Alessandro Di Tecco and this is Simplest, my UI Design studio. I
+            specialize in User Interface Design for web &amp; mobile apps.
+            <span class="rhidden"
+              >I have a passion for creating products and that’s exactly what
+              I’ve been doing in the past 6 years, first as a freelancer, then
+              as an entrepreneur.</span
+            >
+            <a href="about/"
+              >More
+              <img
+                src="img/spl-dots.svg"
+                width="25.2px"
+                height="12.6px"
+                class="dots"
+            /></a>
+          </p>
+        </div>
+      </div>
+    </section>
 
-<p>I’m Alessandro Di Tecco and this is Simplest, my UI Design studio. I specialize in User Interface Design for web &amp; mobile apps. <span class="rhidden">I have a passion for creating products and that’s exactly what I’ve been doing in the past 6 years, first as a freelancer, then as an entrepreneur.</span> <a href="about/">More <img src="img/spl-dots.svg" width="25.2px" height="12.6px" class="dots" /></a></p>
+    <!-- /// work ///  -->
+    <main>
+      <section id="work">
+        <div class="wrapper">
+          <ol class="work-featured-list">
+            <li class="work-featured-item">
+              <a
+                href="work/geekville/"
+                alt="Geekville Case Study, by Simplest.io"
+              >
+                <img
+                  src="img/gvl-hp-feat.png"
+                  alt="Geekville Case Study, by Simplest.io"
+                  width="962"
+                  height="541"
+                />
+                <div class="work-featured-inner">
+                  <h5>Geekville</h5>
+                </div>
+              </a>
+            </li>
 
+            <li class="work-featured-item">
+              <a href="work/3wine/" alt="3Wine Case Study, by Simplest.io">
+                <img
+                  class="lazyload"
+                  data-src="img/3wn-hp-feat.png"
+                  alt="3Wine Case Study, by Simplest.io"
+                  width="962"
+                  height="541"
+                />
+                <noscript>
+                  <img
+                    src="img/3wn-hp-feat.png"
+                    alt="3Wine Case Study, by Simplest.io"
+                    width="962"
+                    height="541"
+                  />
+                </noscript>
+                <div class="work-featured-inner">
+                  <h5>3Wine</h5>
+                </div>
+              </a>
+            </li>
 
-				</div>
-			</div>
-		</section>
+            <li class="work-featured-item">
+              <a
+                href="work/save-the-mom/"
+                alt="Save The Mom Case Study, by Simplest.io"
+              >
+                <img
+                  class="lazyload"
+                  data-src="img/stm-hp-feat.png"
+                  alt="Save The Mom Case Study, by Simplest.io"
+                  width="962"
+                  height="541"
+                />
+                <noscript>
+                  <img
+                    src="img/stm-hp-feat.png"
+                    alt="Save The Mom Case Study, by Simplest.io"
+                    width="962"
+                    height="541"
+                  />
+                </noscript>
+                <div class="work-featured-inner">
+                  <h5>Save The Mom</h5>
+                </div>
+              </a>
+            </li>
 
-		<!-- /// work ///  -->
-		<main>
-			<section id="work">
-	<div class="wrapper">
-		<ol class="work-featured-list">
+            <li class="work-featured-item">
+              <a
+                href="work/curricoolum/"
+                alt="Curricoolum Case Study, by Simplest.io"
+              >
+                <img
+                  class="lazyload"
+                  data-src="img/curr-hp-feat.png"
+                  alt="Curricoolum Case Study, by Simplest.io"
+                  width="962"
+                  height="541"
+                />
+                <noscript>
+                  <img
+                    src="img/curr-hp-feat.png"
+                    alt="Curricoolum Case Study, by Simplest.io"
+                    width="962"
+                    height="541"
+                  />
+                </noscript>
+                <div class="work-featured-inner">
+                  <h5>Curricoolum</h5>
+                </div>
+              </a>
+            </li>
+          </ol>
+        </div>
 
+        <div class="work-featured-additional">
+          <h4>
+            <a href="work/" target="_self">See more</a>
+          </h4>
+          <img src="img/spl-dots.svg" width="25.2px" height="12.6px" />
+        </div>
+      </section>
+    </main>
 
-					<li class="work-featured-item">
-						<a href="work/geekville/" alt="Geekville Case Study, by Simplest.io">
-							<img src="img/gvl-hp-feat.png" alt="Geekville Case Study, by Simplest.io" width="962" height="541">
-							<div class="work-featured-inner">
-								<h5>Geekville</h5>
-							</div>
-						</a>
-					</li>
+    <!-- /// contacts ///  -->
+    <section id="contacts">
+      <div class="wrapper">
+        <ul class="contact-list">
+          <li>
+            <h4>Contacts</h4>
+            <p class="small-txt">
+              You can contact me via email. Please expect a 24-48 hours
+              turnaround time.
+            </p>
+            <a href=""></a>
+          </li>
+          <li>
+            <a class="btn btn-cta" href="#">Send me an e-mail</a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- /// footer ///  -->
+    <footer>
+      <div class="wrapper">
+        <small>
+          &copy;2011 &mdash; 2018 Simplest by
+          <a href="#">Alessandro Di Tecco</a>&comma; All rights reserved. &bull;
+          Unless otherwise noted, all work displayed on this website is the
+          author's original creation. &bull;
+          <a href="/archive/simplest/bicycles/" target="_blank"
+            >Do not click this!</a
+          >
+          &bull; v2.6.8, last update: Mon, 13 Aug 2018 03:04:55 +0200
+        </small>
+      </div>
+    </footer>
 
-
-					<li class="work-featured-item">
-						<a href="work/3wine/" alt="3Wine Case Study, by Simplest.io">
-							<img class="lazyload" data-src="img/3wn-hp-feat.png" alt="3Wine Case Study, by Simplest.io" width="962" height="541">
-							<noscript>
-								<img src="img/3wn-hp-feat.png" alt="3Wine Case Study, by Simplest.io" width="962" height="541">
-							</noscript>
-							<div class="work-featured-inner">
-								<h5>3Wine</h5>
-							</div>
-						</a>
-					</li>
-
-
-
-					<li class="work-featured-item">
-						<a href="work/save-the-mom/" alt="Save The Mom Case Study, by Simplest.io">
-							<img class="lazyload" data-src="img/stm-hp-feat.png" alt="Save The Mom Case Study, by Simplest.io" width="962" height="541">
-							<noscript>
-								<img src="img/stm-hp-feat.png" alt="Save The Mom Case Study, by Simplest.io" width="962" height="541">
-							</noscript>
-							<div class="work-featured-inner">
-								<h5>Save The Mom</h5>
-							</div>
-						</a>
-					</li>
-
-
-
-					<li class="work-featured-item">
-						<a href="work/curricoolum/" alt="Curricoolum Case Study, by Simplest.io">
-							<img class="lazyload" data-src="img/curr-hp-feat.png" alt="Curricoolum Case Study, by Simplest.io" width="962" height="541">
-							<noscript>
-								<img src="img/curr-hp-feat.png" alt="Curricoolum Case Study, by Simplest.io" width="962" height="541">
-							</noscript>
-							<div class="work-featured-inner">
-								<h5>Curricoolum</h5>
-							</div>
-						</a>
-					</li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</ol>
-	</div>
-
-	<div class="work-featured-additional">
-		<h4>
-			<a href="work/" target="_self">See more</a>
-		</h4>
-		<img src="img/spl-dots.svg" width="25.2px" height="12.6px">
-		</a>
-	</div>
-</section>
-
-		</main>
-
-		<!-- /// contacts ///  -->
-		<section id="contacts">
-			<div class="wrapper">
-				<ul class="contact-list">
-					<li>
-						<h4>Contacts</h4>
-						<p class="small-txt">You can contact me via email. Please expect a 24-48 hours turnaround time.</p>
-						<a href=""></a>
-					</li>
-					<li>
-						<a class="btn btn-cta" href="#">Send me an e-mail</a>
-					</li>
-				</ul>
-			</div>
-		</section>
-
-
-
-
-<!-- /// footer ///  -->
-<footer>
-	<div class="wrapper">
-		<small>
-			&copy;2011 &mdash; 2018 Simplest by <a href="#">Alessandro Di Tecco</a>&comma; All rights reserved. &bull; Unless otherwise noted, all work displayed on this website is the author's original creation. &bull; <a href="/archive/simplest/bicycles/" target="_blank">Do not click this!</a> &bull; v2.6.8, last update: Mon, 13 Aug 2018 03:04:55 +0200
-		</small>
-	</div>
-</footer>
-
-		<script type="text/javascript" src="js/lazyload.min.js"></script>
-		<script>
-			/* init lazyload */
-			if (lazyload) { console.info('Lazyload is active.'); }
-			lazyload();
-		</script>
-	</body>
+    <script type="text/javascript" src="js/lazyload.min.js"></script>
+    <script>
+      /* init lazyload */
+      if (lazyload) {
+        console.info("Lazyload is active.")
+      }
+      lazyload()
+    </script>
+  </body>
 </html>
