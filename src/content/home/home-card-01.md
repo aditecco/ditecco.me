@@ -6,7 +6,7 @@ title: ""
 subtitle: ""
 body: ""
 tags: []
-heroImg: ""
+heroImg:
 heroAlt: ""
 order: 1
 ---

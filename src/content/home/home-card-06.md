@@ -1,12 +1,12 @@
 ---
 master: false
 expanded: true
-href: "/archive/the-collective/"
-title: "The Collective"
-subtitle: "work · 2012–2013"
-body: "The first authentic coworking space in Verona."
+href: "/archive/the-digital-league/"
+title: "The Digital League"
+subtitle: "work · 2011–2013"
+body: "A community for tech pros & innovators in the Verona area."
 tags: ["community"]
-heroImg: "../../images/home/tc-tshirt-2.jpg"
-heroAlt: "The Collective T-Shirt"
-order: 6
+heroImg: ../../images/home/tdl-hero.jpg
+heroAlt: "The Digital League's Community"
+order: 7
 ---

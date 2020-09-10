@@ -6,7 +6,7 @@ title: "Résumé"
 subtitle: "work"
 body: "Read more about my current & past activities."
 tags: ["résumé & cv"]
-heroImg: ""
+heroImg:
 heroAlt: ""
 order: 2
 ---

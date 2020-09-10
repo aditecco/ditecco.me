@@ -1,12 +1,12 @@
 ---
 master: false
-expanded: true
-href: "/projects/itakepictures/"
-title: "I take pictures"
+expanded: false
+href: "/blog"
+title: "Blog"
 subtitle: "projects"
-body: "A mini-site for my experiments in photography."
-tags: ["photography"]
-heroImg: "../../images/home/itp-ph-05-sq.jpg"
-heroAlt: "Abstract photography by Alessandro Di Tecco"
-order: 8
+body: "Thoughts about technology, web development, and more."
+tags: ["writing"]
+heroImg:
+heroAlt: ""
+order: 9
 ---

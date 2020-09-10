@@ -1,12 +1,12 @@
 ---
 master: false
 expanded: true
-href: "/archive/the-digital-league/"
-title: "The Digital League"
-subtitle: "work · 2011–2013"
-body: "A community for tech pros & innovators in the Verona area."
-tags: ["community"]
-heroImg: "../../images/home/tdl-hero.jpg"
-heroAlt: "The Digital League's Community"
-order: 7
+href: "/projects/itakepictures/"
+title: "I take pictures"
+subtitle: "projects"
+body: "A mini-site for my experiments in photography."
+tags: ["photography"]
+heroImg: ../../images/home/itp-ph-05-sq.jpg
+heroAlt: "Abstract photography by Alessandro Di Tecco"
+order: 8
 ---

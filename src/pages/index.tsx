@@ -1,19 +1,67 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import cards from "../content/home/cards"
 import { GITLAB_URL, TWITTER_URL } from "../constants"
 import "../styles/home.scss"
+import Img from "gatsby-image"
 
-export default function IndexPage({ data }) {
-  console.log(data)
+interface IOwnProps {}
 
+interface IGatsbyProps {
+  data: {
+    allFile: {
+      edges: IGraphQLQueryResponseNode[]
+    }
+  }
+}
+
+interface IGraphQLQueryResponseNode {
+  node: {
+    childMarkdownRemark: {
+      id: string
+      frontmatter: {
+        master: boolean
+        expanded: boolean
+        href: string
+        title: string
+        subtitle: string
+        body: string
+        tags: string[]
+        heroImg: "" // TODO
+        heroAlt: string
+        order: number
+        image: {
+          childImageSharp: {
+            fixed: {
+              originalName: string
+              // ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+type TProps = IOwnProps & IGatsbyProps
+
+export default function IndexPage({
+  data: {
+    allFile: { edges: cards },
+  },
+}: TProps) {
   return (
     <Layout title="Home">
       <div className="Home">
         <main className="card-list-container">
           <ul className="card-list">
-            {cards.map((card, i) => {
+            {cards.map(card => {
+              const {
+                node: {
+                  childMarkdownRemark: { id, frontmatter },
+                },
+              } = card
+
               const {
                 master,
                 expanded,
@@ -24,11 +72,11 @@ export default function IndexPage({ data }) {
                 tags,
                 heroImg,
                 heroAlt,
-              } = card
+              } = frontmatter
 
               return (
                 <li
-                  key={i}
+                  key={id}
                   className={`card-list-item${
                     master
                       ? " card-list-item--master card-list-item--3rows"
@@ -49,7 +97,7 @@ export default function IndexPage({ data }) {
                         </div>
                       ) : expanded ? (
                         <div className="card-list-item-hero">
-                          <img src={heroImg} alt={heroAlt} />
+                          <Img fixed={heroImg.childImageSharp.fixed} />
                         </div>
                       ) : null}
 
@@ -143,17 +191,16 @@ export const query = graphql`
               subtitle
               body
               tags
-              heroImg
-              heroAlt
-              order
-              image {
+              heroImg {
                 childImageSharp {
-                  fixed {
+                  fixed(width: 300, height: 208) {
                     originalName
                     ...GatsbyImageSharpFixed
                   }
                 }
               }
+              heroAlt
+              order
             }
           }
         }
