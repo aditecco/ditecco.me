@@ -1,11 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import cards from "../content/home/cards"
 import { GITLAB_URL, TWITTER_URL } from "../constants"
 import "../styles/home.scss"
 
-export default function IndexPage() {
+export default function IndexPage({ data }) {
+  console.log(data)
+
   return (
     <Layout title="Home">
       <div className="Home">
@@ -121,3 +123,41 @@ export default function IndexPage() {
     </Layout>
   )
 }
+
+// homepage query
+export const query = graphql`
+  query {
+    allFile(
+      filter: { absolutePath: { glob: "/**/content/home/*.md" } }
+      sort: { fields: childMarkdownRemark___frontmatter___order }
+    ) {
+      edges {
+        node {
+          childMarkdownRemark {
+            id
+            frontmatter {
+              master
+              expanded
+              href
+              title
+              subtitle
+              body
+              tags
+              heroImg
+              heroAlt
+              order
+              image {
+                childImageSharp {
+                  fixed {
+                    originalName
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
