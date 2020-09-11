@@ -28,7 +28,7 @@ interface IGraphQLQueryResponseNode {
       language: string
       timestamp: string
       author: string
-      tags: string
+      tags: string[]
     }
   }
 }

@@ -23,7 +23,7 @@ export interface ContentIndexItemProps {
   slug: string
   timestamp: string
   title: string
-  tags: string
+  tags: string[]
 }
 
 // we export the default list item,
@@ -42,7 +42,11 @@ export function ContentIndexItem({
         <article className="index-item-inner">
           <span className="index-item-timestamp">{timestamp}</span>
           <h3 className="index-item-title">{title}</h3>
-          <span className="index-item-tag">{tags}</span>
+          <ul className="index-item-tag-list">
+            {tags.map(tag => (
+              <li className="index-item-tag">{tag}</li>
+            ))}
+          </ul>
         </article>
       </Link>
     </li>

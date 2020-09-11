@@ -71,6 +71,7 @@
           .index-item-title {
             margin: 0 0 0.8em;
           }
+
           // redundant rules
           .index-item-title {
             @include setFonts(
@@ -84,24 +85,35 @@
             font-size: 1.25em;
             text-transform: capitalize;
           }
+
           .index-item-timestamp {
             @include setFonts(16, "Roboto", $utility-light-gray, center, 400);
             // remove
             font-size: 1em;
           }
-          .index-item-tag {
+
+          .index-item-tag-list {
             // check, tr, normalize
             // using the same tag as the one used in homepage
             // make this into a component and store in separate file (?)
-            padding: 0.2em 1em;
-            border: 2px solid $utility-light-gray;
-            border-radius: 20px;
-            font-family: "Montserrat", sans-serif;
-            font-weight: 400;
-            font-size: 0.9em;
-            letter-spacing: 0.025em;
-            text-transform: uppercase;
-            color: $utility-light-gray;
+            @include resetBox(0, 0, true);
+
+            .index-item-tag {
+              display: inline-block;
+              padding: 0.2em 1em;
+              border: 2px solid $utility-light-gray;
+              border-radius: 20px;
+              font-family: "Montserrat", sans-serif;
+              font-weight: 400;
+              font-size: 0.9em;
+              letter-spacing: 0.025em;
+              text-transform: uppercase;
+              color: $utility-light-gray;
+
+              + .index-item-tag {
+                margin-left: 6px;
+              }
+            }
           }
         }
       }

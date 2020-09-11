@@ -27,7 +27,7 @@ interface IGraphQLQueryResponseNode {
       language: string
       timestamp: string
       author: string
-      tags: string
+      tags: string[]
     }
   }
 }
@@ -50,10 +50,8 @@ export default function Projects({ data }: TProps): ReactElement {
           frontmatter: {
             title: "I take pictures",
             timestamp: "",
-            tags: "photography",
+            tags: ["photography"],
           },
-          timestamp: "",
-          tags: "projects",
         },
       ]}
       contentRenderer={_ => (
