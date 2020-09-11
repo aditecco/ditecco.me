@@ -81,6 +81,7 @@ home.scss
     @media (max-width: 340px) {
       padding: 0 10px;
     }
+
     .card-list-item {
       border-radius: 4px;
       border-bottom: 4px solid rgba($clouds, 0.99);
@@ -93,30 +94,38 @@ home.scss
         border-bottom: 4px solid $accent-bright;
         transform: translateY(10px);
       }
+
       article {
         height: 100%;
       }
+
       .card-list-item-body {
         @include setFlexbox(column nowrap, space-evenly, flex-start);
         height: 100%;
         padding: 0 20px;
+
         & > * {
           margin: 0;
         }
+
         h3 {
           color: black;
         }
+
         h5 {
           color: $silver;
           text-transform: uppercase;
         }
       }
+
       &.card-list-item--2rows {
         grid-row-end: span 2;
+
         .card-list-item-hero,
         .card-list-item-body {
           height: 50%;
         }
+
         .card-list-item-hero {
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
@@ -127,6 +136,7 @@ home.scss
           }
         }
       }
+
       &.card-list-item--3rows {
         grid-row-end: span 3;
       }
@@ -140,6 +150,7 @@ home.scss
   @supports not (display: grid) {
     .card-list {
       @include setFlexbox(row wrap, flex-start, flex-start);
+
       .card-list-item {
         width: 300px;
         height: 200px;
@@ -147,16 +158,19 @@ home.scss
         &:nth-child(3n) {
           margin-right: 0;
         }
+
         &.card-list-item--2rows {
           // for compat
           height: 400px;
           height: calc(200px * 2);
         }
+
         &.card-list-item--3rows {
           // for compat
           height: 600px;
           height: calc(200px * 3);
         }
+
         @media (max-width: 996px) {
           // find a better way for :162
           &:nth-child(3) {
@@ -166,6 +180,7 @@ home.scss
             margin-right: 0;
           }
         }
+
         @media (max-width: 660px) {
           // selects all elems
           // must use pseudo-sel for specificity,
@@ -192,11 +207,13 @@ home.scss
     letter-spacing: 0.025em;
     text-transform: uppercase;
     color: $silver;
+
     // try to name all colors
     &.card-list-item-tag--featured {
       color: #470ff4;
       border: 2px solid #470ff4;
     }
+
     &.card-list-item-tag--archived {
       color: $deepPurple;
       border: 2px solid $deepPurple;
@@ -213,6 +230,7 @@ home.scss
       border-bottom: 4px solid rgba($clouds, 0.99);
       transform: none;
     }
+
     article {
       @include setFlexbox(column nowrap, center, center);
       a {
@@ -225,6 +243,7 @@ home.scss
         padding: 20px;
       }
     }
+
     .card-list-item-hero {
       width: 300px;
       height: 224px;
@@ -239,21 +258,30 @@ home.scss
         color: $utility-dim-white;
       }
     }
+
     .card-list-item-body {
       // nested flexbox, see @114
       flex-grow: 1;
+
       p {
-        margin: 0;
+        margin: 0 0 16px;
         line-height: 1.8;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
+
     .card-list-item-footer {
       @include setBorder(1px, solid, rgba($clouds, 0.99), top);
+
       h6 {
         margin: 0 0 10px;
         font-size: 12px;
         color: $font-color-secondary;
       }
+
       .contact-list {
         @include setFlexbox(row nowrap, space-evenly, center);
         @include setBox(0, 0, true);

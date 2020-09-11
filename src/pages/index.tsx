@@ -58,7 +58,7 @@ export default function IndexPage({
             {cards.map(card => {
               const {
                 node: {
-                  childMarkdownRemark: { id, frontmatter },
+                  childMarkdownRemark: { id, html: __html, frontmatter },
                 },
               } = card
 
@@ -97,36 +97,19 @@ export default function IndexPage({
                         </div>
                       ) : expanded ? (
                         <div className="card-list-item-hero">
-                          <Img fixed={heroImg.childImageSharp.fixed} />
+                          <Img
+                            fixed={heroImg.childImageSharp.fixed}
+                            alt={heroAlt}
+                          />
                         </div>
                       ) : null}
 
                       <div className="card-list-item-body">
                         {master && (
-                          <>
-                            <p>
-                              Hi there! I'm Alessandro Di Tecco, front-end
-                              developer.
-                            </p>
-
-                            <p>
-                              I love the open web and I'm passionate about
-                              building products &amp; experiences with code.
-                            </p>
-
-                            <p>
-                              This website is a collection of my most
-                              significant works and projects.
-                            </p>
-
-                            <p>
-                              To get in touch with me you can{" "}
-                              <a href="mailto:&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;">
-                                send me an email
-                              </a>{" "}
-                              (old fashioned!)
-                            </p>
-                          </>
+                          <div
+                            className="post-html"
+                            dangerouslySetInnerHTML={{ __html }}
+                          />
                         )}
 
                         {subtitle && <h5>{subtitle}</h5>}
@@ -183,6 +166,7 @@ export const query = graphql`
         node {
           childMarkdownRemark {
             id
+            html
             frontmatter {
               master
               expanded
@@ -193,7 +177,7 @@ export const query = graphql`
               tags
               heroImg {
                 childImageSharp {
-                  fixed(width: 300, height: 208) {
+                  fixed(width: 300, height: 208, quality: 90) {
                     originalName
                     ...GatsbyImageSharpFixed
                   }
