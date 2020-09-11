@@ -72,20 +72,29 @@ export default function BlogPost({
                 </span>
               </div>
 
-              <ul className="blog-post-tags">
+              {/* <ul className="blog-post-tags">
                 {tags.map(tag => (
                   <li className="blog-post-tag">{tag}</li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
           </header>
 
+          {/* POST CONTENT */}
           <div
             className="blog-post-body container"
             dangerouslySetInnerHTML={{ __html: node.html }}
           />
 
-          <div className="blog-post-footer">
+          <div className="blog-post-footer container">
+            <h6 className="footer-header">Filed under:</h6>
+
+            <ul className="blog-post-tags">
+              {tags.map(tag => (
+                <li className="blog-post-tag">{tag}</li>
+              ))}
+            </ul>
+
             <div className="blog-post-notes"></div>
           </div>
         </article>

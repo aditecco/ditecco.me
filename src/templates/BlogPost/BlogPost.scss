@@ -111,9 +111,12 @@ BlogPost
     }
   }
 
-  .blog-post-body {
+  .blog-post-body,
+  .blog-post-footer {
     padding: 40px emCalc(20, 16);
+  }
 
+  .blog-post-body {
     & > * {
       margin: 0 0 emCalc(10);
     }
@@ -277,6 +280,15 @@ BlogPost
   }
 
   .blog-post-footer {
+    border-top: 1px dotted $utility-light-gray;
+
+    .footer-header {
+      margin: 0 0 rel(2);
+      font-size: rel(15);
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
     .blog-post-notes {
       // need notes to test these rules!
       /*
