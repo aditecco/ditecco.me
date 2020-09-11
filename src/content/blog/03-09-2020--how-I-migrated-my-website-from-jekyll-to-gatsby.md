@@ -4,7 +4,7 @@ subtitle:
 language: EN
 timestamp: 30/08/2020
 author: Alessandro Di Tecco
-tags: ["meta"]
+tags: ["dev", "gatsby", "jekyll", "JAMStack"]
 ---
 
 It's still a work in progress, but I managed to finally migrate my website to Gatsby. While I write a blog post about the transition, please enjoy this filler text : )

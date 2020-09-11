@@ -24,7 +24,7 @@ interface IGatsbyProps {
         language: string
         timestamp: string
         author: string
-        tags: string
+        tags: string[]
       }
     }
   }
@@ -73,7 +73,9 @@ export default function BlogPost({
               </div>
 
               <ul className="blog-post-tags">
-                <li className="blog-post-tag">{tags}</li>
+                {tags.map(tag => (
+                  <li className="blog-post-tag">{tag}</li>
+                ))}
               </ul>
             </div>
           </header>
