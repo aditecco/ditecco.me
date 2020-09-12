@@ -71,12 +71,6 @@ export default function BlogPost({
                   {language === "EN" ? "English" : "Italiano"}
                 </span>
               </div>
-
-              {/* <ul className="blog-post-tags">
-                {tags.map(tag => (
-                  <li className="blog-post-tag">{tag}</li>
-                ))}
-              </ul> */}
             </div>
           </header>
 
