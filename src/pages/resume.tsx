@@ -33,6 +33,7 @@ type TProps = IOwnProps & IGatsbyProps
 export default function Resume({ data }: TProps): ReactElement {
   const [visibleStory, toggleVisibleStory] = useState({})
   const [lang, setLang] = useState("EN")
+  const [notif, setNotif] = useState("")
   const notifBar = useRef<HTMLDivElement>(null)
 
   // TODO
@@ -52,9 +53,33 @@ export default function Resume({ data }: TProps): ReactElement {
   /**
    * handles language switching
    */
-  function handleChangeLanguage() {
-    setLang(lang => (lang === "EN" ? "IT" : "EN"))
-    // also reset the toggle state
+  function handleChangeLanguage({ currentTarget }) {
+    const prevLang = currentTarget?.dataset?.language
+
+    if (!prevLang) {
+      return
+    }
+
+    switch (prevLang) {
+      case "IT":
+        setLang("EN")
+        setNotif("Changed language to English!")
+        break
+
+      case "EN":
+        setLang("IT")
+        setNotif("Lingua impostata ad italiano!")
+        break
+    }
+
+    // show notif, then hide it
+    notifBar.current.style.opacity = "100"
+
+    setTimeout(() => {
+      notifBar.current.style.opacity = "0"
+    }, 2000)
+
+    // reset the toggle state
     toggleVisibleStory({})
   }
 
@@ -148,21 +173,6 @@ export default function Resume({ data }: TProps): ReactElement {
     )
   }
 
-  useEffect(() => {
-    notifBar.current = document.querySelector(".notification-bar")
-  }, [])
-
-  useEffect(() => {
-    // TODO
-    if (lang) {
-      notifBar.current.style.opacity = "100"
-
-      setTimeout(() => {
-        notifBar.current.style.opacity = "0"
-      }, 2000)
-    }
-  }, [lang])
-
   return (
     <Layout title="Resume">
       <div className="Resume">
@@ -171,10 +181,8 @@ export default function Resume({ data }: TProps): ReactElement {
           &#x25B2; top
         </button>
 
-        <div className="notification-bar">
-          {lang === "EN"
-            ? "Changed language to English!"
-            : "Lingua impostata ad italiano!"}
+        <div className="notification-bar" ref={notifBar}>
+          {notif}
         </div>
 
         {/* NAV */}
@@ -188,7 +196,11 @@ export default function Resume({ data }: TProps): ReactElement {
             </li>
 
             <li>
-              <button className="lang-switcher" onClick={handleChangeLanguage}>
+              <button
+                className="lang-switcher"
+                onClick={handleChangeLanguage}
+                data-language={lang}
+              >
                 {lang === "EN" ? "Versione italiana" : "English version"}
 
                 <img
