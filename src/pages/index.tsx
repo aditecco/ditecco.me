@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { GITLAB_URL, TWITTER_URL } from "../constants"
 import "../styles/home.scss"
-import Img from "gatsby-image"
+import Img, { FixedObject, GatsbyImageProps } from "gatsby-image"
 
 interface IOwnProps {}
 
@@ -19,6 +19,7 @@ interface IGraphQLQueryResponseNode {
   node: {
     childMarkdownRemark: {
       id: string
+      html: string
       frontmatter: {
         master: boolean
         expanded: boolean
@@ -32,10 +33,7 @@ interface IGraphQLQueryResponseNode {
         order: number
         image: {
           childImageSharp: {
-            fixed: {
-              originalName: string
-              // ...GatsbyImageSharpFixed
-            }
+            fixed: FixedObject
           }
         }
       }
@@ -55,7 +53,7 @@ export default function IndexPage({
       <div className="Home">
         <main className="card-list-container">
           <ul className="card-list">
-            {cards.map(card => {
+            {cards.map((card: IGraphQLQueryResponseNode) => {
               const {
                 node: {
                   childMarkdownRemark: { id, html: __html, frontmatter },
@@ -88,7 +86,16 @@ export default function IndexPage({
                   <Link to={href}>
                     <article>
                       {master ? (
-                        <div className="card-list-item-hero">
+                        <div
+                          // TODO convert to Img?
+                          className="card-list-item-hero"
+                          style={{
+                            background: `linear-gradient(transparent, 50%, rgba(0, 0, 0, 0.6)) 0% 0% / cover, url(${heroImg.childImageSharp.fixed.src}) 50% center no-repeat, rgb(96, 125, 139)`,
+                            backgroundSize: `130% auto`,
+                            backgroundPositionX: `left`,
+                            backgroundPositionY: `bottom`,
+                          }}
+                        >
                           <h2>
                             Hi, I'm Alessandro
                             <br />
