@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import { GITLAB_URL, TWITTER_URL } from "../constants"
 import "../styles/home.scss"
 import Img, { FixedObject, GatsbyImageProps } from "gatsby-image"
+import masterHero from "../images/home/adt-hero.jpg"
 
 interface IOwnProps {}
 
@@ -90,10 +91,10 @@ export default function IndexPage({
                           // TODO convert to Img?
                           className="card-list-item-hero"
                           style={{
-                            background: `linear-gradient(transparent, 50%, rgba(0, 0, 0, 0.6)) 0% 0% / cover, url(${heroImg.childImageSharp.fixed.src}) 50% center no-repeat, rgb(96, 125, 139)`,
-                            backgroundSize: `130% auto`,
-                            backgroundPositionX: `left`,
-                            backgroundPositionY: `bottom`,
+                            background: `linear-gradient(transparent, 50%, rgba(0, 0, 0, 0.6)) 0% 0% / cover, url(${masterHero}) 50% center no-repeat, rgb(96, 125, 139)`,
+                            backgroundSize: `140% auto`,
+                            // backgroundPositionX: `left`,
+                            // backgroundPositionY: `bottom`,
                           }}
                         >
                           <h2>

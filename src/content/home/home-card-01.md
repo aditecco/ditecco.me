@@ -6,7 +6,7 @@ title: ""
 subtitle: ""
 body: ""
 tags: []
-heroImg: ../../images/home/adt-hero.jpg
+heroImg:
 heroAlt: ""
 order: 1
 ---
