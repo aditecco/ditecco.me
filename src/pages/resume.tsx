@@ -181,7 +181,10 @@ export default function Resume({ data }: TProps): ReactElement {
         <nav className="page-controls">
           <ul className="subtext">
             <li>
-              <Link to="/">&#8592; Back to homepage</Link>
+              <Link to="/" className="back-button">
+                <i className="material-icons">keyboard_backspace</i> Back to
+                homepage
+              </Link>
             </li>
 
             <li>
