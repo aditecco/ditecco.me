@@ -23,10 +23,10 @@ interface IGraphQLQueryResponseNode {
     childMarkdownRemark: {
       id: string
       frontmatter: {
-        author: string // not string?
+        author: string
         caption: string
         order: number
-        timestamp: string // not string?
+        timestamp: string
         title: string
         image: {
           childImageSharp: {
