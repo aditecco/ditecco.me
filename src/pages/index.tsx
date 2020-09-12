@@ -124,8 +124,10 @@ export default function IndexPage({
                         {body && <p>{body}</p>}
 
                         {tags.length
-                          ? tags.map(tag => (
-                              <span className="card-list-item-tag">{tag}</span>
+                          ? tags.map((tag, i) => (
+                              <span key={i} className="card-list-item-tag">
+                                {tag}
+                              </span>
                             ))
                           : null}
                       </div>
