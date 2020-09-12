@@ -4,23 +4,47 @@ ITakePictures
 
 import React, { ReactElement } from "react"
 import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import Img, { FluidObject } from "gatsby-image"
 import "../../styles/itakepictures.scss"
 import BackButton from "../../components/BackButton/BackButton"
 
 interface IOwnProps {}
 
 interface IGatsbyProps {
-  data // TODO the right type?
+  data: {
+    allFile: {
+      edges: IGraphQLQueryResponseNode[]
+    }
+  }
 }
 
 interface IGraphQLQueryResponseNode {
-  node: {} // TODO
+  node: {
+    childMarkdownRemark: {
+      id: string
+      frontmatter: {
+        author: string // not string?
+        caption: string
+        order: number
+        timestamp: string // not string?
+        title: string
+        image: {
+          childImageSharp: {
+            fluid: FluidObject
+          }
+        }
+      }
+    }
+  }
 }
 
 type TProps = IOwnProps & IGatsbyProps
 
-export default function ITakePictures({ data }: TProps): ReactElement {
+export default function ITakePictures({
+  data: {
+    allFile: { edges: images },
+  },
+}: TProps): ReactElement {
   return (
     <div className="ITakePictures">
       <BackButton
@@ -48,44 +72,48 @@ export default function ITakePictures({ data }: TProps): ReactElement {
         </header>
 
         <div className="container">
-          {data.allFile.edges.map(edge => (
-            <div
-              key={edge.node.childMarkdownRemark.id}
-              className={
-                edge.node.childMarkdownRemark.frontmatter.image.childImageSharp.fluid.originalName.includes(
-                  "-wd"
-                )
-                  ? "module full"
-                  : "module half"
-              }
-            >
-              <Link
-                to={`/projects/itakepictures/photo/${edge.node.childMarkdownRemark.frontmatter.caption
-                  .toLowerCase()
-                  .replace(" ", "-")}`}
-                state={{
-                  image:
-                    edge.node.childMarkdownRemark.frontmatter.image
-                      .childImageSharp.fluid,
-                }}
-              >
-                <Img
-                  fluid={
-                    edge.node.childMarkdownRemark.frontmatter.image
-                      .childImageSharp.fluid
-                  }
-                  fadeIn
-                  alt={edge.node.childMarkdownRemark.frontmatter.title}
-                />
+          {images.map((_image: IGraphQLQueryResponseNode) => {
+            const {
+              node: {
+                childMarkdownRemark: { id, frontmatter },
+              },
+            } = _image
 
-                <div className="caption">
-                  <span>
-                    {edge.node.childMarkdownRemark.frontmatter.caption}
-                  </span>
-                </div>
-              </Link>
-            </div>
-          ))}
+            const {
+              author,
+              caption,
+              order,
+              timestamp,
+              title,
+              image,
+            } = frontmatter
+
+            return (
+              <div
+                key={id}
+                className={
+                  image.childImageSharp.fluid.originalName.includes("-wd")
+                    ? "module full"
+                    : "module half"
+                }
+              >
+                <Link
+                  to={`/projects/itakepictures/photo/${caption
+                    .toLowerCase()
+                    .replace(" ", "-")}`}
+                  state={{
+                    image: image.childImageSharp.fluid,
+                  }}
+                >
+                  <Img fluid={image.childImageSharp.fluid} fadeIn alt={title} />
+
+                  <div className="caption">
+                    <span>{caption}</span>
+                  </div>
+                </Link>
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>
