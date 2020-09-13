@@ -1,0 +1,29 @@
+
+ditecco.me
+==========
+
+Fixes:
+  - master card link issue
+  - master card nested <a>s issue
+  - master card img flash
+  - font flashes (FOUT)
+  
+Features:
+  - add MDX support for blog posts (https://mdxjs.com/getting-started/gatsby)
+  - add syntax highlighting support for blog posts (https://highlightjs.org/)
+  
+Content:
+  - add new projects to home
+  - write a blog post about the migration
+
+Optims:
+  - gatsby source in multiple instances
+  - reorganize folders
+  - refactor CSS
+  - upgrade CSS lib
+  - resize & cut HP hero img
+  - re-export all HP hero images
+
+Backlog:
+  - port resume print stylesheet
+  - look into `gatsby-plugin-typography`
