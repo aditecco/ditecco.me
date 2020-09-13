@@ -166,10 +166,10 @@ export default function IndexPage({
 }
 
 // homepage query
-export const query = graphql`
-  query {
+export const homepageContentQuery = graphql`
+  {
     allFile(
-      filter: { absolutePath: { glob: "/**/content/home/*.md" } }
+      filter: { sourceInstanceName: { eq: "home" } }
       sort: { fields: childMarkdownRemark___frontmatter___order }
     ) {
       edges {

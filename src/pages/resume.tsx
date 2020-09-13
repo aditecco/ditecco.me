@@ -402,8 +402,8 @@ export default function Resume({ data }: TProps): ReactElement {
 Resume query
 --------------------------------- */
 
-export const query = graphql`
-  query {
+export const resumeContentQuery = graphql`
+  {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { glob: "/**/resume/**/*" } }
       sort: { fields: frontmatter___order }

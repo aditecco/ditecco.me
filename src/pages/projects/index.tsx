@@ -13,32 +13,11 @@ interface IGatsbyProps {
   data // TODO the right type?
 }
 
-interface IGraphQLQueryResponseNode {
-  node: {
-    id: string
-    timeToRead: number
-    excerpt: string
-    fields: {
-      slug: string
-    }
-    frontmatter: {
-      title: string
-      subtitle: string | null
-      language: string
-      timestamp: string
-      author: string
-      tags: string[]
-    }
-  }
-}
+interface IGraphQLQueryResponseNode {}
 
 type TProps = IOwnProps & IGatsbyProps
 
 export default function Projects({ data }: TProps): ReactElement {
-  // const {
-  //   allMarkdownRemark: { edges: posts },
-  // } = data
-
   // TODO get content dynamically
   return (
     <ContentIndex

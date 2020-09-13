@@ -124,9 +124,7 @@ export default function ITakePictures({
 export const query = graphql`
   query {
     allFile(
-      filter: {
-        absolutePath: { glob: "/**/content/projects/itakepictures/*.md" }
-      }
+      filter: { sourceInstanceName: { eq: "itakepictures" } }
       sort: { fields: childMarkdownRemark___frontmatter___order }
     ) {
       edges {
