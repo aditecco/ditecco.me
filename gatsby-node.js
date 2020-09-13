@@ -38,27 +38,29 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
  */
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+
+  // blog pages
   const blogPages = await graphql(`
-    query {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "/**/blog/**/*" } }
-      ) {
+    {
+      allFile(filter: { sourceInstanceName: { eq: "blog" } }) {
         edges {
           node {
-            id
-            html
-            timeToRead
-            excerpt
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              subtitle
-              language
-              timestamp
-              author
-              tags
+            childMarkdownRemark {
+              id
+              html
+              timeToRead
+              excerpt
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                subtitle
+                language
+                timestamp
+                author
+                tags
+              }
             }
           }
         }
@@ -66,29 +68,28 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  // ITakePictures pages
   const iTakePicturesPages = await graphql(`
-    query {
-      allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { glob: "/**/projects/itakepictures/**/*" }
-        }
-      ) {
+    {
+      allFile(filter: { sourceInstanceName: { eq: "itakepictures" } }) {
         edges {
           node {
-            id
-            frontmatter {
-              author
-              caption
-              image {
-                childImageSharp {
-                  fluid {
-                    originalName
+            childMarkdownRemark {
+              id
+              frontmatter {
+                author
+                caption
+                image {
+                  childImageSharp {
+                    fluid {
+                      originalName
+                    }
                   }
                 }
+                order
+                timestamp
+                title
               }
-              order
-              timestamp
-              title
             }
           }
         }
@@ -96,9 +97,10 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  blogPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  blogPages.data.allFile.edges.forEach(({ node }) => {
     createPage({
-      path: node.fields.slug,
+      // TODO add year /blog/<year>/<slug>
+      path: `/blog/${node.fields.slug}`,
       component: path.resolve(`./src/templates/BlogPost/BlogPost.tsx`),
       context: {
         node,
@@ -106,8 +108,10 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  iTakePicturesPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  iTakePicturesPages.data.allFile.edges.forEach(({ node }) => {
+    // TODO create slugs w/ createFilePath
     const slug = node.frontmatter.caption.toLowerCase().replace(" ", "-")
+
     createPage({
       path: `/projects/itakepictures/photo/` + slug,
       component: path.resolve(
