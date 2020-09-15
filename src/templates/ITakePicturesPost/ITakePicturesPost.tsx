@@ -13,14 +13,16 @@ interface IGatsbyProps {
   location
   pageContext: {
     node: {
-      id: string
-      frontmatter: {
-        author: string
-        caption: string
-        image: string
-        order: number
-        timestamp: string
-        title: string
+      childMarkdownRemark: {
+        id: string
+        frontmatter: {
+          author: string
+          caption: string
+          image: string
+          order: number
+          timestamp: string
+          title: string
+        }
       }
     }
   }
@@ -31,7 +33,9 @@ type TProps = IOwnProps & IGatsbyProps
 export default function ITakePicturesPost({
   location,
   pageContext: {
-    node: { frontmatter },
+    node: {
+      childMarkdownRemark: { frontmatter },
+    },
   },
 }: TProps): ReactElement {
   return (
