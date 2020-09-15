@@ -69,28 +69,26 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   const iTakePicturesPages = await graphql(`
-    query {
-      allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { glob: "/**/projects/itakepictures/**/*" }
-        }
-      ) {
+    {
+      allFile(filter: { sourceInstanceName: { eq: "itakepictures" } }) {
         edges {
           node {
-            id
-            frontmatter {
-              author
-              caption
-              image {
-                childImageSharp {
-                  fluid {
-                    originalName
+            childMarkdownRemark {
+              id
+              frontmatter {
+                author
+                caption
+                image {
+                  childImageSharp {
+                    fluid {
+                      originalName
+                    }
                   }
                 }
+                order
+                timestamp
+                title
               }
-              order
-              timestamp
-              title
             }
           }
         }
@@ -109,8 +107,11 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  iTakePicturesPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const slug = node.frontmatter.caption.toLowerCase().replace(" ", "-")
+  iTakePicturesPages.data.allFile.edges.forEach(({ node }) => {
+    // TODO create slugs w/ createFilePath
+    const slug = node.childMarkdownRemark.frontmatter.caption
+      .toLowerCase()
+      .replace(" ", "-")
     createPage({
       path: `/projects/itakepictures/photo/` + slug,
       component: path.resolve(
