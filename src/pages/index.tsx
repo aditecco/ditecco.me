@@ -33,10 +33,13 @@ interface IGraphQLQueryResponseNode {
         heroAlt: string
         order: number
         image: {
+        heroImg: {
           childImageSharp: {
             fixed: FixedObject
           }
         }
+        heroAlt: string
+        order: number
       }
     }
   }
