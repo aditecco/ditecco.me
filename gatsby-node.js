@@ -16,16 +16,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   // TODO execute only on /blog posts
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `content` })
+  if (
+    node.internal.type === `MarkdownRemark`
+    // && node.sourceInstanceName === "blog"
+  ) {
+    const slug = createFilePath({ node, getNode, basePath: `content/blog/` })
 
+    // blog posts will be conventionally named
+    // using this format: DD-MM-YYYY--title
     const slugParts = slug.split("--")
 
     createNodeField({
       node,
       name: `slug`,
-      value:
-        "/blog/" + slugParts.shift().match(/[\d]{4}/g) + "/" + slugParts.pop(),
+      value: slugParts.shift().match(/[\d]{4}/g) + "/" + slugParts.pop(),
     })
   }
 }
@@ -35,27 +39,28 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
  */
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+  // blog pages
   const blogPages = await graphql(`
-    query {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "/**/blog/**/*" } }
-      ) {
+    {
+      allFile(filter: { sourceInstanceName: { eq: "blog" } }) {
         edges {
           node {
-            id
-            html
-            timeToRead
-            excerpt
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              subtitle
-              language
-              timestamp
-              author
-              tags
+            childMarkdownRemark {
+              id
+              html
+              timeToRead
+              excerpt
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                subtitle
+                language
+                timestamp
+                author
+                tags
+              }
             }
           }
         }
@@ -93,9 +98,10 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  blogPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  blogPages.data.allFile.edges.forEach(({ node }) => {
     createPage({
-      path: node.fields.slug,
+      // TODO add year /blog/<year>/<slug>
+      path: `/blog/${node.childMarkdownRemark.fields.slug}`,
       component: path.resolve(`./src/templates/BlogPost/BlogPost.tsx`),
       context: {
         node,
