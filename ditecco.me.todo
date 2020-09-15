@@ -17,7 +17,6 @@ Content:
   - write a blog post about the migration
 
 Optims:
-  - gatsby source in multiple instances
   - reorganize folders
   - refactor CSS
   - upgrade CSS lib
@@ -27,3 +26,6 @@ Optims:
 Backlog:
   - port resume print stylesheet
   - look into `gatsby-plugin-typography`
+
+Archive:
+  ✔ gatsby source in multiple instances @done(20-09-16 00:17) @project(Optims)
