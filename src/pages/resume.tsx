@@ -139,6 +139,29 @@ export default function Resume({
   }
 
   /**
+   * sortStories
+   */
+  function sortStories(a, b) {
+    const {
+      node: {
+        childMarkdownRemark: {
+          frontmatter: { order: a_order },
+        },
+      },
+    } = a
+
+    const {
+      node: {
+        childMarkdownRemark: {
+          frontmatter: { order: b_order },
+        },
+      },
+    } = b
+
+    if (a_order < b_order) return -1
+  }
+
+  /**
    * renders data into resume stories
    */
   function renderStories({
@@ -379,8 +402,9 @@ export default function Resume({
                 )}
               </header>
 
-              {stories
+              {[...stories]
                 .filter(filterStoriesByLanguage)
+                .sort(sortStories)
                 .slice(0, 10)
                 .map(renderStories)}
 
@@ -395,8 +419,9 @@ export default function Resume({
                 </h1>
               </header>
 
-              {stories
+              {[...stories]
                 .filter(filterStoriesByLanguage)
+                .sort(sortStories)
                 .slice(10)
                 .map(renderStories)}
             </section>

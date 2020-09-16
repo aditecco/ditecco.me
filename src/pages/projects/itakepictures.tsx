@@ -45,6 +45,26 @@ export default function ITakePictures({
     allFile: { edges: images },
   },
 }: TProps): ReactElement {
+  function sortImages(a, b) {
+    const {
+      node: {
+        childMarkdownRemark: {
+          frontmatter: { order: a_order },
+        },
+      },
+    } = a
+
+    const {
+      node: {
+        childMarkdownRemark: {
+          frontmatter: { order: b_order },
+        },
+      },
+    } = b
+
+    if (a_order < b_order) return -1
+  }
+
   return (
     <div className="ITakePictures">
       <BackButton
@@ -72,48 +92,54 @@ export default function ITakePictures({
         </header>
 
         <div className="container">
-          {images.map((_image: IGraphQLQueryResponseNode) => {
-            const {
-              node: {
-                childMarkdownRemark: { id, frontmatter },
-              },
-            } = _image
+          {[...images]
+            .sort(sortImages)
+            .map((_image: IGraphQLQueryResponseNode) => {
+              const {
+                node: {
+                  childMarkdownRemark: { id, frontmatter },
+                },
+              } = _image
 
-            const {
-              author,
-              caption,
-              order,
-              timestamp,
-              title,
-              image,
-            } = frontmatter
+              const {
+                author,
+                caption,
+                order,
+                timestamp,
+                title,
+                image,
+              } = frontmatter
 
-            return (
-              <div
-                key={id}
-                className={
-                  image.childImageSharp.fluid.originalName.includes("-wd")
-                    ? "module full"
-                    : "module half"
-                }
-              >
-                <Link
-                  to={`/projects/itakepictures/photo/${caption
-                    .toLowerCase()
-                    .replace(" ", "-")}`}
-                  state={{
-                    image: image.childImageSharp.fluid,
-                  }}
+              return (
+                <div
+                  key={id}
+                  className={
+                    image.childImageSharp.fluid.originalName.includes("-wd")
+                      ? "module full"
+                      : "module half"
+                  }
                 >
-                  <Img fluid={image.childImageSharp.fluid} fadeIn alt={title} />
+                  <Link
+                    to={`/projects/itakepictures/photo/${caption
+                      .toLowerCase()
+                      .replace(" ", "-")}`}
+                    state={{
+                      image: image.childImageSharp.fluid,
+                    }}
+                  >
+                    <Img
+                      fluid={image.childImageSharp.fluid}
+                      fadeIn
+                      alt={title}
+                    />
 
-                  <div className="caption">
-                    <span>{caption}</span>
-                  </div>
-                </Link>
-              </div>
-            )
-          })}
+                    <div className="caption">
+                      <span>{caption}</span>
+                    </div>
+                  </Link>
+                </div>
+              )
+            })}
         </div>
       </div>
     </div>
