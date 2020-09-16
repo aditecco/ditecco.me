@@ -12,25 +12,35 @@ import "../styles/resume.scss"
 interface IOwnProps {}
 
 interface IGatsbyProps {
-  data // TODO the right type?
+  data: {
+    allFile: {
+      edges: IGraphQLQueryResponseNode[]
+    }
+  }
 }
 
 interface IGraphQLQueryResponseNode {
   node: {
-    id: string
-    html: string
-    frontmatter: {
-      order: number
-      title: string
-      subtitle: string
-      language: string
+    childMarkdownRemark: {
+      id: string
+      html: string
+      frontmatter: {
+        order: number
+        title: string
+        subtitle: string
+        language: string
+      }
     }
   }
 }
 
 type TProps = IOwnProps & IGatsbyProps
 
-export default function Resume({ data }: TProps): ReactElement {
+export default function Resume({
+  data: {
+    allFile: { edges: stories },
+  },
+}: TProps): ReactElement {
   const [visibleStory, toggleVisibleStory] = useState({})
   const [lang, setLang] = useState("EN")
   const [notif, setNotif] = useState("")
@@ -42,13 +52,11 @@ export default function Resume({ data }: TProps): ReactElement {
   const since = currYear - startYear
   // - var encodedEmail = '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;'
 
-  const {
-    allMarkdownRemark: { edges: stories },
-  } = data
-
   const storyIds = stories
     .filter(filterStoriesByLanguage)
-    .map((story: IGraphQLQueryResponseNode) => story.node.id)
+    .map(
+      (story: IGraphQLQueryResponseNode) => story.node.childMarkdownRemark.id
+    )
 
   /**
    * handles language switching
@@ -127,19 +135,20 @@ export default function Resume({ data }: TProps): ReactElement {
    * filters stories based on language
    */
   function filterStoriesByLanguage({ node }: IGraphQLQueryResponseNode) {
-    return node.frontmatter.language === lang
+    return node.childMarkdownRemark.frontmatter.language === lang
   }
 
   /**
    * renders data into resume stories
    */
-  function renderStories(
-    { node: { id, html, frontmatter } }: IGraphQLQueryResponseNode,
-    i
-  ) {
+  function renderStories({
+    node: {
+      childMarkdownRemark: { id, html: __html, frontmatter },
+    },
+  }: IGraphQLQueryResponseNode) {
     return (
       <div
-        key={i}
+        key={id}
         className="story-block"
         onClick={() =>
           toggleVisibleStory(visibleStories => ({
@@ -166,7 +175,7 @@ export default function Resume({ data }: TProps): ReactElement {
 
         {visibleStory[id] && (
           <div className="story-block-body">
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+            <div dangerouslySetInnerHTML={{ __html }} />
           </div>
         )}
       </div>
@@ -404,19 +413,21 @@ Resume query
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { glob: "/**/resume/**/*" } }
-      sort: { fields: frontmatter___order }
+    allFile(
+      filter: { sourceInstanceName: { eq: "resume" } }
+      sort: { fields: childMarkdownRemark___frontmatter___order }
     ) {
       edges {
         node {
-          id
-          html
-          frontmatter {
-            order
-            title
-            subtitle
-            language
+          childMarkdownRemark {
+            id
+            html
+            frontmatter {
+              order
+              title
+              subtitle
+              language
+            }
           }
         }
       }
