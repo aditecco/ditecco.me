@@ -70,7 +70,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const iTakePicturesPages = await graphql(`
     {
-      allFile(filter: { sourceInstanceName: { eq: "itakepictures" } }) {
+      allFile(
+        filter: { sourceInstanceName: { eq: "itakepictures" } }
+        sort: { fields: childMarkdownRemark___frontmatter___order }
+      ) {
         edges {
           node {
             childMarkdownRemark {
@@ -78,6 +81,9 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 author
                 caption
+                order
+                timestamp
+                title
                 image {
                   childImageSharp {
                     fluid {
@@ -85,9 +91,6 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                   }
                 }
-                order
-                timestamp
-                title
               }
             }
           }
