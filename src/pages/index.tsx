@@ -53,6 +53,25 @@ export default function IndexPage({
     allFile: { edges: cards },
   },
 }: TProps) {
+  function sortCards(a, b) {
+    const {
+      node: {
+        childMarkdownRemark: {
+          frontmatter: { order: a_order },
+        },
+      },
+    } = a
+
+    const {
+      node: {
+        childMarkdownRemark: {
+          frontmatter: { order: b_order },
+        },
+      },
+    } = b
+
+    return a_order - b_order
+  }
   return (
     <Layout title="Home">
       <div className="Home">
@@ -173,8 +192,7 @@ export default function IndexPage({
 export const query = graphql`
   query {
     allFile(
-      filter: { sourceInstanceName: { eq: "home" } }
-      sort: { fields: childMarkdownRemark___frontmatter___order }
+      filter: { sourceInstanceName: { eq: "home" } } # sort: { fields: childMarkdownRemark___frontmatter___order }
     ) {
       edges {
         node {
