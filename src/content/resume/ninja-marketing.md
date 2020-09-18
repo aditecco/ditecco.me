@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 7
 title: 01-06/2011 — Ninja Marketing
 subtitle: Contributing writer
 language: EN
