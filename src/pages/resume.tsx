@@ -158,7 +158,7 @@ export default function Resume({
       },
     } = b
 
-    if (a_order < b_order) return -1
+    return a_order - b_order
   }
 
   /**
@@ -439,8 +439,7 @@ Resume query
 export const query = graphql`
   query {
     allFile(
-      filter: { sourceInstanceName: { eq: "resume" } }
-      sort: { fields: childMarkdownRemark___frontmatter___order }
+      filter: { sourceInstanceName: { eq: "resume" } } # sort: { fields: childMarkdownRemark___frontmatter___order }
     ) {
       edges {
         node {

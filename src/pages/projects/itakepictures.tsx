@@ -62,7 +62,7 @@ export default function ITakePictures({
       },
     } = b
 
-    if (a_order < b_order) return -1
+    return a_order - b_order
   }
 
   return (
@@ -150,8 +150,7 @@ export default function ITakePictures({
 export const query = graphql`
   query {
     allFile(
-      filter: { sourceInstanceName: { eq: "itakepictures" } }
-      sort: { fields: childMarkdownRemark___frontmatter___order }
+      filter: { sourceInstanceName: { eq: "itakepictures" } } # sort: { fields: childMarkdownRemark___frontmatter___order }
     ) {
       edges {
         node {
