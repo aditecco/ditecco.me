@@ -115,6 +115,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const slug = node.childMarkdownRemark.frontmatter.caption
       .toLowerCase()
       .replace(" ", "-")
+
     createPage({
       path: `/projects/itakepictures/photo/` + slug,
       component: path.resolve(

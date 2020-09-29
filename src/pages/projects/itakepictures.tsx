@@ -45,23 +45,22 @@ export default function ITakePictures({
     allFile: { edges: images },
   },
 }: TProps): ReactElement {
-  function sortImages(a, b) {
-    const {
+  function sortImages(
+    {
       node: {
         childMarkdownRemark: {
           frontmatter: { order: a_order },
         },
       },
-    } = a
-
-    const {
+    },
+    {
       node: {
         childMarkdownRemark: {
           frontmatter: { order: b_order },
         },
       },
-    } = b
-
+    }
+  ) {
     return a_order - b_order
   }
 

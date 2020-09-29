@@ -141,23 +141,22 @@ export default function Resume({
   /**
    * sortStories
    */
-  function sortStories(a, b) {
-    const {
+  function sortStories(
+    {
       node: {
         childMarkdownRemark: {
           frontmatter: { order: a_order },
         },
       },
-    } = a
-
-    const {
+    },
+    {
       node: {
         childMarkdownRemark: {
           frontmatter: { order: b_order },
         },
       },
-    } = b
-
+    }
+  ) {
     return a_order - b_order
   }
 

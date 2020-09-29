@@ -53,23 +53,22 @@ export default function IndexPage({
     allFile: { edges: cards },
   },
 }: TProps) {
-  function sortCards(a, b) {
-    const {
+  function sortCards(
+    {
       node: {
         childMarkdownRemark: {
           frontmatter: { order: a_order },
         },
       },
-    } = a
-
-    const {
+    },
+    {
       node: {
         childMarkdownRemark: {
           frontmatter: { order: b_order },
         },
       },
-    } = b
-
+    }
+  ) {
     return a_order - b_order
   }
 
