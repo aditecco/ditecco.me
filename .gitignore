@@ -74,3 +74,6 @@ __source/jekyll/.sass-cache/
 
 # Local Netlify folder
 .netlify
+
+# IDE
+.idea/
