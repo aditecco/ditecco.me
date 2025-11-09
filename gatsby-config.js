@@ -1,4 +1,7 @@
 module.exports = {
+  // Gatsby 5 config
+  trailingSlash: "always",
+  
   // metadata
   siteMetadata: {
     title: `ditecco.me`,
@@ -11,10 +14,11 @@ module.exports = {
   // plugins
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

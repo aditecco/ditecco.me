@@ -72,7 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
     {
       allFile(
         filter: { sourceInstanceName: { eq: "itakepictures" } }
-        sort: { fields: childMarkdownRemark___frontmatter___order }
+        sort: { childMarkdownRemark: { frontmatter: { order: ASC } } }
       ) {
         edges {
           node {
