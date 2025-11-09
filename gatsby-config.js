@@ -8,7 +8,7 @@ module.exports = {
     description: `Personal website of Alessandro Di Tecco, Front-End Developer.`,
     author: `Alessandro Di Tecco`,
     version: "6",
-    currentYear: "2020",
+    currentYear: new Date().getFullYear(),
   },
 
   // plugins

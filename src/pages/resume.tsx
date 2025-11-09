@@ -47,7 +47,7 @@ export default function Resume({
   const notifBar = useRef<HTMLDivElement>(null)
 
   // TODO
-  const currYear = 2020
+  const currYear = new Date().getFullYear()
   const startYear = 2011
   const since = currYear - startYear
   // - var encodedEmail = '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;'
