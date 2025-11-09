@@ -4,7 +4,7 @@ ITakePictures
 
 import React, { ReactElement } from "react"
 import { graphql, Link } from "gatsby"
-import Img, { FluidObject } from "gatsby-image"
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image"
 import "../../styles/itakepictures.scss"
 import BackButton from "../../components/BackButton/BackButton"
 
@@ -30,7 +30,7 @@ interface IGraphQLQueryResponseNode {
         title: string
         image: {
           childImageSharp: {
-            fluid: FluidObject
+            gatsbyImageData: IGatsbyImageData
           }
         }
       }
@@ -45,22 +45,9 @@ export default function ITakePictures({
     allFile: { edges: images },
   },
 }: TProps): ReactElement {
-  function sortImages(
-    {
-      node: {
-        childMarkdownRemark: {
-          frontmatter: { order: a_order },
-        },
-      },
-    },
-    {
-      node: {
-        childMarkdownRemark: {
-          frontmatter: { order: b_order },
-        },
-      },
-    }
-  ) {
+  function sortImages(a: IGraphQLQueryResponseNode, b: IGraphQLQueryResponseNode) {
+    const a_order = a.node.childMarkdownRemark.frontmatter.order
+    const b_order = b.node.childMarkdownRemark.frontmatter.order
     return a_order - b_order
   }
 
@@ -109,26 +96,28 @@ export default function ITakePictures({
                 image,
               } = frontmatter
 
+              const gatsbyImage = getImage(image)
+              if (!gatsbyImage) return null
+
+              // Detect wide images from caption/title instead of filename
+              const isWide = caption.toLowerCase().includes("wd") || 
+                             title.toLowerCase().includes("wd")
+
               return (
                 <div
                   key={id}
-                  className={
-                    image.childImageSharp.fluid.originalName.includes("-wd")
-                      ? "module full"
-                      : "module half"
-                  }
+                  className={isWide ? "module full" : "module half"}
                 >
                   <Link
                     to={`/projects/itakepictures/photo/${caption
                       .toLowerCase()
                       .replace(" ", "-")}`}
                     state={{
-                      image: image.childImageSharp.fluid,
+                      image: gatsbyImage,
                     }}
                   >
-                    <Img
-                      fluid={image.childImageSharp.fluid}
-                      fadeIn
+                    <GatsbyImage
+                      image={gatsbyImage}
                       alt={title}
                     />
 
@@ -163,10 +152,7 @@ export const query = graphql`
               title
               image {
                 childImageSharp {
-                  fluid(quality: 70) {
-                    originalName
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(quality: 70, layout: FULL_WIDTH)
                 }
               }
             }

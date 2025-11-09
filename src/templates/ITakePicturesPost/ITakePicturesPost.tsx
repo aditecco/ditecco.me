@@ -3,14 +3,18 @@ ITakePicturesPost
 --------------------------------- */
 
 import React, { ReactElement } from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import BackButton from "../../components/BackButton/BackButton"
 import "./ITakePicturesPost.scss"
 
 interface IOwnProps {}
 
 interface IGatsbyProps {
-  location
+  location: {
+    state?: {
+      image?: any
+    }
+  }
   pageContext: {
     node: {
       childMarkdownRemark: {
@@ -60,7 +64,9 @@ export default function ITakePicturesPost({
 
         <div className="imageContainer">
           {/* TODO */}
-          <Img fluid={(location.state && location.state.image) || ""} fadeIn />
+          {location.state && location.state.image && (
+            <GatsbyImage image={location.state.image} alt={frontmatter.caption} />
+          )}
         </div>
       </div>
     </div>
