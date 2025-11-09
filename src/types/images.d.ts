@@ -1,3 +1,8 @@
+/**
+ * Type declarations for image imports
+ * Allows TypeScript to understand image file imports
+ */
+
 declare module "*.jpg" {
   const value: string
   export default value
@@ -19,6 +24,26 @@ declare module "*.svg" {
 }
 
 declare module "*.gif" {
+  const value: string
+  export default value
+}
+
+declare module "*.webp" {
+  const value: string
+  export default value
+}
+
+declare module "*.avif" {
+  const value: string
+  export default value
+}
+
+declare module "*.ico" {
+  const value: string
+  export default value
+}
+
+declare module "*.bmp" {
   const value: string
   export default value
 }
