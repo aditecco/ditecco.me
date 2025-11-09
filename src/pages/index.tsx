@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { GITLAB_URL, TWITTER_URL } from "../constants"
 import "../styles/home.scss"
-import Img, { FixedObject, GatsbyImageProps } from "gatsby-image"
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image"
 import masterHero from "../images/home/adt-hero.jpg"
 
 interface IOwnProps {}
@@ -29,18 +29,13 @@ interface IGraphQLQueryResponseNode {
         subtitle: string
         body: string
         tags: string[]
-        heroImg: "" // TODO
+        heroImg: {
+          childImageSharp: {
+            gatsbyImageData: IGatsbyImageData
+          }
+        }
         heroAlt: string
         order: number
-        image: {
-          heroImg: {
-            childImageSharp: {
-              fixed: FixedObject
-            }
-          }
-          heroAlt: string
-          order: number
-        }
       }
     }
   }
@@ -53,22 +48,9 @@ export default function IndexPage({
     allFile: { edges: cards },
   },
 }: TProps) {
-  function sortCards(
-    {
-      node: {
-        childMarkdownRemark: {
-          frontmatter: { order: a_order },
-        },
-      },
-    },
-    {
-      node: {
-        childMarkdownRemark: {
-          frontmatter: { order: b_order },
-        },
-      },
-    }
-  ) {
+  function sortCards(a: IGraphQLQueryResponseNode, b: IGraphQLQueryResponseNode) {
+    const a_order = a.node.childMarkdownRemark.frontmatter.order
+    const b_order = b.node.childMarkdownRemark.frontmatter.order
     return a_order - b_order
   }
 
@@ -130,10 +112,15 @@ export default function IndexPage({
                           </div>
                         ) : expanded ? (
                           <div className="card-list-item-hero">
-                            <Img
-                              fixed={heroImg.childImageSharp.fixed}
-                              alt={heroAlt}
-                            />
+                            {heroImg && (() => {
+                              const image = getImage(heroImg)
+                              return image ? (
+                                <GatsbyImage
+                                  image={image}
+                                  alt={heroAlt || ""}
+                                />
+                              ) : null
+                            })()}
                           </div>
                         ) : null}
 
@@ -211,10 +198,7 @@ export const query = graphql`
               tags
               heroImg {
                 childImageSharp {
-                  fixed(width: 300, height: 208, quality: 90) {
-                    originalName
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(width: 300, height: 208, quality: 90, layout: FIXED)
                 }
               }
               heroAlt
