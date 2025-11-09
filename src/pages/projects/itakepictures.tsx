@@ -45,7 +45,10 @@ export default function ITakePictures({
     allFile: { edges: images },
   },
 }: TProps): ReactElement {
-  function sortImages(a: IGraphQLQueryResponseNode, b: IGraphQLQueryResponseNode) {
+  function sortImages(
+    a: IGraphQLQueryResponseNode,
+    b: IGraphQLQueryResponseNode,
+  ) {
     const a_order = a.node.childMarkdownRemark.frontmatter.order
     const b_order = b.node.childMarkdownRemark.frontmatter.order
     return a_order - b_order
@@ -87,21 +90,16 @@ export default function ITakePictures({
                 },
               } = _image
 
-              const {
-                author,
-                caption,
-                order,
-                timestamp,
-                title,
-                image,
-              } = frontmatter
+              const { author, caption, order, timestamp, title, image } =
+                frontmatter
 
               const gatsbyImage = getImage(image)
               if (!gatsbyImage) return null
 
               // Detect wide images from caption/title instead of filename
-              const isWide = caption.toLowerCase().includes("wd") || 
-                             title.toLowerCase().includes("wd")
+              const isWide =
+                caption.toLowerCase().includes("wd") ||
+                title.toLowerCase().includes("wd")
 
               return (
                 <div
@@ -116,10 +114,7 @@ export default function ITakePictures({
                       image: gatsbyImage,
                     }}
                   >
-                    <GatsbyImage
-                      image={gatsbyImage}
-                      alt={title}
-                    />
+                    <GatsbyImage image={gatsbyImage} alt={title} />
 
                     <div className="caption">
                       <span>{caption}</span>

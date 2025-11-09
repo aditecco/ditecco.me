@@ -1,7 +1,7 @@
 module.exports = {
   // Gatsby 5 config
   trailingSlash: "always",
-  
+
   // metadata
   siteMetadata: {
     title: `ditecco.me`,

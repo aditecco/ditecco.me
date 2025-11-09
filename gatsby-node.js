@@ -119,7 +119,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/projects/itakepictures/photo/` + slug,
       component: path.resolve(
-        `./src/templates/ITakePicturesPost/ITakePicturesPost.tsx`
+        `./src/templates/ITakePicturesPost/ITakePicturesPost.tsx`,
       ),
       context: {
         node,

@@ -55,7 +55,7 @@ export default function Resume({
   const storyIds = stories
     .filter(filterStoriesByLanguage)
     .map(
-      (story: IGraphQLQueryResponseNode) => story.node.childMarkdownRemark.id
+      (story: IGraphQLQueryResponseNode) => story.node.childMarkdownRemark.id,
     )
 
   /**
@@ -155,7 +155,7 @@ export default function Resume({
           frontmatter: { order: b_order },
         },
       },
-    }
+    },
   ) {
     return a_order - b_order
   }

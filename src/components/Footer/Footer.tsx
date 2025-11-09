@@ -9,21 +9,19 @@ import "./Footer.scss"
 interface IOwnProps {}
 
 export default function Footer(props: IOwnProps): ReactElement {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            author
-            currentYear
-            version
-          }
-
-          buildTime
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          author
+          currentYear
+          version
         }
+
+        buildTime
       }
-    `
-  )
+    }
+  `)
 
   return (
     <footer>

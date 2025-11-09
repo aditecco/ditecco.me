@@ -70,7 +70,7 @@ export default function ContentIndex({
 
       contentIndexItemList.current.setAttribute(
         "style",
-        `margin-bottom: ${footerHeight}px`
+        `margin-bottom: ${footerHeight}px`,
       )
     }
   }, [])

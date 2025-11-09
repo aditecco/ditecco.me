@@ -65,7 +65,10 @@ export default function ITakePicturesPost({
         <div className="imageContainer">
           {/* TODO */}
           {location.state && location.state.image && (
-            <GatsbyImage image={location.state.image} alt={frontmatter.caption} />
+            <GatsbyImage
+              image={location.state.image}
+              alt={frontmatter.caption}
+            />
           )}
         </div>
       </div>

@@ -48,7 +48,10 @@ export default function IndexPage({
     allFile: { edges: cards },
   },
 }: TProps) {
-  function sortCards(a: IGraphQLQueryResponseNode, b: IGraphQLQueryResponseNode) {
+  function sortCards(
+    a: IGraphQLQueryResponseNode,
+    b: IGraphQLQueryResponseNode,
+  ) {
     const a_order = a.node.childMarkdownRemark.frontmatter.order
     const b_order = b.node.childMarkdownRemark.frontmatter.order
     return a_order - b_order
@@ -87,8 +90,8 @@ export default function IndexPage({
                       master
                         ? " card-list-item--master card-list-item--3rows"
                         : expanded
-                        ? " card-list-item--2rows"
-                        : ""
+                          ? " card-list-item--2rows"
+                          : ""
                     }`}
                   >
                     <Link to={href}>
@@ -112,15 +115,16 @@ export default function IndexPage({
                           </div>
                         ) : expanded ? (
                           <div className="card-list-item-hero">
-                            {heroImg && (() => {
-                              const image = getImage(heroImg)
-                              return image ? (
-                                <GatsbyImage
-                                  image={image}
-                                  alt={heroAlt || ""}
-                                />
-                              ) : null
-                            })()}
+                            {heroImg &&
+                              (() => {
+                                const image = getImage(heroImg)
+                                return image ? (
+                                  <GatsbyImage
+                                    image={image}
+                                    alt={heroAlt || ""}
+                                  />
+                                ) : null
+                              })()}
                           </div>
                         ) : null}
 
@@ -198,7 +202,12 @@ export const query = graphql`
               tags
               heroImg {
                 childImageSharp {
-                  gatsbyImageData(width: 300, height: 208, quality: 90, layout: FIXED)
+                  gatsbyImageData(
+                    width: 300
+                    height: 208
+                    quality: 90
+                    layout: FIXED
+                  )
                 }
               }
               heroAlt
