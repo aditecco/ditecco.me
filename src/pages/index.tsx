@@ -153,7 +153,7 @@ export default function IndexPage({
                               </li>
                               <li>&middot;</li>
                               <li>
-                                <a href={GITLAB_URL}>GitLab</a>
+                                <a href={GITHUB_URL}>GitHub</a>
                               </li>
                               <li>&middot;</li>
                               <li>
