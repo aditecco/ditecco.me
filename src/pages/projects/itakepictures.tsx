@@ -28,6 +28,7 @@ interface IGraphQLQueryResponseNode {
         order: number
         timestamp: string
         title: string
+        wide: boolean
         image: {
           childImageSharp: {
             gatsbyImageData: IGatsbyImageData
@@ -90,22 +91,14 @@ export default function ITakePictures({
                 },
               } = _image
 
-              const { author, caption, order, timestamp, title, image } =
+              const { author, caption, order, timestamp, title, image, wide } =
                 frontmatter
 
               const gatsbyImage = getImage(image)
               if (!gatsbyImage) return null
 
-              // Detect wide images from caption/title instead of filename
-              const isWide =
-                caption.toLowerCase().includes("wd") ||
-                title.toLowerCase().includes("wd")
-
               return (
-                <div
-                  key={id}
-                  className={isWide ? "module full" : "module half"}
-                >
+                <div key={id} className={wide ? "module full" : "module half"}>
                   <Link
                     to={`/projects/itakepictures/photo/${caption
                       .toLowerCase()
@@ -145,6 +138,7 @@ export const query = graphql`
               order
               timestamp
               title
+              wide
               image {
                 childImageSharp {
                   gatsbyImageData(quality: 70, layout: FULL_WIDTH)
