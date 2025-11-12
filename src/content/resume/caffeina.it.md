@@ -5,4 +5,4 @@ subtitle: "Front-End Developer"
 language: IT
 ---
 
-WIP
+WIP : )
