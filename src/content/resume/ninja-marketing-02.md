@@ -1,5 +1,5 @@
 ---
-order: 7
+order: 8
 title: 04-06/2011 — Ninja Marketing
 subtitle: Editor, Design Section
 language: EN

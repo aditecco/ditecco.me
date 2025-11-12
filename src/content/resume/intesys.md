@@ -1,6 +1,6 @@
 ---
-order: 1
-title: "2019 - Present — Intesys"
+order: 2
+title: "2019 - 2023 — Intesys"
 subtitle: "Front-End Developer"
 language: EN
 ---

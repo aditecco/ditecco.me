@@ -23,11 +23,11 @@ function capitalize(word) {
 
 // generates frontmatter for gatsby's markdown posts
 const content = (filename, config) => `---
-author: ${config.author}
+author: "${config.author}"
 caption: "${config.caption}"
 image: ../../../images/itakepictures/${filename}
 order: ${config.order}
-timestamp: 7 Sep 2020
+timestamp: "7 Sep 2020"
 title: "${capitalize(config.caption.replace('-', ' '))}"
 ---
 `
@@ -68,6 +68,7 @@ const data = [
   ["itp-ph-07-wd.jpg", { caption: "Blank", author: 'Alessandro Di Tecco' }],
   // [ "itp-ph-04-wd.jpg", { caption: "", author: 'Alessandro Di Tecco' }],
   // ["itp-ph-08-wd.jpg", { caption: "untitled 27", author: 'Alessandro Di Tecco' }],
+  ["itp-ph-20-sq.jpg", { caption: "Astratto 25", author: 'Alessandro Di Tecco' }],
   ["itp-ph-13-sq.jpg", { caption: "Untitled 30", author: 'Alessandro Di Tecco' }],
   //[ "itp-ph-15-wd.jpg", { caption: "Untitled 31", author: 'Alessandro Di Tecco' }],
 ]

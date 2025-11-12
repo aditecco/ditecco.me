@@ -14,17 +14,19 @@ interface IOwnProps {}
 interface IGatsbyProps {
   pageContext: {
     node: {
-      id: string
-      html: string
-      timeToRead: number
-      excerpt: string
-      frontmatter: {
-        title: string
-        subtitle: string
-        language: string
-        timestamp: string
-        author: string
-        tags: string[]
+      childMarkdownRemark: {
+        id: string
+        html: string
+        timeToRead: number
+        excerpt: string
+        frontmatter: {
+          title: string
+          subtitle: string
+          language: string
+          timestamp: string
+          author: string
+          tags: string[]
+        }
       }
     }
   }
@@ -36,14 +38,16 @@ export default function BlogPost({
   pageContext: { node },
 }: TProps): ReactElement {
   const {
-    frontmatter: { author, language, subtitle, title, timestamp, tags },
+    childMarkdownRemark: {
+      frontmatter: { author, language, subtitle, title, timestamp, tags },
+    },
   } = node
 
   // TMP
   const bgImage = undefined
 
   return (
-    <Layout title={node.frontmatter.title}>
+    <Layout title={title}>
       <div className="BlogPost">
         <article className="blog-post-content">
           <header
@@ -64,26 +68,20 @@ export default function BlogPost({
                 <h5 className="blog-post-author">{author}</h5>
 
                 <span className="blog-post-time-to-read">
-                  Reading time: {node.timeToRead} minute
+                  Reading time: {node.childMarkdownRemark.timeToRead} minute
                 </span>
 
                 <span className="blog-post-lang">
                   {language === "EN" ? "English" : "Italiano"}
                 </span>
               </div>
-
-              {/* <ul className="blog-post-tags">
-                {tags.map(tag => (
-                  <li className="blog-post-tag">{tag}</li>
-                ))}
-              </ul> */}
             </div>
           </header>
 
           {/* POST CONTENT */}
           <div
             className="blog-post-body container"
-            dangerouslySetInnerHTML={{ __html: node.html }}
+            dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html }}
           />
 
           <div className="blog-post-footer container">

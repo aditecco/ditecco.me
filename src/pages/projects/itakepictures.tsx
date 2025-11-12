@@ -4,7 +4,7 @@ ITakePictures
 
 import React, { ReactElement } from "react"
 import { graphql, Link } from "gatsby"
-import Img, { FluidObject } from "gatsby-image"
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image"
 import "../../styles/itakepictures.scss"
 import BackButton from "../../components/BackButton/BackButton"
 
@@ -23,14 +23,15 @@ interface IGraphQLQueryResponseNode {
     childMarkdownRemark: {
       id: string
       frontmatter: {
-        author: string // not string?
+        author: string
         caption: string
         order: number
-        timestamp: string // not string?
+        timestamp: string
         title: string
+        wide: boolean
         image: {
           childImageSharp: {
-            fluid: FluidObject
+            gatsbyImageData: IGatsbyImageData
           }
         }
       }
@@ -45,6 +46,15 @@ export default function ITakePictures({
     allFile: { edges: images },
   },
 }: TProps): ReactElement {
+  function sortImages(
+    a: IGraphQLQueryResponseNode,
+    b: IGraphQLQueryResponseNode,
+  ) {
+    const a_order = a.node.childMarkdownRemark.frontmatter.order
+    const b_order = b.node.childMarkdownRemark.frontmatter.order
+    return a_order - b_order
+  }
+
   return (
     <div className="ITakePictures">
       <BackButton
@@ -72,48 +82,40 @@ export default function ITakePictures({
         </header>
 
         <div className="container">
-          {images.map((_image: IGraphQLQueryResponseNode) => {
-            const {
-              node: {
-                childMarkdownRemark: { id, frontmatter },
-              },
-            } = _image
+          {[...images]
+            .sort(sortImages)
+            .map((_image: IGraphQLQueryResponseNode) => {
+              const {
+                node: {
+                  childMarkdownRemark: { id, frontmatter },
+                },
+              } = _image
 
-            const {
-              author,
-              caption,
-              order,
-              timestamp,
-              title,
-              image,
-            } = frontmatter
+              const { author, caption, order, timestamp, title, image, wide } =
+                frontmatter
 
-            return (
-              <div
-                key={id}
-                className={
-                  image.childImageSharp.fluid.originalName.includes("-wd")
-                    ? "module full"
-                    : "module half"
-                }
-              >
-                <Link
-                  to={`/projects/itakepictures/photo/${caption
-                    .toLowerCase()
-                    .replace(" ", "-")}`}
-                  state={{
-                    image: image.childImageSharp.fluid,
-                  }}
-                >
-                  <Img fluid={image.childImageSharp.fluid} fadeIn alt={title} />
+              const gatsbyImage = getImage(image)
+              if (!gatsbyImage) return null
 
-                  <div className="caption">
-                    <span>{caption}</span>
-                  </div>
-                </Link>
-              </div>
-            )
-          })}
+              return (
+                <div key={id} className={wide ? "module full" : "module half"}>
+                  <Link
+                    to={`/projects/itakepictures/photo/${caption
+                      .toLowerCase()
+                      .replace(" ", "-")}`}
+                    state={{
+                      image: gatsbyImage,
+                    }}
+                  >
+                    <GatsbyImage image={gatsbyImage} alt={title} />
+
+                    <div className="caption">
+                      <span>{caption}</span>
+                    </div>
+                  </Link>
+                </div>
+              )
+            })}
         </div>
       </div>
     </div>
@@ -124,10 +126,7 @@ export default function ITakePictures({
 export const query = graphql`
   query {
     allFile(
-      filter: {
-        absolutePath: { glob: "/**/content/projects/itakepictures/*.md" }
-      }
-      sort: { fields: childMarkdownRemark___frontmatter___order }
+      filter: { sourceInstanceName: { eq: "itakepictures" } } # sort: { fields: childMarkdownRemark___frontmatter___order }
     ) {
       edges {
         node {
@@ -139,12 +138,10 @@ export const query = graphql`
               order
               timestamp
               title
+              wide
               image {
                 childImageSharp {
-                  fluid(quality: 70) {
-                    originalName
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(quality: 70, layout: FULL_WIDTH)
                 }
               }
             }

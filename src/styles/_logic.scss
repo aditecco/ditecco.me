@@ -80,7 +80,7 @@ functions & mixins
 }
 
 @function rel($t, $c: 16, $u: "rem") {
-  @return ($t / $c) * 1#{$u};
+  @return ($t / $c) + #{$u};
 }
 
 @function emCalc($target, $context: 10) {

@@ -1,10 +1,9 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import { GITLAB_URL, TWITTER_URL } from "../constants"
+import { GITHUB_URL, TWITTER_URL } from "../constants"
 import "../styles/home.scss"
-import Img, { FixedObject, GatsbyImageProps } from "gatsby-image"
-import masterHero from "../images/home/adt-hero.jpg"
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image"
 
 interface IOwnProps {}
 
@@ -29,14 +28,13 @@ interface IGraphQLQueryResponseNode {
         subtitle: string
         body: string
         tags: string[]
-        heroImg: "" // TODO
-        heroAlt: string
-        order: number
-        image: {
+        heroImg: {
           childImageSharp: {
-            fixed: FixedObject
+            gatsbyImageData: IGatsbyImageData
           }
         }
+        heroAlt: string
+        order: number
       }
     }
   }
@@ -49,115 +47,126 @@ export default function IndexPage({
     allFile: { edges: cards },
   },
 }: TProps) {
+  function sortCards(
+    a: IGraphQLQueryResponseNode,
+    b: IGraphQLQueryResponseNode,
+  ) {
+    const a_order = a.node.childMarkdownRemark.frontmatter.order
+    const b_order = b.node.childMarkdownRemark.frontmatter.order
+    return a_order - b_order
+  }
+
   return (
     <Layout title="Home">
       <div className="Home">
         <main className="card-list-container">
           <ul className="card-list">
-            {cards.map((card: IGraphQLQueryResponseNode) => {
-              const {
-                node: {
-                  childMarkdownRemark: { id, html: __html, frontmatter },
-                },
-              } = card
+            {[...cards]
+              .sort(sortCards)
+              .map((card: IGraphQLQueryResponseNode) => {
+                const {
+                  node: {
+                    childMarkdownRemark: { id, html: __html, frontmatter },
+                  },
+                } = card
 
-              const {
-                master,
-                expanded,
-                href,
-                title,
-                subtitle,
-                body,
-                tags,
-                heroImg,
-                heroAlt,
-              } = frontmatter
+                const {
+                  master,
+                  expanded,
+                  href,
+                  title,
+                  subtitle,
+                  body,
+                  tags,
+                  heroImg,
+                  heroAlt,
+                } = frontmatter
 
-              return (
-                <li
-                  key={id}
-                  className={`card-list-item${
-                    master
-                      ? " card-list-item--master card-list-item--3rows"
-                      : expanded
-                      ? " card-list-item--2rows"
-                      : ""
-                  }`}
-                >
-                  <Link to={href}>
-                    <article>
-                      {master ? (
-                        <div
-                          // TODO convert to Img?
-                          className="card-list-item-hero"
-                          style={{
-                            background: `linear-gradient(transparent, 50%, rgba(0, 0, 0, 0.6)) 0% 0% / cover, url(${masterHero}) 50% center no-repeat, rgb(96, 125, 139)`,
-                            backgroundSize: `140% auto`,
-                            // backgroundPositionX: `left`,
-                            // backgroundPositionY: `bottom`,
-                          }}
-                        >
-                          <h2>
-                            Hi, I'm Alessandro
-                            <br />
-                            Di Tecco.
-                          </h2>
-                        </div>
-                      ) : expanded ? (
-                        <div className="card-list-item-hero">
-                          <Img
-                            fixed={heroImg.childImageSharp.fixed}
-                            alt={heroAlt}
-                          />
-                        </div>
-                      ) : null}
-
-                      <div className="card-list-item-body">
-                        {master && (
+                return (
+                  <li
+                    key={id}
+                    className={`card-list-item${
+                      master
+                        ? " card-list-item--master card-list-item--3rows"
+                        : expanded
+                          ? " card-list-item--2rows"
+                          : ""
+                    }`}
+                  >
+                    <Link to={href}>
+                      <article>
+                        {master ? (
                           <div
-                            className="post-html"
-                            dangerouslySetInnerHTML={{ __html }}
-                          />
-                        )}
+                            // TODO convert to Img?
+                            className="card-list-item-hero"
+                          >
+                            <h2>
+                              Hi, I'm Alessandro
+                              <br />
+                              Di Tecco.
+                            </h2>
+                          </div>
+                        ) : expanded ? (
+                          <div className="card-list-item-hero">
+                            {heroImg &&
+                              (() => {
+                                const image = getImage(heroImg)
+                                return image ? (
+                                  <GatsbyImage
+                                    image={image}
+                                    alt={heroAlt || ""}
+                                  />
+                                ) : null
+                              })()}
+                          </div>
+                        ) : null}
 
-                        {subtitle && <h5>{subtitle}</h5>}
-                        {title && <h3>{title}</h3>}
-                        {body && <p>{body}</p>}
+                        <div className="card-list-item-body">
+                          {master && (
+                            <div
+                              className="post-html"
+                              dangerouslySetInnerHTML={{ __html }}
+                            />
+                          )}
 
-                        {tags.length
-                          ? tags.map((tag, i) => (
-                              <span key={i} className="card-list-item-tag">
-                                {tag}
-                              </span>
-                            ))
-                          : null}
-                      </div>
+                          {subtitle && <h5>{subtitle}</h5>}
+                          {title && <h3>{title}</h3>}
+                          {body && <p>{body}</p>}
 
-                      {master && (
-                        <div className="card-list-item-footer">
-                          <h6>Find me also on:</h6>
-                          <ul className="contact-list">
-                            <li>
-                              <a href="mailto:&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;">
-                                Email
-                              </a>
-                            </li>
-                            <li>&middot;</li>
-                            <li>
-                              <a href={GITLAB_URL}>GitLab</a>
-                            </li>
-                            <li>&middot;</li>
-                            <li>
-                              <a href={TWITTER_URL}>Twitter</a>
-                            </li>
-                          </ul>
+                          {tags.length
+                            ? tags.map((tag, i) => (
+                                <span key={i} className="card-list-item-tag">
+                                  {tag}
+                                </span>
+                              ))
+                            : null}
                         </div>
-                      )}
-                    </article>
-                  </Link>
-                </li>
-              )
-            })}
+
+                        {master && (
+                          <div className="card-list-item-footer">
+                            <h6>Find me also on:</h6>
+                            <ul className="contact-list">
+                              <li>
+                                <a href="mailto:&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;">
+                                  Email
+                                </a>
+                              </li>
+                              <li>&middot;</li>
+                              <li>
+                                <a href={GITHUB_URL}>GitHub</a>
+                              </li>
+                              <li>&middot;</li>
+                              <li>
+                                <a href={TWITTER_URL}>Twitter</a>
+                              </li>
+                            </ul>
+                          </div>
+                        )}
+                      </article>
+                    </Link>
+                  </li>
+                )
+              })}
           </ul>
         </main>
       </div>
@@ -169,8 +178,7 @@ export default function IndexPage({
 export const query = graphql`
   query {
     allFile(
-      filter: { absolutePath: { glob: "/**/content/home/*.md" } }
-      sort: { fields: childMarkdownRemark___frontmatter___order }
+      filter: { sourceInstanceName: { eq: "home" } } # sort: { fields: childMarkdownRemark___frontmatter___order }
     ) {
       edges {
         node {
@@ -187,10 +195,12 @@ export const query = graphql`
               tags
               heroImg {
                 childImageSharp {
-                  fixed(width: 300, height: 208, quality: 90) {
-                    originalName
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(
+                    width: 300
+                    height: 208
+                    quality: 90
+                    layout: FIXED
+                  )
                 }
               }
               heroAlt

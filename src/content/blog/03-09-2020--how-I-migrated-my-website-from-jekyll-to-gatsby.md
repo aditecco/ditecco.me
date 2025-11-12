@@ -1,9 +1,9 @@
 ---
-title: How I migrated my website from Jekyll to Gatsby
+title: "How I migrated my website from Jekyll to Gatsby"
 subtitle:
-language: EN
-timestamp: 30/08/2020
-author: Alessandro Di Tecco
+language: "EN"
+timestamp: "30/08/2020"
+author: "Alessandro Di Tecco"
 tags: ["dev", "gatsby", "jekyll", "JAMStack"]
 ---
 

@@ -131,9 +131,6 @@ home.scss
           border-top-right-radius: 4px;
           background-color: $utility-light-gray;
           overflow: hidden;
-          img {
-            filter: brightness(102%);
-          }
         }
       }
 
@@ -225,6 +222,10 @@ home.scss
   --------------------------------- */
 
   .card-list-item.card-list-item--master {
+    a:hover {
+    color: inherit;
+    }
+
     &:hover {
       // is there a more elegant way to override hover borders?
       border-bottom: 4px solid rgba($clouds, 0.99);
@@ -250,10 +251,11 @@ home.scss
       padding: 40px 20px;
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
+      @include setBorder(1px, solid, rgba($clouds, 0.99), bottom);
 
       h2 {
         margin: 0;
-        color: $utility-dim-white;
+        color: black;
       }
     }
 

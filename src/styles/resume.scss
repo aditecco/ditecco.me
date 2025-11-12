@@ -4,6 +4,22 @@ resume.scss
 
 @import "_logic";
 
+// Pulsating light animation
+@keyframes pulsate {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(#00a0b0, 0.7);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 8px 4px rgba(#00a0b0, 0.4);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(#00a0b0, 0.7);
+  }
+}
+
 .Resume {
   // custom page bg
   background-color: $rm-background-page-outer;
@@ -218,12 +234,15 @@ resume.scss
 
   .page-controls {
     padding: 16px;
+
     ul {
       @include setFlexbox(row nowrap, center, center);
       @include setBox(0, 0, true);
+
       @media (max-width: 320px) {
         flex-wrap: wrap;
       }
+
       li {
         margin: 0 10px 0 0;
 
@@ -242,6 +261,13 @@ resume.scss
         img {
           margin-left: 5px;
           vertical-align: middle;
+        }
+
+        .back-button {
+          i.material-icons {
+            font-size: inherit;
+            vertical-align: middle;
+          }
         }
 
         .lang-switcher {
@@ -464,7 +490,9 @@ resume.scss
         width: $s;
         height: $s;
         border-radius: 50%;
-        background-color: $amber;
+        background-color: #00a0b0;
+        animation: pulsate 2s ease-in-out infinite;
+        box-shadow: 0 0 4px rgba(#00a0b0, 0.6);
       }
 
       h2,

@@ -16,16 +16,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   // TODO execute only on /blog posts
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `content` })
+  if (
+    node.internal.type === `MarkdownRemark`
+    // && node.sourceInstanceName === "blog"
+  ) {
+    const slug = createFilePath({ node, getNode, basePath: `content/blog/` })
 
+    // blog posts will be conventionally named
+    // using this format: DD-MM-YYYY--title
     const slugParts = slug.split("--")
 
     createNodeField({
       node,
       name: `slug`,
-      value:
-        "/blog/" + slugParts.shift().match(/[\d]{4}/g) + "/" + slugParts.pop(),
+      value: slugParts.shift().match(/[\d]{4}/g) + "/" + slugParts.pop(),
     })
   }
 }
@@ -35,27 +39,28 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
  */
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+  // blog pages
   const blogPages = await graphql(`
-    query {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "/**/blog/**/*" } }
-      ) {
+    {
+      allFile(filter: { sourceInstanceName: { eq: "blog" } }) {
         edges {
           node {
-            id
-            html
-            timeToRead
-            excerpt
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              subtitle
-              language
-              timestamp
-              author
-              tags
+            childMarkdownRemark {
+              id
+              html
+              timeToRead
+              excerpt
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                subtitle
+                language
+                timestamp
+                author
+                tags
+              }
             }
           }
         }
@@ -64,28 +69,29 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   const iTakePicturesPages = await graphql(`
-    query {
-      allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { glob: "/**/projects/itakepictures/**/*" }
-        }
+    {
+      allFile(
+        filter: { sourceInstanceName: { eq: "itakepictures" } }
+        sort: { childMarkdownRemark: { frontmatter: { order: ASC } } }
       ) {
         edges {
           node {
-            id
-            frontmatter {
-              author
-              caption
-              image {
-                childImageSharp {
-                  fluid {
-                    originalName
+            childMarkdownRemark {
+              id
+              frontmatter {
+                author
+                caption
+                order
+                timestamp
+                title
+                image {
+                  childImageSharp {
+                    fluid {
+                      originalName
+                    }
                   }
                 }
               }
-              order
-              timestamp
-              title
             }
           }
         }
@@ -93,9 +99,10 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  blogPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  blogPages.data.allFile.edges.forEach(({ node }) => {
     createPage({
-      path: node.fields.slug,
+      // TODO add year /blog/<year>/<slug>
+      path: `/blog/${node.childMarkdownRemark.fields.slug}`,
       component: path.resolve(`./src/templates/BlogPost/BlogPost.tsx`),
       context: {
         node,
@@ -103,12 +110,16 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  iTakePicturesPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const slug = node.frontmatter.caption.toLowerCase().replace(" ", "-")
+  iTakePicturesPages.data.allFile.edges.forEach(({ node }) => {
+    // TODO create slugs w/ createFilePath
+    const slug = node.childMarkdownRemark.frontmatter.caption
+      .toLowerCase()
+      .replace(" ", "-")
+
     createPage({
       path: `/projects/itakepictures/photo/` + slug,
       component: path.resolve(
-        `./src/templates/ITakePicturesPost/ITakePicturesPost.tsx`
+        `./src/templates/ITakePicturesPost/ITakePicturesPost.tsx`,
       ),
       context: {
         node,

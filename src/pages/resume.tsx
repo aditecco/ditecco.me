@@ -12,49 +12,82 @@ import "../styles/resume.scss"
 interface IOwnProps {}
 
 interface IGatsbyProps {
-  data // TODO the right type?
+  data: {
+    allFile: {
+      edges: IGraphQLQueryResponseNode[]
+    }
+  }
 }
 
 interface IGraphQLQueryResponseNode {
   node: {
-    id: string
-    html: string
-    frontmatter: {
-      order: number
-      title: string
-      subtitle: string
-      language: string
+    childMarkdownRemark: {
+      id: string
+      html: string
+      frontmatter: {
+        order: number
+        title: string
+        subtitle: string
+        language: string
+      }
     }
   }
 }
 
 type TProps = IOwnProps & IGatsbyProps
 
-export default function Resume({ data }: TProps): ReactElement {
+export default function Resume({
+  data: {
+    allFile: { edges: stories },
+  },
+}: TProps): ReactElement {
   const [visibleStory, toggleVisibleStory] = useState({})
   const [lang, setLang] = useState("EN")
+  const [notif, setNotif] = useState("")
   const notifBar = useRef<HTMLDivElement>(null)
 
   // TODO
-  const currYear = 2020
+  const currYear = new Date().getFullYear()
   const startYear = 2011
   const since = currYear - startYear
   // - var encodedEmail = '&#x61;&#x6C;&#x65;&#x73;&#x73;&#x61;&#x6E;&#x64;&#x72;&#x6F;&#x40;&#x64;&#x69;&#x74;&#x65;&#x63;&#x63;&#x6F;&#x2E;&#x6D;&#x65;'
 
-  const {
-    allMarkdownRemark: { edges: stories },
-  } = data
-
   const storyIds = stories
     .filter(filterStoriesByLanguage)
-    .map((story: IGraphQLQueryResponseNode) => story.node.id)
+    .map(
+      (story: IGraphQLQueryResponseNode) => story.node.childMarkdownRemark.id,
+    )
 
   /**
    * handles language switching
    */
-  function handleChangeLanguage() {
-    setLang(lang => (lang === "EN" ? "IT" : "EN"))
-    // also reset the toggle state
+  function handleChangeLanguage({ currentTarget }) {
+    const prevLang = currentTarget?.dataset?.language
+
+    if (!prevLang) {
+      return
+    }
+
+    switch (prevLang) {
+      case "IT":
+        setLang("EN")
+        setNotif("Changed language to English!")
+        break
+
+      case "EN":
+        setLang("IT")
+        setNotif("Lingua impostata ad italiano!")
+        break
+    }
+
+    // show notif, then hide it
+    notifBar.current.style.opacity = "100"
+
+    setTimeout(() => {
+      notifBar.current.style.opacity = "0"
+    }, 2000)
+
+    // reset the toggle state
     toggleVisibleStory({})
   }
 
@@ -102,19 +135,42 @@ export default function Resume({ data }: TProps): ReactElement {
    * filters stories based on language
    */
   function filterStoriesByLanguage({ node }: IGraphQLQueryResponseNode) {
-    return node.frontmatter.language === lang
+    return node.childMarkdownRemark.frontmatter.language === lang
+  }
+
+  /**
+   * sortStories
+   */
+  function sortStories(
+    {
+      node: {
+        childMarkdownRemark: {
+          frontmatter: { order: a_order },
+        },
+      },
+    },
+    {
+      node: {
+        childMarkdownRemark: {
+          frontmatter: { order: b_order },
+        },
+      },
+    },
+  ) {
+    return a_order - b_order
   }
 
   /**
    * renders data into resume stories
    */
-  function renderStories(
-    { node: { id, html, frontmatter } }: IGraphQLQueryResponseNode,
-    i
-  ) {
+  function renderStories({
+    node: {
+      childMarkdownRemark: { id, html: __html, frontmatter },
+    },
+  }: IGraphQLQueryResponseNode) {
     return (
       <div
-        key={i}
+        key={id}
         className="story-block"
         onClick={() =>
           toggleVisibleStory(visibleStories => ({
@@ -141,27 +197,12 @@ export default function Resume({ data }: TProps): ReactElement {
 
         {visibleStory[id] && (
           <div className="story-block-body">
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+            <div dangerouslySetInnerHTML={{ __html }} />
           </div>
         )}
       </div>
     )
   }
-
-  useEffect(() => {
-    notifBar.current = document.querySelector(".notification-bar")
-  }, [])
-
-  useEffect(() => {
-    // TODO
-    if (lang) {
-      notifBar.current.style.opacity = "100"
-
-      setTimeout(() => {
-        notifBar.current.style.opacity = "0"
-      }, 2000)
-    }
-  }, [lang])
 
   return (
     <Layout title="Resume">
@@ -171,21 +212,26 @@ export default function Resume({ data }: TProps): ReactElement {
           &#x25B2; top
         </button>
 
-        <div className="notification-bar">
-          {lang === "EN"
-            ? "Changed language to English!"
-            : "Lingua impostata ad italiano!"}
+        <div className="notification-bar" ref={notifBar}>
+          {notif}
         </div>
 
         {/* NAV */}
         <nav className="page-controls">
           <ul className="subtext">
             <li>
-              <Link to="/">&#8592; Back to homepage</Link>
+              <Link to="/" className="back-button">
+                <i className="material-icons">keyboard_backspace</i> Back to
+                homepage
+              </Link>
             </li>
 
             <li>
-              <button className="lang-switcher" onClick={handleChangeLanguage}>
+              <button
+                className="lang-switcher"
+                onClick={handleChangeLanguage}
+                data-language={lang}
+              >
                 {lang === "EN" ? "Versione italiana" : "English version"}
 
                 <img
@@ -355,8 +401,9 @@ export default function Resume({ data }: TProps): ReactElement {
                 )}
               </header>
 
-              {stories
+              {[...stories]
                 .filter(filterStoriesByLanguage)
+                .sort(sortStories)
                 .slice(0, 10)
                 .map(renderStories)}
 
@@ -371,8 +418,9 @@ export default function Resume({ data }: TProps): ReactElement {
                 </h1>
               </header>
 
-              {stories
+              {[...stories]
                 .filter(filterStoriesByLanguage)
+                .sort(sortStories)
                 .slice(10)
                 .map(renderStories)}
             </section>
@@ -389,19 +437,20 @@ Resume query
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { glob: "/**/resume/**/*" } }
-      sort: { fields: frontmatter___order }
+    allFile(
+      filter: { sourceInstanceName: { eq: "resume" } } # sort: { fields: childMarkdownRemark___frontmatter___order }
     ) {
       edges {
         node {
-          id
-          html
-          frontmatter {
-            order
-            title
-            subtitle
-            language
+          childMarkdownRemark {
+            id
+            html
+            frontmatter {
+              order
+              title
+              subtitle
+              language
+            }
           }
         }
       }
