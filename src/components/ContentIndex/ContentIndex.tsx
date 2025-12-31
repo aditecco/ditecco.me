@@ -8,13 +8,9 @@ import Layout from "../layout"
 import BackButton from "../BackButton/BackButton"
 import "./ContentIndex.scss"
 
-interface IContentNode {
-  node: object // TODO
-}
-
 interface IOwnProps {
-  content: IContentNode[]
-  contentRenderer: (...args) => ReactElement
+  content: ContentIndexItemProps[]
+  contentRenderer: (item: ContentIndexItemProps) => ReactElement
   title: string
 }
 

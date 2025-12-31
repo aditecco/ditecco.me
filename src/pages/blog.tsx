@@ -42,7 +42,7 @@ export default function Blog({ data }: TProps): ReactElement {
     })
 
     return {
-      _id: post._id,
+      id: post._id,
       slug: `${year}/${post.slug.current}`,
       timestamp,
       title: post.title,
@@ -54,9 +54,9 @@ export default function Blog({ data }: TProps): ReactElement {
     <ContentIndex
       title="Blog index"
       content={content}
-      contentRenderer={(post: any) => (
+      contentRenderer={post => (
         <ContentIndexItem
-          id={post._id}
+          id={post.id}
           slug={post.slug}
           timestamp={post.timestamp}
           title={post.title}
