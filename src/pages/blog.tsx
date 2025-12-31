@@ -3,60 +3,64 @@ Blog
 --------------------------------- */
 
 import React, { ReactElement } from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import ContentIndex, {
   ContentIndexItem,
 } from "../components/ContentIndex/ContentIndex"
 
 interface IOwnProps {}
 
-interface IGatsbyProps {
-  data: { allFile: { edges: IGraphQLQueryResponseNode[] } } // TODO the right type?
+interface ISanityBlogPost {
+  _id: string
+  title: string
+  slug: {
+    current: string
+  }
+  publishedAt: string
+  tags?: Array<{
+    title: string
+  }>
 }
 
-interface IGraphQLQueryResponseNode {
-  node: {
-    childMarkdownRemark: {
-      id: string
-      timeToRead: number
-      excerpt: string
-      fields: {
-        slug: string
-      }
-      frontmatter: {
-        title: string
-        subtitle: string | null
-        language: string
-        timestamp: string
-        author: string
-        tags: string[]
-      }
-    }
+interface IGatsbyProps {
+  data: {
+    allSanityBlogPost: { nodes: ISanityBlogPost[] }
   }
 }
 
 type TProps = IOwnProps & IGatsbyProps
 
 export default function Blog({ data }: TProps): ReactElement {
-  const {
-    allFile: { edges: posts },
-  } = data
+  const posts = data.allSanityBlogPost.nodes
+
+  const content = posts.map(post => {
+    const year = new Date(post.publishedAt).getFullYear()
+    const timestamp = new Date(post.publishedAt).toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "2-digit",
+    })
+
+    return {
+      _id: post._id,
+      slug: `${year}/${post.slug.current}`,
+      timestamp,
+      title: post.title,
+      tags: post.tags ? post.tags.map(t => t.title) : [],
+    }
+  })
 
   return (
     <ContentIndex
       title="Blog index"
-      content={posts}
-      contentRenderer={({
-        node: {
-          childMarkdownRemark: { id, timeToRead, excerpt, fields, frontmatter },
-        },
-      }: IGraphQLQueryResponseNode) => (
+      content={content}
+      contentRenderer={(post: any) => (
         <ContentIndexItem
-          id={id}
-          slug={fields.slug}
-          timestamp={frontmatter.timestamp}
-          title={frontmatter.title}
-          tags={frontmatter.tags}
+          id={post._id}
+          slug={post.slug}
+          timestamp={post.timestamp}
+          title={post.title}
+          tags={post.tags}
         />
       )}
     />
@@ -65,26 +69,16 @@ export default function Blog({ data }: TProps): ReactElement {
 
 export const query = graphql`
   {
-    allFile(filter: { sourceInstanceName: { eq: "blog" } }) {
-      edges {
-        node {
-          childMarkdownRemark {
-            id
-            html
-            timeToRead
-            excerpt
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              subtitle
-              language
-              timestamp
-              author
-              tags
-            }
-          }
+    allSanityBlogPost(sort: { publishedAt: DESC }) {
+      nodes {
+        _id
+        title
+        slug {
+          current
+        }
+        publishedAt
+        tags {
+          title
         }
       }
     }
