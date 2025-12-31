@@ -5,6 +5,11 @@ export default defineCliConfig({
     projectId: process.env.SANITY_STUDIO_PROJECT_ID ?? '',
     dataset: process.env.SANITY_STUDIO_DATASET ?? '',
   },
+  graphql: [
+    {
+      playground: false,
+    },
+  ],
   deployment: {
     /**
      * Enable auto-updates for studios.
