@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   // Gatsby 5 config
   trailingSlash: "always",
@@ -20,17 +24,19 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-sanity",
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+        watchMode: true,
+        // overlayDrafts: true,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/src/content/blog`,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
