@@ -75,7 +75,10 @@ exports.createPages = async ({ graphql, actions }) => {
     // TODO create slugs w/ createFilePath
     const slug = node.childMarkdownRemark.frontmatter.caption
       .toLowerCase()
-      .replace(" ", "-")
+      .trim()
+      .replace(/ /g, "-")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
 
     createPage({
       path: `/projects/itakepictures/photo/` + slug,
