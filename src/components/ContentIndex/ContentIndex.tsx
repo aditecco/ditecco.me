@@ -90,7 +90,20 @@ export default function ContentIndex({
           </section>
 
           <section>
-            <ul className="index-item-list">{content.map(contentRenderer)}</ul>
+            {content?.length ? (
+              <ul className="index-item-list">
+                {content.map(contentRenderer)}
+              </ul>
+            ) : (
+              <div
+                style={{
+                  font: "inherit",
+                  padding: 16,
+                }}
+              >
+                No posts for now!
+              </div>
+            )}
           </section>
         </main>
       </div>
