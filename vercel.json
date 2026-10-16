@@ -1,0 +1,17 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/blog", "destination": "/notes/", "permanent": true },
+    { "source": "/blog/:path*", "destination": "/notes/", "permanent": true },
+    {
+      "source": "/projects/itakepictures/photo/:slug",
+      "destination": "https://itakepictures.ditecco.me/photo/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/itakepictures",
+      "destination": "https://itakepictures.ditecco.me/",
+      "permanent": true
+    }
+  ]
+}

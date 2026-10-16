@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Home from "../components/Home"
+import { getHomeCards } from "../lib/content"
+
+const cards = await getHomeCards()
+---
+
+<Layout title="Home">
+  <Home cards={cards} />
+</Layout>

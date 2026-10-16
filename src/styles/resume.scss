@@ -2,6 +2,8 @@
 resume.scss
 --------------------------------- */
 
+@use "sass:color";
+
 @import "_logic";
 
 // Pulsating light animation
@@ -24,7 +26,9 @@ resume.scss
   // custom page bg
   background-color: $rm-background-page-outer;
 
-  + footer {
+  // the island wrapper sits between .Resume and the footer
+  + footer,
+  :where(astro-island):has(> &) + footer {
     background-color: $rm-background-page-outer;
   }
 
@@ -197,7 +201,7 @@ resume.scss
     background-color: $rm-accent-bright;
     &:hover {
       color: $rm-background-page-inner;
-      background-color: darken($rm-accent-bright, 15%);
+      background-color: color.adjust($rm-accent-bright, $lightness: -15%);
     }
   }
 
@@ -303,7 +307,7 @@ resume.scss
     box-shadow: 0 4px 16px rgba(black, 0.25);
     &:hover {
       color: #f1f1f1;
-      background-color: darken($rm-accent-bright, 15%);
+      background-color: color.adjust($rm-accent-bright, $lightness: -15%);
     }
     @media (min-width: 990px) {
       visibility: visible;
@@ -326,7 +330,7 @@ resume.scss
     left: calc(50% - (#{$w} / 2));
     width: $w;
     padding: 10px;
-    border: 1px solid darken($utility-highlight, 20%);
+    border: 1px solid color.adjust($utility-highlight, $lightness: -20%);
     border-radius: 4px;
     text-align: center;
     background-color: $utility-highlight;
@@ -486,7 +490,7 @@ resume.scss
         position: absolute;
         // top: calc(50% - 21px);
         top: calc(50% - (#{$s} / 2));
-        left: -$s / 2;
+        left: -$s * 0.5;
         width: $s;
         height: $s;
         border-radius: 50%;

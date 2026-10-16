@@ -26,6 +26,31 @@ export default defineType({
           {title: 'Code', value: 'code'},
           {title: 'Underline', value: 'underline'},
         ],
+        annotations: [
+          {
+            name: 'link',
+            title: 'Link',
+            type: 'object',
+            fields: [
+              {
+                name: 'href',
+                title: 'URL',
+                type: 'string',
+                validation: (Rule) =>
+                  Rule.required().uri({
+                    allowRelative: true,
+                    scheme: ['http', 'https', 'mailto', 'tel'],
+                  }),
+              },
+              {
+                name: 'blank',
+                title: 'Open in new tab',
+                type: 'boolean',
+                initialValue: false,
+              },
+            ],
+          },
+        ],
       },
     }),
     defineArrayMember({

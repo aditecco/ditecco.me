@@ -2,6 +2,8 @@
 logic
 --------------------------------- */
 
+@use "sass:math";
+
 @import "_colors-typography";
 
 /* ---------------------------------
@@ -80,12 +82,12 @@ functions & mixins
 }
 
 @function rel($t, $c: 16, $u: "rem") {
-  @return ($t / $c) + #{$u};
+  @return math.div($t, $c) + #{$u};
 }
 
 @function emCalc($target, $context: 10) {
   // ref: https://stackoverflow.com/questions/13905407/append-unit-type-to-the-result-of-a-calculation
-  @return ($target / $context) * 1em;
+  @return math.div($target, $context) * 1em;
 }
 
 // initializes the stylesheet

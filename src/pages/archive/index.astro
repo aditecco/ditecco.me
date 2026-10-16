@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import ContentIndex from "../../components/ContentIndex/ContentIndex"
+import FooterSpacer from "../../components/FooterSpacer.astro"
+
+const content = [
+  {
+    id: "06c699dd1a7e41689d877ad49b3f7a30",
+    slug: "/archive/simplest/",
+    title: "Simplest",
+    tags: ["UI Design"],
+    timestamp: "2011 - 2016",
+  },
+  {
+    id: "1270be44060d48459278e094fd7fd6bd",
+    slug: "/archive/geekville/en/",
+    title: "Geekville",
+    tags: ["Business"],
+    timestamp: "2013 - 2016",
+  },
+  {
+    id: "92d58424cd0045208fda1a375462363e",
+    slug: "/archive/the-collective/",
+    title: "The Collective",
+    tags: ["Community"],
+    timestamp: "2012 - 2013",
+  },
+  {
+    id: "a72d0249de0045e1acb8766f1cc411e7",
+    slug: "/archive/the-digital-league/",
+    title: "The Digital League",
+    tags: ["Community"],
+    timestamp: "2011 - 2013",
+  },
+]
+---
+
+<Layout title="Archive index">
+  <FooterSpacer />
+  <ContentIndex title="Archive index" content={content} />
+</Layout>

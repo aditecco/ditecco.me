@@ -1,6 +1,8 @@
 import author from './documents/author'
-import blogPost from './documents/blogPost'
-import blogTag from './taxonomies/blogTag'
+import note from './documents/note'
+import resumeEntry from './documents/resumeEntry'
+import homeCard from './documents/homeCard'
+import noteTag from './taxonomies/noteTag'
 import portableText from './objects/portableText'
 import socialLinks from './objects/socialLinks'
 import codeBlock from './objects/codeBlock'
@@ -9,10 +11,12 @@ import imageBlock from './objects/imageBlock'
 export const schemaTypes = [
   // Documents
   author,
-  blogPost,
+  note,
+  resumeEntry,
+  homeCard,
 
   // Taxonomies
-  blogTag,
+  noteTag,
 
   // Objects
   portableText,
