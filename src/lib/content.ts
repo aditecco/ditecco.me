@@ -70,7 +70,9 @@ const client = projectId
       projectId,
       dataset: dataset || "production",
       apiVersion: "2025-01-01",
-      useCdn: true,
+      // content is only read at build/dev time, so skip the CDN: it can
+      // serve stale results for a while after a publish
+      useCdn: false,
     })
   : null
 
