@@ -10,20 +10,21 @@
     "build": "sanity build",
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy",
-    "deploy-graphql:dev":"sanity graphql deploy --dataset development"
+    "deploy-graphql:dev": "sanity graphql deploy --dataset development"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
-    "@sanity/vision": "^5.1.0",
-    "react": "^19.1",
-    "react-dom": "^19.1",
-    "sanity": "^5.1.0",
+    "@sanity/vision": "^6.19.0",
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2",
+    "sanity": "^6.19.0",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^6.0.0",
+    "@types/node": "^22.20.5",
     "@types/react": "^19.1",
     "eslint": "^9.28",
     "prettier": "^3.5",
