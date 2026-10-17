@@ -46,6 +46,17 @@ for (const card of loadHomeCards()) {
 docs.push(...loadResumeEntries())
 
 const tx = client.transaction()
+
+// ids containing a dot are private to the dataset, so an earlier import that
+// used them left documents the public API can't see; drop them
+const existingIds = await client.fetch(
+  `*[_type in ["homeCard", "resumeEntry"]]._id`,
+)
+const legacyIds = existingIds.filter(id =>
+  id.replace(/^drafts\./, "").includes("."),
+)
+for (const id of legacyIds) tx.delete(id)
+
 for (const doc of docs) tx.createOrReplace(doc)
 await tx.commit()
 

@@ -1,6 +1,6 @@
 [
   {
-    "_id": "homeCard.home-card-01",
+    "_id": "homeCard-home-card-01",
     "_type": "homeCard",
     "master": true,
     "expanded": false,
@@ -73,7 +73,9 @@
             "_type": "span",
             "_key": "i8",
             "text": "send me an e-mail",
-            "marks": ["i7"]
+            "marks": [
+              "i7"
+            ]
           },
           {
             "_type": "span",
@@ -90,7 +92,7 @@
     "order": 1
   },
   {
-    "_id": "homeCard.home-card-02",
+    "_id": "homeCard-home-card-02",
     "_type": "homeCard",
     "master": false,
     "expanded": false,
@@ -98,13 +100,15 @@
     "title": "Résumé",
     "subtitle": "work",
     "body": "Read more about my current & past activities.",
-    "tags": ["résumé & cv"],
+    "tags": [
+      "résumé & cv"
+    ],
     "heroImgFile": null,
     "heroAlt": "",
     "order": 2
   },
   {
-    "_id": "homeCard.home-card-03",
+    "_id": "homeCard-home-card-03",
     "_type": "homeCard",
     "master": false,
     "expanded": true,
@@ -112,13 +116,15 @@
     "title": "Simplest",
     "subtitle": "work · 2011–2016",
     "body": "My one-man-band user interface design studio.",
-    "tags": ["UI Design"],
+    "tags": [
+      "UI Design"
+    ],
     "heroImgFile": "spl-hero.jpg",
     "heroAlt": "Simplest UI Design",
     "order": 3
   },
   {
-    "_id": "homeCard.home-card-04",
+    "_id": "homeCard-home-card-04",
     "_type": "homeCard",
     "master": false,
     "expanded": true,
@@ -126,13 +132,15 @@
     "title": "Geekville",
     "subtitle": "work · 2013–2016",
     "body": "A coworking space for tech & creative professionals.",
-    "tags": ["entrepreneurship"],
+    "tags": [
+      "entrepreneurship"
+    ],
     "heroImgFile": "gvl-hero.jpg",
     "heroAlt": "A view of Geekville",
     "order": 4
   },
   {
-    "_id": "homeCard.home-card-05",
+    "_id": "homeCard-home-card-05",
     "_type": "homeCard",
     "master": false,
     "expanded": true,
@@ -140,13 +148,15 @@
     "title": "The Collective",
     "subtitle": "work · 2012–2013",
     "body": "The first authentic coworking space in Verona.",
-    "tags": ["community"],
+    "tags": [
+      "community"
+    ],
     "heroImgFile": "tc-tshirt-2.jpg",
     "heroAlt": "The Collective T-Shirt",
     "order": 5
   },
   {
-    "_id": "homeCard.home-card-06",
+    "_id": "homeCard-home-card-06",
     "_type": "homeCard",
     "master": false,
     "expanded": true,
@@ -154,13 +164,15 @@
     "title": "The Digital League",
     "subtitle": "work · 2011–2013",
     "body": "A community for tech pros & innovators in the Verona area.",
-    "tags": ["community"],
+    "tags": [
+      "community"
+    ],
     "heroImgFile": "tdl-hero.jpg",
     "heroAlt": "The Digital League's Community",
     "order": 7
   },
   {
-    "_id": "homeCard.home-card-07",
+    "_id": "homeCard-home-card-07",
     "_type": "homeCard",
     "master": false,
     "expanded": true,
@@ -168,13 +180,15 @@
     "title": "I take pictures",
     "subtitle": "projects",
     "body": "A mini-site for my experiments in photography.",
-    "tags": ["photography"],
+    "tags": [
+      "photography"
+    ],
     "heroImgFile": "itp-ph-05-sq.jpg",
     "heroAlt": "Abstract photography by Alessandro Di Tecco",
     "order": 8
   },
   {
-    "_id": "homeCard.home-card-08",
+    "_id": "homeCard-home-card-08",
     "_type": "homeCard",
     "master": false,
     "expanded": false,
@@ -182,7 +196,9 @@
     "title": "Blog",
     "subtitle": "projects",
     "body": "Thoughts about technology, web development, and more.",
-    "tags": ["writing"],
+    "tags": [
+      "writing"
+    ],
     "heroImgFile": null,
     "heroAlt": "",
     "order": 9

@@ -35,6 +35,10 @@ function fixPlaceholders(md) {
 // The old resume page showed the first 10 entries (per language) as work
 // experience and the rest as "other". Two entries share order 2, so that cut
 // falls after order 9.
+// a dot in a document id makes it private to the dataset (the public API
+// can't read it), so file names like "bcf.it" become "bcf-it"
+const idSlug = slug => slug.replace(/\./g, "-")
+
 const LAST_WORK_ORDER = 9
 
 export function loadResumeEntries() {
@@ -44,7 +48,7 @@ export function loadResumeEntries() {
       const slug = file.replace(/\.md$/, "")
 
       return {
-        _id: `resumeEntry.${slug}`,
+        _id: `resumeEntry-${idSlug(slug)}`,
         _type: "resumeEntry",
         title: String(data.title),
         subtitle: data.subtitle ?? "",
@@ -73,7 +77,7 @@ export function loadHomeCards() {
           : data.href
 
     return {
-      _id: `homeCard.${slug}`,
+      _id: `homeCard-${idSlug(slug)}`,
       _type: "homeCard",
       master: Boolean(data.master),
       expanded: Boolean(data.expanded),

@@ -1,6 +1,6 @@
 [
   {
-    "_id": "resumeEntry.bcf.it",
+    "_id": "resumeEntry-bcf-it",
     "_type": "resumeEntry",
     "title": "2007 - 2009 — BCF",
     "subtitle": "Copywriter",
@@ -25,7 +25,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.bcf",
+    "_id": "resumeEntry-bcf",
     "_type": "resumeEntry",
     "title": "2007 - 2009 — BCF",
     "subtitle": "Copywriter",
@@ -50,7 +50,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.behance-portfolio-reviews.it",
+    "_id": "resumeEntry-behance-portfolio-reviews-it",
     "_type": "resumeEntry",
     "title": "03-05/2014 — Behance Portfolio Reviews",
     "subtitle": "Organizer",
@@ -123,7 +123,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.behance-portfolio-reviews",
+    "_id": "resumeEntry-behance-portfolio-reviews",
     "_type": "resumeEntry",
     "title": "03-05/2014 — Behance Portfolio Reviews",
     "subtitle": "Organizer",
@@ -270,7 +270,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.caffeina.it",
+    "_id": "resumeEntry-caffeina-it",
     "_type": "resumeEntry",
     "title": "2023 - Oggi — Caffeina",
     "subtitle": "Front-End Developer",
@@ -295,7 +295,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.caffeina",
+    "_id": "resumeEntry-caffeina",
     "_type": "resumeEntry",
     "title": "2023 - Present — Caffeina",
     "subtitle": "Front-End Developer",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.clab-comunicazione.it",
+    "_id": "resumeEntry-clab-comunicazione-it",
     "_type": "resumeEntry",
     "title": "2010 - 2011 — Clab Comunicazione",
     "subtitle": "Copywriter",
@@ -345,7 +345,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.clab-comunicazione",
+    "_id": "resumeEntry-clab-comunicazione",
     "_type": "resumeEntry",
     "title": "2010 - 2011 — Clab Comunicazione",
     "subtitle": "Copywriter",
@@ -370,7 +370,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.fornace.it",
+    "_id": "resumeEntry-fornace-it",
     "_type": "resumeEntry",
     "title": "2018 - 2019 — Fornace",
     "subtitle": "Front-End Developer",
@@ -395,7 +395,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.fornace",
+    "_id": "resumeEntry-fornace",
     "_type": "resumeEntry",
     "title": "2018 - 2019 — Fornace",
     "subtitle": "Front-End Developer",
@@ -420,7 +420,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.geekville.it",
+    "_id": "resumeEntry-geekville-it",
     "_type": "resumeEntry",
     "title": "2013 - 2016 — Geekville",
     "subtitle": "Creatore, Co-Founder, Designer",
@@ -475,7 +475,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.geekville",
+    "_id": "resumeEntry-geekville",
     "_type": "resumeEntry",
     "title": "2013 - 2016 — Geekville",
     "subtitle": "Creator, Co-Founder, All-around Designer",
@@ -505,7 +505,9 @@
             "_type": "span",
             "_key": "b2",
             "text": "Geekville",
-            "marks": ["b1"]
+            "marks": [
+              "b1"
+            ]
           },
           {
             "_type": "span",
@@ -560,7 +562,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.intesys.it",
+    "_id": "resumeEntry-intesys-it",
     "_type": "resumeEntry",
     "title": "2019 - 2023 — Intesys",
     "subtitle": "Front-End Developer",
@@ -585,7 +587,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.intesys",
+    "_id": "resumeEntry-intesys",
     "_type": "resumeEntry",
     "title": "2019 - 2023 — Intesys",
     "subtitle": "Front-End Developer",
@@ -610,7 +612,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.ninja-marketing-02.it",
+    "_id": "resumeEntry-ninja-marketing-02-it",
     "_type": "resumeEntry",
     "title": "04-06/2011 — Ninja Marketing",
     "subtitle": "Editor, Design Section",
@@ -641,7 +643,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.ninja-marketing-02",
+    "_id": "resumeEntry-ninja-marketing-02",
     "_type": "resumeEntry",
     "title": "04-06/2011 — Ninja Marketing",
     "subtitle": "Editor, Design Section",
@@ -671,14 +673,16 @@
             "_type": "span",
             "_key": "b2",
             "text": "→ read my post for the launch of Ninja Marketing Design (in Italian)",
-            "marks": ["b1"]
+            "marks": [
+              "b1"
+            ]
           }
         ]
       }
     ]
   },
   {
-    "_id": "resumeEntry.ninja-marketing.it",
+    "_id": "resumeEntry-ninja-marketing-it",
     "_type": "resumeEntry",
     "title": "01-06/2011 — Ninja Marketing",
     "subtitle": "Contributing writer",
@@ -715,7 +719,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.ninja-marketing",
+    "_id": "resumeEntry-ninja-marketing",
     "_type": "resumeEntry",
     "title": "01-06/2011 — Ninja Marketing",
     "subtitle": "Contributing writer",
@@ -759,14 +763,16 @@
             "_type": "span",
             "_key": "b4",
             "text": "→ read my posts on Ninja Marketing (Italian)",
-            "marks": ["b3"]
+            "marks": [
+              "b3"
+            ]
           }
         ]
       }
     ]
   },
   {
-    "_id": "resumeEntry.simplest.it",
+    "_id": "resumeEntry-simplest-it",
     "_type": "resumeEntry",
     "title": "2011 - 2016 — Simplest",
     "subtitle": "Freelance User Interface Designer",
@@ -851,7 +857,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.simplest",
+    "_id": "resumeEntry-simplest",
     "_type": "resumeEntry",
     "title": "2011 - 2016 — Simplest",
     "subtitle": "Freelance User Interface Designer",
@@ -1005,7 +1011,9 @@
             "_type": "span",
             "_key": "bi",
             "text": "portfolio",
-            "marks": ["bh"]
+            "marks": [
+              "bh"
+            ]
           }
         ]
       },
@@ -1026,7 +1034,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.startup-weekend-02.it",
+    "_id": "resumeEntry-startup-weekend-02-it",
     "_type": "resumeEntry",
     "title": "10-12/2012 — Startup Weekend",
     "subtitle": "Organizer",
@@ -1141,7 +1149,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.startup-weekend-02",
+    "_id": "resumeEntry-startup-weekend-02",
     "_type": "resumeEntry",
     "title": "10-12/2012 — Startup Weekend",
     "subtitle": "Organizer",
@@ -1171,7 +1179,9 @@
             "_type": "span",
             "_key": "b2",
             "text": "Startup Weekend Verona 2012,",
-            "marks": ["b1"]
+            "marks": [
+              "b1"
+            ]
           },
           {
             "_type": "span",
@@ -1391,7 +1401,9 @@
             "_type": "span",
             "_key": "bv",
             "text": "→ Startup Weekend Verona 2012",
-            "marks": ["bu"]
+            "marks": [
+              "bu"
+            ]
           }
         ]
       },
@@ -1412,7 +1424,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.startup-weekend.it",
+    "_id": "resumeEntry-startup-weekend-it",
     "_type": "resumeEntry",
     "title": "04/2013 — Startup Weekend",
     "subtitle": "Coach",
@@ -1461,7 +1473,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.startup-weekend",
+    "_id": "resumeEntry-startup-weekend",
     "_type": "resumeEntry",
     "title": "04/2013 — Startup Weekend",
     "subtitle": "Coach",
@@ -1496,7 +1508,9 @@
             "_type": "span",
             "_key": "b2",
             "text": "H-Farm",
-            "marks": ["b1"]
+            "marks": [
+              "b1"
+            ]
           },
           {
             "_type": "span",
@@ -1508,7 +1522,9 @@
             "_type": "span",
             "_key": "b5",
             "text": "Startup Weekend Venice 2013;",
-            "marks": ["b4"]
+            "marks": [
+              "b4"
+            ]
           },
           {
             "_type": "span",
@@ -1535,7 +1551,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.the-collective.it",
+    "_id": "resumeEntry-the-collective-it",
     "_type": "resumeEntry",
     "title": "2012 - 2013 — The Collective",
     "subtitle": "Creatore, Co-Founder, Designer",
@@ -1578,7 +1594,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.the-collective",
+    "_id": "resumeEntry-the-collective",
     "_type": "resumeEntry",
     "title": "2012 - 2013 — The Collective",
     "subtitle": "Creator, Co-Founder, All-around Designer",
@@ -1616,7 +1632,9 @@
             "_type": "span",
             "_key": "b3",
             "text": "The Collective",
-            "marks": ["b2"]
+            "marks": [
+              "b2"
+            ]
           },
           {
             "_type": "span",
@@ -1657,7 +1675,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.the-digital-league.it",
+    "_id": "resumeEntry-the-digital-league-it",
     "_type": "resumeEntry",
     "title": "2011 - 2013 — The Digital League",
     "subtitle": "Founder, All-around Designer",
@@ -1724,7 +1742,7 @@
     ]
   },
   {
-    "_id": "resumeEntry.the-digital-league",
+    "_id": "resumeEntry-the-digital-league",
     "_type": "resumeEntry",
     "title": "2011 - 2013 — The Digital League",
     "subtitle": "Founder, All-around Designer",
@@ -1754,7 +1772,9 @@
             "_type": "span",
             "_key": "b2",
             "text": "The Digital League:",
-            "marks": ["b1"]
+            "marks": [
+              "b1"
+            ]
           },
           {
             "_type": "span",
