@@ -16,7 +16,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "fixtures": "node scripts/build-fixtures.mjs",
-    "import": "node scripts/import-to-sanity.mjs",
+    "import": "node --env-file-if-exists=.env scripts/import-to-sanity.mjs",
     "format": "prettier --write \"**/*.{js,mjs,jsx,ts,tsx,astro,json,md}\"",
     "format:check": "prettier --check \"**/*.{js,mjs,jsx,ts,tsx,astro,json,md}\""
   },
