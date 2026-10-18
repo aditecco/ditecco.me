@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Resume from "../components/Resume"
+import { getResumeEntries } from "../lib/content"
+
+const stories = await getResumeEntries()
+---
+
+<Layout title="Resume">
+  <Resume stories={stories} client:load />
+</Layout>

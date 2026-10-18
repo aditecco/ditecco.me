@@ -1,0 +1,1867 @@
+[
+  {
+    "_id": "resumeEntry-bcf-it",
+    "_type": "resumeEntry",
+    "title": "2007 - 2009 — BCF",
+    "subtitle": "Copywriter",
+    "language": "IT",
+    "category": "other",
+    "order": 10,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "BCF &egrave; un'agenzia di pubblicit&agrave; e studio di design industriale con oltre 30 anni di esperienza. Ho lavorato principalmente come copywriter, ma mi sono anche occupato di presentare progetti creativi ai maggiori clienti d'agenzia e di ideare/gestire progetti digitali.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-bcf",
+    "_type": "resumeEntry",
+    "title": "2007 - 2009 — BCF",
+    "subtitle": "Copywriter",
+    "language": "EN",
+    "category": "other",
+    "order": 10,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "At BCF -- advertising agency & industrial design studio with 30+ years of experience -- I worked mainly as a Copywriter, but also did a number of other things such as pitching creative projects to top agency clients and managing digital projects.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-behance-portfolio-reviews-it",
+    "_type": "resumeEntry",
+    "title": "03-05/2014 — Behance Portfolio Reviews",
+    "subtitle": "Organizer",
+    "language": "IT",
+    "category": "other",
+    "order": 11,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b9",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "Sono stato uno degli organizzatori di Behance Portfolio Reviews Verona 2014, prima edizione in assoluto per la citt&agrave;.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b1",
+            "text": "Behance Portfolio Review &egrave; un format pensato per incitare i professionisti della creativit&agrave; a scambiarsi feedback sui propri lavori.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "Come organizzatore mi sono occupato di:",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": "Marketing dell'evento;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b4",
+            "text": "Vendita dei biglietti;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b5",
+            "text": "Allestimento dei locali della manifestazione (pre & post evento);",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b6",
+            "text": "Conduzione dell'evento;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b7",
+            "text": "Comunicazione con Behance HQ in USA.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b8",
+            "text": "Credits: per il reclutamento degli ospiti speciali e dei Review Leaders un grande aiuto &egrave; venuto da Stefano Torregrossa & Matteo Cuccato, che hanno messo a disposizione il loro network di conoscenze personali e professionali.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-behance-portfolio-reviews",
+    "_type": "resumeEntry",
+    "title": "03-05/2014 — Behance Portfolio Reviews",
+    "subtitle": "Organizer",
+    "language": "EN",
+    "category": "other",
+    "order": 11,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "I was the lead organizer of Behance Portfolio Reviews Verona 2014, for the first time ever in the city.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b3",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "Behance Portfolio Review is a networking event aimed specifically at creatives, with the purpose of promoting the practice of design critique.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b4",
+            "text": "As an organizer, I took care of:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b7",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b6",
+            "text": "Marketing the event;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "b9",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b8",
+            "text": "Selling tickets;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bb",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "ba",
+            "text": "Preparing the event location (before & after the event);",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bd",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bc",
+            "text": "Running the event;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bf",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "be",
+            "text": "Communicating with Behance HQ in US.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bh",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bg",
+            "text": "Credits: a big help for recruiting Special Guests and Review Leaders came from Stefano Torregrossa & Matteo Cuccato, who leveraged their personal and professional network for the cause.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-caffeina-it",
+    "_type": "resumeEntry",
+    "title": "2023 - Oggi — Caffeina",
+    "subtitle": "Front-End Developer",
+    "language": "IT",
+    "category": "work",
+    "order": 1,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "WIP : )",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-caffeina",
+    "_type": "resumeEntry",
+    "title": "2023 - Present — Caffeina",
+    "subtitle": "Front-End Developer",
+    "language": "EN",
+    "category": "work",
+    "order": 1,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "WIP : )",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-clab-comunicazione-it",
+    "_type": "resumeEntry",
+    "title": "2010 - 2011 — Clab Comunicazione",
+    "subtitle": "Copywriter",
+    "language": "IT",
+    "category": "work",
+    "order": 9,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "Clab Comunicazione &egrave; un'agenzia pubblicitaria; ho lavorato principalmente come copywriter, ma anche in qualit&agrave; di responsabile dell'area digitale (siti web, adv online, e altri), sia come designer che come project manager.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-clab-comunicazione",
+    "_type": "resumeEntry",
+    "title": "2010 - 2011 — Clab Comunicazione",
+    "subtitle": "Copywriter",
+    "language": "EN",
+    "category": "work",
+    "order": 9,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "At Clab Comunicazione, ad agency, I worked mainly as a Copywriter, but I was also in charge of everything digital -- websites, online adv, etc -- both from a design & management standpoint.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-fornace-it",
+    "_type": "resumeEntry",
+    "title": "2018 - 2019 — Fornace",
+    "subtitle": "Front-End Developer",
+    "language": "IT",
+    "category": "work",
+    "order": 2,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "In Fornace sviluppo layout e interfacce web & mobile, con i pi&ugrave; recenti standard CSS e JavaScript. Il tipo di lavoro spazia da piccoli brochure-sites con CMS a grandi applicazioni enterprise in React. Talvolta mi occupo anche, per progetti selezionati, del design UI/UX.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-fornace",
+    "_type": "resumeEntry",
+    "title": "2018 - 2019 — Fornace",
+    "subtitle": "Front-End Developer",
+    "language": "EN",
+    "category": "work",
+    "order": 2,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "At Fornace, I code web & mobile layouts and interfaces, with modern CSS and JavaScript; my work ranges from building small CMS-backed brochure sites to taking part in the development of large enterprise React applications. I also occasionally take care of UX/UI design for select projects.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-geekville-it",
+    "_type": "resumeEntry",
+    "title": "2013 - 2016 — Geekville",
+    "subtitle": "Creatore, Co-Founder, Designer",
+    "language": "IT",
+    "category": "work",
+    "order": 4,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b6",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "Fondato nel 2013, ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b1",
+            "text": "Geekville",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": " &egrave; stato il principale coworking per aziende e freelance del settore creativo, web, & mobile a Verona.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": "Un ambiente di lavoro non convenzionale ispirato agli uffici delle startup di Silicon Valley, Geekville offriva tutto il necessario per essere produttivi, favorendo allo stesso tempo l'incontro e lo scambio di conoscenze tra coworkers.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b4",
+            "text": "Geekville &egrave; stato attivo anche nella produzione di corsi & workshop, con il brand Geekville Learning.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b5",
+            "text": "Credits: Geekville &egrave; stato fondato e realizzato col fondamentale aiuto del mio socio Francesco Adami.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-geekville",
+    "_type": "resumeEntry",
+    "title": "2013 - 2016 — Geekville",
+    "subtitle": "Creator, Co-Founder, All-around Designer",
+    "language": "EN",
+    "category": "work",
+    "order": 4,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b4",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_type": "link",
+            "_key": "b1",
+            "href": "/archive/geekville/en/"
+          }
+        ],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "Founded in oct. 2013, ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "Geekville",
+            "marks": [
+              "b1"
+            ]
+          },
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": " was a coworking space for digital and creative professionals operating in the Verona area.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b6",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b5",
+            "text": "Inspired by the coolest startup HQs, Geekville was no ordinary workplace; while providing state-of-the-art office facilities, its friendly and creative vibe encouraged socializing and knowledge sharing among coworkers.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b8",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b7",
+            "text": "Geekville also created courses and workshops under the dedicated branch Geekville Learning.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "ba",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b9",
+            "text": "Credits: I founded, built and ran Geekville with the help of my business associate Francesco Adami.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-intesys-it",
+    "_type": "resumeEntry",
+    "title": "2019 - 2023 — Intesys",
+    "subtitle": "Front-End Developer",
+    "language": "IT",
+    "category": "work",
+    "order": 2,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "In Intesys sono parte del team front-end, dove creiamo moderne SPAs per clienti enterprise con React e altre tecnologie leader di settore.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-intesys",
+    "_type": "resumeEntry",
+    "title": "2019 - 2023 — Intesys",
+    "subtitle": "Front-End Developer",
+    "language": "EN",
+    "category": "work",
+    "order": 2,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "At Intesys I'm part of the front-end team, where we build modern enterprise SPAs with React and other state-of-the-art technology.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-ninja-marketing-02-it",
+    "_type": "resumeEntry",
+    "title": "04-06/2011 — Ninja Marketing",
+    "subtitle": "Editor, Design Section",
+    "language": "IT",
+    "category": "work",
+    "order": 8,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b2",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "La Sezione Design &egrave; stata un'assoluta novit&agrave; per Ninja Marketing ed ha introdotto un grande cambiamento nella tradizione marketing-centrica del sito: sono stato scelto come editor per gestirne il lancio al pubblico, curarne la linea editoriale, reclutare e coordinare un team di contributors. ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b1",
+            "text": "→ Post di lancio della Sezione Design",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-ninja-marketing-02",
+    "_type": "resumeEntry",
+    "title": "04-06/2011 — Ninja Marketing",
+    "subtitle": "Editor, Design Section",
+    "language": "EN",
+    "category": "work",
+    "order": 8,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b3",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_type": "link",
+            "_key": "b1",
+            "href": "http://www.ninjamarketing.it/2011/04/19/ninja-marketing-speaks-design-al-via-la-nuova-sezione-dedicata-alle-arti-visive-a-tutto-tondo/"
+          }
+        ],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "The Design Section introduced a big change in Ninja Marketing's marketing-centric tradition; as an editor I was given the task of launching the new section, establishing an editorial line, and recruiting a team of contributors. ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "→ read my post for the launch of Ninja Marketing Design (in Italian)",
+            "marks": [
+              "b1"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-ninja-marketing-it",
+    "_type": "resumeEntry",
+    "title": "01-06/2011 — Ninja Marketing",
+    "subtitle": "Contributing writer",
+    "language": "IT",
+    "category": "work",
+    "order": 7,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b3",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "Ninja Marketing &egrave; uno dei principali blog di marketing italiani, con particolare specializzazione su social media & unconventional.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b1",
+            "text": "Come contributor per la Sezione Startup ho scritto news e approfondimenti, interviste e analisi sul mondo startup italiano. ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "→ Leggi i miei post",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-ninja-marketing",
+    "_type": "resumeEntry",
+    "title": "01-06/2011 — Ninja Marketing",
+    "subtitle": "Contributing writer",
+    "language": "EN",
+    "category": "work",
+    "order": 7,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "Ninja Marketing is one of the leading Italian marketing blogs, with a focus on unconventional & social media marketing.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b5",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_type": "link",
+            "_key": "b3",
+            "href": "http://www.ninjamarketing.it/author/alessandro-ditecco/"
+          }
+        ],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "As a contributor for the Startup section I wrote news and features, interviews and analysis about the Italian startup scene. ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b4",
+            "text": "→ read my posts on Ninja Marketing (Italian)",
+            "marks": [
+              "b3"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-simplest-it",
+    "_type": "resumeEntry",
+    "title": "2011 - 2016 — Simplest",
+    "subtitle": "Freelance User Interface Designer",
+    "language": "IT",
+    "category": "work",
+    "order": 3,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "bb",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "Mi occupo di UI Design dal 2011, e dal 2015 ho deciso di dare un nome alla mia attivit&agrave;: l'ho chiamata Simplest, perch&eacute; le pi&ugrave; semplici interazioni e interfacce utente sono il fondamento delle migliori esperienze digitali.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b1",
+            "text": "In 5 anni ho progettato una vasta gamma di prodotti digitali, spesso curandone l'immagine a tutto tondo:",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "web-app UIs",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": "mobile UIs",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b4",
+            "text": "product/marketing websites",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b5",
+            "text": "e-commerce",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b6",
+            "text": "landing pages",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b7",
+            "text": "identity, marketing visuals, banners, etc",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b8",
+            "text": "Ecco il mio portfolio completo: ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b9",
+            "text": "→ Simplest",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "ba",
+            "text": "Inoltre, data la mia passata esperienza imprenditoriale, ho sviluppato una comprensione a tutto tondo del ciclo di vita di un prodotto: progettazione (nell'ambito fisico o digitale), marketing & vendita, pricing, amministrazione, acquisizione clienti, fidelizzazione, customer care, e tutte le quotidiane attivit&agrave; di problem-solving che ogni imprenditore conosce bene.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-simplest",
+    "_type": "resumeEntry",
+    "title": "2011 - 2016 — Simplest",
+    "subtitle": "Freelance User Interface Designer",
+    "language": "EN",
+    "category": "work",
+    "order": 3,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "I've been designing interfaces as a freelancer since 2011; starting from 2015, I decided to create my solo User Interface Design studio: I called it Simplest, to remind myself that the simplest user interfaces & interactions are the building blocks of the best digital experiences.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b3",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "Over the course of 5 years I designed a diverse range of digital products, often taking care of the full product image:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b4",
+            "text": "web-app UIs",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "b7",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b6",
+            "text": "mobile UIs",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "b9",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b8",
+            "text": "product/marketing websites",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bb",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "ba",
+            "text": "e-commerce",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bd",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bc",
+            "text": "landing pages",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bf",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "be",
+            "text": "identity, marketing visuals, banners, etc",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bj",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_type": "link",
+            "_key": "bh",
+            "href": "/archive/simplest/"
+          }
+        ],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bg",
+            "text": "Check out my complete ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "bi",
+            "text": "portfolio",
+            "marks": [
+              "bh"
+            ]
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "bl",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bk",
+            "text": "Moreover, given my past entrepreneurial experience, I developed a solid understanding of what building a product means: from design (both in the physical and digital realm) to marketing & sales, pricing, admin, client acquisition, client retention, customer care, and all the daily problem-solving founders are accustomed to.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-startup-weekend-02-it",
+    "_type": "resumeEntry",
+    "title": "10-12/2012 — Startup Weekend",
+    "subtitle": "Organizer",
+    "language": "IT",
+    "category": "other",
+    "order": 13,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "bg",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "Sono stato uno dei 3 organizzatori di Startup Weekend Verona 2012, per la prima volta in assoluto nella citt&agrave;: ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b1",
+            "text": "→ Startup Weekend Verona 2012",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "Organizzare uno Startup Weekend &egrave; un'attivit&agrave; che richiede molta pianificazione, e l'abilit&agrave; di saper gestire una moltitudine di aspetti:",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": "Reperimento sponsor;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b4",
+            "text": "Reclutamento di coach e giuria;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b5",
+            "text": "Marketing dell'evento;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b6",
+            "text": "Relazioni pubbliche dell'evento;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b7",
+            "text": "Vendita dei biglietti e customer service;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b8",
+            "text": "Allestimento dei locali della manifestazione (pre & post evento);",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b9",
+            "text": "Conduzione dell'evento secondo il programma stabilito;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "ba",
+            "text": "Gestione dei premi e comunicazione con aziende partner;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "bb",
+            "text": "Lavoro amministrativo (gestire gli incassi, emettere fatture, etc);",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "bc",
+            "text": "Comunicazione con gli HQ di Startup Weekend in USA.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "bd",
+            "text": "Personalmente ho lavorato soprattutto negli ambiti 2, 3, 5, 6, 8. Inoltre, ho realizzato l'immagine dell'evento: ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "be",
+            "text": "→ Startup Weekend Verona 2012 on Simplest",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "bf",
+            "text": "Grazie al lavoro di tutti l'evento ha avuto un grande successo, con 120+ partecipanti.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-startup-weekend-02",
+    "_type": "resumeEntry",
+    "title": "10-12/2012 — Startup Weekend",
+    "subtitle": "Organizer",
+    "language": "EN",
+    "category": "other",
+    "order": 13,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b4",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_type": "link",
+            "_key": "b1",
+            "href": "https://web.archive.org/web/20121217072032/http://verona.startupweekend.org/"
+          }
+        ],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "I was one of the 3-people-team who organized ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "Startup Weekend Verona 2012,",
+            "marks": [
+              "b1"
+            ]
+          },
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": " for the first time ever in the city.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b6",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b5",
+            "text": "Organizing a Startup Weekend is no easy task: it involves a lot of planning and the ability to wear many different hats:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b8",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b7",
+            "text": "Finding sponsors;",
+            "marks": []
+          }
+        ],
+        "listItem": "number",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "ba",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b9",
+            "text": "Recruiting Coaches and Jury members;",
+            "marks": []
+          }
+        ],
+        "listItem": "number",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bc",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bb",
+            "text": "Marketing the event;",
+            "marks": []
+          }
+        ],
+        "listItem": "number",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "be",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bd",
+            "text": "Doing PR for the event;",
+            "marks": []
+          }
+        ],
+        "listItem": "number",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bg",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bf",
+            "text": "Selling tickets and providing customer service;",
+            "marks": []
+          }
+        ],
+        "listItem": "number",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bi",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bh",
+            "text": "Preparing the event location (before & after the event);",
+            "marks": []
+          }
+        ],
+        "listItem": "number",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bk",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bj",
+            "text": "Running the event, & making sure it follows the planned schedule;",
+            "marks": []
+          }
+        ],
+        "listItem": "number",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bm",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bl",
+            "text": "Assigning prizes, and communicating with the sponsors who make them available;",
+            "marks": []
+          }
+        ],
+        "listItem": "number",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bo",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bn",
+            "text": "Doing admin work (collecting payments, invoicing, etc);",
+            "marks": []
+          }
+        ],
+        "listItem": "number",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bq",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bp",
+            "text": "Constantly communicating with Startup Weekend HQ in US.",
+            "marks": []
+          }
+        ],
+        "listItem": "number",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bs",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "br",
+            "text": "I worked mostly in areas 02, 03, 05, 06, 08.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "bw",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_type": "link",
+            "_key": "bu",
+            "href": "/archive/simplest/work/startup-weekend-verona/"
+          }
+        ],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bt",
+            "text": "I also created the event identity: ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "bv",
+            "text": "→ Startup Weekend Verona 2012",
+            "marks": [
+              "bu"
+            ]
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "by",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bx",
+            "text": "Thanks to the work of everyone involved the event was a success, with 120+ attendees.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-startup-weekend-it",
+    "_type": "resumeEntry",
+    "title": "04/2013 — Startup Weekend",
+    "subtitle": "Coach",
+    "language": "IT",
+    "category": "other",
+    "order": 12,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "Nell'aprile 2013 ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b1",
+            "text": "H-Farm,",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": " uno dei maggiori acceleratori di startup italiani, ha organizzato e ospitato Startup Weekend Venezia; sono stato invitato a partecipare all'evento in qualit&agrave; di Coach: ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": "→ Startup Weekend Venice 2013",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b4",
+            "text": "Quello del Coach &egrave; un ruolo importante all'interno di uno Startup Weekend: il Coach &egrave; fondamentalmente un esperto nella sua materia – nel mio caso, UI Design & Logo Design – che assiste i team mettendo a disposizione la propria conoscenza.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-startup-weekend",
+    "_type": "resumeEntry",
+    "title": "04/2013 — Startup Weekend",
+    "subtitle": "Coach",
+    "language": "EN",
+    "category": "other",
+    "order": 12,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b7",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_type": "link",
+            "_key": "b1",
+            "href": "http://www.h-farmventures.com/en/"
+          },
+          {
+            "_type": "link",
+            "_key": "b4",
+            "href": "https://web.archive.org/web/20131115072955/http://venice.startupweekend.org/"
+          }
+        ],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "In april 2013, ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "H-Farm",
+            "marks": [
+              "b1"
+            ]
+          },
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": " (one of the top italian startup accelerators) organized and hosted ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b5",
+            "text": "Startup Weekend Venice 2013;",
+            "marks": [
+              "b4"
+            ]
+          },
+          {
+            "_type": "span",
+            "_key": "b6",
+            "text": " I was invited to join the event as a Coach.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b9",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b8",
+            "text": "The role of Coaches in Startup Weekend's formula is an important one: a Coach is basically an expert in his field &mdash; in my case, UI Design & Logo Design &mdash; who follows each team and contributes with his knowledge.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-the-collective-it",
+    "_type": "resumeEntry",
+    "title": "2012 - 2013 — The Collective",
+    "subtitle": "Creatore, Co-Founder, Designer",
+    "language": "IT",
+    "category": "work",
+    "order": 5,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b4",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "Nel 2012 a Verona non esisteva una vera e propria offerta dedicata al coworking. Certo, c'era abbondanza di professionisti e aziende che affittavano qualcuno dei loro locali per arrotondare, ma nessuno aveva ancora pensato di creare una realt&agrave; che facesse una cosa sola e con la massima qualit&agrave;: offrire spazi di lavoro come servizio per giovani aziende e professionisti, a un prezzo ragionevole. E' in questo vuoto che si &egrave; inserito ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b1",
+            "text": "The Collective.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "In molti si sono incontrati a The Collective: alcuni hanno instaurato rapporti professionali, altri sono diventati semplicemente buoni amici. Alcuni ne hanno fatto quasi una seconda casa, altri ci hanno trovato lo spazio giusto per dare vita a quei progetti che da troppo tempo tenevano nel cassetto. Altri ancora si sono ispirati a The Collective per creare un proprio coworking. In tutti i casi, The Collective ha lasciato il segno.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": "Credits: The Collective &egrave; stato fondato e realizzato col fondamentale aiuto del mio socio Francesco Adami.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-the-collective",
+    "_type": "resumeEntry",
+    "title": "2012 - 2013 — The Collective",
+    "subtitle": "Creator, Co-Founder, All-around Designer",
+    "language": "EN",
+    "category": "work",
+    "order": 5,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "In 2012 in Verona there was no shortage of professionals and companies renting excess office space; yet, there wasn't any company whose only focus was offering young freelancers & startups a place to work, for a reasonable price.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b5",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_type": "link",
+            "_key": "b2",
+            "href": "/archive/the-collective/"
+          }
+        ],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": "The Collective",
+            "marks": [
+              "b2"
+            ]
+          },
+          {
+            "_type": "span",
+            "_key": "b4",
+            "text": " was built around this exact need, and effectively filled this void as the first state-of-the-art coworking space in Verona.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b7",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b6",
+            "text": "The Collective brought a lot of people together: some of them became business partners, others just good friends. Some people elected the space as a second house, some others realized it was the right place to work on those projects they kept in a closet for too long. Others were so inspired they decided to try and build a coworking space on their own. Either way, The Collective made a lasting impact.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b9",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b8",
+            "text": "Credits: I founded, built and ran Geekville with the help of my business associate Francesco Adami.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-the-digital-league-it",
+    "_type": "resumeEntry",
+    "title": "2011 - 2013 — The Digital League",
+    "subtitle": "Founder, All-around Designer",
+    "language": "IT",
+    "category": "work",
+    "order": 6,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b8",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "I principali eventi tech/digital in Italia di norma sono un'esclusiva delle grandi citt&agrave; come Roma o Milano. E' nel 2009 che ho avuto per la prima volta l'idea di creare un'organizzazione in grado di portare quel tipo di manifestazioni a Verona. Due anni dopo, nel 2011, ho fondato ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b1",
+            "text": "The Digital League.",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": " un'associazione con l'obiettivo di portare a Verona i migliori eventi nazionali e internazionali su internet, tecnologia, startup e cultura digitale, favorendo cos&igrave; la nascita di una tech-community locale. ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": "Nei suoi due anni di attivit&agrave;, The Digital League ha ottenuto molte conquiste:",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b4",
+            "text": "Ha creato The Collective, il primo coworking a Verona per professionisti creativi & digitali;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b5",
+            "text": "Ha creato il format Digital Drink, ciclo di aperitivi di networking che hanno offerto a molte startup l'opportunit&agrave; di presentare il proprio prodotto a un pubblico selezionato;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b6",
+            "text": "Ha attivato relazioni e collaborazioni, nella forma della media partnership, con eventi e iniziative tech italiane e internazionali;",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b7",
+            "text": "E' stata uno degli sponsor paganti di Startup Weekend Verona 2012.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "resumeEntry-the-digital-league",
+    "_type": "resumeEntry",
+    "title": "2011 - 2013 — The Digital League",
+    "subtitle": "Founder, All-around Designer",
+    "language": "EN",
+    "category": "work",
+    "order": 6,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "b4",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_type": "link",
+            "_key": "b1",
+            "href": "/archive/the-digital-league/"
+          }
+        ],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b0",
+            "text": "The coolest tech events in Italy, both big or small, are usually held only in major cities like Milan or Rome. I've been thinking of a way to bring them to Verona, my city, since 2009. It was only after 2 years, in 2011, that I founded ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "b2",
+            "text": "The Digital League:",
+            "marks": [
+              "b1"
+            ]
+          },
+          {
+            "_type": "span",
+            "_key": "b3",
+            "text": " a non-profit association aiming to bring the best national/international tech & digital events to Verona. By gathering people around topics such as internet culture, tehnology, startup & entrepreneurship, The Digital League aimed to create a local digital community.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b6",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b5",
+            "text": "Here are TDL's most significant achievements:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "b8",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b7",
+            "text": "Founded The Collective, the first authentic coworking space in Verona;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "ba",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "b9",
+            "text": "Created DigitalDrink, a networking event that gave several startups the opportunity to pitch their product to a selected audience;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "bc",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bb",
+            "text": "Created connections and relationships, in the form of media partnerships, with many tech conferences in Italy and abroad;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "be",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "bd",
+            "text": "Contributed to Startup Weekend Verona 2012 with a paid sponsorship.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      }
+    ]
+  }
+]

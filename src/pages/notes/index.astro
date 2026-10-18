@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import ContentIndex from "../../components/ContentIndex/ContentIndex"
+import FooterSpacer from "../../components/FooterSpacer.astro"
+import { getNotes } from "../../lib/content"
+
+const notes = await getNotes()
+
+const content = notes.map(note => ({
+  id: note.id,
+  slug: `/notes/${note.slug}/`,
+  timestamp: new Date(note.publishedAt).toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "2-digit",
+  }),
+  title: note.title,
+  tags: note.tags,
+}))
+---
+
+<Layout title="Notes index">
+  <FooterSpacer />
+  <ContentIndex title="Notes index" content={content} />
+</Layout>

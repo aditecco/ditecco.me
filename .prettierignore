@@ -1,5 +1,7 @@
 .cache
 package.json
 package-lock.json
+dist
+.astro
 public
-src/utils/post-generator.js
+.sanity

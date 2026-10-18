@@ -1,0 +1,14 @@
+---
+// Index pages pin the footer to the bottom of the viewport, so the list
+// needs a bottom margin matching the footer's (wrapping-dependent) height.
+// Render it *before* the page content: styles key off `.ContentIndex + footer`.
+---
+
+<script>
+  const footer = document.querySelector("footer")
+  const list = document.querySelector<HTMLElement>(".index-item-list")
+
+  if (footer && list) {
+    list.style.marginBottom = `${footer.getBoundingClientRect().height}px`
+  }
+</script>

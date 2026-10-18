@@ -1,0 +1,15 @@
+---
+import { site } from "../lib/site"
+import "./Footer.scss"
+
+const text = `© ${site.currentYear} ${site.author}, All rights reserved. • v${site.version} • last build @${site.buildTime} • coded with love & `
+---
+
+<footer>
+  <small>
+    {text}
+    <a href="https://astro.build/" target="_blank" rel="noopener">
+      Astro
+    </a>
+  </small>
+</footer>

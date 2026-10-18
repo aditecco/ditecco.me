@@ -1,0 +1,43 @@
+---
+import "normalize.css/normalize.css"
+import "@fontsource/montserrat"
+import "@fontsource/roboto"
+import "@fontsource/arvo"
+import "@fontsource/kaushan-script"
+import "@fontsource/karla"
+import "@fontsource/trocchi"
+import "../styles/index.scss"
+import Footer from "../components/Footer.astro"
+import { site } from "../lib/site"
+
+type Props = {
+  title: string
+  description?: string
+  lang?: string
+}
+
+const { title, description = site.description, lang = "en" } = Astro.props
+const fullTitle = `${title} | ${site.title}`
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content={site.author} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <slot />
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,358 @@
+/* ---------------------------------
+Note
+--------------------------------- */
+
+@import "../styles/_logic";
+
+.Note {
+  // custom page bg
+  // background-color: $rm-background-page-outer;
+  margin: 20px;
+
+  + footer {
+    // background-color: $rm-background-page-outer;
+    padding-top: 40px;
+  }
+
+  // typography
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: left;
+  color: $utility-dark-gray;
+
+  // .container
+  .container {
+    @include container(700px);
+  }
+
+  .blog-post-content {
+    @include container(880px);
+    box-shadow: 0 4px 30px #00000022;
+    background-color: snow;
+    border-top: 3px solid $accent-bright;
+    // border: 4px double $utility-light-gray;
+    // padding: 1px;
+  }
+
+  .blog-post-header {
+    background-color: rgba($paper, 0.45);
+  }
+
+  .blog-post-header-text {
+    padding: 40px 20px;
+
+    .blog-post-title,
+    .blog-post-timestamp,
+    .blog-post-author {
+    }
+  }
+
+  .blog-post-title {
+    margin: rel(5) 0;
+    font-family: $heading-font;
+    font-size: emCalc(24, 16);
+    font-weight: 400;
+
+    @media (min-width: 650px) {
+      font-size: emCalc(48, 16);
+    }
+  }
+
+  .blog-post-meta {
+    $spacer: 6px;
+
+    padding: 10px 0;
+    border-top: 1px dotted rgba(black, 0.25);
+
+    > * {
+      display: inline-block;
+      margin: 0 $spacer 0 0;
+
+      &::after {
+        content: "•";
+        margin-left: $spacer;
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .blog-post-timestamp,
+  .blog-post-author {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  .blog-post-tags {
+    @include setFlexbox(row wrap, flex-start, center);
+    @include resetBox(0, 0, true);
+    @include setFonts((16 * 0.8), $system-font, $font-color-bright);
+
+    .blog-post-tag {
+      padding: 1px 16px 2px;
+      border: 2px solid $accent-bright;
+      border-radius: 4px;
+      margin: 5px 2px;
+      font-size: small;
+      color: $accent-bright;
+      text-transform: uppercase;
+
+      + .blog-post-tag {
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .blog-post-body,
+  .blog-post-footer {
+    padding: 40px emCalc(20, 16);
+  }
+
+  .blog-post-body {
+    & > * {
+      margin: 0 0 emCalc(10);
+    }
+
+    /* ---------------------------------
+    headings
+    --------------------------------- */
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: $heading-font;
+      // forcing the weight, otherwise normalize.css
+      // would override the font-weight of .blog-post-body
+      font-weight: 400;
+      // need to fix the margin-bottom, computed ad 22px
+    }
+    // the context for emCalc is 16!
+    // that is, the font-size of .blog-post-body
+    h2 {
+      font-size: emCalc(28, 16);
+    }
+    h3 {
+      font-size: emCalc(22, 16);
+    }
+    h4 {
+      font-size: emCalc(18, 16);
+    }
+    h5 {
+      font-size: emCalc(16, 16);
+    }
+    h6 {
+      font-size: emCalc(14, 16);
+    }
+
+    /* ---------------------------------
+    lists
+    --------------------------------- */
+    ul,
+    ol {
+      padding: emCalc(10, 16) emCalc(20, 16);
+      border-left: 1px solid $utility-highlight;
+      background-color: rgba($utility-highlight, 0.15);
+      padding-inline-start: 30px;
+
+      li {
+        margin-bottom: emCalc(10, 16);
+        border-bottom: 1px dotted rgba($utility-dark-gray, 0.25);
+
+        &:last-child {
+          margin-bottom: 0;
+          border: none;
+        }
+
+        &::marker {
+          color: inherit;
+        }
+
+        // style links
+        a {
+          @extend %resetAnchors;
+          border: none;
+          color: black;
+        }
+      }
+    }
+
+    ul {
+      list-style: circle;
+    }
+
+    /* ---------------------------------
+    fx
+    --------------------------------- */
+
+    &::selection {
+      background: $utility-dark-gray;
+      color: white;
+    }
+
+    .highlighted {
+      @extend %specialTextPad;
+      background-color: $utility-highlight;
+    }
+
+    em {
+    }
+
+    strong {
+      color: $utility-dark-gray;
+    }
+
+    /* ---------------------------------
+    special txt
+    --------------------------------- */
+
+    pre {
+      padding: emCalc(20, 16) emCalc(10, 16);
+      @include setBorder(3px, solid, $accent-bright, left);
+      background-color: rgba($utility-light-gray, 0.25);
+      tab-size: 2;
+      line-height: 1.5em;
+      white-space: pre-wrap;
+    }
+
+    code.inline-code {
+      @extend %specialTextPad;
+      background-color: rgba($utility-light-gray, 0.25);
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    blockquote {
+      // force overriding of browser styles
+      margin: 0 0 emCalc(10, 16);
+      padding: emCalc(8, 16);
+      border-left: 3px solid $accent-bright;
+      font-style: italic;
+
+      > * {
+        margin: 0 0 0 20px;
+      }
+
+      &::before,
+      &::after {
+        // TODO
+        content: '" ';
+        font-size: emCalc(24, 16);
+        color: $utility-light-gray;
+        display: block;
+        height: 16px;
+      }
+    }
+
+    /* ---------------------------------
+    links
+    --------------------------------- */
+    a {
+      @extend %specialTextPad;
+      @extend %resetAnchors;
+      border-bottom: 1px solid $accent-bright;
+
+      &:hover {
+        @include setBorder(2px, solid, $accent-bright, bottom);
+        color: black;
+        background-color: rgba($accent-bright, 0.1);
+      }
+    }
+
+    /* ---------------------------------
+    other
+    --------------------------------- */
+    hr {
+      width: 20%;
+      margin: 40px auto 40px;
+      // needed to remove browser def border
+      border: 0;
+      border-bottom: 3px double $utility-light-gray;
+    }
+  }
+
+  .blog-post-footer {
+    border-top: 1px dotted $utility-light-gray;
+
+    .footer-header {
+      margin: 0 0 rel(2);
+      font-size: rel(15);
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .blog-post-notes {
+      // need notes to test these rules!
+      /*
+      border-top: 1px dotted $utility-light-gray;
+      margin-top: 3.5em;
+      color: $utility-light-gray;
+      ol {
+        background-color: inherit;
+        border: 0px none;
+      }
+      p { color: $utility-light-gray; }
+      p a {
+        color: #333;
+        text-decoration: none;
+        border-bottom: none;
+      }
+      p a:hover {
+        color: $utility-light-gray;
+        text-decoration: none;
+        border-bottom: none;
+      }
+      */
+    }
+  }
+
+  .blog-post-cta {
+    @include resetBox($pad: 0, $isList: true);
+    @include container(880px);
+    margin-top: 40px;
+    border-top: 1px dotted $utility-light-gray;
+    text-align: center;
+
+    @media (min-width: 650px) {
+      @include setFlexbox(row nowrap, center, center);
+      border-bottom: 1px dotted $utility-light-gray;
+    }
+  }
+
+  .blog-post-cta-item {
+    width: 100%;
+    border-bottom: 1px dotted $utility-light-gray;
+
+    @media (min-width: 650px) {
+      border-right: 1px dotted $utility-light-gray;
+      border-bottom: none;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    .blog-post-cta-button {
+      font-size: 18px;
+      display: block;
+      padding: emCalc(30, 16);
+      color: inherit;
+      @extend %resetAnchors;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $accent-bright;
+        color: white;
+        transition: background-color, 200ms, ease;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import ContentIndex from "../../components/ContentIndex/ContentIndex"
+import FooterSpacer from "../../components/FooterSpacer.astro"
+
+const content = [
+  {
+    id: "4b2b81a2037543969db96dfdfc9f7fe7",
+    slug: "https://itakepictures.ditecco.me/",
+    title: "I take pictures",
+    tags: ["photography"],
+    timestamp: "",
+  },
+]
+---
+
+<Layout title="Projects index">
+  <FooterSpacer />
+  <ContentIndex title="Projects index" content={content} />
+</Layout>

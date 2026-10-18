@@ -2,19 +2,10 @@
 ContentIndex
 --------------------------------- */
 
-import { Link } from "gatsby"
-import React, { ReactElement, useRef, useEffect } from "react"
-import Layout from "../layout"
 import BackButton from "../BackButton/BackButton"
 import "./ContentIndex.scss"
 
-interface IOwnProps {
-  content: ContentIndexItemProps[]
-  contentRenderer: (item: ContentIndexItemProps) => ReactElement
-  title: string
-}
-
-export interface ContentIndexItemProps {
+export type ContentIndexItemProps = {
   id: string
   slug: string
   timestamp: string
@@ -22,91 +13,68 @@ export interface ContentIndexItemProps {
   tags: string[]
 }
 
-// we export the default list item,
-// which has all the right CSS classes
+type Props = {
+  content: ContentIndexItemProps[]
+  title: string
+}
 
 export function ContentIndexItem({
-  id,
   slug,
   timestamp,
   title,
   tags,
-}: ContentIndexItemProps): ReactElement {
+}: ContentIndexItemProps) {
   return (
-    <li className="index-item" key={id}>
-      <Link to={slug}>
+    <li className="index-item">
+      <a href={slug}>
         <article className="index-item-inner">
           <span className="index-item-timestamp">{timestamp}</span>
           <h3 className="index-item-title">{title}</h3>
           <ul className="index-item-tag-list">
             {tags.map(tag => (
-              <li className="index-item-tag">{tag}</li>
+              <li key={tag} className="index-item-tag">
+                {tag}
+              </li>
             ))}
           </ul>
         </article>
-      </Link>
+      </a>
     </li>
   )
 }
 
-export default function ContentIndex({
-  content,
-  contentRenderer,
-  title,
-}: IOwnProps) {
-  const footer = useRef<HTMLElement>(null)
-  const contentIndexItemList = useRef<HTMLLIElement>(null)
-
-  useEffect(() => {
-    footer.current = document.querySelector("footer")
-    contentIndexItemList.current = document.querySelector(".index-item-list")
-
-    if (footer.current && contentIndexItemList.current) {
-      const footerHeight = footer.current.getBoundingClientRect().height
-
-      contentIndexItemList.current.setAttribute(
-        "style",
-        `margin-bottom: ${footerHeight}px`,
-      )
-    }
-  }, [])
-
+export default function ContentIndex({ content, title }: Props) {
   return (
-    <Layout title={title}>
-      <div className="ContentIndex">
-        <nav className="index-nav">
-          <ul>
-            <li>
-              <BackButton target="/" label="home" />
-            </li>
-          </ul>
-        </nav>
+    <div className="ContentIndex">
+      <nav className="index-nav">
+        <ul>
+          <li>
+            <BackButton target="/" label="home" />
+          </li>
+        </ul>
+      </nav>
 
-        <main>
-          <section>
-            <div className="index-hero">
-              <h1>{title}</h1>
+      <main>
+        <section>
+          <div className="index-hero">
+            <h1>{title}</h1>
+          </div>
+        </section>
+
+        <section>
+          {content.length ? (
+            <ul className="index-item-list">
+              {content.map(item => (
+                <ContentIndexItem key={item.id} {...item} />
+              ))}
+            </ul>
+          ) : (
+            <div style={{ font: "inherit", padding: 16 }}>
+              No posts for now!
             </div>
-          </section>
-
-          <section>
-            {content?.length ? (
-              <ul className="index-item-list">
-                {content.map(contentRenderer)}
-              </ul>
-            ) : (
-              <div
-                style={{
-                  font: "inherit",
-                  padding: 16,
-                }}
-              >
-                No posts for now!
-              </div>
-            )}
-          </section>
-        </main>
-      </div>
-    </Layout>
+          )}
+        </section>
+      </main>
+    </div>
   )
 }

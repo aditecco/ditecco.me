@@ -2,27 +2,22 @@
 BackButton
 --------------------------------- */
 
-import React, { ReactElement, CSSProperties } from "react"
-import { Link } from "gatsby"
+import type { CSSProperties } from "react"
 import "./BackButton.scss"
 
-interface IOwnProps {
+type Props = {
   target: string
   label?: string
   style?: CSSProperties
 }
 
-export default function BackButton({
-  target,
-  label,
-  style,
-}: IOwnProps): ReactElement {
+export default function BackButton({ target, label, style }: Props) {
   return (
     <div className="BackButton" style={style || {}}>
-      <Link to={target} className="BackButtonLink">
+      <a href={target} className="BackButtonLink">
         <i className="material-icons">keyboard_backspace</i>
         <span className="label">{label || "Back"}</span>
-      </Link>
+      </a>
     </div>
   )
 }

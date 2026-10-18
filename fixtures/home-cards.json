@@ -1,0 +1,206 @@
+[
+  {
+    "_id": "homeCard-home-card-01",
+    "_type": "homeCard",
+    "master": true,
+    "expanded": false,
+    "href": "",
+    "title": "",
+    "subtitle": "",
+    "body": "",
+    "intro": [
+      {
+        "_type": "block",
+        "_key": "i1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "i0",
+            "text": "Hi there! I'm Alessandro Di Tecco, front-end developer.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "i3",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "i2",
+            "text": "I love the open web and I'm passionate about building products & experiences with code.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "i5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "i4",
+            "text": "This website is a collection of my most significant works and projects.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "ia",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_type": "link",
+            "_key": "i7",
+            "href": "mailto:alessandro@ditecco.me"
+          }
+        ],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "i6",
+            "text": "To get in touch with me you can ",
+            "marks": []
+          },
+          {
+            "_type": "span",
+            "_key": "i8",
+            "text": "send me an e-mail",
+            "marks": [
+              "i7"
+            ]
+          },
+          {
+            "_type": "span",
+            "_key": "i9",
+            "text": " (old fashioned!).",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "tags": [],
+    "heroImgFile": null,
+    "heroAlt": "",
+    "order": 1
+  },
+  {
+    "_id": "homeCard-home-card-02",
+    "_type": "homeCard",
+    "master": false,
+    "expanded": false,
+    "href": "/resume/",
+    "title": "Résumé",
+    "subtitle": "work",
+    "body": "Read more about my current & past activities.",
+    "tags": [
+      "résumé & cv"
+    ],
+    "heroImgFile": null,
+    "heroAlt": "",
+    "order": 2
+  },
+  {
+    "_id": "homeCard-home-card-03",
+    "_type": "homeCard",
+    "master": false,
+    "expanded": true,
+    "href": "/archive/simplest/",
+    "title": "Simplest",
+    "subtitle": "work · 2011–2016",
+    "body": "My one-man-band user interface design studio.",
+    "tags": [
+      "UI Design"
+    ],
+    "heroImgFile": "spl-hero.jpg",
+    "heroAlt": "Simplest UI Design",
+    "order": 3
+  },
+  {
+    "_id": "homeCard-home-card-04",
+    "_type": "homeCard",
+    "master": false,
+    "expanded": true,
+    "href": "/archive/geekville/en/",
+    "title": "Geekville",
+    "subtitle": "work · 2013–2016",
+    "body": "A coworking space for tech & creative professionals.",
+    "tags": [
+      "entrepreneurship"
+    ],
+    "heroImgFile": "gvl-hero.jpg",
+    "heroAlt": "A view of Geekville",
+    "order": 4
+  },
+  {
+    "_id": "homeCard-home-card-05",
+    "_type": "homeCard",
+    "master": false,
+    "expanded": true,
+    "href": "/archive/the-collective/",
+    "title": "The Collective",
+    "subtitle": "work · 2012–2013",
+    "body": "The first authentic coworking space in Verona.",
+    "tags": [
+      "community"
+    ],
+    "heroImgFile": "tc-tshirt-2.jpg",
+    "heroAlt": "The Collective T-Shirt",
+    "order": 5
+  },
+  {
+    "_id": "homeCard-home-card-06",
+    "_type": "homeCard",
+    "master": false,
+    "expanded": true,
+    "href": "/archive/the-digital-league/",
+    "title": "The Digital League",
+    "subtitle": "work · 2011–2013",
+    "body": "A community for tech pros & innovators in the Verona area.",
+    "tags": [
+      "community"
+    ],
+    "heroImgFile": "tdl-hero.jpg",
+    "heroAlt": "The Digital League's Community",
+    "order": 7
+  },
+  {
+    "_id": "homeCard-home-card-07",
+    "_type": "homeCard",
+    "master": false,
+    "expanded": true,
+    "href": "https://itakepictures.ditecco.me/",
+    "title": "I take pictures",
+    "subtitle": "projects",
+    "body": "A mini-site for my experiments in photography.",
+    "tags": [
+      "photography"
+    ],
+    "heroImgFile": "itp-ph-05-sq.jpg",
+    "heroAlt": "Abstract photography by Alessandro Di Tecco",
+    "order": 8
+  },
+  {
+    "_id": "homeCard-home-card-08",
+    "_type": "homeCard",
+    "master": false,
+    "expanded": false,
+    "href": "/notes/",
+    "title": "Blog",
+    "subtitle": "projects",
+    "body": "Thoughts about technology, web development, and more.",
+    "tags": [
+      "writing"
+    ],
+    "heroImgFile": null,
+    "heroAlt": "",
+    "order": 9
+  }
+]

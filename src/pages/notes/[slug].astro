@@ -1,0 +1,21 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import Note from "../../components/Note"
+import { getNote, getNotes } from "../../lib/content"
+
+export async function getStaticPaths() {
+  const notes = await getNotes()
+
+  return notes.map(({ slug }) => ({ params: { slug } }))
+}
+
+const note = await getNote(Astro.params.slug!)
+
+if (!note) {
+  return Astro.redirect("/404/")
+}
+---
+
+<Layout title={note.title} lang={note.language.toLowerCase()}>
+  <Note note={note} />
+</Layout>
