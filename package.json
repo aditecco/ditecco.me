@@ -7,7 +7,7 @@
   "author": "Alessandro Di Tecco",
   "license": "0BSD",
   "engines": {
-    "node": ">=22.22.0"
+    "node": "^24.22.1"
   },
   "scripts": {
     "dev": "astro dev",
