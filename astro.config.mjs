@@ -29,6 +29,8 @@ export default defineConfig({
   integrations: [react()],
   vite: {
     plugins: [publicIndexes],
+    // three.js (~130 kB gzipped) ships as one lazily loaded chunk
+    build: { chunkSizeWarningLimit: 600 },
     css: {
       preprocessorOptions: {
         // the stylesheets still use @import; migrating them to @use is a

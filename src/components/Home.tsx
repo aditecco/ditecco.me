@@ -10,6 +10,11 @@ import "../styles/home.scss"
 
 type Props = {
   cards: HomeCard[]
+  hero?: ReactNode
+}
+
+type CardProps = HomeCard & {
+  hero?: ReactNode
 }
 
 function Card({
@@ -22,11 +27,13 @@ function Card({
   tags,
   heroImg,
   heroAlt,
-}: HomeCard) {
+  hero,
+}: CardProps) {
   return (
     <article>
       {master ? (
         <div className="card-list-item-hero">
+          {hero}
           <h2>
             Hi, I'm Alessandro
             <br />
@@ -88,7 +95,7 @@ function Card({
   )
 }
 
-export default function Home({ cards }: Props) {
+export default function Home({ cards, hero }: Props) {
   const sorted = [...cards].sort((a, b) => a.order - b.order)
 
   return (
@@ -105,7 +112,9 @@ export default function Home({ cards }: Props) {
                   : ""
             }`
 
-            let content: ReactNode = <Card {...card} />
+            let content: ReactNode = (
+              <Card {...card} hero={master ? hero : undefined} />
+            )
 
             // the master card holds its own links, and anchors can't nest
             if (!master && href) {

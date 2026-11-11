@@ -223,7 +223,7 @@ home.scss
 
   .card-list-item.card-list-item--master {
     a:hover {
-    color: inherit;
+      color: inherit;
     }
 
     &:hover {
@@ -246,6 +246,7 @@ home.scss
     }
 
     .card-list-item-hero {
+      position: relative;
       width: 300px;
       height: 224px;
       padding: 40px 20px;
@@ -254,6 +255,8 @@ home.scss
       @include setBorder(1px, solid, rgba($clouds, 0.99), bottom);
 
       h2 {
+        position: relative;
+        z-index: 1;
         margin: 0;
         color: black;
       }

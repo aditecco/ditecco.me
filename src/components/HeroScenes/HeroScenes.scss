@@ -1,0 +1,70 @@
+/* ---------------------------------
+HeroScenes
+--------------------------------- */
+
+@import "../../styles/_colors-typography";
+
+.HeroScenes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+
+  .HeroScenes-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    &.is-shown {
+      opacity: 1;
+    }
+  }
+
+  .HeroScenes-controls {
+    position: absolute;
+    right: 8px;
+    bottom: 6px;
+    z-index: 2;
+    display: flex;
+    gap: 2px;
+  }
+
+  .HeroScenes-dot {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      margin: auto;
+      border: 1.5px solid rgba(black, 0.55);
+      border-radius: 50%;
+      background-color: rgba(white, 0.6);
+      transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    &:hover::before {
+      transform: scale(1.25);
+    }
+
+    &[aria-pressed="true"]::before {
+      background-color: rgba(black, 0.7);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $accent-bright;
+      outline-offset: -2px;
+    }
+  }
+}
