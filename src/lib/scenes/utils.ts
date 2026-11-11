@@ -46,15 +46,6 @@ export function randomBetween(min: number, max: number) {
   return min + Math.random() * (max - min)
 }
 
-export const FULLSCREEN_VERTEX = /* glsl */ `
-  varying vec2 vUv;
-
-  void main() {
-    vUv = uv;
-    gl_Position = vec4(position.xy, 0.0, 1.0);
-  }
-`
-
 // gradient noise, returns roughly [-1, 1]
 export const NOISE_3D = /* glsl */ `
   vec3 hash3(vec3 p) {

@@ -17,8 +17,8 @@ BackButton
   }
 
   &:hover {
-    border: 2px solid $asphalt;
-    color: $asphalt;
+    border: 2px solid var(--text-strong);
+    color: var(--text-strong);
   }
 
   .BackButtonLink {

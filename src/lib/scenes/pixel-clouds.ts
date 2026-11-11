@@ -101,8 +101,8 @@ function snap(value: number) {
   return Math.round(value / PIXEL) * PIXEL
 }
 
-const createPixelClouds: SceneFactory = initialSize => {
-  let size: Size = initialSize
+const createPixelClouds: SceneFactory = context => {
+  let size: Size = context.size
   const scene = new Scene()
   scene.background = new Color(SKY)
   const camera = createPixelCamera(size)
@@ -125,6 +125,7 @@ const createPixelClouds: SceneFactory = initialSize => {
   return {
     scene,
     camera,
+    tone: "light",
     update(_elapsed, delta) {
       for (const cloud of clouds) {
         cloud.x += cloud.speed * delta

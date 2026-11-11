@@ -4,11 +4,13 @@ common
 
 @import "_logic";
 
+@import "_theme";
+
 @include init(false, false);
 
 body {
-  background-color: $background-bright-03;
+  background-color: var(--page-bg);
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  color: $utility-dark-gray;
+  color: var(--text);
 }

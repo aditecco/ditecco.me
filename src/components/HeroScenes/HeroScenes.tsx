@@ -3,8 +3,10 @@ HeroScenes
 --------------------------------- */
 
 import { useEffect, useRef, useState } from "react"
+import { setPreferences, usePreferences } from "../../lib/preferences"
 import { SCENES } from "../../lib/scenes/catalog"
 import type { Stage } from "../../lib/scenes/stage"
+import type { Tone } from "../../lib/scenes/types"
 import "./HeroScenes.scss"
 
 const ROTATE_MS = 15_000
@@ -32,9 +34,12 @@ export default function HeroScenes() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const hasSceneRef = useRef(false)
   const [stage, setStage] = useState<Stage | null>(null)
-  const [index, setIndex] = useState(0)
   const [shown, setShown] = useState(false)
+  const [playing, setPlaying] = useState(false)
+  const [tone, setTone] = useState<Tone | null>(null)
+  const { sceneIndex, autoRotate, resolvedTheme } = usePreferences()
   const reducedMotion = usePrefersReducedMotion()
+  const rotating = autoRotate && !reducedMotion && shown
 
   // three.js is loaded lazily so it stays out of the critical path
   useEffect(() => {
@@ -46,6 +51,7 @@ export default function HeroScenes() {
         if (cancelled || !canvasRef.current) return
         created = createStage(canvasRef.current)
         setStage(created)
+        setPreferences({ scenesAvailable: true })
       })
       // no WebGL: the card simply keeps its plain background
       .catch(() => {})
@@ -53,6 +59,7 @@ export default function HeroScenes() {
     return () => {
       cancelled = true
       created?.dispose()
+      setPreferences({ scenesAvailable: false })
     }
   }, [])
 
@@ -62,7 +69,7 @@ export default function HeroScenes() {
     setShown(false)
     const timeout = setTimeout(
       () => {
-        stage.show(SCENES[index].id)
+        setTone(stage.show(SCENES[sceneIndex].id, resolvedTheme))
         hasSceneRef.current = true
         setShown(true)
       },
@@ -70,7 +77,7 @@ export default function HeroScenes() {
     )
 
     return () => clearTimeout(timeout)
-  }, [stage, index])
+  }, [stage, sceneIndex, resolvedTheme])
 
   // only animate while on screen and in a visible tab
   useEffect(() => {
@@ -80,8 +87,10 @@ export default function HeroScenes() {
     let inView = true
 
     function sync() {
-      if (!reducedMotion && inView && !document.hidden) stage.play()
+      const active = !reducedMotion && inView && !document.hidden
+      if (active) stage.play()
       else stage.pause()
+      setPlaying(active)
     }
 
     const intersection = new IntersectionObserver(([entry]) => {
@@ -103,43 +112,64 @@ export default function HeroScenes() {
     }
   }, [stage, reducedMotion])
 
-  // selecting a scene resets the timer, since `index` changes
-  useEffect(() => {
-    if (!stage || reducedMotion) return
-
-    const timeout = setTimeout(
-      () => setIndex(current => (current + 1) % SCENES.length),
-      ROTATE_MS,
-    )
-
-    return () => clearTimeout(timeout)
-  }, [stage, index, reducedMotion])
-
   return (
-    <div className="HeroScenes">
+    <div
+      className="HeroScenes"
+      data-tone={tone ?? undefined}
+      data-paused={playing ? undefined : ""}
+    >
       <canvas
         ref={canvasRef}
         className={`HeroScenes-canvas${shown ? " is-shown" : ""}`}
         aria-hidden="true"
       />
+      <div className="HeroScenes-guard" aria-hidden="true" />
 
       {stage && (
-        <div
-          className="HeroScenes-controls"
-          role="group"
-          aria-label="Background scene"
-        >
-          {SCENES.map((scene, i) => (
-            <button
-              key={scene.id}
-              type="button"
-              className="HeroScenes-dot"
-              title={scene.label}
-              aria-label={scene.label}
-              aria-pressed={i === index}
-              onClick={() => setIndex(i)}
-            />
-          ))}
+        <div className="HeroScenes-controls">
+          <span
+            key={sceneIndex}
+            className="HeroScenes-label"
+            aria-hidden="true"
+          >
+            {SCENES[sceneIndex].label}
+          </span>
+
+          <div
+            className="HeroScenes-dots"
+            role="group"
+            aria-label="Background scene"
+          >
+            {SCENES.map((scene, i) => {
+              const active = i === sceneIndex
+
+              return (
+                <button
+                  key={scene.id}
+                  type="button"
+                  className="HeroScenes-dot"
+                  title={scene.label}
+                  aria-label={scene.label}
+                  aria-pressed={active}
+                  onClick={() => setPreferences({ sceneIndex: i })}
+                >
+                  <span className="HeroScenes-pip">
+                    {active && rotating && (
+                      // the progress bar drives the rotation, so pausing
+                      // its animation also pauses the timer
+                      <span
+                        className="HeroScenes-progress"
+                        style={{ animationDuration: `${ROTATE_MS}ms` }}
+                        onAnimationEnd={() =>
+                          setPreferences({ sceneIndex: sceneIndex + 1 })
+                        }
+                      />
+                    )}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
         </div>
       )}
     </div>

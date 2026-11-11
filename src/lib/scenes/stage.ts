@@ -1,16 +1,34 @@
 import { WebGLRenderer } from "three"
+import createAurora from "./aurora"
 import type { SceneId } from "./catalog"
+import createDunes from "./dunes"
+import createFlock from "./flock"
+import createHorizon from "./horizon"
 import createLavaLamp from "./lava-lamp"
+import createLife from "./life"
 import createLightShape from "./light-shape"
+import createNight from "./night"
+import createOrbits from "./orbits"
 import createPixelClouds from "./pixel-clouds"
+import createRain from "./rain"
 import createSky from "./sky"
-import type { SceneFactory, SceneInstance, Size } from "./types"
+import createTopography from "./topography"
+import type { SceneFactory, SceneInstance, Size, Theme, Tone } from "./types"
 
 const FACTORIES: Record<SceneId, SceneFactory> = {
   sky: createSky,
+  dunes: createDunes,
+  aurora: createAurora,
   "pixel-clouds": createPixelClouds,
   "lava-lamp": createLavaLamp,
+  topography: createTopography,
+  night: createNight,
+  flock: createFlock,
+  rain: createRain,
+  horizon: createHorizon,
   "light-shape": createLightShape,
+  life: createLife,
+  orbits: createOrbits,
 }
 
 // avoid a big jump after the tab was hidden or the loop paused
@@ -53,12 +71,13 @@ export function createStage(canvas: HTMLCanvasElement) {
   }
 
   return {
-    show(id: SceneId) {
+    show(id: SceneId, theme: Theme): Tone {
       current?.dispose()
       elapsed = 0
-      current = FACTORIES[id](size)
+      current = FACTORIES[id]({ size, theme })
       current.update(0, 0)
       render()
+      return current.tone
     },
     play() {
       last = null

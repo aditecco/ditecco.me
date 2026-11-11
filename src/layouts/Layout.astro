@@ -8,20 +8,32 @@ import "@fontsource/karla"
 import "@fontsource/trocchi"
 import "../styles/index.scss"
 import Footer from "../components/Footer.astro"
+import Settings from "../components/Settings/Settings"
 import { site } from "../lib/site"
 
 type Props = {
   title: string
   description?: string
   lang?: string
+  // for pages without a dark design: no theme switching, no settings
+  lightOnly?: boolean
 }
 
-const { title, description = site.description, lang = "en" } = Astro.props
+const {
+  title,
+  description = site.description,
+  lang = "en",
+  lightOnly = false,
+} = Astro.props
 const fullTitle = `${title} | ${site.title}`
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html
+  lang={lang}
+  data-theme={lightOnly ? "light" : undefined}
+  data-theme-locked={lightOnly ? "" : undefined}
+>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,8 +47,27 @@ const fullTitle = `${title} | ${site.title}`
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <!-- set the theme before first paint; keep the key in sync with lib/preferences -->
+    <script is:inline>
+      try {
+        var root = document.documentElement
+        if (!root.hasAttribute("data-theme-locked")) {
+          var theme = localStorage.getItem("ditecco:theme")
+          var dark =
+            theme === "dark" ||
+            (theme !== "light" &&
+              matchMedia("(prefers-color-scheme: dark)").matches)
+          root.dataset.theme = dark ? "dark" : "light"
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
+    {!lightOnly && (
+      <header class="SiteBar">
+        <Settings client:idle />
+      </header>
+    )}
     <slot />
     <Footer />
   </body>

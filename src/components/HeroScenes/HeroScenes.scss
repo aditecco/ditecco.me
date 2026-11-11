@@ -5,10 +5,18 @@ HeroScenes
 @import "../../styles/_colors-typography";
 
 .HeroScenes {
+  --ink: 0, 0, 0;
+  --glass: 255, 255, 255;
+
   position: absolute;
   inset: 0;
   overflow: hidden;
   border-radius: inherit;
+
+  &[data-tone="dark"] {
+    --ink: 255, 255, 255;
+    --glass: 8, 10, 18;
+  }
 
   .HeroScenes-canvas {
     display: block;
@@ -22,49 +30,174 @@ HeroScenes
     }
   }
 
+  // a soft scrim that keeps the heading legible on any scene
+  .HeroScenes-guard {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 90% 65% at 30% 48%,
+      rgba(var(--glass), 0.5),
+      rgba(var(--glass), 0) 72%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  &[data-tone] .HeroScenes-guard {
+    opacity: 1;
+  }
+
+  /* ---------------------------------
+  controls
+  --------------------------------- */
+
   .HeroScenes-controls {
     position: absolute;
-    right: 8px;
-    bottom: 6px;
+    right: 10px;
+    bottom: 10px;
     z-index: 2;
     display: flex;
-    gap: 2px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .HeroScenes-label {
+    padding: 0 4px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(var(--ink), 0.85);
+    opacity: 0;
+    animation: hero-scenes-label 3.2s ease forwards;
+  }
+
+  .HeroScenes-dots {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    border-radius: 999px;
+    background-color: rgba(var(--glass), 0.45);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 0 1px rgba(var(--ink), 0.06);
   }
 
   .HeroScenes-dot {
-    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 22px;
-    padding: 0;
+    padding: 0 3px;
     border: 0;
-    border-radius: 50%;
     background: none;
     cursor: pointer;
-
-    &::before {
-      content: "";
-      display: block;
-      width: 8px;
-      height: 8px;
-      margin: auto;
-      border: 1.5px solid rgba(black, 0.55);
-      border-radius: 50%;
-      background-color: rgba(white, 0.6);
-      transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    &:hover::before {
-      transform: scale(1.25);
-    }
-
-    &[aria-pressed="true"]::before {
-      background-color: rgba(black, 0.7);
-    }
 
     &:focus-visible {
       outline: 2px solid $accent-bright;
       outline-offset: -2px;
+      border-radius: 6px;
     }
+  }
+
+  .HeroScenes-pip {
+    position: relative;
+    display: block;
+    width: 6px;
+    height: 6px;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: rgba(var(--ink), 0.3);
+    transition:
+      width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+      background-color 0.2s ease;
+  }
+
+  .HeroScenes-dot:hover .HeroScenes-pip {
+    background-color: rgba(var(--ink), 0.6);
+  }
+
+  .HeroScenes-dot[aria-pressed="true"] .HeroScenes-pip {
+    width: 24px;
+    background-color: rgba(var(--ink), 0.8);
+  }
+
+  // while rotating, the active pip becomes a track with a filling bar
+  .HeroScenes-dot[aria-pressed="true"]:has(.HeroScenes-progress)
+    .HeroScenes-pip {
+    background-color: rgba(var(--ink), 0.25);
+  }
+
+  .HeroScenes-progress {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: rgba(var(--ink), 0.85);
+    transform-origin: left center;
+    animation-name: hero-scenes-progress;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  &[data-paused] .HeroScenes-progress,
+  &:hover .HeroScenes-progress,
+  &:focus-within .HeroScenes-progress {
+    animation-play-state: paused;
+  }
+}
+
+// the heading follows the tone of the scene behind it
+.Home
+  .card-list-item--master
+  .card-list-item-hero:has(.HeroScenes[data-tone])
+  h2 {
+  transition: color 0.5s ease;
+}
+
+.Home
+  .card-list-item--master
+  .card-list-item-hero:has(.HeroScenes[data-tone="light"])
+  h2 {
+  color: #111;
+  text-shadow: 0 0 14px rgba(white, 0.6);
+}
+
+.Home
+  .card-list-item--master
+  .card-list-item-hero:has(.HeroScenes[data-tone="dark"])
+  h2 {
+  color: white;
+  text-shadow: 0 0 14px rgba(black, 0.45);
+}
+
+@keyframes hero-scenes-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes hero-scenes-label {
+  0% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  15%,
+  70% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .HeroScenes .HeroScenes-label {
+    animation: none;
+    opacity: 1;
   }
 }
