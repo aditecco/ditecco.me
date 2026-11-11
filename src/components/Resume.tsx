@@ -130,7 +130,7 @@ export default function Resume({ stories }: Props) {
   /**
    * renders data into resume stories
    */
-  function renderStories({ id, order, title, subtitle, body }: ResumeEntry) {
+  function renderStories({ id, title, subtitle, body }: ResumeEntry) {
     return (
       <div
         key={id}
@@ -143,8 +143,9 @@ export default function Resume({ stories }: Props) {
         }
       >
         <header className="story-block-header">
-          {/* indicator on 1st story */}
-          {order === 1 && <span className="story-block-current-indicator" />}
+          {/* current-job indicator, disabled for now: restore `order` in the
+          destructured props, then render
+          {order === 1 && <span className="story-block-current-indicator" />} */}
 
           <h2>
             {title}
@@ -260,34 +261,16 @@ export default function Resume({ stories }: Props) {
                 <ul className="skill-list">
                   {[
                     "React",
-                    "JavaScript ES6",
+                    "Next.js",
                     "TypeScript",
-                    "CSS3",
-                    "Sass",
-                    "HTML5",
-                    "UI Design",
-                  ].map(skill => (
-                    <li key={skill} className="skill-list-item">
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-
-                <h4>Toolbox</h4>
-                <ul className="skill-list">
-                  {[
-                    "Visual Studio Code",
-                    "git",
-                    "fish shell",
-                    "Unix CLI",
-                    "Dev Tools",
-                    "npm, yarn",
-                    "gulp, webpack, parcel",
-                    "Cypress",
-                    "Sketch",
-                    "Adobe XD",
-                    "Photoshop",
-                    "macOS",
+                    "HTML/CSS/JS",
+                    "Design Systems",
+                    "UI/UX Design",
+                    "Figma",
+                    "AI",
+                    "Testing",
+                    "API",
+                    "GraphQL",
                   ].map(skill => (
                     <li key={skill} className="skill-list-item">
                       {skill}
@@ -364,6 +347,29 @@ export default function Resume({ stories }: Props) {
                     </p>
                   </>
                 )}
+
+                <aside className="availability-banner" role="note">
+                  <span
+                    className="availability-banner-dot"
+                    aria-hidden="true"
+                  />
+
+                  <p>
+                    {lang === "EN" ? (
+                      <>
+                        <strong>Open to new opportunities.</strong> I'm
+                        currently looking for my next role: feel free to get in
+                        touch.
+                      </>
+                    ) : (
+                      <>
+                        <strong>Aperto a nuove opportunità.</strong> Sono
+                        attualmente alla ricerca del mio prossimo ruolo: non
+                        esitare a contattarmi.
+                      </>
+                    )}
+                  </p>
+                </aside>
               </header>
 
               {storiesOf("work").map(renderStories)}
