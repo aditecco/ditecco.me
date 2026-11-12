@@ -17,7 +17,7 @@ import {
 } from "./utils"
 
 // CSS pixels per art pixel
-const PIXEL = 4
+const PIXEL = 3
 
 const SKY = "#86bdf7"
 const FILL = "#ffffff"
@@ -31,21 +31,46 @@ type Cloud = {
   width: number
 }
 
-function createCloudTexture() {
-  const cols = Math.round(randomBetween(18, 30))
-  const rows = 11
-  const baseline = rows - 2
-  const puffCount = Math.max(3, Math.round(cols / 6))
-  const puffs = Array.from({ length: puffCount }, (_, i) => {
-    const r = randomBetween(3.4, 4.6)
+type Puff = { x: number; y: number; r: number }
+
+function createPuffs(cols: number, baseline: number) {
+  // a row of small puffs along the base...
+  const baseCount = Math.max(3, Math.round(cols / 5))
+  const base = Array.from({ length: baseCount }, (_, i) => {
+    const r = randomBetween(3.2, 4.2)
     return {
-      x: r + (i / (puffCount - 1)) * (cols - 2 * r),
-      y: baseline - r + randomBetween(-1.5, 1),
+      x: r + (i / (baseCount - 1)) * (cols - 2 * r),
+      y: baseline - r + randomBetween(-0.5, 1),
       r,
     }
   })
-  const first = puffs[0]
-  const last = puffs[puffs.length - 1]
+
+  // ...topped by one or two big domes
+  const domeCount = cols > 26 ? 2 : 1
+  const domes = Array.from({ length: domeCount }, (_, i) => {
+    const r = randomBetween(5, 6.5)
+    return {
+      x: ((i + 1) / (domeCount + 1)) * cols + randomBetween(-2, 2),
+      y: baseline - r - randomBetween(2, 4),
+      r,
+    }
+  })
+
+  return { base, domes }
+}
+
+function createCloudTexture() {
+  const cols = Math.round(randomBetween(22, 34))
+  const rows = 17
+  const baseline = rows - 2
+  const { base, domes } = createPuffs(cols, baseline)
+  const puffs = [...base, ...domes]
+  const first = base[0]
+  const last = base[base.length - 1]
+
+  function inside(p: Puff, x: number, y: number) {
+    return (x + 0.5 - p.x) ** 2 + (y + 0.5 - p.y) ** 2 <= p.r ** 2
+  }
 
   function filled(x: number, y: number) {
     if (x < 0 || x >= cols || y < 0 || y > baseline) return false
@@ -55,9 +80,23 @@ function createCloudTexture() {
       return true
     }
 
-    return puffs.some(
-      p => (x + 0.5 - p.x) ** 2 + (y + 0.5 - p.y) ** 2 <= p.r ** 2,
-    )
+    return puffs.some(p => inside(p, x, y))
+  }
+
+  // a crescent of shade on the lower right of each puff makes it read round
+  function shaded(x: number, y: number) {
+    if (y >= baseline - 1) return true
+
+    const owner = puffs.find(p => inside(p, x, y))
+    if (!owner) return false
+
+    const dx = x + 0.5 - owner.x
+    const dy = y + 0.5 - owner.y
+    const nearEdge = Math.hypot(dx, dy) / owner.r > 0.7
+    const lowerRight = dx * 0.5 + dy > owner.r * 0.35
+    const overlapped = puffs.some(p => p !== owner && inside(p, x, y))
+
+    return nearEdge && lowerRight && !overlapped
   }
 
   // one cell of padding on each side for the outline
@@ -71,7 +110,7 @@ function createCloudTexture() {
       let color: string | null = null
 
       if (filled(x, y)) {
-        color = y >= baseline - 1 ? SHADE : FILL
+        color = shaded(x, y) ? SHADE : FILL
       } else if (
         filled(x - 1, y) ||
         filled(x + 1, y) ||

@@ -33,16 +33,9 @@ theme
 }
 
 :root {
-  @include light-theme;
-}
-
-:root[data-theme="dark"] {
   @include dark-theme;
 }
 
-// without JS there is no data-theme, so follow the OS
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    @include dark-theme;
-  }
+:root[data-theme="light"] {
+  @include light-theme;
 }

@@ -52,11 +52,12 @@ const fullTitle = `${title} | ${site.title}`
       try {
         var root = document.documentElement
         if (!root.hasAttribute("data-theme-locked")) {
+          // dark unless the visitor picked light, or system on a light OS
           var theme = localStorage.getItem("ditecco:theme")
           var dark =
-            theme === "dark" ||
-            (theme !== "light" &&
-              matchMedia("(prefers-color-scheme: dark)").matches)
+            theme === "system"
+              ? matchMedia("(prefers-color-scheme: dark)").matches
+              : theme !== "light"
           root.dataset.theme = dark ? "dark" : "light"
         }
       } catch (e) {}

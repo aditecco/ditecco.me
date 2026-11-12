@@ -87,7 +87,7 @@ const createLightShape: SceneFactory = ({ size, theme }) => {
     `,
   })
 
-  const mesh = new Mesh(new IcosahedronGeometry(1, 40), material)
+  const mesh = new Mesh(new IcosahedronGeometry(1, 28), material)
   scene.add(mesh)
 
   function layout(aspect: number) {

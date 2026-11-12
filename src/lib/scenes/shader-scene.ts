@@ -17,6 +17,7 @@ type Options = {
   uniforms?: Record<string, IUniform>
   // start mid-animation so the first frame is already interesting
   timeOffset?: number
+  maxPixelRatio?: number
 }
 
 const VERTEX = /* glsl */ `
@@ -81,6 +82,7 @@ export function createShaderScene({
   fragmentShader,
   uniforms = {},
   timeOffset = 0,
+  maxPixelRatio = 1.5,
 }: Options): SceneInstance {
   const scene = new Scene()
   const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1)
@@ -103,6 +105,7 @@ export function createShaderScene({
     scene,
     camera,
     tone,
+    maxPixelRatio,
     update(elapsed) {
       material.uniforms.uTime.value = elapsed + timeOffset
     },

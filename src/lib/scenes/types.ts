@@ -19,6 +19,8 @@ export type SceneInstance = {
   scene: Scene
   camera: Camera
   tone: Tone
+  // soft, full-screen shaders don't need retina resolution
+  maxPixelRatio?: number
   update(elapsed: number, delta: number): void
   resize(size: Size): void
   dispose(): void

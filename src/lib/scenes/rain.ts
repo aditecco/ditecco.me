@@ -6,6 +6,7 @@ const createRain: SceneFactory = ({ size }) =>
     size,
     tone: "dark",
     timeOffset: 12,
+    maxPixelRatio: 1,
     fragmentShader: /* glsl */ `
       // blurry city lights behind the glass
       vec3 bokeh(vec2 p) {

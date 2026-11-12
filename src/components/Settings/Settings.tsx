@@ -24,7 +24,8 @@ const THEMES = [
 export default function Settings() {
   const toggleRef = useRef<HTMLButtonElement>(null)
   const panelRef = useRef<HTMLDivElement>(null)
-  const { theme, sceneIndex, autoRotate, scenesAvailable } = usePreferences()
+  const { theme, sceneIndex, autoRotate, scenesEnabled, scenesAvailable } =
+    usePreferences()
 
   // anchor the popover (rendered in the top layer) under its button
   useEffect(() => {
@@ -85,34 +86,48 @@ export default function Settings() {
 
         {scenesAvailable && (
           <div className="Settings-group">
-            <label className="Settings-heading" htmlFor="settings-scene">
-              Scene
-            </label>
-            <select
-              id="settings-scene"
-              className="Settings-select"
-              value={sceneIndex}
-              onChange={event =>
-                setPreferences({ sceneIndex: Number(event.target.value) })
-              }
-            >
-              {SCENES.map((scene, i) => (
-                <option key={scene.id} value={i}>
-                  {scene.label}
-                </option>
-              ))}
-            </select>
-
-            <label className="Settings-check">
+            <label className="Settings-row">
+              <span className="Settings-heading">Animated scenes</span>
               <input
                 type="checkbox"
-                checked={autoRotate}
+                role="switch"
+                className="Settings-switch"
+                checked={scenesEnabled}
                 onChange={event =>
-                  setPreferences({ autoRotate: event.target.checked })
+                  setPreferences({ scenesEnabled: event.target.checked })
                 }
               />
-              Rotate scenes automatically
             </label>
+
+            {scenesEnabled && (
+              <>
+                <select
+                  className="Settings-select"
+                  aria-label="Scene"
+                  value={sceneIndex}
+                  onChange={event =>
+                    setPreferences({ sceneIndex: Number(event.target.value) })
+                  }
+                >
+                  {SCENES.map((scene, i) => (
+                    <option key={scene.id} value={i}>
+                      {scene.label}
+                    </option>
+                  ))}
+                </select>
+
+                <label className="Settings-check">
+                  <input
+                    type="checkbox"
+                    checked={autoRotate}
+                    onChange={event =>
+                      setPreferences({ autoRotate: event.target.checked })
+                    }
+                  />
+                  Rotate automatically
+                </label>
+              </>
+            )}
           </div>
         )}
       </div>

@@ -6,6 +6,7 @@ const createSky: SceneFactory = ({ size }) =>
     size,
     tone: "dark",
     timeOffset: 20,
+    maxPixelRatio: 1,
     fragmentShader: /* glsl */ `
       const vec3 ZENITH = vec3(0.16, 0.38, 0.72);
       const vec3 HORIZON = vec3(0.62, 0.78, 0.93);

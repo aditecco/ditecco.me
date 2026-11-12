@@ -33,6 +33,12 @@ const FACTORIES: Record<SceneId, SceneFactory> = {
 
 // avoid a big jump after the tab was hidden or the loop paused
 const MAX_DELTA = 0.1
+// the scenes are slow and calm: 30 fps is plenty and halves the GPU work
+const FRAME_INTERVAL = 1000 / 30
+// if rendered frames keep arriving slower than this, lower the resolution
+const SLOW_FRAME_INTERVAL = 1000 / 20
+const SLOW_FRAMES_BEFORE_DOWNGRADE = 45
+const QUALITY_STEPS = [1, 0.75, 0.5]
 
 export type Stage = ReturnType<typeof createStage>
 
@@ -42,14 +48,15 @@ export function createStage(canvas: HTMLCanvasElement) {
     antialias: true,
     powerPreference: "low-power",
   })
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-
   let size = measure()
   renderer.setSize(size.width, size.height, false)
 
   let current: SceneInstance | null = null
   let elapsed = 0
   let last: number | null = null
+  // device-level, so it carries over between scenes
+  let quality = 0
+  let slowFrames = 0
 
   function measure(): Size {
     return {
@@ -58,13 +65,37 @@ export function createStage(canvas: HTMLCanvasElement) {
     }
   }
 
+  function applyPixelRatio() {
+    const base = Math.min(window.devicePixelRatio, current?.maxPixelRatio ?? 2)
+    renderer.setPixelRatio(base * QUALITY_STEPS[quality])
+  }
+
+  function adaptQuality(interval: number) {
+    if (interval > SLOW_FRAME_INTERVAL) slowFrames++
+    else slowFrames = Math.max(0, slowFrames - 1)
+
+    if (
+      slowFrames > SLOW_FRAMES_BEFORE_DOWNGRADE &&
+      quality < QUALITY_STEPS.length - 1
+    ) {
+      quality++
+      slowFrames = 0
+      applyPixelRatio()
+    }
+  }
+
   function render() {
     if (current) renderer.render(current.scene, current.camera)
   }
 
   function tick(now: number) {
-    const delta = last === null ? 0 : Math.min((now - last) / 1000, MAX_DELTA)
+    // 1 ms of slack so 60 Hz displays reliably render every other frame
+    if (last !== null && now - last < FRAME_INTERVAL - 1) return
+
+    const interval = last === null ? 0 : now - last
+    const delta = Math.min(interval / 1000, MAX_DELTA)
     last = now
+    if (interval > 0) adaptQuality(interval)
     elapsed += delta
     current?.update(elapsed, delta)
     render()
@@ -75,12 +106,14 @@ export function createStage(canvas: HTMLCanvasElement) {
       current?.dispose()
       elapsed = 0
       current = FACTORIES[id]({ size, theme })
+      applyPixelRatio()
       current.update(0, 0)
       render()
       return current.tone
     },
     play() {
       last = null
+      slowFrames = 0
       renderer.setAnimationLoop(tick)
     },
     pause() {
@@ -97,6 +130,8 @@ export function createStage(canvas: HTMLCanvasElement) {
       current?.dispose()
       current = null
       renderer.dispose()
+      // free the GPU context now rather than whenever GC gets to it
+      renderer.forceContextLoss()
     },
   }
 }

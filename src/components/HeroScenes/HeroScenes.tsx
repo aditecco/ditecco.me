@@ -3,7 +3,11 @@ HeroScenes
 --------------------------------- */
 
 import { useEffect, useRef, useState } from "react"
-import { setPreferences, usePreferences } from "../../lib/preferences"
+import {
+  getPreferences,
+  setPreferences,
+  usePreferences,
+} from "../../lib/preferences"
 import { SCENES } from "../../lib/scenes/catalog"
 import type { Stage } from "../../lib/scenes/stage"
 import type { Tone } from "../../lib/scenes/types"
@@ -37,12 +41,23 @@ export default function HeroScenes() {
   const [shown, setShown] = useState(false)
   const [playing, setPlaying] = useState(false)
   const [tone, setTone] = useState<Tone | null>(null)
-  const { sceneIndex, autoRotate, resolvedTheme } = usePreferences()
+  const { sceneIndex, autoRotate, resolvedTheme, scenesEnabled } =
+    usePreferences()
   const reducedMotion = usePrefersReducedMotion()
   const rotating = autoRotate && !reducedMotion && shown
 
-  // three.js is loaded lazily so it stays out of the critical path
+  // lets the settings menu offer scene options on this page
   useEffect(() => {
+    setPreferences({ scenesAvailable: true })
+    return () => setPreferences({ scenesAvailable: false })
+  }, [])
+
+  // three.js is loaded lazily, and not at all when scenes are disabled
+  useEffect(() => {
+    // read the store directly: during hydration the hook still returns the
+    // server snapshot, which would start loading three.js needlessly
+    if (!getPreferences().scenesEnabled) return
+
     let cancelled = false
     let created: Stage | null = null
 
@@ -51,17 +66,20 @@ export default function HeroScenes() {
         if (cancelled || !canvasRef.current) return
         created = createStage(canvasRef.current)
         setStage(created)
-        setPreferences({ scenesAvailable: true })
       })
-      // no WebGL: the card simply keeps its plain background
-      .catch(() => {})
+      // no WebGL: the card keeps its plain background, and there is
+      // nothing to configure
+      .catch(() => setPreferences({ scenesAvailable: false }))
 
     return () => {
       cancelled = true
       created?.dispose()
-      setPreferences({ scenesAvailable: false })
+      hasSceneRef.current = false
+      setStage(null)
+      setShown(false)
+      setTone(null)
     }
-  }, [])
+  }, [scenesEnabled])
 
   useEffect(() => {
     if (!stage) return
@@ -119,6 +137,8 @@ export default function HeroScenes() {
       data-paused={playing ? undefined : ""}
     >
       <canvas
+        // a disposed renderer loses its context, so each run needs a new canvas
+        key={String(scenesEnabled)}
         ref={canvasRef}
         className={`HeroScenes-canvas${shown ? " is-shown" : ""}`}
         aria-hidden="true"

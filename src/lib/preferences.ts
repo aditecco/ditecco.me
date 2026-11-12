@@ -10,18 +10,22 @@ export type Preferences = {
   resolvedTheme: Theme
   sceneIndex: number
   autoRotate: boolean
-  // true once a scene stage is mounted on the current page
+  scenesEnabled: boolean
+  // true while the current page has a scene stage that can run
   scenesAvailable: boolean
 }
 
 export const THEME_STORAGE_KEY = "ditecco:theme"
 const AUTO_ROTATE_STORAGE_KEY = "ditecco:auto-rotate"
+const SCENES_ENABLED_STORAGE_KEY = "ditecco:scenes-enabled"
+export const DEFAULT_THEME: ThemePreference = "dark"
 
 const SERVER_STATE: Preferences = {
-  theme: "system",
-  resolvedTheme: "light",
+  theme: DEFAULT_THEME,
+  resolvedTheme: "dark",
   sceneIndex: 0,
   autoRotate: true,
+  scenesEnabled: true,
   scenesAvailable: false,
 }
 
@@ -69,19 +73,24 @@ function isThemePreference(value: unknown): value is ThemePreference {
 
 if (darkQuery) {
   const stored = readStorage(THEME_STORAGE_KEY)
-  const theme = isThemePreference(stored) ? stored : "system"
+  const theme = isThemePreference(stored) ? stored : DEFAULT_THEME
 
   state = {
     ...SERVER_STATE,
     theme,
     resolvedTheme: resolveTheme(theme),
     autoRotate: readStorage(AUTO_ROTATE_STORAGE_KEY) !== "false",
+    scenesEnabled: readStorage(SCENES_ENABLED_STORAGE_KEY) !== "false",
   }
   applyTheme(state.resolvedTheme)
 
   darkQuery.addEventListener("change", () => {
     if (state.theme === "system") setPreferences({ theme: "system" })
   })
+}
+
+export function getPreferences() {
+  return state
 }
 
 export function setPreferences(next: Partial<Preferences>) {
@@ -95,6 +104,10 @@ export function setPreferences(next: Partial<Preferences>) {
 
   if (next.autoRotate !== undefined) {
     writeStorage(AUTO_ROTATE_STORAGE_KEY, String(next.autoRotate))
+  }
+
+  if (next.scenesEnabled !== undefined) {
+    writeStorage(SCENES_ENABLED_STORAGE_KEY, String(next.scenesEnabled))
   }
 
   if (next.sceneIndex !== undefined) {

@@ -6,6 +6,7 @@ const createAurora: SceneFactory = ({ size }) =>
     size,
     tone: "dark",
     timeOffset: 10,
+    maxPixelRatio: 1,
     fragmentShader: /* glsl */ `
       const vec3 SKY_TOP = vec3(0.01, 0.02, 0.06);
       const vec3 SKY_BOTTOM = vec3(0.03, 0.08, 0.13);
