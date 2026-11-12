@@ -7,16 +7,16 @@ footer
 footer {
   font-family: $base-font;
   padding: 20px;
-  color: $font-color-dark;
+  color: var(--text);
   text-align: center;
 
   a {
     @extend %resetAnchors;
     color: inherit;
-    border-bottom: 1px dotted $utility-dark-gray;
+    border-bottom: 1px dotted currentColor;
 
     &:hover {
-      color: $utility-dark-gray;
+      color: var(--text-strong);
 
       border-bottom-style: solid;
     }

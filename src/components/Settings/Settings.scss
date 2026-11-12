@@ -1,0 +1,202 @@
+/* ---------------------------------
+Settings
+--------------------------------- */
+
+@import "../../styles/_colors-typography";
+
+.SiteBar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 12px 0;
+
+  @media print {
+    display: none;
+  }
+}
+
+.Settings {
+  .Settings-toggle {
+    display: flex;
+    padding: 6px;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    color: var(--text);
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    svg {
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    &:hover {
+      color: var(--text-strong);
+
+      svg {
+        transform: rotate(60deg);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $accent-bright;
+    }
+  }
+
+  .Settings-panel {
+    position: absolute;
+    inset: auto;
+    width: 240px;
+    margin: 0;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--surface);
+    box-shadow: 0 10px 30px var(--shadow);
+    color: var(--text);
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .Settings-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    + .Settings-group {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+  }
+
+  .Settings-heading {
+    float: left;
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .Settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    .Settings-heading {
+      float: none;
+      width: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  .Settings-switch {
+    position: relative;
+    flex-shrink: 0;
+    width: 30px;
+    height: 18px;
+    margin: 0;
+    border-radius: 9px;
+    background-color: var(--border-subtle);
+    appearance: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(black, 0.3);
+      transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    &:checked {
+      background-color: $accent-bright;
+
+      &::before {
+        transform: translateX(12px);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $accent-bright;
+      outline-offset: 2px;
+    }
+  }
+
+  .Settings-segmented {
+    clear: both;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3px;
+    border-radius: 6px;
+    background-color: var(--page-bg);
+  }
+
+  .Settings-segment {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 6px 4px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &:has(input:checked) {
+      background-color: var(--surface);
+      color: var(--text-strong);
+      box-shadow: 0 1px 3px var(--shadow);
+    }
+
+    &:has(input:focus-visible) {
+      outline: 2px solid $accent-bright;
+    }
+  }
+
+  .Settings-select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    background-color: var(--surface);
+    color: var(--text-strong);
+    font: inherit;
+  }
+
+  .Settings-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+
+    input {
+      margin: 0;
+      accent-color: $accent-bright;
+    }
+  }
+}

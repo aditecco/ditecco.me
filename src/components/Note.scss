@@ -19,7 +19,7 @@ Note
   font-weight: 400;
   line-height: 1.7;
   text-align: left;
-  color: $utility-dark-gray;
+  color: var(--text);
 
   // .container
   .container {
@@ -29,14 +29,14 @@ Note
   .blog-post-content {
     @include container(880px);
     box-shadow: 0 4px 30px #00000022;
-    background-color: snow;
+    background-color: var(--surface-note);
     border-top: 3px solid $accent-bright;
     // border: 4px double $utility-light-gray;
     // padding: 1px;
   }
 
   .blog-post-header {
-    background-color: rgba($paper, 0.45);
+    background-color: var(--surface-note-header);
   }
 
   .blog-post-header-text {
@@ -63,7 +63,7 @@ Note
     $spacer: 6px;
 
     padding: 10px 0;
-    border-top: 1px dotted rgba(black, 0.25);
+    border-top: 1px dotted var(--border-subtle);
 
     > * {
       display: inline-block;
@@ -180,7 +180,7 @@ Note
         a {
           @extend %resetAnchors;
           border: none;
-          color: black;
+          color: var(--text-strong);
         }
       }
     }
@@ -207,7 +207,7 @@ Note
     }
 
     strong {
-      color: $utility-dark-gray;
+      color: var(--text-strong);
     }
 
     /* ---------------------------------
@@ -262,7 +262,7 @@ Note
 
       &:hover {
         @include setBorder(2px, solid, $accent-bright, bottom);
-        color: black;
+        color: var(--text-strong);
         background-color: rgba($accent-bright, 0.1);
       }
     }
@@ -275,12 +275,12 @@ Note
       margin: 40px auto 40px;
       // needed to remove browser def border
       border: 0;
-      border-bottom: 3px double $utility-light-gray;
+      border-bottom: 3px double var(--border-subtle);
     }
   }
 
   .blog-post-footer {
-    border-top: 1px dotted $utility-light-gray;
+    border-top: 1px dotted var(--border-subtle);
 
     .footer-header {
       margin: 0 0 rel(2);
@@ -292,7 +292,7 @@ Note
     .blog-post-notes {
       // need notes to test these rules!
       /*
-      border-top: 1px dotted $utility-light-gray;
+      border-top: 1px dotted var(--border-subtle);
       margin-top: 3.5em;
       color: $utility-light-gray;
       ol {
@@ -318,21 +318,21 @@ Note
     @include resetBox($pad: 0, $isList: true);
     @include container(880px);
     margin-top: 40px;
-    border-top: 1px dotted $utility-light-gray;
+    border-top: 1px dotted var(--border-subtle);
     text-align: center;
 
     @media (min-width: 650px) {
       @include setFlexbox(row nowrap, center, center);
-      border-bottom: 1px dotted $utility-light-gray;
+      border-bottom: 1px dotted var(--border-subtle);
     }
   }
 
   .blog-post-cta-item {
     width: 100%;
-    border-bottom: 1px dotted $utility-light-gray;
+    border-bottom: 1px dotted var(--border-subtle);
 
     @media (min-width: 650px) {
-      border-right: 1px dotted $utility-light-gray;
+      border-right: 1px dotted var(--border-subtle);
       border-bottom: none;
 
       &:last-child {

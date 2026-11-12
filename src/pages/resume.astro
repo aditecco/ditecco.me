@@ -6,6 +6,6 @@ import { getResumeEntries } from "../lib/content"
 const stories = await getResumeEntries()
 ---
 
-<Layout title="Resume">
+<Layout title="Resume" lightOnly>
   <Resume stories={stories} client:load />
 </Layout>

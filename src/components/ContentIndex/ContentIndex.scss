@@ -6,10 +6,10 @@
 
 .ContentIndex {
   // custom page bg
-  background-color: $background-bright-03;
+  background-color: var(--page-bg);
 
   + footer {
-    background-color: $background-bright-03;
+    background-color: var(--page-bg);
     position: fixed;
     bottom: 0;
     right: 0;
@@ -53,10 +53,10 @@
   .index-item-list {
     @include resetBox(0, 0, true);
     .index-item {
-      @include setBorder(1px, dashed, $utility-light-gray, bottom);
+      @include setBorder(1px, dashed, var(--border-subtle), bottom);
       transition: background-color 0.6s ease;
       &:hover {
-        background-color: $background-bright;
+        background-color: var(--hover-bg);
       }
       a {
         cursor: pointer;
@@ -74,20 +74,14 @@
 
           // redundant rules
           .index-item-title {
-            @include setFonts(
-              20,
-              "Montserrat",
-              $utility-dark-gray,
-              center,
-              400
-            );
+            @include setFonts(20, "Montserrat", var(--text), center, 400);
             // remove
             font-size: 1.25em;
             text-transform: capitalize;
           }
 
           .index-item-timestamp {
-            @include setFonts(16, "Roboto", $utility-light-gray, center, 400);
+            @include setFonts(16, "Roboto", var(--text-muted), center, 400);
             // remove
             font-size: 1em;
           }
@@ -101,14 +95,14 @@
             .index-item-tag {
               display: inline-block;
               padding: 0.2em 1em;
-              border: 2px solid $utility-light-gray;
+              border: 2px solid var(--text-muted);
               border-radius: 20px;
               font-family: "Montserrat", sans-serif;
               font-weight: 400;
               font-size: 0.9em;
               letter-spacing: 0.025em;
               text-transform: uppercase;
-              color: $utility-light-gray;
+              color: var(--text-muted);
 
               + .index-item-tag {
                 margin-left: 6px;

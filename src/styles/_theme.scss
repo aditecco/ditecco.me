@@ -1,0 +1,41 @@
+/* ---------------------------------
+theme
+--------------------------------- */
+
+@mixin light-theme {
+  --page-bg: #{$background-bright-03};
+  --surface: white;
+  --surface-note: snow;
+  --surface-note-header: #{rgba($paper, 0.45)};
+  --text: #{$utility-dark-gray};
+  --text-strong: black;
+  --text-muted: #{$silver};
+  --border: #{$clouds};
+  --border-subtle: #{$utility-light-gray};
+  --hover-bg: #{$background-bright};
+  --shadow: rgba(119, 119, 119, 0.15);
+  color-scheme: light;
+}
+
+@mixin dark-theme {
+  --page-bg: #15171a;
+  --surface: #1f2226;
+  --surface-note: #1f2226;
+  --surface-note-header: rgba(255, 255, 255, 0.03);
+  --text: #c3c9cf;
+  --text-strong: #f3f5f7;
+  --text-muted: #7f8891;
+  --border: #2c3036;
+  --border-subtle: #3b4148;
+  --hover-bg: #23272c;
+  --shadow: rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
+}
+
+:root {
+  @include dark-theme;
+}
+
+:root[data-theme="light"] {
+  @include light-theme;
+}

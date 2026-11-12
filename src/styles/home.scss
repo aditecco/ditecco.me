@@ -6,10 +6,10 @@ home.scss
 
 .Home {
   // custom page bg
-  background-color: $background-bright-03;
+  background-color: var(--page-bg);
 
   + footer {
-    background-color: $background-bright-03;
+    background-color: var(--page-bg);
   }
 
   // typography
@@ -43,7 +43,7 @@ home.scss
     color: inherit;
     text-decoration: none;
     &:hover {
-      color: black;
+      color: var(--text-strong);
       border-bottom: 2px solid $accent-bright;
       background-color: rgba($accent-bright, 0.1);
     }
@@ -84,11 +84,11 @@ home.scss
 
     .card-list-item {
       border-radius: 4px;
-      border-bottom: 4px solid rgba($clouds, 0.99);
+      border-bottom: 4px solid var(--border);
       text-align: left;
-      color: rgba($utility-dark-gray, 0.95);
-      box-shadow: 0 2px 4px rgba(#777, 0.15);
-      background-color: white;
+      color: var(--text);
+      box-shadow: 0 2px 4px var(--shadow);
+      background-color: var(--surface);
       transition: all 0.5s ease;
       &:hover {
         border-bottom: 4px solid $accent-bright;
@@ -109,11 +109,11 @@ home.scss
         }
 
         h3 {
-          color: black;
+          color: var(--text-strong);
         }
 
         h5 {
-          color: $silver;
+          color: var(--text-muted);
           text-transform: uppercase;
         }
       }
@@ -129,7 +129,7 @@ home.scss
         .card-list-item-hero {
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
-          background-color: $utility-light-gray;
+          background-color: var(--border-subtle);
           overflow: hidden;
         }
       }
@@ -196,14 +196,14 @@ home.scss
 
   .card-list-item-tag {
     padding: 0.2em 1em;
-    border: 2px solid $silver;
+    border: 2px solid var(--text-muted);
     border-radius: 20px;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 0.9em;
     letter-spacing: 0.025em;
     text-transform: uppercase;
-    color: $silver;
+    color: var(--text-muted);
 
     // try to name all colors
     &.card-list-item-tag--featured {
@@ -223,12 +223,12 @@ home.scss
 
   .card-list-item.card-list-item--master {
     a:hover {
-    color: inherit;
+      color: inherit;
     }
 
     &:hover {
       // is there a more elegant way to override hover borders?
-      border-bottom: 4px solid rgba($clouds, 0.99);
+      border-bottom: 4px solid var(--border);
       transform: none;
     }
 
@@ -246,16 +246,19 @@ home.scss
     }
 
     .card-list-item-hero {
+      position: relative;
       width: 300px;
       height: 224px;
       padding: 40px 20px;
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
-      @include setBorder(1px, solid, rgba($clouds, 0.99), bottom);
+      @include setBorder(1px, solid, var(--border), bottom);
 
       h2 {
+        position: relative;
+        z-index: 1;
         margin: 0;
-        color: black;
+        color: var(--text-strong);
       }
     }
 
@@ -274,12 +277,12 @@ home.scss
     }
 
     .card-list-item-footer {
-      @include setBorder(1px, solid, rgba($clouds, 0.99), top);
+      @include setBorder(1px, solid, var(--border), top);
 
       h6 {
         margin: 0 0 10px;
         font-size: 12px;
-        color: $font-color-secondary;
+        color: var(--text-muted);
       }
 
       .contact-list {
