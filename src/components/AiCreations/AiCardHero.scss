@@ -1,0 +1,42 @@
+/* ---------------------------------
+AiCardHero
+--------------------------------- */
+
+.AiCardHero {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  // CSS sky: shown until WebGL draws, and instead of it when unavailable
+  background: linear-gradient(to bottom, #2a6bdb, #99c9f5);
+
+  .AiCardHero-sky {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  // the cover's headline, in its black boxes
+  .AiCardHero-title {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 72px;
+    line-height: 0.86;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #f1eee7;
+
+    span {
+      display: table;
+      padding: 0.07em 0.1em 0.01em;
+      background: #0a0a0a;
+
+      + span {
+        margin-top: 0.05em;
+      }
+    }
+  }
+}

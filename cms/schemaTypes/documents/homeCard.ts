@@ -60,6 +60,13 @@ export default defineType({
       options: {hotspot: true},
     }),
     defineField({
+      name: 'heroScene',
+      title: 'Hero scene',
+      type: 'string',
+      description: 'A live scene that replaces the hero image',
+      options: {list: [{title: 'AI Creations sky', value: 'ai-sky'}]},
+    }),
+    defineField({
       name: 'heroAlt',
       title: 'Hero image alt text',
       type: 'string',

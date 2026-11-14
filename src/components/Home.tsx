@@ -11,6 +11,8 @@ import "../styles/home.scss"
 type Props = {
   cards: HomeCard[]
   hero?: ReactNode
+  // live hero for cards with heroScene "ai-sky"
+  aiHero?: ReactNode
 }
 
 type CardProps = HomeCard & {
@@ -42,7 +44,8 @@ function Card({
         </div>
       ) : expanded ? (
         <div className="card-list-item-hero">
-          {heroImg && (
+          {hero}
+          {!hero && heroImg && (
             <img
               src={heroImg.src}
               srcSet={heroImg.srcSet}
@@ -95,7 +98,7 @@ function Card({
   )
 }
 
-export default function Home({ cards, hero }: Props) {
+export default function Home({ cards, hero, aiHero }: Props) {
   const sorted = [...cards].sort((a, b) => a.order - b.order)
 
   return (
@@ -103,17 +106,21 @@ export default function Home({ cards, hero }: Props) {
       <main className="card-list-container">
         <ul className="card-list">
           {sorted.map(card => {
-            const { id, master, expanded, href } = card
+            const { id, master, expanded, href, heroScene } = card
+            const isAi = heroScene === "ai-sky"
             const className = `card-list-item${
               master
                 ? " card-list-item--master card-list-item--3rows"
                 : expanded
                   ? " card-list-item--2rows"
                   : ""
-            }`
+            }${isAi ? " card-list-item--ai" : ""}`
 
             let content: ReactNode = (
-              <Card {...card} hero={master ? hero : undefined} />
+              <Card
+                {...card}
+                hero={master ? hero : isAi ? aiHero : undefined}
+              />
             )
 
             // the master card holds its own links, and anchors can't nest

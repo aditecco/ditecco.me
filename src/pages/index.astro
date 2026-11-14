@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro"
 import Home from "../components/Home"
 import HeroScenes from "../components/HeroScenes/HeroScenes"
+import AiCardHero from "../components/AiCreations/AiCardHero"
 import { getHomeCards } from "../lib/content"
 
 const cards = await getHomeCards()
@@ -10,5 +11,6 @@ const cards = await getHomeCards()
 <Layout title="Home">
   <Home cards={cards}>
     <HeroScenes slot="hero" client:visible />
+    <AiCardHero slot="aiHero" client:visible />
   </Home>
 </Layout>

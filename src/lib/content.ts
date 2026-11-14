@@ -1,4 +1,5 @@
 import { createClient } from "@sanity/client"
+import { aiImage, type AiImage } from "./ai-image"
 import { sanityImageUrl } from "./sanity-image"
 
 /* ---------------------------------
@@ -25,6 +26,8 @@ export type HomeCard = {
   tags: string[]
   heroImg?: HeroImage
   heroAlt?: string
+  // a live scene that replaces the hero image
+  heroScene?: "ai-sky"
   order: number
 }
 
@@ -44,6 +47,30 @@ export type NoteSummary = {
   slug: string
   publishedAt: string
   tags: string[]
+}
+
+export type AiMedium = {
+  title: string
+  slug: string
+}
+
+export type AiCreationSummary = {
+  id: string
+  title: string
+  slug: string
+  medium: AiMedium
+  tools: string[]
+  publishedAt: string
+  summary: string
+  cover?: AiImage
+}
+
+export type AiCreation = AiCreationSummary & {
+  mediumDetail?: string
+  lede?: string
+  hero?: AiImage
+  credits: { role: string; contribution: string }[]
+  body: PortableTextValue
 }
 
 export type Note = NoteSummary & {
@@ -122,7 +149,7 @@ export async function getHomeCards(): Promise<HomeCard[]> {
   const cards = await query<any[]>(
     `*[_type == "homeCard"] | order(order asc){
       _id, master, expanded, href, title, subtitle, body, intro,
-      "tags": coalesce(tags, []), heroImg, heroAlt, order
+      "tags": coalesce(tags, []), heroImg, heroAlt, heroScene, order
     }`,
   )
 
@@ -206,4 +233,64 @@ export async function getNote(slug: string): Promise<Note | null> {
   )
 
   return note ? { ...note, id: note._id } : null
+}
+
+/* ---------------------------------
+AI Creations
+--------------------------------- */
+
+// no fixtures: without Sanity the section renders its empty state
+
+const aiCreationFields = `
+  _id, title, "slug": slug.current,
+  "medium": medium->{title, "slug": slug.current}, "tools": coalesce(tools, []),
+  publishedAt, summary, coverImage
+`
+
+// the index thumbnail is 200x140 (10:7)
+function toAiSummary(c: any): AiCreationSummary {
+  return {
+    id: c._id,
+    title: c.title,
+    slug: c.slug,
+    medium: c.medium,
+    tools: c.tools ?? [],
+    publishedAt: c.publishedAt,
+    summary: c.summary,
+    cover: aiImage(c.coverImage, 200, 140),
+  }
+}
+
+function toAiCreation(c: any): AiCreation {
+  return {
+    ...toAiSummary(c),
+    mediumDetail: c.mediumDetail,
+    lede: c.lede,
+    hero: aiImage(c.heroImage, 1280, 720),
+    credits: c.credits ?? [],
+    body: c.body ?? [],
+  }
+}
+
+export async function getAiCreations(): Promise<AiCreationSummary[]> {
+  if (!client) return []
+
+  const creations = await query<any[]>(
+    `*[_type == "aiCreation" && defined(slug.current)] | order(publishedAt desc){${aiCreationFields}}`,
+  )
+
+  return creations.map(toAiSummary)
+}
+
+export async function getAiCreation(slug: string): Promise<AiCreation | null> {
+  if (!client) return null
+
+  const creation = await query<any>(
+    `*[_type == "aiCreation" && slug.current == $slug][0]{
+      ${aiCreationFields}, mediumDetail, lede, heroImage, credits, body
+    }`,
+    { slug },
+  )
+
+  return creation ? toAiCreation(creation) : null
 }

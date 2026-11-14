@@ -1,0 +1,120 @@
+---
+import { ArrowLeft, ArrowRight } from "lucide-react"
+import AiLayout from "../../components/AiCreations/AiLayout.astro"
+import AiBody from "../../components/AiCreations/AiBody"
+import AiImg from "../../components/AiCreations/AiImg"
+import { getAiCreation, getAiCreations } from "../../lib/content"
+import {
+  AI_ALL,
+  aiDate,
+  aiHref,
+  aiNext,
+  aiNumber,
+  aiMediumHref,
+} from "../../lib/ai-creations"
+
+export async function getStaticPaths() {
+  const creations = await getAiCreations()
+
+  // `all` is the index; the CMS refuses it as a slug, this is a backstop
+  return creations
+    .filter(({ slug }) => slug !== "all")
+    .map(({ slug }) => ({ params: { slug } }))
+}
+
+const { slug } = Astro.params
+const [creation, all] = await Promise.all([
+  getAiCreation(slug!),
+  getAiCreations(),
+])
+
+if (!creation) {
+  return Astro.redirect("/404/")
+}
+
+const index = all.findIndex(c => c.slug === slug)
+const next = aiNext(all, slug!)
+const facts = [
+  { term: "Medium", detail: creation.mediumDetail || creation.medium?.title },
+  ...(creation.tools.length
+    ? [{ term: "Tools", detail: creation.tools.join(", ") }]
+    : []),
+  ...creation.credits.map(c => ({ term: c.role, detail: c.contribution })),
+]
+---
+
+<AiLayout
+  title={`${creation.title} · AI Creations`}
+  description={creation.summary}
+>
+  <div class="AiPage AiPage--detail">
+    <header class="AiBar">
+      <a class="AiChip" href={AI_ALL}>
+        <ArrowLeft size={16} aria-hidden />
+        Index
+      </a>
+      <span class="AiLabel">
+        {aiNumber(index)} / {String(all.length).padStart(2, "0")}
+      </span>
+    </header>
+
+    <article>
+      <section class="AiDetailHead">
+        <p class="AiLabel">
+          {creation.medium && (
+            <>
+              <a class="AiLink" href={aiMediumHref(creation.medium.slug)}>
+                {creation.medium.title}
+              </a>{" "}
+              ·{" "}
+            </>
+          )}
+          {aiDate(creation.publishedAt)}
+        </p>
+        <h1>{creation.title}</h1>
+        {creation.lede && <p class="AiDeck AiDeck--lede">{creation.lede}</p>}
+      </section>
+
+      {creation.hero && (
+        <AiImg
+          image={creation.hero}
+          label="Hero image · 16:9"
+          className="AiHero"
+          width={1280}
+          height={720}
+          eager
+        />
+      )}
+
+      <dl class="AiFacts">
+        {facts.map(f => (
+          <div>
+            <dt>{f.term}</dt>
+            <dd>{f.detail}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <AiBody value={creation.body} />
+    </article>
+
+    {next && (
+      <nav class="AiNext" aria-label="More creations">
+        <a href={aiHref(next.creation.slug)}>
+          <span class="AiNext-text">
+            <span class="AiLabel">Next · {next.number}</span>
+            <span class="AiNext-title">{next.creation.title}</span>
+          </span>
+          <ArrowRight className="AiNext-arrow" aria-hidden />
+        </a>
+      </nav>
+    )}
+
+    <footer class="AiFoot">
+      <span>AI Creations</span>
+      <a class="AiLink" href={AI_ALL}>
+        All creations
+      </a>
+    </footer>
+  </div>
+</AiLayout>

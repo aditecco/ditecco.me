@@ -137,6 +137,12 @@ home.scss
       &.card-list-item--3rows {
         grid-row-end: span 3;
       }
+
+      // AI Creations wears its own accent
+      &.card-list-item--ai,
+      &.card-list-item--ai:hover {
+        border-bottom-color: #fff200;
+      }
     }
   }
 
