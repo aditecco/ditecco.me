@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react"
 import { useRef, useState, type CSSProperties } from "react"
 import type { GlitchState } from "../../lib/ai-sky/glitch"
 import { useSky } from "./useSky"
@@ -114,7 +114,7 @@ export default function AiCover({ allHref, latestHref }: Props) {
       <footer className="AiCover-footer">
         <div className="AiCover-actions">
           <a className="AiButton AiButton--accent" href={allHref}>
-            Browse the creations
+            Browse
             <ArrowRight size={20} aria-hidden />
           </a>
           {latestHref && (
@@ -127,9 +127,17 @@ export default function AiCover({ allHref, latestHref }: Props) {
           <button
             type="button"
             className="AiChip AiChip--paper"
+            aria-label={still ? "Play motion" : "Pause motion"}
             onClick={() => setPlaying(still)}
           >
-            {still ? "Play motion" : "Pause motion"}
+            {still ? (
+              <Play size={16} aria-hidden />
+            ) : (
+              <Pause size={16} aria-hidden />
+            )}
+            <span className="AiCover-motion">
+              {still ? "Play motion" : "Pause motion"}
+            </span>
           </button>
         )}
       </footer>

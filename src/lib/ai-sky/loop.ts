@@ -7,8 +7,8 @@ import {
 } from "./glitch"
 import { createSkyRenderer } from "./renderer"
 
-// full: every frame up to 60 fps; lite: half resolution, 3 octaves, 30 fps;
-// still: one frame, redrawn only on resize
+// full: 30 fps; lite: the same at half resolution and 3 octaves; still: one
+// frame, redrawn only on resize
 export type SkyTier = "full" | "lite" | "still"
 
 type Options = {
@@ -24,15 +24,11 @@ type Options = {
   onDowngrade?: (tier: SkyTier) => void
 }
 
-const FRAME_INTERVAL: Record<Exclude<SkyTier, "still">, number> = {
-  full: 1000 / 60,
-  lite: 1000 / 30,
-}
+// the clouds drift slowly and glitches flicker in ~55 ms steps, so 30 fps
+// looks the same as 60 at half the GPU work
+const FRAME_INTERVAL = 1000 / 30
 // sustained frames slower than this move down a tier
-const SLOW_INTERVAL: Record<Exclude<SkyTier, "still">, number> = {
-  full: 1000 / 40,
-  lite: 1000 / 20,
-}
+const SLOW_INTERVAL = 1000 / 20
 const SLOW_FRAMES_BEFORE_DOWNGRADE = 45
 const MAX_DELTA = 0.05
 const STILL_TIME = 20
@@ -117,15 +113,14 @@ export function createSkyLoop(canvas: HTMLCanvasElement, options: Options) {
     raf = requestAnimationFrame(frame)
     if (tier === "still") return
 
-    const interval = FRAME_INTERVAL[tier]
-    // a little slack so a 60 Hz display doesn't skip frames at the full tier
-    if (now - lastDraw < interval - 2) return
+    // a little slack so display refresh rates don't skip frames
+    if (now - lastDraw < FRAME_INTERVAL - 2) return
 
     const delta = lastFrame === null ? 0 : now - lastFrame
     lastFrame = now
     lastDraw = now
 
-    if (delta > SLOW_INTERVAL[tier]) slowFrames++
+    if (delta > SLOW_INTERVAL) slowFrames++
     else slowFrames = Math.max(0, slowFrames - 1)
     if (slowFrames > SLOW_FRAMES_BEFORE_DOWNGRADE) {
       downgrade()
