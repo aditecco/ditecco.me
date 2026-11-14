@@ -8,12 +8,12 @@ import {
   aiDate,
   aiHref,
   aiNumber,
-  aiTags,
+  aiMediums,
   aiThings,
 } from "../../lib/ai-creations"
 
 const creations = await getAiCreations()
-const tags = aiTags(creations)
+const mediums = aiMediums(creations)
 ---
 
 <AiLayout
@@ -38,8 +38,13 @@ const tags = aiTags(creations)
           <span data-count>{aiThings(creations.length)}</span> that did not
           exist before a person and a machine sat down together.
         </p>
-        {tags.length > 0 && (
-          <div class="AiFilters" role="group" aria-label="Filter by tag" hidden>
+        {mediums.length > 1 && (
+          <div
+            class="AiFilters"
+            role="group"
+            aria-label="Filter by medium"
+            hidden
+          >
             <button
               type="button"
               class="AiFilter"
@@ -48,14 +53,14 @@ const tags = aiTags(creations)
             >
               All
             </button>
-            {tags.map(tag => (
+            {mediums.map(medium => (
               <button
                 type="button"
                 class="AiFilter"
-                data-filter={tag.slug}
+                data-filter={medium.slug}
                 aria-pressed="false"
               >
-                {tag.title}
+                {medium.title}
               </button>
             ))}
           </div>
@@ -65,11 +70,7 @@ const tags = aiTags(creations)
 
     <main>
       {creations.map((c, i) => (
-        <a
-          class="AiRow"
-          href={aiHref(c.slug)}
-          data-tags={c.tags.map(t => t.slug).join(" ")}
-        >
+        <a class="AiRow" href={aiHref(c.slug)} data-medium={c.medium?.slug}>
           <span class="AiRow-no" aria-hidden="true">
             {aiNumber(i)}
           </span>
@@ -78,7 +79,7 @@ const tags = aiTags(creations)
             <span class="AiRow-summary">{c.summary}</span>
           </span>
           <span class="AiRow-meta">
-            <span class="AiRow-medium">{c.medium}</span>
+            <span class="AiRow-medium">{c.medium?.title}</span>
             {c.tools.length > 0 && <span>{c.tools.join(" · ")}</span>}
             <span>{aiDate(c.publishedAt)}</span>
           </span>
@@ -112,11 +113,11 @@ const tags = aiTags(creations)
   const count = document.querySelector("[data-count]")
 
   // "" shows everything
-  function apply(tag: string) {
+  function apply(medium: string) {
     const buttons = [...group.querySelectorAll<HTMLElement>("[data-filter]")]
-    // an unknown ?tag= falls back to All
+    // an unknown ?medium= falls back to All
     const active =
-      buttons.find(b => b.dataset.filter === tag) ??
+      buttons.find(b => b.dataset.filter === medium) ??
       buttons.find(b => b.dataset.filter === "")
 
     for (const b of buttons) {
@@ -126,8 +127,7 @@ const tags = aiTags(creations)
     let shown = 0
     for (const row of rows) {
       const match =
-        !active.dataset.filter ||
-        row.dataset.tags.split(" ").includes(active.dataset.filter)
+        !active.dataset.filter || row.dataset.medium === active.dataset.filter
       row.hidden = !match
       if (match) shown++
     }
@@ -139,7 +139,7 @@ const tags = aiTags(creations)
   // the filters only work with JS, so they stay hidden without it
   if (group) {
     group.hidden = false
-    apply(new URLSearchParams(location.search).get("tag") ?? "")
+    apply(new URLSearchParams(location.search).get("medium") ?? "")
 
     group.addEventListener("click", event => {
       const button = (event.target as Element).closest<HTMLElement>(
@@ -148,10 +148,10 @@ const tags = aiTags(creations)
       if (!button) return
 
       // keep the filter in the URL, so it can be shared and survives "back"
-      const tag = apply(button.dataset.filter)
+      const medium = apply(button.dataset.filter)
       const url = new URL(location.href)
-      if (tag) url.searchParams.set("tag", tag)
-      else url.searchParams.delete("tag")
+      if (medium) url.searchParams.set("medium", medium)
+      else url.searchParams.delete("medium")
       history.replaceState(null, "", url)
     })
   }

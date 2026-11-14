@@ -10,7 +10,7 @@ import {
   aiHref,
   aiNext,
   aiNumber,
-  aiTagHref,
+  aiMediumHref,
 } from "../../lib/ai-creations"
 
 export async function getStaticPaths() {
@@ -35,7 +35,7 @@ if (!creation) {
 const index = all.findIndex(c => c.slug === slug)
 const next = aiNext(all, slug!)
 const facts = [
-  { term: "Medium", detail: creation.mediumDetail || creation.medium },
+  { term: "Medium", detail: creation.mediumDetail || creation.medium?.title },
   ...(creation.tools.length
     ? [{ term: "Tools", detail: creation.tools.join(", ") }]
     : []),
@@ -61,7 +61,15 @@ const facts = [
     <article>
       <section class="AiDetailHead">
         <p class="AiLabel">
-          {creation.medium} · {aiDate(creation.publishedAt)}
+          {creation.medium && (
+            <>
+              <a class="AiLink" href={aiMediumHref(creation.medium.slug)}>
+                {creation.medium.title}
+              </a>{" "}
+              ·{" "}
+            </>
+          )}
+          {aiDate(creation.publishedAt)}
         </p>
         <h1>{creation.title}</h1>
         {creation.lede && <p class="AiDeck AiDeck--lede">{creation.lede}</p>}
@@ -85,18 +93,6 @@ const facts = [
             <dd>{f.detail}</dd>
           </div>
         ))}
-        {creation.tags.length > 0 && (
-          <div>
-            <dt>Tags</dt>
-            <dd class="AiTags">
-              {creation.tags.map(tag => (
-                <a class="AiTag" href={aiTagHref(tag.slug)}>
-                  {tag.title}
-                </a>
-              ))}
-            </dd>
-          </div>
-        )}
       </dl>
 
       <AiBody value={creation.body} />

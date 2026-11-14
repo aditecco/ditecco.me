@@ -49,9 +49,7 @@ export type NoteSummary = {
   tags: string[]
 }
 
-export type AiMedium = "Code" | "Image" | "Sound" | "Writing"
-
-export type AiTag = {
+export type AiMedium = {
   title: string
   slug: string
 }
@@ -64,7 +62,6 @@ export type AiCreationSummary = {
   tools: string[]
   publishedAt: string
   summary: string
-  tags: AiTag[]
   cover?: AiImage
 }
 
@@ -245,8 +242,8 @@ AI Creations
 // no fixtures: without Sanity the section renders its empty state
 
 const aiCreationFields = `
-  _id, title, "slug": slug.current, medium, "tools": coalesce(tools, []),
-  "tags": coalesce(tags[]->{title, "slug": slug.current}, []),
+  _id, title, "slug": slug.current,
+  "medium": medium->{title, "slug": slug.current}, "tools": coalesce(tools, []),
   publishedAt, summary, coverImage
 `
 
@@ -258,7 +255,6 @@ function toAiSummary(c: any): AiCreationSummary {
     slug: c.slug,
     medium: c.medium,
     tools: c.tools ?? [],
-    tags: c.tags ?? [],
     publishedAt: c.publishedAt,
     summary: c.summary,
     cover: aiImage(c.coverImage, 200, 140),

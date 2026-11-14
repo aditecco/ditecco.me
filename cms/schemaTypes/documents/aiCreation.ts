@@ -3,8 +3,6 @@ import {defineField, defineType} from 'sanity'
 // routes under /ai-creations/ that a slug must not shadow
 const RESERVED_SLUGS = ['all']
 
-const MEDIUMS = ['Code', 'Image', 'Sound', 'Writing']
-
 export default defineType({
   name: 'aiCreation',
   title: 'AI Creation',
@@ -31,8 +29,9 @@ export default defineType({
     defineField({
       name: 'medium',
       title: 'Medium',
-      type: 'string',
-      options: {list: MEDIUMS, layout: 'radio', direction: 'horizontal'},
+      type: 'reference',
+      to: [{type: 'aiMedium'}],
+      description: 'The category the index page filters by',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -47,14 +46,6 @@ export default defineType({
       type: 'array',
       of: [{type: 'string'}],
       options: {layout: 'tags'},
-    }),
-    defineField({
-      name: 'tags',
-      title: 'Tags',
-      type: 'array',
-      description: 'The index page filters by these',
-      of: [{type: 'reference', to: [{type: 'aiTag'}]}],
-      validation: (Rule) => Rule.unique(),
     }),
     defineField({
       name: 'publishedAt',
@@ -120,7 +111,7 @@ export default defineType({
     }),
   ],
   preview: {
-    select: {title: 'title', subtitle: 'medium', media: 'coverImage'},
+    select: {title: 'title', subtitle: 'medium.title', media: 'coverImage'},
   },
   orderings: [
     {

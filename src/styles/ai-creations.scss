@@ -845,19 +845,3 @@ ol.AiProse {
       color 0.15s ease;
   }
 }
-
-.AiTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.AiTag {
-  @include ai-mono;
-  padding: 4px 10px;
-  border: 2px solid var(--ai-ink);
-
-  &:hover {
-    background: var(--ai-accent);
-  }
-}

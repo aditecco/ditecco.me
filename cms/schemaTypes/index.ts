@@ -4,7 +4,7 @@ import resumeEntry from './documents/resumeEntry'
 import homeCard from './documents/homeCard'
 import aiCreation from './documents/aiCreation'
 import noteTag from './taxonomies/noteTag'
-import aiTag from './taxonomies/aiTag'
+import aiMedium from './taxonomies/aiMedium'
 import portableText from './objects/portableText'
 import socialLinks from './objects/socialLinks'
 import codeBlock from './objects/codeBlock'
@@ -22,7 +22,7 @@ export const schemaTypes = [
 
   // Taxonomies
   noteTag,
-  aiTag,
+  aiMedium,
 
   // Objects
   portableText,

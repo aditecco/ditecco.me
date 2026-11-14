@@ -1,4 +1,4 @@
-import type { AiCreationSummary, AiTag } from "./content"
+import type { AiCreationSummary, AiMedium } from "./content"
 
 export const AI_BASE = "/ai-creations/"
 export const AI_ALL = `${AI_BASE}all/`
@@ -7,15 +7,15 @@ export function aiHref(slug: string) {
   return `${AI_BASE}${slug}/`
 }
 
-export function aiTagHref(slug: string) {
-  return `${AI_ALL}?tag=${encodeURIComponent(slug)}`
+export function aiMediumHref(slug: string) {
+  return `${AI_ALL}?medium=${encodeURIComponent(slug)}`
 }
 
-// every tag in use, once, alphabetically
-export function aiTags(creations: AiCreationSummary[]) {
-  const bySlug = new Map<string, AiTag>()
-  for (const c of creations) {
-    for (const tag of c.tags) if (tag.slug) bySlug.set(tag.slug, tag)
+// every medium in use, once, alphabetically
+export function aiMediums(creations: AiCreationSummary[]) {
+  const bySlug = new Map<string, AiMedium>()
+  for (const { medium } of creations) {
+    if (medium?.slug) bySlug.set(medium.slug, medium)
   }
   return [...bySlug.values()].sort((a, b) => a.title.localeCompare(b.title))
 }
