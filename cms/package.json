@@ -34,6 +34,16 @@
     "adm-zip": "^0.6.1",
     "typeid-js": {
       "uuid": "^11.1.1"
+    },
+    "@vercel/frameworks": {
+      "js-yaml": "^3.15.2"
+    },
+    "smol-toml": "^1.9.1",
+    "@oclif/core": {
+      "minimatch": "^11.0.8"
+    },
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.8"
     }
   },
   "prettier": {
