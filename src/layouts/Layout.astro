@@ -17,6 +17,8 @@ type Props = {
   lang?: string
   // for pages without a dark design: no theme switching, no settings
   lightOnly?: boolean
+  // pages with their own footer
+  siteFooter?: boolean
 }
 
 const {
@@ -24,6 +26,7 @@ const {
   description = site.description,
   lang = "en",
   lightOnly = false,
+  siteFooter = true,
 } = Astro.props
 const fullTitle = `${title} | ${site.title}`
 ---
@@ -70,6 +73,6 @@ const fullTitle = `${title} | ${site.title}`
       </header>
     )}
     <slot />
-    <Footer />
+    {siteFooter && <Footer />}
   </body>
 </html>

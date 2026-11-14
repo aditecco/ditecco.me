@@ -202,5 +202,22 @@
     "heroImgFile": null,
     "heroAlt": "",
     "order": 9
+  },
+  {
+    "_id": "homeCard-home-card-09",
+    "_type": "homeCard",
+    "master": false,
+    "expanded": true,
+    "href": "/ai-creations/",
+    "title": "AI Creations",
+    "subtitle": "projects",
+    "body": "Things I made with machines, and how they were made.",
+    "tags": [
+      "experiments"
+    ],
+    "heroImgFile": null,
+    "heroScene": "ai-sky",
+    "heroAlt": "",
+    "order": 6
   }
 ]

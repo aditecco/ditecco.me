@@ -1,0 +1,131 @@
+---
+import { ArrowLeft, ArrowUp } from "lucide-react"
+import AiLayout from "../../components/AiCreations/AiLayout.astro"
+import AiImg from "../../components/AiCreations/AiImg"
+import { getAiCreations } from "../../lib/content"
+import {
+  AI_BASE,
+  aiDate,
+  aiHref,
+  aiNumber,
+  aiThings,
+} from "../../lib/ai-creations"
+
+const creations = await getAiCreations()
+const mediums = ["Code", "Image", "Sound", "Writing"].filter(m =>
+  creations.some(c => c.medium === m),
+)
+---
+
+<AiLayout
+  title="Index · AI Creations"
+  description="Every AI creation, newest first."
+>
+  <div class="AiPage">
+    <header class="AiBar">
+      <a class="AiChip" href={AI_BASE}>
+        <ArrowLeft size={16} aria-hidden />
+        AI Creations
+      </a>
+      <a class="AiLink" href="/">
+        ditecco.me
+      </a>
+    </header>
+
+    <section class="AiIndexHead">
+      <h1>Index</h1>
+      <div class="AiIndexHead-side">
+        <p class="AiDeck">
+          <span data-count>{aiThings(creations.length)}</span> that did not
+          exist before a person and a machine sat down together.
+        </p>
+        {mediums.length > 1 && (
+          <div
+            class="AiFilters"
+            role="group"
+            aria-label="Filter by medium"
+            hidden
+          >
+            {["All", ...mediums].map(m => (
+              <button
+                type="button"
+                class="AiFilter"
+                data-filter={m}
+                aria-pressed={m === "All" ? "true" : "false"}
+              >
+                {m}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <main>
+      {creations.map((c, i) => (
+        <a class="AiRow" href={aiHref(c.slug)} data-medium={c.medium}>
+          <span class="AiRow-no" aria-hidden="true">
+            {aiNumber(i)}
+          </span>
+          <span class="AiRow-text">
+            <span class="AiRow-title">{c.title}</span>
+            <span class="AiRow-summary">{c.summary}</span>
+          </span>
+          <span class="AiRow-meta">
+            <span class="AiRow-medium">{c.medium}</span>
+            {c.tools.length > 0 && <span>{c.tools.join(" · ")}</span>}
+            <span>{aiDate(c.publishedAt)}</span>
+          </span>
+          <AiImg
+            image={c.cover}
+            label="Cover · 10:7"
+            className="AiRow-cover"
+            width={200}
+            height={140}
+          />
+        </a>
+      ))}
+      {creations.length === 0 && <p class="AiEmpty">Nothing here yet.</p>}
+    </main>
+
+    <footer class="AiFoot">
+      <span>End of index</span>
+      <a class="AiLink" href={AI_BASE}>
+        Back to the cover
+        <ArrowUp size={16} aria-hidden />
+      </a>
+    </footer>
+  </div>
+</AiLayout>
+
+<script>
+  import { aiThings } from "../../lib/ai-creations"
+
+  const group = document.querySelector<HTMLElement>(".AiFilters")
+  const rows = [...document.querySelectorAll<HTMLElement>(".AiRow")]
+  const count = document.querySelector("[data-count]")
+
+  // the filters only work with JS, so they stay hidden without it
+  if (group) {
+    group.hidden = false
+    group.addEventListener("click", event => {
+      const button = (event.target as Element).closest<HTMLElement>(
+        "[data-filter]",
+      )
+      if (!button) return
+
+      const filter = button.dataset.filter
+      for (const b of group.querySelectorAll("[data-filter]")) {
+        b.setAttribute("aria-pressed", String(b === button))
+      }
+
+      let shown = 0
+      for (const row of rows) {
+        const match = filter === "All" || row.dataset.medium === filter
+        row.hidden = !match
+        if (match) shown++
+      }
+      if (count) count.textContent = aiThings(shown)
+    })
+  }
+</script>

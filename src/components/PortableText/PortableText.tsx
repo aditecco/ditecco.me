@@ -6,7 +6,7 @@ type Props = {
 }
 
 // Validate URLs to prevent javascript: and data: protocol attacks
-function isValidUrl(url: string): boolean {
+export function isValidUrl(url: string): boolean {
   if (!url) return false
 
   try {

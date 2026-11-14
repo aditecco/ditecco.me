@@ -1,0 +1,375 @@
+[
+  {
+    "_id": "aiCreation-thirteen-scenes-for-a-home-card",
+    "_type": "aiCreation",
+    "slug": {
+      "_type": "slug",
+      "current": "thirteen-scenes-for-a-home-card"
+    },
+    "title": "Thirteen scenes for a home card",
+    "medium": "Code",
+    "mediumDetail": "Code, real-time graphics",
+    "tools": ["three.js", "coding agent"],
+    "publishedAt": "2026-11-02T10:00:00Z",
+    "summary": "Small, calm three.js worlds that rotate behind my name on the home page.",
+    "lede": "The hero on my home page used to be a flat block of colour. Now it drifts through thirteen small worlds, each written in conversation with a coding agent.",
+    "coverImage": {
+      "_type": "imageBlock",
+      "_key": "k0",
+      "alt": "A pixel-art sky scene on the home card"
+    },
+    "heroImage": {
+      "_type": "imageBlock",
+      "_key": "k1",
+      "alt": "The home page card cycling through its scenes"
+    },
+    "credits": [
+      {
+        "_key": "k2",
+        "_type": "credit",
+        "role": "Human",
+        "contribution": "The brief, the taste, the cuts"
+      },
+      {
+        "_key": "k3",
+        "_type": "credit",
+        "role": "Machine",
+        "contribution": "First drafts, variations on demand"
+      }
+    ],
+    "body": [
+      {
+        "_type": "block",
+        "_key": "k4",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "k5",
+            "text": "The brief",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "k6",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "k7",
+            "text": "I wanted the first card on the site to feel alive without asking anything of the visitor. No controls, no scroll hijacking: a quiet scene that happens to be there, and a different one next time you look.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "k8",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "k9",
+            "text": "Writing one shader by hand is an evening. Writing thirteen is a project I would never have started. That gap is exactly where a machine collaborator earns its place.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "promptBlock",
+        "_key": "ka",
+        "label": "Prompt",
+        "note": "Pass 1 of 4",
+        "text": "A small, calm three.js scene for a 300 × 224 card. Soft and slow, no interaction. A heading sits on top, so tell me whether it needs light or dark text. It must dispose cleanly and never render above a capped pixel ratio."
+      },
+      {
+        "_type": "block",
+        "_key": "kb",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "kc",
+            "text": "The first answers were competent and forgettable. The interesting work started when I stopped describing scenes and started describing constraints.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "iterations",
+        "_key": "kd",
+        "title": "8-bit clouds, four passes",
+        "items": [
+          {
+            "_type": "iteration",
+            "_key": "ke",
+            "label": "V1",
+            "caption": "Flat. Sprites, not weather.",
+            "image": {
+              "_type": "imageBlock",
+              "_key": "kf",
+              "alt": "First pass of the pixel clouds"
+            }
+          },
+          {
+            "_type": "iteration",
+            "_key": "kg",
+            "label": "V2",
+            "caption": "Volume, but the palette fights the card.",
+            "image": {
+              "_type": "imageBlock",
+              "_key": "kh",
+              "alt": "Second pass of the pixel clouds"
+            }
+          },
+          {
+            "_type": "iteration",
+            "_key": "ki",
+            "label": "V3",
+            "caption": "Puffier. Too fast.",
+            "image": {
+              "_type": "imageBlock",
+              "_key": "kj",
+              "alt": "Third pass of the pixel clouds"
+            }
+          },
+          {
+            "_type": "iteration",
+            "_key": "kk",
+            "label": "V4",
+            "caption": "Slow drift, three tones.",
+            "kept": true,
+            "image": {
+              "_type": "imageBlock",
+              "_key": "kl",
+              "alt": "Fourth and final pass of the pixel clouds"
+            }
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "km",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "kn",
+            "text": "Where I stepped in",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "ko",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "kp",
+            "text": "Left alone, every scene wanted to be the main event. The edits that mattered were subtractions: lower contrast, slower motion, a pixel-ratio cap, and a rule that only one scene is ever alive at a time.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "kq",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "kr",
+            "text": "The settings menu grew out of the same instinct. If a visitor would rather have a still page, that should be one click away.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "pullQuote",
+        "_key": "ks",
+        "text": "The machine is generous with options. Deciding which twelve to throw away is still the job."
+      },
+      {
+        "_type": "figureRow",
+        "_key": "kt",
+        "images": [
+          {
+            "_type": "imageBlock",
+            "_key": "ku",
+            "alt": "The home card in the light theme",
+            "caption": "Fig. 02 — Light theme"
+          },
+          {
+            "_type": "imageBlock",
+            "_key": "kv",
+            "alt": "The home card in the dark theme",
+            "caption": "Fig. 03 — Dark theme"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "kw",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "kx",
+            "text": "The result",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "ky",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "kz",
+            "text": "Thirteen scenes, one card, and a home page that is never quite the same twice.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "ctaLink",
+        "_key": "k10",
+        "label": "See it on the home page",
+        "href": "/"
+      }
+    ]
+  },
+  {
+    "_id": "aiCreation-a-typeface-that-never-existed",
+    "_type": "aiCreation",
+    "slug": {
+      "_type": "slug",
+      "current": "a-typeface-that-never-existed"
+    },
+    "title": "A typeface that never existed",
+    "medium": "Image",
+    "mediumDetail": "Type design",
+    "tools": ["image model", "vector editor"],
+    "publishedAt": "2026-10-12T10:00:00Z",
+    "summary": "Drawing an alphabet by arguing with an image model, one glyph at a time.",
+    "lede": "Twenty-six letters, a few hundred rejected ones, and a slow negotiation about what an R is allowed to look like.",
+    "coverImage": {
+      "_type": "imageBlock",
+      "_key": "k11",
+      "alt": "Specimen sheet of the generated typeface"
+    },
+    "credits": [
+      {
+        "_key": "k12",
+        "_type": "credit",
+        "role": "Human",
+        "contribution": "Proportions, spacing, every final curve"
+      },
+      {
+        "_key": "k13",
+        "_type": "credit",
+        "role": "Machine",
+        "contribution": "Hundreds of glyph sketches"
+      }
+    ],
+    "body": [
+      {
+        "_type": "block",
+        "_key": "k14",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "k15",
+            "text": "The brief",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "k16",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "k17",
+            "text": "Sample content for local development: replace it in the CMS.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "promptBlock",
+        "_key": "k18",
+        "label": "Prompt",
+        "text": "A capital R from a condensed grotesque that was never released, drawn on a white background, no texture."
+      },
+      {
+        "_type": "pullQuote",
+        "_key": "k19",
+        "text": "The model never draws the same R twice. That turned out to be the useful part."
+      }
+    ]
+  },
+  {
+    "_id": "aiCreation-the-resume-that-rewrites-itself",
+    "_type": "aiCreation",
+    "slug": {
+      "_type": "slug",
+      "current": "the-resume-that-rewrites-itself"
+    },
+    "title": "The résumé that rewrites itself",
+    "medium": "Writing",
+    "tools": ["language model", "Astro"],
+    "publishedAt": "2026-08-20T10:00:00Z",
+    "summary": "One career, told for different readers without changing a single fact.",
+    "credits": [
+      {
+        "_key": "k1a",
+        "_type": "credit",
+        "role": "Human",
+        "contribution": "The facts, and the red lines"
+      },
+      {
+        "_key": "k1b",
+        "_type": "credit",
+        "role": "Machine",
+        "contribution": "The retellings"
+      }
+    ],
+    "body": [
+      {
+        "_type": "block",
+        "_key": "k1c",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "k1d",
+            "text": "Sample content for local development: replace it in the CMS.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  }
+]

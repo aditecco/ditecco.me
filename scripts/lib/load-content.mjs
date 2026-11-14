@@ -88,6 +88,7 @@ export function loadHomeCards() {
       intro: data.master ? markdownToPortableText(content, "i") : undefined,
       tags: data.tags ?? [],
       heroImgFile,
+      ...(data.heroScene && { heroScene: data.heroScene }),
       heroAlt: data.heroAlt,
       order: data.order,
     }

@@ -1,0 +1,19 @@
+---
+import AiLayout from "../../components/AiCreations/AiLayout.astro"
+import AiCover from "../../components/AiCreations/AiCover"
+import { getAiCreations } from "../../lib/content"
+import { AI_ALL, aiHref } from "../../lib/ai-creations"
+
+const [latest] = await getAiCreations()
+---
+
+<AiLayout
+  title="AI Creations"
+  description="Things I made with machines, and how they were made."
+>
+  <AiCover
+    client:load
+    allHref={AI_ALL}
+    latestHref={latest && aiHref(latest.slug)}
+  />
+</AiLayout>
