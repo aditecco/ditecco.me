@@ -8,13 +8,12 @@ import {
   aiDate,
   aiHref,
   aiNumber,
+  aiTags,
   aiThings,
 } from "../../lib/ai-creations"
 
 const creations = await getAiCreations()
-const mediums = ["Code", "Image", "Sound", "Writing"].filter(m =>
-  creations.some(c => c.medium === m),
-)
+const tags = aiTags(creations)
 ---
 
 <AiLayout
@@ -39,21 +38,24 @@ const mediums = ["Code", "Image", "Sound", "Writing"].filter(m =>
           <span data-count>{aiThings(creations.length)}</span> that did not
           exist before a person and a machine sat down together.
         </p>
-        {mediums.length > 1 && (
-          <div
-            class="AiFilters"
-            role="group"
-            aria-label="Filter by medium"
-            hidden
-          >
-            {["All", ...mediums].map(m => (
+        {tags.length > 0 && (
+          <div class="AiFilters" role="group" aria-label="Filter by tag" hidden>
+            <button
+              type="button"
+              class="AiFilter"
+              data-filter=""
+              aria-pressed="true"
+            >
+              All
+            </button>
+            {tags.map(tag => (
               <button
                 type="button"
                 class="AiFilter"
-                data-filter={m}
-                aria-pressed={m === "All" ? "true" : "false"}
+                data-filter={tag.slug}
+                aria-pressed="false"
               >
-                {m}
+                {tag.title}
               </button>
             ))}
           </div>
@@ -63,7 +65,11 @@ const mediums = ["Code", "Image", "Sound", "Writing"].filter(m =>
 
     <main>
       {creations.map((c, i) => (
-        <a class="AiRow" href={aiHref(c.slug)} data-medium={c.medium}>
+        <a
+          class="AiRow"
+          href={aiHref(c.slug)}
+          data-tags={c.tags.map(t => t.slug).join(" ")}
+        >
           <span class="AiRow-no" aria-hidden="true">
             {aiNumber(i)}
           </span>
@@ -105,27 +111,48 @@ const mediums = ["Code", "Image", "Sound", "Writing"].filter(m =>
   const rows = [...document.querySelectorAll<HTMLElement>(".AiRow")]
   const count = document.querySelector("[data-count]")
 
+  // "" shows everything
+  function apply(tag: string) {
+    const buttons = [...group.querySelectorAll<HTMLElement>("[data-filter]")]
+    // an unknown ?tag= falls back to All
+    const active =
+      buttons.find(b => b.dataset.filter === tag) ??
+      buttons.find(b => b.dataset.filter === "")
+
+    for (const b of buttons) {
+      b.setAttribute("aria-pressed", String(b === active))
+    }
+
+    let shown = 0
+    for (const row of rows) {
+      const match =
+        !active.dataset.filter ||
+        row.dataset.tags.split(" ").includes(active.dataset.filter)
+      row.hidden = !match
+      if (match) shown++
+    }
+    if (count) count.textContent = aiThings(shown)
+
+    return active.dataset.filter
+  }
+
   // the filters only work with JS, so they stay hidden without it
   if (group) {
     group.hidden = false
+    apply(new URLSearchParams(location.search).get("tag") ?? "")
+
     group.addEventListener("click", event => {
       const button = (event.target as Element).closest<HTMLElement>(
         "[data-filter]",
       )
       if (!button) return
 
-      const filter = button.dataset.filter
-      for (const b of group.querySelectorAll("[data-filter]")) {
-        b.setAttribute("aria-pressed", String(b === button))
-      }
-
-      let shown = 0
-      for (const row of rows) {
-        const match = filter === "All" || row.dataset.medium === filter
-        row.hidden = !match
-        if (match) shown++
-      }
-      if (count) count.textContent = aiThings(shown)
+      // keep the filter in the URL, so it can be shared and survives "back"
+      const tag = apply(button.dataset.filter)
+      const url = new URL(location.href)
+      if (tag) url.searchParams.set("tag", tag)
+      else url.searchParams.delete("tag")
+      history.replaceState(null, "", url)
     })
   }
 </script>

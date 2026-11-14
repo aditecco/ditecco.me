@@ -51,6 +51,11 @@ export type NoteSummary = {
 
 export type AiMedium = "Code" | "Image" | "Sound" | "Writing"
 
+export type AiTag = {
+  title: string
+  slug: string
+}
+
 export type AiCreationSummary = {
   id: string
   title: string
@@ -59,7 +64,7 @@ export type AiCreationSummary = {
   tools: string[]
   publishedAt: string
   summary: string
-  tags: string[]
+  tags: AiTag[]
   cover?: AiImage
 }
 
@@ -241,7 +246,8 @@ AI Creations
 
 const aiCreationFields = `
   _id, title, "slug": slug.current, medium, "tools": coalesce(tools, []),
-  "tags": coalesce(tags, []), publishedAt, summary, coverImage
+  "tags": coalesce(tags[]->{title, "slug": slug.current}, []),
+  publishedAt, summary, coverImage
 `
 
 // the index thumbnail is 200x140 (10:7)

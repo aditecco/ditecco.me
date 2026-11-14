@@ -10,6 +10,7 @@ import {
   aiHref,
   aiNext,
   aiNumber,
+  aiTagHref,
 } from "../../lib/ai-creations"
 
 export async function getStaticPaths() {
@@ -37,9 +38,6 @@ const facts = [
   { term: "Medium", detail: creation.mediumDetail || creation.medium },
   ...(creation.tools.length
     ? [{ term: "Tools", detail: creation.tools.join(", ") }]
-    : []),
-  ...(creation.tags.length
-    ? [{ term: "Tags", detail: creation.tags.join(", ") }]
     : []),
   ...creation.credits.map(c => ({ term: c.role, detail: c.contribution })),
 ]
@@ -87,6 +85,18 @@ const facts = [
             <dd>{f.detail}</dd>
           </div>
         ))}
+        {creation.tags.length > 0 && (
+          <div>
+            <dt>Tags</dt>
+            <dd class="AiTags">
+              {creation.tags.map(tag => (
+                <a class="AiTag" href={aiTagHref(tag.slug)}>
+                  {tag.title}
+                </a>
+              ))}
+            </dd>
+          </div>
+        )}
       </dl>
 
       <AiBody value={creation.body} />

@@ -1,10 +1,23 @@
-import type { AiCreationSummary } from "./content"
+import type { AiCreationSummary, AiTag } from "./content"
 
 export const AI_BASE = "/ai-creations/"
 export const AI_ALL = `${AI_BASE}all/`
 
 export function aiHref(slug: string) {
   return `${AI_BASE}${slug}/`
+}
+
+export function aiTagHref(slug: string) {
+  return `${AI_ALL}?tag=${encodeURIComponent(slug)}`
+}
+
+// every tag in use, once, alphabetically
+export function aiTags(creations: AiCreationSummary[]) {
+  const bySlug = new Map<string, AiTag>()
+  for (const c of creations) {
+    for (const tag of c.tags) if (tag.slug) bySlug.set(tag.slug, tag)
+  }
+  return [...bySlug.values()].sort((a, b) => a.title.localeCompare(b.title))
 }
 
 // "01", "02", …

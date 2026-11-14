@@ -52,8 +52,8 @@ export default defineType({
       name: 'tags',
       title: 'Tags',
       type: 'array',
-      of: [{type: 'string'}],
-      options: {layout: 'tags'},
+      description: 'The index page filters by these',
+      of: [{type: 'reference', to: [{type: 'aiTag'}]}],
       validation: (Rule) => Rule.unique(),
     }),
     defineField({
