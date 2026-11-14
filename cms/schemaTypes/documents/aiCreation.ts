@@ -1,6 +1,6 @@
 import {defineField, defineType} from 'sanity'
 
-// routes under /ai-creations/ that a slug must not shadow
+// routes under /ai/ that a slug must not shadow
 const RESERVED_SLUGS = ['all']
 
 export default defineType({

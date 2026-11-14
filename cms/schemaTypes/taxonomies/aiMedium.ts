@@ -15,7 +15,7 @@ export default defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'Used in the index filter URL: /ai-creations/all/?medium=slug',
+      description: 'Used in the index filter URL: /ai/all/?medium=slug',
       options: {source: 'title', maxLength: 96},
       validation: (Rule) => Rule.required(),
     }),

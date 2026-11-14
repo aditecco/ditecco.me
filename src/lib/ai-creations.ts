@@ -1,6 +1,6 @@
 import type { AiCreationSummary, AiMedium } from "./content"
 
-export const AI_BASE = "/ai-creations/"
+export const AI_BASE = "/ai/"
 export const AI_ALL = `${AI_BASE}all/`
 
 export function aiHref(slug: string) {

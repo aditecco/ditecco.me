@@ -1,7 +1,7 @@
 ---
 master: false
 expanded: true
-href: "/ai-creations/"
+href: "/ai/"
 title: "AI Creations"
 subtitle: "projects"
 body: "Things I made with machines, and how they were made."
