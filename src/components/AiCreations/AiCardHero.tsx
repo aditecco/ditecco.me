@@ -15,7 +15,10 @@ export default function AiCardHero() {
   return (
     <div className="AiCardHero" aria-hidden>
       <canvas ref={canvasRef} className="AiCardHero-sky" />
-      <span className="AiCardHero-mark">AI</span>
+      <span className="AiCardHero-title">
+        <span>AI</span>
+        <span>Creations</span>
+      </span>
     </div>
   )
 }

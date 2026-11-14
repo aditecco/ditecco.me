@@ -17,14 +17,26 @@ AiCardHero
     height: 100%;
   }
 
-  .AiCardHero-mark {
+  // the cover's headline, in its black boxes
+  .AiCardHero-title {
     position: absolute;
     left: 14px;
-    bottom: -22px;
+    bottom: 14px;
     font-family: "Bebas Neue", sans-serif;
-    font-size: 190px;
-    line-height: 1;
+    font-size: 72px;
+    line-height: 0.86;
     letter-spacing: -0.01em;
-    color: #0a0a0a;
+    text-transform: uppercase;
+    color: #f1eee7;
+
+    span {
+      display: table;
+      padding: 0.07em 0.1em 0.01em;
+      background: #0a0a0a;
+
+      + span {
+        margin-top: 0.05em;
+      }
+    }
   }
 }
