@@ -229,6 +229,20 @@ cover
   }
 }
 
+.AiCover-footer .AiChip {
+  min-height: 52px;
+  padding: 0 18px;
+}
+
+// icon only on narrow screens, so all three controls share a line
+.AiCover-motion {
+  display: none;
+
+  @media (min-width: 520px) {
+    display: inline;
+  }
+}
+
 .AiCover-header {
   display: flex;
   padding: 24px var(--ai-gutter);
@@ -242,7 +256,15 @@ cover
 .AiCover-title {
   position: relative;
   font-family: var(--ai-display);
-  font-size: clamp(76px, 21.5vw, 330px);
+  // "CREATIONS" spans the gutters, limited to what fits between header and footer
+  font-size: clamp(
+    76px,
+    min(
+      calc((100vw - 2 * var(--ai-gutter)) / 3.4),
+      calc((100svh - 220px) / 1.93)
+    ),
+    420px
+  );
   line-height: 0.86;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -254,17 +276,54 @@ cover
     color: var(--ai-paper);
   }
 
-  span {
+  .AiLine {
     display: table;
     padding: 0.07em 0.1em 0.01em;
 
-    + span {
+    + .AiLine {
       margin-top: 0.05em;
     }
   }
 
-  h1 span {
+  h1 .AiLine {
     background: var(--ai-ink);
+  }
+
+  // narrow screens: "CREA" and "TIONS" stack, each in its own box, so the
+  // headline can be as wide as the longer half
+  @media (max-width: 640px) {
+    font-size: clamp(
+      76px,
+      min(
+        calc((100vw - 2 * var(--ai-gutter)) / 2.15),
+        calc((100svh - 200px) / 2.92)
+      ),
+      420px
+    );
+
+    .AiLine,
+    h1 .AiLine {
+      display: block;
+      padding: 0;
+      background: none;
+    }
+
+    .AiLine > span {
+      display: table;
+      padding: 0.07em 0.1em 0.01em;
+
+      + span {
+        margin-top: 0.05em;
+      }
+    }
+
+    h1 .AiLine > span {
+      background: var(--ai-ink);
+    }
+
+    .AiLine-cut::after {
+      content: "-";
+    }
   }
 }
 

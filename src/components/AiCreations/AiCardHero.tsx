@@ -9,7 +9,7 @@ export default function AiCardHero() {
 
   useSky(canvasRef, {
     kinds: ["bands", "blocks"],
-    pixelRatio: () => Math.min(window.devicePixelRatio || 1, 2),
+    pixelRatio: () => 1,
   })
 
   return (

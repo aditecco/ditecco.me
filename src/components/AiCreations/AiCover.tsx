@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react"
 import { useRef, useState, type CSSProperties } from "react"
 import type { GlitchState } from "../../lib/ai-sky/glitch"
 import { useSky } from "./useSky"
@@ -9,7 +9,8 @@ type Props = {
 }
 
 const KINDS = ["bands", "blocks", "ghost", "slice"] as const
-const LINES = ["AI", "Creations"]
+// "Creations" is split in two so narrow screens can stack it at a larger size
+const LINES = [["AI"], ["Crea", "tions"]]
 
 // deterministic 0..1 from a glitch seed, so a frozen frame stays put
 function rand(seed: number, k: number) {
@@ -33,6 +34,21 @@ function ghostStyle(
   }
 }
 
+function Lines() {
+  return LINES.map(parts => (
+    <span key={parts.join("")} className="AiLine">
+      {parts.map((part, i) => (
+        <span
+          key={part}
+          className={i < parts.length - 1 ? "AiLine-cut" : undefined}
+        >
+          {part}
+        </span>
+      ))}
+    </span>
+  ))
+}
+
 function Ghost({
   className,
   style,
@@ -42,9 +58,7 @@ function Ghost({
 }) {
   return (
     <div className={`AiCover-ghost ${className}`} style={style} aria-hidden>
-      {LINES.map(line => (
-        <span key={line}>{line}</span>
-      ))}
+      <Lines />
     </div>
   )
 }
@@ -76,10 +90,8 @@ export default function AiCover({ allHref, latestHref }: Props) {
 
       <main className="AiCover-main">
         <div className="AiCover-title">
-          <h1>
-            {LINES.map(line => (
-              <span key={line}>{line}</span>
-            ))}
+          <h1 aria-label="AI Creations">
+            <Lines />
           </h1>
           <Ghost
             className="AiCover-ghost--red"
@@ -114,7 +126,7 @@ export default function AiCover({ allHref, latestHref }: Props) {
       <footer className="AiCover-footer">
         <div className="AiCover-actions">
           <a className="AiButton AiButton--accent" href={allHref}>
-            Browse the creations
+            Browse
             <ArrowRight size={20} aria-hidden />
           </a>
           {latestHref && (
@@ -127,9 +139,17 @@ export default function AiCover({ allHref, latestHref }: Props) {
           <button
             type="button"
             className="AiChip AiChip--paper"
+            aria-label={still ? "Play motion" : "Pause motion"}
             onClick={() => setPlaying(still)}
           >
-            {still ? "Play motion" : "Pause motion"}
+            {still ? (
+              <Play size={16} aria-hidden />
+            ) : (
+              <Pause size={16} aria-hidden />
+            )}
+            <span className="AiCover-motion">
+              {still ? "Play motion" : "Pause motion"}
+            </span>
           </button>
         )}
       </footer>
