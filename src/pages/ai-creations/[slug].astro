@@ -38,6 +38,9 @@ const facts = [
   ...(creation.tools.length
     ? [{ term: "Tools", detail: creation.tools.join(", ") }]
     : []),
+  ...(creation.tags.length
+    ? [{ term: "Tags", detail: creation.tags.join(", ") }]
+    : []),
   ...creation.credits.map(c => ({ term: c.role, detail: c.contribution })),
 ]
 ---

@@ -59,6 +59,7 @@ export type AiCreationSummary = {
   tools: string[]
   publishedAt: string
   summary: string
+  tags: string[]
   cover?: AiImage
 }
 
@@ -236,27 +237,22 @@ export async function getNote(slug: string): Promise<Note | null> {
 AI Creations
 --------------------------------- */
 
+// no fixtures: without Sanity the section renders its empty state
+
 const aiCreationFields = `
   _id, title, "slug": slug.current, medium, "tools": coalesce(tools, []),
-  publishedAt, summary, coverImage
+  "tags": coalesce(tags, []), publishedAt, summary, coverImage
 `
-
-// optional: fixtures/ai-creations.json holds Sanity-shaped documents
-const fixtureAiCreations = Object.values(
-  import.meta.glob("../../fixtures/ai-creations.json", {
-    eager: true,
-    import: "default",
-  }),
-)[0] as any[] | undefined
 
 // the index thumbnail is 200x140 (10:7)
 function toAiSummary(c: any): AiCreationSummary {
   return {
     id: c._id,
     title: c.title,
-    slug: typeof c.slug === "string" ? c.slug : c.slug.current,
+    slug: c.slug,
     medium: c.medium,
     tools: c.tools ?? [],
+    tags: c.tags ?? [],
     publishedAt: c.publishedAt,
     summary: c.summary,
     cover: aiImage(c.coverImage, 200, 140),
@@ -274,14 +270,8 @@ function toAiCreation(c: any): AiCreation {
   }
 }
 
-function byDateDesc(a: { publishedAt: string }, b: { publishedAt: string }) {
-  return b.publishedAt.localeCompare(a.publishedAt)
-}
-
 export async function getAiCreations(): Promise<AiCreationSummary[]> {
-  if (!client) {
-    return (fixtureAiCreations ?? []).map(toAiSummary).sort(byDateDesc)
-  }
+  if (!client) return []
 
   const creations = await query<any[]>(
     `*[_type == "aiCreation" && defined(slug.current)] | order(publishedAt desc){${aiCreationFields}}`,
@@ -291,10 +281,7 @@ export async function getAiCreations(): Promise<AiCreationSummary[]> {
 }
 
 export async function getAiCreation(slug: string): Promise<AiCreation | null> {
-  if (!client) {
-    const found = (fixtureAiCreations ?? []).find(c => c.slug.current === slug)
-    return found ? toAiCreation(found) : null
-  }
+  if (!client) return null
 
   const creation = await query<any>(
     `*[_type == "aiCreation" && slug.current == $slug][0]{

@@ -2,7 +2,7 @@ import type { AiImage } from "../../lib/ai-image"
 
 type Props = {
   image?: AiImage
-  // shown in the placeholder drawn when there's no image file
+  // shown in the placeholder drawn when the image is missing
   label: string
   className?: string
   width: number

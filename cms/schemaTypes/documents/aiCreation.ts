@@ -49,6 +49,14 @@ export default defineType({
       options: {layout: 'tags'},
     }),
     defineField({
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {layout: 'tags'},
+      validation: (Rule) => Rule.unique(),
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Published date',
       type: 'datetime',
