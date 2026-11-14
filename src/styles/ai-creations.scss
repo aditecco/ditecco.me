@@ -320,6 +320,10 @@ cover
     h1 .AiLine > span {
       background: var(--ai-ink);
     }
+
+    .AiLine-cut::after {
+      content: "-";
+    }
   }
 }
 

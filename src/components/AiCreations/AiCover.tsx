@@ -37,8 +37,13 @@ function ghostStyle(
 function Lines() {
   return LINES.map(parts => (
     <span key={parts.join("")} className="AiLine">
-      {parts.map(part => (
-        <span key={part}>{part}</span>
+      {parts.map((part, i) => (
+        <span
+          key={part}
+          className={i < parts.length - 1 ? "AiLine-cut" : undefined}
+        >
+          {part}
+        </span>
       ))}
     </span>
   ))
