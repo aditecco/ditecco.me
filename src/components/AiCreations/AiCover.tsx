@@ -9,7 +9,8 @@ type Props = {
 }
 
 const KINDS = ["bands", "blocks", "ghost", "slice"] as const
-const LINES = ["AI", "Creations"]
+// "Creations" is split in two so narrow screens can stack it at a larger size
+const LINES = [["AI"], ["Crea", "tions"]]
 
 // deterministic 0..1 from a glitch seed, so a frozen frame stays put
 function rand(seed: number, k: number) {
@@ -33,6 +34,16 @@ function ghostStyle(
   }
 }
 
+function Lines() {
+  return LINES.map(parts => (
+    <span key={parts.join("")} className="AiLine">
+      {parts.map(part => (
+        <span key={part}>{part}</span>
+      ))}
+    </span>
+  ))
+}
+
 function Ghost({
   className,
   style,
@@ -42,9 +53,7 @@ function Ghost({
 }) {
   return (
     <div className={`AiCover-ghost ${className}`} style={style} aria-hidden>
-      {LINES.map(line => (
-        <span key={line}>{line}</span>
-      ))}
+      <Lines />
     </div>
   )
 }
@@ -76,10 +85,8 @@ export default function AiCover({ allHref, latestHref }: Props) {
 
       <main className="AiCover-main">
         <div className="AiCover-title">
-          <h1>
-            {LINES.map(line => (
-              <span key={line}>{line}</span>
-            ))}
+          <h1 aria-label="AI Creations">
+            <Lines />
           </h1>
           <Ghost
             className="AiCover-ghost--red"
